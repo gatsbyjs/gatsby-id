@@ -7,5 +7,5 @@ Untuk turut serta menerjemahkannya, silakan merujuk pada [Perkembangan Terjemaha
 
 Tautan Bermanfaat:
 
-* [Panduan Style](/style-guide.md)
+* [Panduan Penulisan](/style-guide.md)
 * [Panduan Terjemahan Gatsby](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
