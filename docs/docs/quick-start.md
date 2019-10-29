@@ -1,66 +1,66 @@
 ---
-title: Quick Start
+title: Mulai Cepat
 ---
 
-This quick start is intended for intermediate to advanced developers. For a gentler intro to Gatsby, [head to our tutorial](/tutorial/)!
+Mulai cepat ini dimaksudkan untuk para pengembang tingkat menengah hingga tingkat lanjut. Untuk pengantar Gatsby, [buka tutorial kami](/tutorial/)!
 
-## Use the Gatsby CLI
+## Menggunakan Gatsby CLI
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-quick-start-with-gatsby-create-develop-and-build-gatsby-sites-from-the-command-line"
   lessonTitle="Quick Start with Gatsby: Create, Develop, and Build Gatsby Sites From the Command Line"
 />
 
-**Note**: this video uses `npx`, which is a tool to execute an npm package without first installing it. Running the command `npx gatsby new` is the same as running `gatsby new` after installing the gatsby-cli on your computer.
+**Catatan**: video ini menggunakan `npx`, yang merupakan alat untuk menjalankan sebuah paket npm tanpa harus menginstalnya terlebih dahulu. Menjalankan perintah `npx gatsby new` sama dengan menjalankan `gatsby new` setelah menginstal gatsby-cli di komputer Anda.
 
-### Install the Gatsby CLI.
+### Instal Gatsby CLI.
 
 ```shell
 npm install -g gatsby-cli
 ```
 
-### Create a new site.
+### Buat situs baru.
 
 ```shell
 gatsby new gatsby-site
 ```
 
-### Change directories into site folder.
+### Ubah direktori ke folder situs.
 
 ```shell
 cd gatsby-site
 ```
 
-### Start development server.
+### Mulai *server* pengembangan.
 
 ```shell
 gatsby develop
 ```
 
-Gatsby will start a hot-reloading development environment accessible by default at `localhost:8000`.
+Gatsby akan memulai *hot-reloading* pada lingkungan pengembangan yang dapat diakses secara bawaan di `localhost:8000`.
 
-Try editing the JavaScript pages in `src/pages`. Saved changes will live reload in the browser.
+Coba ubah laman JavaScript di `src/pages`. Perubahan yang disimpan akan langsung dimuat ulang di browser.
 
-### Create a production build.
+### Buat versi produksi.
 
 ```shell
 gatsby build
 ```
 
-Gatsby will perform an optimized production build for your site, generating static HTML and per-route JavaScript code bundles.
+Gatsby akan melakukan versi produksi yang dioptimalkan untuk situs Anda, menghasilkan HTML statis dan bundel kode JavaScript per rute.
 
-### Serve the production build locally.
+### Menyediakan versi produksi secara lokal.
 
 ```shell
 gatsby serve
 ```
 
-Gatsby starts a local HTML server for testing your built site. Remember to build your site using `gatsby build` before using this command.
+Gatsby memulai *server* HTML lokal untuk menguji situs yang Anda buat. Ingatlah untuk membangun situs Anda menggunakan `gatsby build` sebelum menggunakan perintah ini.
 
-### Access documentation for CLI commands
+### Akses dokumentasi untuk perintah CLI
 
-To see detailed documentation for the CLI commands, run `gatsby --help` in the terminal.
+Untuk melihat dokumentasi secara terperinci terkait perintah CLI, jalankan `gatsby --help` di terminal.
 
-For specific commands, run `gatsby COMMAND_NAME --help` e.g. `gatsby new --help`.
+Untuk perintah tertentu, jalankan `gatsby NAMA_PERINTAH --help` contoh `gatsby new --help`.
 
-For more information on the Gatsby CLI, visit the [CLI reference](/docs/gatsby-cli/) section of the docs.
+Untuk informasi lebih lanjut tentang Gatsby CLI, kunjungi bagian [Referensi CLI](/docs/gatsby-cli/) pada dokumen tersebut.
