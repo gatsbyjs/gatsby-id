@@ -1,14 +1,11 @@
 
-# Gatsby Indonesia Translation
+# Gatsby Terjemahan Bahasa Indonesia
 
-This repo contains the Indonesia translation for Gatsby.
+Repo ini berisi Gatsby terjemahan bahasa Indonesia.
 
-Please refer to the [Translation Progress Issue](https://github.com/gatsbyjs/gatsby-ID/issues/1) to start translating!
+Untuk turut serta menerjemahkannya, silakan merujuk pada [Perkembangan Terjemahan Saat Ini](https://github.com/gatsbyjs/gatsby-ID/issues/1)
 
-Useful Links:
+Tautan Bermanfaat:
 
-* [Style Guide](/style-guide.md)
-* [Gatsby Translation Guide](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
-
-(Feel free to translate this document and add any content you feel would be useful to contributors).
-  
+* [Panduan Penulisan](/style-guide.md)
+* [Panduan Terjemahan Gatsby](https://www.gatsbyjs.org/contributing/gatsby-docs-translation-guide/)
