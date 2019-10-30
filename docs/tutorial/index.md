@@ -1,39 +1,39 @@
 ---
-title: Gatsby.js Tutorials
+title: Tutorial Gatsby.js
 disableTableOfContents: true
 ---
 
-Welcome to Gatsby! We’re glad you’re here. The goal of this tutorial is to guide you through setting up and deploying your first Gatsby site using a starter template. As we walk through that process, we’ll introduce some more general web development topics, and go over the underlying structure of a Gatsby site.
+Selamat datang di Gatsby! Kami senang Anda ada di sini. Tujuan dari tutorial ini adalah untuk memandu Anda mengatur dan menyebarkan situs Gatsby Anda menggunakan templat pemula. Saat kita menjalani proses itu, kami akan memperkenalkan beberapa topik pengembangan web yang lebih umum, dan membahas struktur dasar situs Gatsby.
 
-> The full tutorial is intended to be as accessible as possible to people without much web development experience (yet!) — no need to be an expert. If you prefer to jump straight to code, feel free to skip the step-by-step tutorial and see the [quick start](/docs/quick-start/) page.
+> Tutorial lengkap ini dimaksudkan agar dapat diakses oleh orang-orang tanpa banyak pengalaman pengembangan web (belum!) — tidak perlu menjadi seorang ahli. Jika Anda lebih suka melompat langsung ke kode, silakan lewati tutorial langkah demi langkah dan lihat halaman [mulai cepat](/docs/quick-start/).
 
-## Gatsby fundamentals
+## Dasar Gatsby
 
-0.  [Set up your development environment](/tutorial/part-zero/): We'll introduce you to core technologies that power Gatsby, and guide you through setting up your development environment.
-1.  [Get to know Gatsby building blocks](/tutorial/part-one/): Starting new projects, developing, and deploying sites.
-1.  [Introduction to using CSS in Gatsby](/tutorial/part-two/): Explore libraries like Typography.js and CSS Modules.
-1.  [Building nested layouts in Gatsby](/tutorial/part-three/): Layouts are sections of your site that are reused across multiple pages like headers and footers.
+1.  [Menyiapkan lingkungan pengembangan Anda](/tutorial/part-zero/): Kami akan memperkenalkan Anda inti dari teknologi yang memberi kekuatan pada Gatsby, dan memandu Anda menyiapkan lingkungan pengembangan Anda.
+2.  [Mengenal blok bangunan Gatsby](/tutorial/part-one/): Memulai proyek baru, mengembangkan, dan menyebarkan situs.
+3.  [Pengantar menggunakan CSS di Gatsby](/tutorial/part-two/): Menjelajahi pustaka seperti Typography.js dan CSS Modules.
+4.  [Membangun tata letak bersarang di Gatsby](/tutorial/part-three/): Tata letak adalah bagian dari situs Anda yang digunakan kembali di beberapa halaman seperti header dan footer.
 
-## Intermediate tutorials
+## Tutorial menengah
 
-In these intermediate tutorials, you'll learn how to pull data from almost anywhere into your Gatsby site with GraphQL.
+Dalam tutorial menengah ini, Anda akan belajar cara menarik data dari hampir dari mana saja ke situs Gatsby Anda dengan GraphQL.
 
-4.  [Querying for data in a blog](/tutorial/part-four/): Create a blog and use a GraphQL query to pull your site title into the blog header.
-5.  [Source plugins and rendering queried data](/tutorial/part-five/): Use a source plugin to pull Markdown blog posts into your site and create an index page with a list of blog posts.
-6.  [Transformer plugins](/tutorial/part-six/): Use a transformer plugin to transform your Markdown blog posts into a form the blog can render.
-7.  [Programmatically create pages from data](/tutorial/part-seven/): Learn how to programmatically create a set of pages for your blog posts.
-8.  [Preparing a site to go live](/tutorial/part-eight/): Learn how to audit your site for performance and best practices for accessibility, SEO, and more.
+1.  [Melakukan permintaan data pada blog](/tutorial/part-four/): Membuat blog dan menggunakan GraphQL _query_ untuk menarik judul situs Anda ke header blog.
+2.  [_Source_ plugin dan me-render data yang diminta](/tutorial/part-five/): Menggunakan _source_ plugin untuk menarik Markdown blog pos ke situs Anda dan membuat halaman index dengan daftar postingan blog.
+3.  [Plugin transformer](/tutorial/part-six/): Menggunakan plugin transformer untuk mengubah posting blog Markdown Anda menjadi sebuah bentuk blog yang dapat dirender.
+4.  [Secara terprogram membuat halaman dari data](/tutorial/part-seven/): Mempelajari cara membuat satu set halaman untuk posting blog Anda secara terporgram.
+5.  [Mempersiapkan situs untuk disebarkan](/tutorial/part-eight/): Mempelajari cara mengaudit situs Anda untuk kinerja dan praktik terbaik untuk aksesibilitas, SEO, dan banyak lagi.
 
-## Theme tutorials
+## Tutorial tema
 
-Gatsby themes abstract all of your default configuration (shared functionality, data sourcing, design) out of your site and into an installable package.
+Tema Gatsby mengabstraksi semua konfigurasi standar Anda (berbagi fungsionalitas, sumber data, desain) dari situs Anda dan menjadi paket yang dapat diinstal.
 
-This means that the configuration and functionality isn’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+Ini berarti konfigurasi dan fungsionalitas secara tidak langsung di tulis ke dalam proyek Anda, tapi agak berversi, dikelola secara berpusat, dan diinstall sebagai "dependency". Anda dapat secara mulus memperbarui tema, menggabungkan tema bersamaan, dan bahkan menukar satu tema yang kompatibel dengan yang lain.
 
-Learn more about using and building themes with the [Gatsby theme tutorials](/tutorial/theme-tutorials/).
+Pelajari lebih lanjut tentang menggunakan dan membangun tema dengan [tutorial tema Gatsby](/tutorial/theme-tutorials/).
 
-## Additional tutorials
+## Tutorial tambahan
 
-There are many use cases for Gatsby, some of which aren't covered in the first set of tutorials to keep you focused while learning. Gatsby's Additional Tutorials section is a collection of resources showing how to complete even more Gatsby tasks step-by-step, such as using source plugins for images and CMS content.
+Ada banyak kasus penggunaan untuk Gatsby, beberapa di antaranya tidak tercakup dalam rangakaian tutorial pertama agar Anda tetap fokus saat belajar. Bagian Tutorial Tambahan Gatsby adalah kumpulan sumber daya yang menunjukan bagaimana menyelesaikan lebih banyak tugas langkah demi langkah dengan Gatsby, seperti menggunakan _source_ plugin untuk gambar dan kontent CMS.
 
-Go deeper with [additional Gatsby tutorials](/tutorial/additional-tutorials/).
+Masuk lebih dalam dengan [tutorial tambahan Gatsby](/tutorial/additional-tutorials/).
