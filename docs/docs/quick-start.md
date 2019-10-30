@@ -1,8 +1,8 @@
 ---
-title: Mulai Cepat
+title: Cara Singkat
 ---
 
-Mulai cepat ini dimaksudkan untuk para pengembang tingkat menengah hingga tingkat lanjut. Untuk pengantar Gatsby, [buka tutorial kami](/tutorial/)!
+Bagian ini dimaksudkan untuk para pengembang tingkat menengah hingga tingkat lanjut. Jika Anda masih baru dengan Gatsby, [buka tutorial kami](/tutorial/)!
 
 ## Menggunakan Gatsby CLI
 
