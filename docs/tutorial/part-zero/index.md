@@ -4,7 +4,7 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Sebelum memulai membangun situs Gatsby pertama Anda, Anda harus membiasakan diri dengan beberapa teknologi web utama dan memastikan bahwa Anda telah menginstal semua perangkat lunak yang diperlukan.
+Sebelum memulai membangun situs Gatsby pertama Anda, Anda harus membiasakan diri dengan beberapa teknologi inti pada web dan memastikan bahwa Anda telah menginstal semua perangkat lunak yang diperlukan.
 
 ## Biasakan diri Anda dengan baris perintah
 
@@ -159,9 +159,9 @@ Sekarang, lanjut ke [**mengenal *building blocks* pada Gatsby**](/tutorial/part-
 
 ## Referensi
 
-### Gambaran tentang teknologi utama
+### Gambaran tentang teknologi inti
 
-Tidak perlu menjadi seseorang yang ahli dengan hal ini - jika Anda tidak, jangan khawatir! Anda akan mendapatkan banyak hal melalui seri tutorial ini. Ini adalah beberapa teknologi web utama yang akan Anda gunakan saat membangun situs Gatsby:
+Tidak perlu menjadi seseorang yang ahli dengan hal ini - jika Anda tidak, jangan khawatir! Anda akan mendapatkan banyak hal melalui seri tutorial ini. Ini adalah beberapa teknologi inti pada web yang akan Anda gunakan saat membangun situs Gatsby:
 
 - **HTML**: Bahasa *markup* yang dapat dipahami oleh setiap browser web. HTML adalah singkatan dari *HyperText Markup Language*. HTML memberikan konten web Anda sebuah struktur informasi yang universal, mendefinisikan hal-hal seperti judul utama, paragraf, dan banyak lagi.
 - **CSS**: Bahasa presentasi yang digunakan untuk menata tampilan konten web Anda (font, warna, tata letak, dll). CSS singkatan dari *Cascading Style Sheets*.
