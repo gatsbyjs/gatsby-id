@@ -1,14 +1,14 @@
-# Style Guide
+# Panduan Penulisan
 
-Use this file for language-specific style rules to follow for translation.
+Gunakan file ini sebagai panduan penulisan dalam penerjemahan.
 
-## Rules
+## Aturan
 
-### Text in Code Blocks
+### Teks di dalam Kode
 
-Leave text in code blocks untranslated except for comments. You may optionally translate text in strings, but be careful not to translate strings that refer to code!
+Jangan menerjemahkan teks yang ada di dalam kode kecuali teks untuk komentar. Kamu juga bisa menerjemakan teks yang tipenya adalah [string](https://id.wikipedia.org/wiki/String), tapi tetap harus hati - hati jangan menerjemahkan string yang merujuk pada kode!
 
-Example:
+Contoh:
 
 ```js
 // Example
@@ -18,54 +18,54 @@ export default () => (
 )
 ```
 
-✅ DO:
+✅ BOLEH:
 
 ```js
-// Ejemplo
+// Contoh
 import React from "react"
 export default () => (
   <div style={{ color: `purple`, fontSize: `72px` }}>Hello Gatsby!</div>
 )
 ```
 
-✅ ALSO OKAY:
+✅ BOLEH JUGA:
 
 ```js
-// Ejemplo
+// Contoh
 import React from "react"
 export default () => (
-  <div style={{ color: `purple`, fontSize: `72px` }}>¡Hola Gatsby!</div>
+  <div style={{ color: `purple`, fontSize: `72px` }}>Halo Gatsby!</div>
 )
 ```
 
-❌ DON'T:
+❌ JANGAN:
 
 ```js
-// Ejemplo
+// Contoh
 import React from "react"
 export default () => (
-  // 'purple' is a CSS keyword
-  <div style={{ color: `morado`, fontSize: `72px` }}>¡Hola Gatsby!</div>
+  // 'purple' adalah sebuag nama yang digunakan dalam CSS
+  <div style={{ color: `ungu`, fontSize: `72px` }}>Halo Gatsby!</div>
 )
 ```
 
-❌ DEFINITELY DON'T:
+❌ JANGAN PERNAH LAKUKAN:
 
 ```js
-importar Reaccionar desde "reaccionar"
-exportar defecto () => (
-   <div estilo = {{color: `morado`, fontSize:` 72px`}}> ¡Hola Gatsby! </div>
+impor Aksi dari "aksi"
+expor standar () => (
+   <div gaya = {{color: `ungu`, fontSize:` 72px`}}> Halo Gatsby! </div>
 )
 ```
 
-### External Links
+### Tautan dari luar
 
-If an external link is to an article in a reference like [MDN] or [Wikipedia], and a version of that article exists in your language that is of decent quality, consider linking to that version instead.
+Jika ada tautan dari luar yang berhubungan dengan referensi dalam artikel seperti pada [MDN] atau [Wikipedia], dan artikel tersebut berbahasa Indonesia yang kualitasnya terjamin, maka lebih baik menautkan pada kata tersebut.
 
 [mdn]: https://developer.mozilla.org/en-US/
 [wikipedia]: https://en.wikipedia.org/wiki/Main_Page
 
-Example:
+Contoh:
 
 ```md
 React elements are [immutable](https://en.wikipedia.org/wiki/Immutable_object).
@@ -74,17 +74,17 @@ React elements are [immutable](https://en.wikipedia.org/wiki/Immutable_object).
 ✅ OK:
 
 ```md
-Los elementos de React son [inmutables](https://es.wikipedia.org/wiki/Objeto_inmutable).
+Elemen - elemen pada React adalah [inmutables](https://es.wikipedia.org/wiki/Objeto_inmutable).
 ```
 
-For links that have no equivalent (Stack Overflow, YouTube videos, etc.), just use the English link.
+Untuk tautan - tautan yang tidak mempunyai padankata (Stack Overflow, video - video YouTube, dan lainnya), maka gunakanlah tautan berbahasa Inggris.
 
-## Glossary
+## Glosarium
 
-Use this section to list how common technical terminology should be translated.
+Gunakan bagian ini untuk mendaftar tentang bagaimana cara terminologi teknis seharusnya diterjemahkan.
 
-| Term   | Translation |
-| ------ | ----------- |
-| Plugin | ??          |
-| Theme  | ??          |
-| Query  | ??          |
+| Istilah   | Terjemahan  |
+| --------- | ----------- |
+| Plugin    | ??          |
+| Theme     | ??          |
+| Query     | ??          |
