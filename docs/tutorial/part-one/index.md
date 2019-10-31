@@ -1,14 +1,14 @@
 ---
-title: Kenali Blok Penyusun Gatsby
+title: Kenali *Bulding Blocks* Gatsby
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-pada [**bagian sebelumnya**](/tutorial/part-zero/), Anda telah menyiapkan lingkungan pengembangan lokal Anda dengan memasang perangkat lunak yang diperlukan dan membuat situs Gatsby pertama Anda menggunakan [**starter “hello world”**](https://github.com/gatsbyjs/gatsby-starter-hello-world). Sekarang, coba selami lebih dalam kode yang dihasilkan oleh starter itu
+Pada [**bagian sebelumnya**](/tutorial/part-zero/), Anda telah menyiapkan lingkungan pengembangan lokal Anda dengan memasang perangkat lunak yang diperlukan dan membuat situs Gatsby pertama Anda menggunakan [**starter “hello world”**](https://github.com/gatsbyjs/gatsby-starter-hello-world). Sekarang, coba selami lebih dalam kode yang dihasilkan oleh starter itu
 
 ## Menggunakan starter Gatsby
 
-pada [**tutorial bagian nol**](/tutorial/part-zero/), Anda telah membuat sebuah situs baru berdasarkan starter “halo dunia” menggunakan perintah berikut:
+Pada [**tutorial bagian nol**](/tutorial/part-zero/), Anda telah membuat sebuah situs baru berdasarkan starter “hello world” menggunakan perintah berikut:
 
 ```shell
 gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -20,7 +20,7 @@ Ketika membuat sebuah situs Gatsby baru, kamu menggunakan perintah struktur beri
 gatsby new [NAMA_DIREKTORI_SITUS] [URL_DARI_STARTER_RESITORI_GITHUB]
 ```
 
-Jika Anda menghilangkan URL dari bagian akhir, Gatsby akan secara otomatis menghasilkan situs untuk Anda berdasarkan pada [**starter standar**](https://github.com/gatsbyjs/gatsby-starter-default). Untuk bagian tutorial ini, tetap dengan situs “Hello World” yang sudah Anda buat di bagian tutorial nol
+Jika Anda menghilangkan URL dari bagian akhir, Gatsby akan secara otomatis menghasilkan situs untuk Anda berdasarkan pada [**starter standar**](https://github.com/gatsbyjs/gatsby-starter-default). Untuk bagian tutorial ini, tetap dengan situs “Hello World” yang sudah Anda buat di tutorial bagian nol
 
 ### ✋ Buka kodenya
 
@@ -42,7 +42,7 @@ Buka berkas di `src/pages/index.js`. Kode dalam berkas ini membuat komponen yang
 
 ### ✋ Buat perubahan pada beranda “Hello World”
 
-1. Ubah teks “Hello World!” Menjadi “Hello Gatsby!” Dan simpan berkas tersebut. Jika windows Anda bersebelahan, Anda dapat melihat bahwa perubahan kode dan konten Anda tercermin hampir secara instan di browser setelah Anda menyimpan berkas.
+1. Ubah teks “Hello World!” Menjadi “Hello Gatsby!” dan simpan berkas tersebut. Jika windows Anda bersebelahan, Anda dapat melihat bahwa perubahan kode dan konten Anda tercermin hampir secara instan di browser setelah Anda menyimpan berkas.
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="./02-demo-hot-reloading.mp4"></source>
@@ -117,13 +117,13 @@ import React from "react"
 export default () => React.createElement("div", null, "Hello world!")
 ```
 
-Sekarang Anda dapat melihat penggunaan impor `'react'`! Tapi tunggu. Anda sedang menulis JSX, bukan HTML dan JavaScript murni. Bagaimana peramban membacanya? Jawaban singkatnya: Tidak. Situs Gatsby hadir dengan tooling yang telah diatur untuk mengubah kode sumber Anda menjadi sesuatu yang dapat ditafsirkan oleh peramban.
+Sekarang Anda dapat melihat penggunaan impor `'react'`! Tapi tunggu. Anda sedang menulis JSX, bukan HTML dan JavaScript murni. Bagaimana peramban membacanya? Jawaban singkatnya: Tidak. Situs Gatsby hadir dengan alat bantu yang telah diatur untuk mengubah kode sumber Anda menjadi sesuatu yang dapat ditafsirkan oleh peramban.
 
 ## Membangun dengan komponen
 
 Beranda yang baru saja Anda edit dibuat dengan mendefinisikan komponen halaman. Apa sebenarnya "komponen" itu?
 
-Didefinisikan secara luas, komponen adalah blok penyusun untuk situs Anda; Ini adalah potongan kode mandiri yang menggambarkan bagian UI (antarmuka pengguna).
+Didefinisikan secara luas, komponen adalah *building blocks* untuk situs Anda; Ini adalah potongan kode mandiri yang menggambarkan bagian UI (antarmuka pengguna).
 
 Gatsby dibangun di atas React. Ketika kita berbicara tentang menggunakan dan mendefinisikan **komponen**, kita benar-benar berbicara tentang **Komponen React** - potongan kode mandiri (biasanya ditulis dengan JSX) yang dapat menerima input dan mengembalikan elemen React menggambarkan bagian dari UI.
 
@@ -144,7 +144,7 @@ Di dunia komponen, Anda malah membuat komponen `PrimaryButton` dengan style butt
 <PrimaryButton>Click me</PrimaryButton>
 ```
 
-Komponen menjadi blok penyusun dasar situs Anda. Alih-alih dibatasi pada blok bangunan yang disediakan peramban, misal `<button />`, Anda dapat dengan mudah membuat blok baru yang secara elegan memenuhi kebutuhan proyek Anda.
+Komponen menjadi *building blocks* dasar situs Anda. Alih-alih dibatasi pada *building blocks* yang disediakan peramban, misal `<button />`, Anda dapat dengan mudah membuat blok baru yang secara elegan memenuhi kebutuhan proyek Anda.
 
 ### ✋ Menggunakan komponen halaman
 
@@ -308,7 +308,7 @@ Ketika Anda mengklik tautan "Contact" baru di beranda, Anda akan melihat ...
 
 ... halaman pengembangan Gatsby 404. Mengapa? Karena Anda mencoba menautkan ke halaman yang belum ada.
 
-2.  Sekarang Anda harus membuat komponen halaman untuk halaman "Kontak" baru Anda di `src/pages/contact.js` dan minta tautannya kembali ke beranda:
+2.  Sekarang Anda harus membuat komponen halaman untuk halaman "Contact" baru Anda di `src/pages/contact.js` dan minta tautannya kembali ke beranda:
 
 ```jsx:title=src/pages/contact.js
 import React from "react"
@@ -372,8 +372,7 @@ Setelah ini selesai berjalan, Anda akan melihat sesuatu di terminal Anda seperti
 
 ![Tangkapan layar penerbitan situs Gatsby dengan Surge](surge-deployment.png)
 
-Buka alamat web yang terdaftar di baris terbawah (`low-pain.surge.sh` dalam hal ini
-case) dan Anda akan melihat situs Anda yang baru diterbitkan! Kerja bagus!
+Buka alamat web yang terdaftar di baris terbawah (`lowly-pain.surge.sh` dalam hal ini) dan Anda akan melihat situs Anda yang baru diterbitkan! Kerja bagus!
 
 ## ➡️ Apa Selanjutnya?
 
@@ -385,4 +384,4 @@ Di bagian ini Anda:
 - Mempelajari tentang komponen dan sub-komponen halaman Gatsby
 - Belajar tentang "props" React dan menggunakan kembali komponen React
 
-Sekarang, lanjut ke [** menambahkan style ke situs Anda **] (/tutorial/bagian-dua/)!
+Sekarang, lanjut ke [** menambahkan style ke situs Anda **](/tutorial/part-two/)!
