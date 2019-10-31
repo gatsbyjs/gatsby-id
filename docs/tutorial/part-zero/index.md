@@ -1,194 +1,194 @@
 ---
-title: Set Up Your Development Environment
+title: Menyiapkan Lingkungan Pengembangan Anda
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Before you start building your first Gatsby site, you’ll need to familiarize yourself with some core web technologies and make sure that you have installed all required software tools.
+Sebelum memulai membangun situs Gatsby pertama Anda, Anda harus membiasakan diri dengan beberapa teknologi inti pada web dan memastikan bahwa Anda telah menginstal semua perangkat lunak yang diperlukan.
 
-## Familiarize yourself with the command line
+## Biasakan diri Anda dengan *command line*
 
-The command line is a text-based interface used to run commands on your computer. You’ll also often see it referred to as the terminal. In this tutorial, we’ll use both interchangeably. It’s a lot like using the Finder on a Mac or Explorer on Windows. Finder and Explorer are examples of graphical user interfaces (GUI). The command line is a powerful, text-based way to interact with your computer.
+*Command line* adalah sebuah antarmuka berbasis teks yang digunakan untuk menjalankan perintah di komputer Anda. *Command line* juga sering kita ketahui sebagai terminal. Dalam tutorial ini, kita akan menggunakan keduanya secara bergantian. *Command line* ini sangat mirip seperti kita menggunakan Finder di Mac atau Explorer di Windows. Finder dan Explorer adalah contoh antarmuka pengguna grafis (GUI). *Command line* adalah cara yang ampuh untuk berinteraksi dengan komputer Anda dengan berbasis teks.
 
-Take a moment to locate and open up the command line interface (CLI) for your computer. Depending on which operating system you are using, see [**instructions for Mac**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/), [**instructions for Windows**](https://www.quora.com/How-do-I-open-terminal-in-windows) or [**instructions for Linux**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/).
+Luangkan waktu sejenak untuk mencari dan membuka *command line interface* (CLI) untuk komputer Anda. Tergantung pada sistem operasi yang Anda gunakan, lihat [**petunjuk untuk Mac**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/), [**petunjuk untuk Windows**](https://www.quora.com/How-do-I-open-terminal-in-windows) atau [**petunjuk untuk Linux**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/).
 
-## Install Homebrew for Node.js
+## Instal Homebrew untuk Node.js
 
-To install Gatsby and Node.js, it is recommended to use [Homebrew](https://brew.sh/). A little set-up in the beginning can save you from some headaches later on!
+Untuk menginstal Gatsby dan Node.js, disarankan untuk menggunakan [Homebrew](https://brew.sh/). Sedikit pengaturan di awal dapat menghindarkan Anda dari permasalahan nantinya!
 
-How to install or verify Homebrew on your computer:
+Cara menginstal atau memverifikasi Homebrew di komputer Anda:
 
-1. Open your Terminal.
-1. See if Homebrew is installed by running `brew -v`. You should see "Homebrew" and a version number.
-1. If not, download and install [Homebrew with the instructions](https://docs.brew.sh/Installation) for your operating system (Mac, Linux or Windows).
-1. Once you've installed Homebrew, repeat step 2 to verify.
+1. Buka Terminal Anda.
+2. Lihat apakah Homebrew telah diinstal dengan menjalankan `brew -v`. Anda akan melihat "Homebrew" dan nomor versinya.
+3. Jika tidak, unduh dan instal [Homebrew dengan petunjuknya](https://docs.brew.sh/Installation) untuk sistem operasi Anda (Mac, Linux atau Windows).
+4. Setelah Anda menginstal Homebrew, ulangi langkah ke-2 untuk memverifikasi.
 
-### Mac Users: install Xcode Command Line Tools
+### Pengguna Mac: instal Xcode Command Line
 
-1. Open your Terminal.
-1. On a Mac, install Xcode Command line tools by running `xcode-select --install`.
-   1. If that fails, download it [directly from the Apple site](https://developer.apple.com/download/more/), after signing-in with Apple developer account
-1. After being prompted to start the installation, you'll be prompted again to accept a software license for the tools to download.
+1. Buka Terminal Anda.
+2. Pada Mac, instal Xcode Command Line dengan menjalankan `xcode-select --install`.
+   1. Jika gagal, unduh [langsung dari situs Apple](https://developer.apple.com/download/more/), setelah masuk dengan akun pengembang Apple
+3. Setelah diminta untuk memulai proses instalasi, Anda akan diminta untuk menerima lisensi perangkat lunak untuk dapat diunduh.
 
-## ⌚ Install Node.js and npm
+## ⌚ Instal Node.js dan npm
 
-Node.js is an environment that can run JavaScript code outside of a web browser. Gatsby is built with Node.js. To get up and running with Gatsby, you’ll need to have a recent version installed on your computer.
+Node.js adalah sebuah lingkungan yang dapat menjalankan kode JavaScript di luar browser web. Gatsby dibangun dengan Node.js. Untuk memulai dan menjalankan Gatsby, Anda harus memiliki Node.js versi terbaru yang diinstal di komputer Anda.
 
-_Note: Gatsby's minimum supported Node.js version is Node 8, but feel free to use a more recent version._
+_Catatan: Versi minimum Node.js yang didukung oleh Gatsby adalah Node 8, akan tetapi jangan ragu untuk menggunakan versi yang lebih baru._
 
-1. Open your Terminal.
-1. Run `brew update` to make sure you have the latest version of Homebrew.
-1. Run this command to install Node and npm in one go: `brew install node`
+1. Buka Terminal Anda.
+2. Jalankan `brew update` untuk memastikan Anda memiliki Homebrew versi terbaru.
+3. Jalankan perintah ini untuk menginstal Node dan npm sekaligus: `brew install node`
 
-Once you have followed the installation steps, make sure everything was installed properly:
+Setelah Anda mengikuti langkah-langkah instalasi, pastikan semuanya telah diinstal dengan benar:
 
-### Check your Node.js installation
+### Periksa instalasi Node.js Anda
 
-1.  Open up your terminal.
-2.  Run `node --version`. (If you’re new to the command line, “run `command`” means “type `node --version` in the command prompt, and hit the Enter key”. From here on, this is what we mean by “run `command`”).
-3.  Run `npm --version`.
+1. Buka Terminal Anda.
+2. Jalankan `node --version`. (Jika Anda baru dalam menggunakan *command line*, “jalankan `command`” berarti “ketik `node --version` di *command prompt*, dan tekan tombol *Enter*”. Dari sini, inilah yang kami maksud dengan “jalankan `command`”).
+3. Jalankan `npm --version`.
 
-The output of each of those commands should be a version number. Your versions may not be the same as those shown below! If entering those commands doesn’t show you a version number, go back and make sure you have installed Node.js.
+*Output* dari masing-masing perintah tersebut harus berupa nomor versi. Versi Anda mungkin tidak sama dengan yang ditunjukkan di bawah ini! Jika pada saat Anda memasukkan perintah-perintah tersebut tidak menunjukkan nomor versi Anda, kembali lagi dan pastikan Anda telah menginstal Node.js.
 
-![Check node and npm versions in terminal](01-node-npm-versions.png)
+![Periksa versi node dan npm di terminal](01-node-npm-versions.png)
 
-## Install Git
+## Instal Git
 
-Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. When you install a Gatsby "starter" site, Gatsby uses Git behind the scenes to download and install the required files for your starter. You will need to have Git installed to set up your first Gatsby site.
+Git adalah sistem pengelola perubahan yang terdistribusi secara terbuka dan gratis yang dirancang untuk menangani segala sesuatu mulai dari proyek kecil hingga proyek yang sangat besar dengan cepat dan efisien. Saat Anda memasang situs Gatsby "starter", Gatsby menggunakan Git di belakang layar untuk mengunduh dan menginstal file yang diperlukan untuk starter Anda. Anda perlu menginstal Git untuk menyiapkan situs Gatsby pertama Anda.
 
-The steps to download and install Git depend on your operating system. Follow the guide for your system:
+Langkah-langkah untuk mengunduh dan menginstal Git tergantung pada sistem operasi Anda. Ikuti panduan untuk sistem Anda:
 
-- [Install Git on macOS](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
-- [Install Git on Windows](https://www.atlassian.com/git/tutorials/install-git#windows)
-- [Install Git on Linux](https://www.atlassian.com/git/tutorials/install-git#linux)
+- [Instal Git untuk macOS](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
+- [Instal Git untuk Windows](https://www.atlassian.com/git/tutorials/install-git#windows)
+- [Instal Git untuk Linux](https://www.atlassian.com/git/tutorials/install-git#linux)
 
-## Using the Gatsby CLI
+## Menggunakan Gatsby CLI
 
-The Gatsby CLI tool lets you quickly create new Gatsby-powered sites and run commands for developing Gatsby sites. It is a published npm package.
+Gatsby CLI memungkinkan Anda untuk membuat situs yang didukung oleh Gatsby dengan cepat dan dapat menjalankan perintah-perintah untuk membangun situs Gatsby. Gatsby CLI merupakan sebuah paket yang diterbitkan di npm .
 
-The Gatsby CLI is available via npm and should be installed globally by running `npm install -g gatsby-cli`.
+Gatsby CLI tersedia melalui npm dan harus diinstal secara global dengan menjalankan `npm install -g gatsby-cli`.
 
-_**Note**: when you install Gatsby and run it for the first time, you'll see a short message notifying you about anonymous usage data that is being collected for Gatsby commands, you can read more about how that data is pulled out and used in the [telemetry doc](/docs/telemetry)._
+_**Catatan**: ketika Anda menginstal Gatsby dan dijalankan untuk pertama kalinya, Anda akan melihat pesan singkat yang memberi tahu Anda tentang data penggunaan yang tidak dikenal dimana data tersebut dikumpulkan untuk perintah-perintah Gatsby, Anda dapat membaca lebih lanjut tentang bagaimana data itu diambil dan digunakan dalam [dokumen telemetri](/docs/telemetry)._
 
-To see the commands available, run `gatsby --help`.
+Untuk melihat perintah-perintah yang tersedia, jalankan `gatsby --help`.
 
-![Check gatsby commands in terminal](05-gatsby-help.png)
+![Periksa perintah gatsby di terminal](05-gatsby-help.png)
 
-> 💡 If you are unable to successfully run the Gatsby CLI due to a permissions issue, you may want to check out the [npm docs on fixing permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions), or [this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
+> 💡 Jika Anda tidak berhasil menjalankan Gatsby CLI karena masalah perizinan, Anda mungkin ingin membaca [dokumen npm dalam memperbaiki perizinan](https://docs.npmjs.com/getting-started/fixing-npm-permissions), atau [panduan ini](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
 
-## Create a Gatsby site
+## Membuat situs Gatsby
 
-Now you are ready to use the Gatsby CLI tool to create your first Gatsby site. Using the tool, you can download “starters” (partially built sites with some default configuration) to help you get moving faster on creating a certain type of site. The “Hello World” starter you’ll be using here is a starter with the bare essentials needed for a Gatsby site.
+Sekarang Anda siap menggunakan Gatsby CLI untuk membuat situs Gatsby pertama Anda. Dengan menggunakan Gatsby CLI, Anda dapat mengunduh "starters" (situs yang dibangun dengan beberapa konfigurasi bawaan) untuk membantu Anda bekerja lebih cepat dalam membuat situs dengan jenis tertentu. Starter "Hello World" yang akan Anda gunakan di sini adalah starter yang sudah termasuk konfigurasi penting yang dibutuhkan dalam membuat situs Gatsby.
 
-1.  Open up your terminal.
-2.  Run `gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world`. (_Note: Depending on your download speed, the amount of time this takes will vary. For brevity's sake, the gif below was paused during part of the install_).
-3.  Run `cd hello-world`.
-4.  Run `gatsby develop`.
+1. Buka terminal Anda.
+2. Jalankan `gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world`. (_Catatan: Tergantung pada kecepatan unduhan Anda, jumlah waktu yang dibutuhkan akan bervariasi. Untuk mempersingkat, gif di bawah ini ditunda selama proses install_).
+3. Jalankan `cd hello-world`.
+4. Jalankan `gatsby develop`.
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="./03-create-site.mp4" />
   <p>Sorry! You browser doesn't support this video.</p>
 </video>
 
-What just happened?
+Apa yang baru saja terjadi?
 
 ```shell
 gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-- `new` is a gatsby command to create a new Gatsby project.
-- Here, `hello-world` is an arbitrary title — you could pick anything. The CLI tool will place the code for your new site in a new folder called “hello-world”.
-- Lastly, the GitHub URL specified points to a code repository that holds the starter code you want to use.
+- `new` adalah perintah gatsby untuk membuat proyek Gatsby yang baru.
+- Disini, `hello-world` adalah judul acak - Anda bisa memilih apa saja. CLI akan menempatkan kode untuk situs baru Anda pada folder baru yang disebut “hello-world”.
+- Terakhir, GitHub URL akan menentukan poin ke repositori yang berisi kode starter yang akan Anda gunakan.
 
 ```shell
 cd hello-world
 ```
 
-- This says 'I want to change directories (`cd`) to the “hello-world” subfolder'. Whenever you want to run any commands for your site, you need to be in the context for that site (aka, your terminal needs to be pointed at the directory where your site code lives).
+- Ini dapat diartikan juga sebagai 'Saya ingin mengubah direktori (`cd`) menjadi *subfolder* “hello-world”'. Kapan pun Anda ingin menjalankan perintah untuk situs Anda, Anda harus berada dalam direktori situs tersebut (alias, terminal Anda perlu diarahkan ke direktori tempat kode situs Anda berada).
 
 ```shell
 gatsby develop
 ```
 
-- This command starts a development server. You will be able to see and interact with your new site in a development environment — local (on your computer, not published to the internet).
+- Perintah ini akan memulai *development server*. Anda akan dapat melihat dan berinteraksi dengan situs baru Anda di lingkungan pengembangan - lokal (di komputer Anda, tidak dipublikasikan ke internet).
 
-### View your site locally
+### Lihat situs Anda secara lokal
 
-Open up a new tab in your browser and navigate to [**http://localhost:8000**](http://localhost:8000/).
+Buka tab baru di browser Anda dan arahkan ke [**http://localhost:8000**](http://localhost:8000/).
 
-![Check homepage](04-home-page.png)
+![Periksa beranda](04-home-page.png)
 
-Congrats! This is the beginning of your very first Gatsby site! 🎉
+Selamat! Ini merupakan awal dari situs Gatsby pertama Anda! 🎉
 
-You’ll be able to visit the site locally at [**_http://localhost:8000_**](http://localhost:8000/) for as long as your development server is running. That’s the process you started by running the `gatsby develop` command. To stop running that process (or to “stop running the development server”), go back to your terminal window, hold down the “control” key, and then hit “c” (ctrl-c). To start it again, run `gatsby develop` again!
+Anda dapat mengunjungi situs secara lokal di [**_http://localhost:8000_**](http://localhost:8000/) selama *development server* Anda berjalan. Itulah proses yang Anda mulai dengan menjalankan perintah `gatsby develop`. Untuk berhenti menjalankan proses tersebut (atau untuk "berhenti menjalankan *development server*"), kembali ke jendela terminal Anda, tahan tombol "control", dan kemudian tekan "c" (ctrl-c). Untuk memulainya lagi, jalankan `gatsby develop` lagi!
 
-**Note:** If you are using VM setup like `vagrant` and/or would like to listen on your local IP address, run `gatsby develop -- --host=0.0.0.0`. Now, the development server listens on both 'localhost' and your local IP.
+**Catatan:** Jika Anda menggunakan pengaturan VM seperti `vagrant` dan atau ingin terhubung pada alamat IP lokal Anda, jalankan `gatsby develop -- --host=0.0.0.0`. Sekarang, *development server* terhubung ke 'localhost' dan IP lokal Anda.
 
-## Set up a code editor
+## Menyiapkan *code editor*
 
-A code editor is a program designed specifically for editing computer code. There are many great ones out there.
+*Code editor* adalah program yang dirancang khusus untuk mengedit kode. Ada banyak *Code editor* yang bagus di luar sana.
 
-### Download VS Code
+### Unduh VS Code
 
-Gatsby documentation sometimes includes screenshots that were taken in VS Code, so if you don't have a preferred code editor yet, using VS Code will make sure that your screen looks just like the screenshots in the tutorial and docs. If you choose to use VS Code, visit the [VS Code site](https://code.visualstudio.com/#alt-downloads) and download the version appropriate for your platform.
+Dokumentasi Gatsby terkadang menyertakan *screenshots* yang diambil dalam VS Code, jadi jika Anda belum memiliki *Code editor* pilihan, dengan menggunakan VS Code akan dipastikan bahwa layar Anda akan terlihat sama seperti *screenshots* dalam tutorial dan dokumen. Jika Anda memilih untuk menggunakan VS Code, kunjungi [Situs VS Code](https://code.visualstudio.com/#alt-downloads) dan unduh versi yang sesuai untuk *platform* Anda.
 
-### Install the Prettier plugin
+### Instal *plugin* Prettier
 
-We also recommend using [Prettier](https://github.com/prettier/prettier), a tool that helps format your code to avoid errors.
+Kami juga merekomendasikan menggunakan [Prettier](https://github.com/prettier/prettier), sebuat alat yang membantu memformat kode Anda untuk menghindari kesalahan.
 
-You can use Prettier directly in your editor using the [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode):
+Anda dapat menggunakan Prettier secara langsung di *editor* Anda menggunakan [Prettier VS Code plugin](https://github.com/prettier/prettier-vscode):
 
-1.  Open the extensions view on VS Code (View => Extensions).
-2.  Search for "Prettier - Code formatter".
-3.  Click "Install". (After installation you'll be prompted to restart VS Code to enable the extension. Newer versions of VS Code will automatically enable the extension after download.)
+1. Buka tampilan ekstensi pada VS Code (View => Extensions).
+2. Cari "Prettier - Code formatter".
+3. Klik "Install". (Setelah instalasi, Anda akan diminta untuk me-*restart* VS Code untuk mengaktifkan ekstensi. Untuk VS Code versi terbaru, VS Code akan secara otomatis mengaktifkan ekstensi setelah diunduh.)
 
-> 💡 If you're not using VS Code, check out the Prettier docs for [install instructions](https://prettier.io/docs/en/install.html) or [other editor integrations](https://prettier.io/docs/en/editors.html).
+> 💡 Jika Anda tidak menggunakan VS Code, periksa dokumen Prettier untuk [instruksi instalasi](https://prettier.io/docs/en/install.html) atau [integrasi editor lainnya](https://prettier.io/docs/en/editors.html).
 
-## ➡️ What’s Next?
+## ➡️ Apa berikutnya?
 
-To summarize, in this section you:
+Sebagai rangkuman, pada bagian ini Anda:
 
-- Learned about the command line and how to use it
-- Installed and learned about Node.js and the npm CLI tool, the version control system Git, and the Gatsby CLI tool
-- Generated a new Gatsby site using the Gatsby CLI tool
-- Ran the Gatsby development server and visited your site locally
-- Downloaded a code editor
-- Installed a code formatter called Prettier
+- Mempelajari tentang *command line* dan cara menggunakannya
+- Menginstal dan mempelajari tentang Node.js dan npm CLI, sistem pengelola perubahan Git, dan Gatsby CLI
+- Menghasilkan situs Gatsby baru dengan menggunakan Gatsby CLI
+- Menjalankan *development server* Gatsby dan mengunjungi situs Anda secara lokal
+- Mengunduh *code editor*
+- Menginstal pemformat kode yang disebut Prettier
 
-Now, move on to [**getting to know Gatsby building blocks**](/tutorial/part-one/).
+Sekarang, lanjut ke [**mengenal *building blocks* pada Gatsby**](/tutorial/part-one/).
 
-## References
+## Referensi
 
-### Overview of core technologies
+### Gambaran tentang teknologi inti
 
-It’s not necessary to be an expert with these already — if you’re not, don’t worry! You’ll pick up a lot through the course of this tutorial series. These are some of the main web technologies you’ll use when building a Gatsby site:
+Tidak perlu menjadi seseorang yang ahli dengan hal ini - jika Anda tidak, jangan khawatir! Anda akan mendapatkan banyak hal melalui seri tutorial ini. Ini adalah beberapa teknologi inti pada web yang akan Anda gunakan saat membangun situs Gatsby:
 
-- **HTML**: A markup language that every web browser is able to understand. It stands for HyperText Markup Language. HTML gives your web content a universal informational structure, defining things like headings, paragraphs, and more.
-- **CSS**: A presentational language used to style the appearance of your web content (fonts, colors, layout, etc). It stands for Cascading Style Sheets.
-- **JavaScript**: A programming language that helps us make the web dynamic and interactive.
-- **React**: A code library (built with JavaScript) for building user interfaces. It’s the framework that Gatsby uses to build pages and structure content.
-- **GraphQL**: A query language that allows you to pull data into your website. It’s the interface that Gatsby uses for managing site data.
+- **HTML**: Bahasa *markup* yang dapat dipahami oleh setiap browser web. HTML adalah singkatan dari *HyperText Markup Language*. HTML memberikan konten web Anda sebuah struktur informasi yang universal, mendefinisikan hal-hal seperti judul utama, paragraf, dan banyak lagi.
+- **CSS**: Bahasa presentasi yang digunakan untuk menata tampilan konten web Anda (font, warna, tata letak, dll). CSS singkatan dari *Cascading Style Sheets*.
+- **JavaScript**: Bahasa pemrograman yang membantu kita dalam membuat web menjadi dinamis dan interaktif.
+- **React**: Sebuah *library* (dibangun dengan JavaScript) untuk membangun antarmuka pengguna. Ini adalah *framework* yang digunakan Gatsby untuk membangun halaman dan menyusun konten.
+- **GraphQL**: Bahasa *query* yang memungkinkan Anda untuk menarik data ke situs web Anda. Ini adalah antarmuka yang digunakan Gatsby untuk mengelola data pada situs.
 
-### What is a website?
+### Apa itu situs web?
 
-For a comprehensive introduction to what a website is--including an intro to HTML and CSS--check out “[**Building your first web page**](https://learn.shayhowe.com/html-css/building-your-first-web-page/)”. It’s a great place to start learning about the web. For a more hands-on introduction to [**HTML**](https://www.codecademy.com/learn/learn-html), [**CSS**](https://www.codecademy.com/learn/learn-css), and [**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript), check out the tutorials from Codecademy. [**React**](https://reactjs.org/tutorial/tutorial.html) and [**GraphQL**](http://graphql.org/graphql-js/) also have their own introductory tutorials.
+Untuk pengenalan yang komprehensif tentang apa itu situs web - termasuk pengantar ke HTML dan CSS - lihat “[**Membangun halaman web pertama Anda**](https://learn.shayhowe.com/html-css/building-your-first-web-page/)”. Ini adalah tempat yang tepat untuk memulai pembelajaran tentang web. Untuk pengenalan langsung [**HTML**](https://www.codecademy.com/learn/learn-html), [**CSS**](https://www.codecademy.com/learn/learn-css), dan [**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript), lihat tutorial dari Codecademy. [**React**](https://reactjs.org/tutorial/tutorial.html) dan [**GraphQL**](http://graphql.org/graphql-js/) juga memiliki tutorial pengantar mereka sendiri.
 
-### Learn more about the command line
+### Pelajari lebih lanjut tentang *command line*
 
-For a great introduction to using the command line, check out [**Codecademy’s Command Line tutorial**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) for Mac and Linux users, and [**this tutorial**](https://www.computerhope.com/issues/chusedos.htm) for Windows users. Even if you are a Windows user, the first page of the Codecademy tutorial is a valuable read. It explains what the command line is, not just how to interface with it.
+Tutorial ini sangat bagus untuk Anda yang masih baru dalam menggunakan *command line*, lihat [**tutorial *Command Line* oleh Codecademy**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) untuk pengguna Mac dan Linux, dan [**tutorial ini**](https://www.computerhope.com/issues/chusedos.htm) untuk pengguna Windows. Meskipun Anda pengguna Windows, halaman pertama pada tutorial dari Codecademy sangat layak untuk Anda baca. Tutorial tersebut menjelaskan tentang apa itu *command line*, bukan hanya bagaimana berinteraksi dengannya.
 
-### Learn more about npm
+### Pelajari lebih lanjut tentang npm
 
-npm is a JavaScript package manager. A package is a module of code that you can choose to include in your projects. If you just downloaded and installed Node.js, npm was installed with it!
+npm adalah pengelola paket JavaScript. Paket adalah sebuah modul kode yang dapat Anda pilih untuk dimasukkan ke dalam proyek Anda. Jika Anda baru saja mengunduh dan menginstal Node.js, npm sudah terinstal dengannya!
 
-npm has three distinct components: the npm website, the npm registry, and the npm command line interface (CLI).
+npm memiliki tiga komponen berbeda: situs web npm, registri npm, dan *command line interface* (CLI).
 
-- On the npm website, you can browse what JavaScript packages are available in the npm registry.
-- The npm registry is a large database of information about JavaScript packages available on npm.
-- Once you’ve identified a package you want, you can use the npm CLI to install it in your project or globally (like other CLI tools). The npm CLI is what talks to the registry — you generally only interact with the npm website or the npm CLI.
+- Pada situs web npm, Anda dapat mencari paket JavaScript apa yang tersedia di registri npm.
+- Registri npm adalah sebuah database informasi besar tentang paket-paket JavaScript yang tersedia di npm.
+- Setelah Anda mengidentifikasi paket yang Anda inginkan, Anda dapat menggunakan npm CLI untuk menginstalnya di proyek Anda atau secara global (seperti CLI lainnya). CLI npm yang akan berinteraksi ke registri - Anda biasanya hanya akan berinteraksi dengan situs web npm atau CLI npm.
 
-> 💡 Check out npm’s introduction, “[**What is npm?**](https://docs.npmjs.com/getting-started/what-is-npm)”.
+> 💡 Lihat pengenalan tentang npm, “[**Apa itu npm?**](https://docs.npmjs.com/getting-started/what-is-npm)”.
 
-### Learn more about Git
+### Pelajari lebih lanjut tentang Git
 
-You will not need to know Git to complete this tutorial, but it is a very useful tool. If you are interested in learning more about version control, Git, and GitHub, check out GitHub's [Git Handbook](https://guides.github.com/introduction/git-handbook/).
+Anda tidak perlu tahu Git untuk menyelesaikan tutorial ini, tetapi Git akan sangat berguna. Jika Anda tertarik untuk mempelajari lebih lanjut tentang pengelola perubahan, Git, dan GitHub, lihat [Pedoman GitHub](https://guides.github.com/introduction/git-handbook/) Github.
