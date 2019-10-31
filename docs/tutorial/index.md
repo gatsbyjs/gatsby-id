@@ -3,16 +3,16 @@ title: Tutorial Gatsby.js
 disableTableOfContents: true
 ---
 
-Selamat datang di Gatsby! Kami senang Anda ada di sini. Tujuan dari tutorial ini adalah untuk memandu Anda mengatur dan menyebarkan situs Gatsby Anda menggunakan templat pemula. Saat kita menjalani proses itu, kami akan memperkenalkan beberapa topik pengembangan web yang lebih umum, dan membahas struktur dasar situs Gatsby.
+Selamat datang di Gatsby! Kami senang Anda ada di sini. Tujuan dari tutorial ini adalah untuk memandu Anda dalam mengatur dan menyebarkan situs Gatsby pertama Anda menggunakan templat pemula. Dalam menjalani proses tersebut, kami akan memperkenalkan beberapa topik pengembangan web yang lebih umum, dan membahas struktur dasar situs Gatsby.
 
-> Tutorial lengkap ini dimaksudkan agar dapat diakses oleh orang-orang tanpa banyak pengalaman pengembangan web (belum!) — tidak perlu menjadi seorang ahli. Jika Anda lebih suka melompat langsung ke kode, silakan lewati tutorial langkah demi langkah dan lihat halaman [mulai cepat](/docs/quick-start/).
+> Tutorial lengkap ini dimaksudkan agar dapat diakses oleh orang-orang yang belum memiliki banyak pengalaman dalam pengembangan web tidak perlu menjadi seorang ahli. Jika Anda lebih suka melompat langsung ke kode, silakan lewati tutorial langkah demi langkah dan lihat halaman [mulai cepat](/docs/quick-start/).
 
 ## Dasar Gatsby
 
 1.  [Menyiapkan lingkungan pengembangan Anda](/tutorial/part-zero/): Kami akan memperkenalkan Anda inti dari teknologi yang memberi kekuatan pada Gatsby, dan memandu Anda menyiapkan lingkungan pengembangan Anda.
-2.  [Mengenal blok bangunan Gatsby](/tutorial/part-one/): Memulai proyek baru, mengembangkan, dan menyebarkan situs.
+2.  [Mengenal *building blocks* pada Gatsby](/tutorial/part-one/): Memulai proyek baru, mengembangkan, dan menyebarkan situs.
 3.  [Pengantar menggunakan CSS di Gatsby](/tutorial/part-two/): Menjelajahi pustaka seperti Typography.js dan CSS Modules.
-4.  [Membangun tata letak bersarang di Gatsby](/tutorial/part-three/): Tata letak adalah bagian dari situs Anda yang digunakan kembali di beberapa halaman seperti header dan footer.
+4.  [Membangun *nested layouts* di Gatsby](/tutorial/part-three/): *Layouts* adalah bagian dari situs Anda yang digunakan kembali di beberapa halaman seperti header dan footer.
 
 ## Tutorial menengah
 
