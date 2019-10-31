@@ -6,11 +6,11 @@ disableTableOfContents: true
 
 Sebelum memulai membangun situs Gatsby pertama Anda, Anda harus membiasakan diri dengan beberapa teknologi inti pada web dan memastikan bahwa Anda telah menginstal semua perangkat lunak yang diperlukan.
 
-## Biasakan diri Anda dengan baris perintah
+## Biasakan diri Anda dengan *command line*
 
-Baris perintah adalah sebuah antarmuka berbasis teks yang digunakan untuk menjalankan perintah di komputer Anda. Baris perintah juga sering kita ketahui sebagai terminal. Dalam tutorial ini, kita akan menggunakan keduanya secara bergantian. Baris perintah ini sangat mirip seperti kita menggunakan Finder di Mac atau Explorer di Windows. Finder dan Explorer adalah contoh antarmuka pengguna grafis (GUI). Baris perintah adalah cara yang ampuh untuk berinteraksi dengan komputer Anda dengan berbasis teks.
+*Command line* adalah sebuah antarmuka berbasis teks yang digunakan untuk menjalankan perintah di komputer Anda. *Command line* juga sering kita ketahui sebagai terminal. Dalam tutorial ini, kita akan menggunakan keduanya secara bergantian. *Command line* ini sangat mirip seperti kita menggunakan Finder di Mac atau Explorer di Windows. Finder dan Explorer adalah contoh antarmuka pengguna grafis (GUI). *Command line* adalah cara yang ampuh untuk berinteraksi dengan komputer Anda dengan berbasis teks.
 
-Luangkan waktu sejenak untuk mencari dan membuka antarmuka baris perintah (CLI) untuk komputer Anda. Tergantung pada sistem operasi yang Anda gunakan, lihat [**petunjuk untuk Mac**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/), [**petunjuk untuk Windows**](https://www.quora.com/How-do-I-open-terminal-in-windows) atau [**petunjuk untuk Linux**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/).
+Luangkan waktu sejenak untuk mencari dan membuka *command line interface* (CLI) untuk komputer Anda. Tergantung pada sistem operasi yang Anda gunakan, lihat [**petunjuk untuk Mac**](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/), [**petunjuk untuk Windows**](https://www.quora.com/How-do-I-open-terminal-in-windows) atau [**petunjuk untuk Linux**](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/).
 
 ## Instal Homebrew untuk Node.js
 
@@ -23,10 +23,10 @@ Cara menginstal atau memverifikasi Homebrew di komputer Anda:
 3. Jika tidak, unduh dan instal [Homebrew dengan petunjuknya](https://docs.brew.sh/Installation) untuk sistem operasi Anda (Mac, Linux atau Windows).
 4. Setelah Anda menginstal Homebrew, ulangi langkah ke-2 untuk memverifikasi.
 
-### Pengguna Mac: instal Baris Perintah Xcode
+### Pengguna Mac: instal Xcode Command Line
 
 1. Buka Terminal Anda.
-2. Pada Mac, instal baris perintah Xcode dengan menjalankan `xcode-select --install`.
+2. Pada Mac, instal Xcode Command Line dengan menjalankan `xcode-select --install`.
    1. Jika gagal, unduh [langsung dari situs Apple](https://developer.apple.com/download/more/), setelah masuk dengan akun pengembang Apple
 3. Setelah diminta untuk memulai proses instalasi, Anda akan diminta untuk menerima lisensi perangkat lunak untuk dapat diunduh.
 
@@ -45,7 +45,7 @@ Setelah Anda mengikuti langkah-langkah instalasi, pastikan semuanya telah diinst
 ### Periksa instalasi Node.js Anda
 
 1. Buka Terminal Anda.
-2. Jalankan `node --version`. (Jika Anda baru dalam menggunakan baris perintah, “jalankan `command`” berarti “ketik `node --version` di *command prompt*, dan tekan tombol *Enter*”. Dari sini, inilah yang kami maksud dengan “jalankan `command`”).
+2. Jalankan `node --version`. (Jika Anda baru dalam menggunakan *command line*, “jalankan `command`” berarti “ketik `node --version` di *command prompt*, dan tekan tombol *Enter*”. Dari sini, inilah yang kami maksud dengan “jalankan `command`”).
 3. Jalankan `npm --version`.
 
 *Output* dari masing-masing perintah tersebut harus berupa nomor versi. Versi Anda mungkin tidak sama dengan yang ditunjukkan di bawah ini! Jika pada saat Anda memasukkan perintah-perintah tersebut tidak menunjukkan nomor versi Anda, kembali lagi dan pastikan Anda telah menginstal Node.js.
@@ -110,7 +110,7 @@ cd hello-world
 gatsby develop
 ```
 
-- Perintah ini akan memulai *server* pengembangan. Anda akan dapat melihat dan berinteraksi dengan situs baru Anda di lingkungan pengembangan - lokal (di komputer Anda, tidak dipublikasikan ke internet).
+- Perintah ini akan memulai *development server*. Anda akan dapat melihat dan berinteraksi dengan situs baru Anda di lingkungan pengembangan - lokal (di komputer Anda, tidak dipublikasikan ke internet).
 
 ### Lihat situs Anda secara lokal
 
@@ -120,9 +120,9 @@ Buka tab baru di browser Anda dan arahkan ke [**http://localhost:8000**](http://
 
 Selamat! Ini merupakan awal dari situs Gatsby pertama Anda! 🎉
 
-Anda dapat mengunjungi situs secara lokal di [**_http://localhost:8000_**](http://localhost:8000/) selama *server* pengembangan Anda berjalan. Itulah proses yang Anda mulai dengan menjalankan perintah `gatsby develop`. Untuk berhenti menjalankan proses tersebut (atau untuk "berhenti menjalankan *server* pengembangan"), kembali ke jendela terminal Anda, tahan tombol "control", dan kemudian tekan "c" (ctrl-c). Untuk memulainya lagi, jalankan `gatsby develop` lagi!
+Anda dapat mengunjungi situs secara lokal di [**_http://localhost:8000_**](http://localhost:8000/) selama *development server* Anda berjalan. Itulah proses yang Anda mulai dengan menjalankan perintah `gatsby develop`. Untuk berhenti menjalankan proses tersebut (atau untuk "berhenti menjalankan *development server*"), kembali ke jendela terminal Anda, tahan tombol "control", dan kemudian tekan "c" (ctrl-c). Untuk memulainya lagi, jalankan `gatsby develop` lagi!
 
-**Catatan:** Jika Anda menggunakan pengaturan VM seperti `vagrant` dan atau ingin terhubung pada alamat IP lokal Anda, jalankan `gatsby develop -- --host=0.0.0.0`. Sekarang, *server* pengembangan terhubung ke 'localhost' dan IP lokal Anda.
+**Catatan:** Jika Anda menggunakan pengaturan VM seperti `vagrant` dan atau ingin terhubung pada alamat IP lokal Anda, jalankan `gatsby develop -- --host=0.0.0.0`. Sekarang, *development server* terhubung ke 'localhost' dan IP lokal Anda.
 
 ## Menyiapkan *code editor*
 
@@ -148,10 +148,10 @@ Anda dapat menggunakan Prettier secara langsung di *editor* Anda menggunakan [Pr
 
 Sebagai rangkuman, pada bagian ini Anda:
 
-- Mempelajari tentang baris perintah dan cara menggunakannya
+- Mempelajari tentang *command line* dan cara menggunakannya
 - Menginstal dan mempelajari tentang Node.js dan npm CLI, sistem pengelola perubahan Git, dan Gatsby CLI
 - Menghasilkan situs Gatsby baru dengan menggunakan Gatsby CLI
-- Menjalankan *server* pengembangan Gatsby dan mengunjungi situs Anda secara lokal
+- Menjalankan *development server* Gatsby dan mengunjungi situs Anda secara lokal
 - Mengunduh *code editor*
 - Menginstal pemformat kode yang disebut Prettier
 
@@ -173,15 +173,15 @@ Tidak perlu menjadi seseorang yang ahli dengan hal ini - jika Anda tidak, jangan
 
 Untuk pengenalan yang komprehensif tentang apa itu situs web - termasuk pengantar ke HTML dan CSS - lihat “[**Membangun halaman web pertama Anda**](https://learn.shayhowe.com/html-css/building-your-first-web-page/)”. Ini adalah tempat yang tepat untuk memulai pembelajaran tentang web. Untuk pengenalan langsung [**HTML**](https://www.codecademy.com/learn/learn-html), [**CSS**](https://www.codecademy.com/learn/learn-css), dan [**JavaScript**](https://www.codecademy.com/learn/introduction-to-javascript), lihat tutorial dari Codecademy. [**React**](https://reactjs.org/tutorial/tutorial.html) dan [**GraphQL**](http://graphql.org/graphql-js/) juga memiliki tutorial pengantar mereka sendiri.
 
-### Pelajari lebih lanjut tentang baris perintah
+### Pelajari lebih lanjut tentang *command line*
 
-Tutorial ini sangat bagus untuk Anda yang masih baru dalam menggunakan baris perintah, lihat [**tutorial Baris Perintah oleh Codecademy**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) untuk pengguna Mac dan Linux, dan [**tutorial ini**](https://www.computerhope.com/issues/chusedos.htm) untuk pengguna Windows. Meskipun Anda pengguna Windows, halaman pertama pada tutorial dari Codecademy sangat layak untuk Anda baca. Tutorial tersebut menjelaskan tentang apa itu baris perintah, bukan hanya bagaimana berinteraksi dengannya.
+Tutorial ini sangat bagus untuk Anda yang masih baru dalam menggunakan *command line*, lihat [**tutorial *Command Line* oleh Codecademy**](https://www.codecademy.com/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) untuk pengguna Mac dan Linux, dan [**tutorial ini**](https://www.computerhope.com/issues/chusedos.htm) untuk pengguna Windows. Meskipun Anda pengguna Windows, halaman pertama pada tutorial dari Codecademy sangat layak untuk Anda baca. Tutorial tersebut menjelaskan tentang apa itu *command line*, bukan hanya bagaimana berinteraksi dengannya.
 
 ### Pelajari lebih lanjut tentang npm
 
 npm adalah pengelola paket JavaScript. Paket adalah sebuah modul kode yang dapat Anda pilih untuk dimasukkan ke dalam proyek Anda. Jika Anda baru saja mengunduh dan menginstal Node.js, npm sudah terinstal dengannya!
 
-npm memiliki tiga komponen berbeda: situs web npm, registri npm, dan antarmuka baris perintah (CLI).
+npm memiliki tiga komponen berbeda: situs web npm, registri npm, dan *command line interface* (CLI).
 
 - Pada situs web npm, Anda dapat mencari paket JavaScript apa yang tersedia di registri npm.
 - Registri npm adalah sebuah database informasi besar tentang paket-paket JavaScript yang tersedia di npm.
