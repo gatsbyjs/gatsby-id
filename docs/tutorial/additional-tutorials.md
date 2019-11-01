@@ -1,7 +1,7 @@
 ---
-title: Additional Tutorials
+judul: Tutorial Tambahan
 ---
 
-There are many use cases for Gatsby, from the very common "happy paths" to more specific and complex integrations. With additional Gatsby tutorials, learn about more topics that go beyond [the basics](/tutorial/) and gain development superpowers.
+Ada banyak contoh penggunaan Gatsby, dari yg umum atau dikenal "jalur bahagia" hingga integrasi yang lebih spesifik dan kompleks. Dengan tutorial tambahan untuk Gatsby, kita akan mempelajari lebih banyak topik yang melampaui [dasar-dasar] (/tutorial/) dan mendapatkan pengembangan yang lebih baik.
 
 <GuideList slug={props.slug} />
