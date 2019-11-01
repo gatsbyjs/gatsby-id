@@ -1,5 +1,5 @@
 ---
-judul: Berpikir di Gatsby
+title: Thinking in Gatsby
 ---
 
-Segera datang.
+Coming soon.
