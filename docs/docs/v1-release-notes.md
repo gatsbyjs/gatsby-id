@@ -1,9 +1,9 @@
 ---
-title: v1 Release Notes
+judul: Catatan Rilis v1
 ---
 
-Check out the following useful links for Gatsby version 1:
+Lihat tautan berikut untuk Gatsby versi 1:
 
-- [v1 documentation](https://v1.gatsbyjs.org/)
-- [v1 changelog](https://github.com/gatsbyjs/gatsby/blob/master/CHANGELOG.md#100---2017-07-06)
-- [v1 release announcement](/blog/gatsby-v1/)
+- [dokumentasi v1](https://v1.gatsbyjs.org/)
+- [catatan perubahan v1](https://github.com/gatsbyjs/gatsby/blob/master/CHANGELOG.md#100---2017-07-06)
+- [pengumuman rilis v1](/blog/gatsby-v1/)
