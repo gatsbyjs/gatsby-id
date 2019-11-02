@@ -52,4 +52,4 @@ npm install --save gatsby-plugin-manifest
 }
 ```
 
-Itu saja yang kamu butuhkan untuk menambahkan file manifest di website Gatsby. Contoh yang diberikan menggambarkan konfigurasi basis -- lebih lanjut lihat referensi di [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) untuk opsi lebih lanjut.
+Itu saja yang kamu butuhkan untuk menambahkan file manifest di website Gatsby. Contoh yang diberikan menggambarkan konfigurasi basis -- silahkan cek referensi di [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) untuk opsi lebih lanjut.
