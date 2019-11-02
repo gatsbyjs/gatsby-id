@@ -1,12 +1,12 @@
 ---
-title: Testing
-overview: true
+judul: Pengujian
+gambaran: sebenernya
 ---
 
 <GuideList slug={props.slug} />
 
-## Other resources
+## Referensi Lainnya
 
-- Read the article ["Quality assurance in GatsbyJS projects - linting and testing" by Kalin Chernev](https://kalinchernev.github.io/gatsbyjs-qa-linting-testing/)
-- [Gatsby blog posts on testing in Gatsby](/blog/tags/testing)
-- [Jason Lengstorf's livestream with Kent Dodds adding tests to a Gatsby site](https://www.youtube.com/watch?v=BzRAYt7BHRw&t=2024s).
+- Baca artikel ["Jaminan kualitas dalam proyek GatsbyJS - *linting* dan pengujian" oleh Kalin Chernev](https://kalinchernev.github.io/gatsbyjs-qa-linting-testing/)
+- [Posting blog Gatsby tentang pengujian di Gatsby](/blog/tags/testing)
+- [Siaran langsung Jason Lengstorf dengan Kent Dodds dalam menambahkan pengujian ke situs Gatsby](https://www.youtube.com/watch?v=BzRAYt7BHRw&t=2024s).
