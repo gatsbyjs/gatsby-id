@@ -1,5 +1,5 @@
 ---
-title: Using Multiple Themes Together
+judul: Menggunakan Beberapa Tema secara Bersamaan
 ---
 
-_This tutorial is coming soon. In the meantime, check out the [introduction to using multiple themes in the docs](/docs/themes/using-multiple-gatsby-themes)._
+_Tutorial ini akan segera hadir. Sementara itu, periksa [pengantar untuk menggunakan beberapa tema dalam dokumen](/docs/themes/using-multiple-gatsby-themes)._
