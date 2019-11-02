@@ -1,5 +1,5 @@
 ---
-title: Thinking in Gatsby
+judul: Berpikir di Gatsby
 ---
 
-Coming soon.
+Segera Hadir.
