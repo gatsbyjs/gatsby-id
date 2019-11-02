@@ -2,13 +2,13 @@
 title: Menambahkan File Manifest
 ---
 
-Jika kamu menjalankan [audit dengan menggunakan Lighthouse](/docs/audit-with-lighthouse/), mungkin kamu akan mendapatkan notifikasi skor di dalam kategori "Progressive Web App". Mari kita bahas bagaimana cara meningkatkan skor di PWA.
+Jika kamu menjalankan [audit dengan menggunakan *Lighthouse*](/docs/audit-with-lighthouse/), mungkin kamu akan mendapatkan notifikasi skor di dalam kategori *"Progressive Web App"*. Mari kita bahas bagaimana cara meningkatkan skor di PWA.
 
 Tetapi hal yang pertama adalah, apa itu PWA?
 
-PWA adalah website biasa yang mengambil keutungan dari browser modern untuk meningkatkan pengalaman dengan fitur - fitur dan manfaat yang mirip seperti aplikasi. Periksa [Gambaran Google's](https://developers.google.com/web/progressive-web-apps/) tentang apa definisi pengalaman di PWA dan [dokumentasi Progressive web apps (PWAs)](/docs/progressive-web-app/) untuk belajar bagaimana membuat progressive web app di Gatsby.
+PWA adalah website biasa yang mengambil keutungan dari browser modern untuk meningkatkan pengalaman dengan fitur - fitur dan manfaat yang mirip seperti aplikasi. Periksa [Gambaran Google's](https://developers.google.com/web/progressive-web-apps/) tentang apa definisi pengalaman di PWA dan [dokumentasi *Progressive web apps (PWAs)*](/docs/progressive-web-app/) untuk belajar bagaimana membuat aplikasi website yang *progressive* di Gatsby.
 
-Sebuah inklusi dari web app manifest adalah satu dari tiga hal yang disetujui secara umum [syarat dasar untuk PWA](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1).
+Sebuah inklusi dari web app manifest adalah satu dari tiga hal yang disetujui secara umum [tentang syarat dasar untuk PWA](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1).
 
 Mengutip [Google](https://developers.google.com/web/fundamentals/web-app-manifest/):
 
@@ -52,4 +52,4 @@ npm install --save gatsby-plugin-manifest
 }
 ```
 
-Itu saja yang kamu butuhkan untuk menambahkan file manifest di website Gatsby. Contoh yang diberikan menggambarkan konfigurasi basis -- silahkan cek referensi di [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) untuk opsi lebih lanjut.
+Itu saja yang kamu butuhkan untuk menambahkan file manifest di website Gatsby. Contoh yang diberikan menggambarkan konfigurasi basis -- silahkan cek referensi di [referensi *plugin*](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) untuk opsi lebih lanjut.
