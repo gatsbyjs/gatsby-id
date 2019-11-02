@@ -1,14 +1,14 @@
 ---
-title: Theme Tutorials
+judul: Tutorial Tema
 ---
 
-Gatsby themes are a new way to encapsulate, re-use, and compose Gatsby functionality.
+Tema dalam Gatsby adalah cara baru yang digunakan untuk merangkum, menggunakan kembali, dan menyusun fungsionalitas dari Gatsby.
 
-In this section, you'll find tutorials for:
+Di bagian ini, Anda akan menemukan tutorial untuk:
 
-1. Setting up a site using a single theme (the blog theme)
-2. Setting up a site which composes multiple themes (the blog theme, and the notes theme)
+1. Menyiapkan situs menggunakan satu tema (tema untuk blog)
+2. Menyiapkan situs yang menyusun beberapa tema (tema untuk blog, dan catatan dari tema)
 
-To learn more about themes in general, you may be interested to check out the [themes section of the docs](/docs/themes), as well.
+Untuk mempelajari lebih lanjut mengenai tema secara umum, Anda mungkin tertarik untuk memeriksa [bagian tema dokumen](/docs/themes).
 
 <GuideList slug={props.slug} />
