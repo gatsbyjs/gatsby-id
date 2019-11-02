@@ -1,8 +1,7 @@
 ---
-title: Sourcing from Prose
+judul: Sumber dari Prosa
 ---
 
-This is a stub. Help our community expand it.
+Ini sebuah rintisan. Bantu komunitas kami dalam mengembangkannya.
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-pull request gets accepted.
+Silakan gunakan [Panduan Gaya Penulisan Gatsby](/contributing/gatsby-style-guide/) untuk memastikan permintaan *pull request* Anda diterima.
