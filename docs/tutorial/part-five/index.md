@@ -24,9 +24,9 @@ Anda dapat mengaksesnya ketika server pengembangan situs Anda berjalan, biasanya
 
 Lihat pada "tipe" `Site` dan lihat kolom apa yang tersedia di dalamnya, termasuk objek `siteMetadata` yang Anda minta sebelumnya. Coba buka GraphiQL dan mainkan dengan data Anda! Tekan <kbd>Ctrl + Space</kbd> (atau gunakan <kbd>Shift + Space</kbd> sebagai alternatif pintasan keyboard) untuk membuka jendela _autocomplete_ dan <kbd>Ctrl + Enter</kbd> untuk menjalankan kueri GraphQL. Anda akan menggunakan GraphiQL lebih banyak melalui tutorial yang tersisa.
 
-## Menggunakan GraphiQL _Explorer_
+## Menggunakan GraphiQL *Explorer*
 
-GraphiQL _Explorer_ memungkinkan Anda untuk membangun kueri penuh secara interaktif dengan mengklik bidang dan input yang tersedia tanpa proses mengetik kueri berulang dengan tangan.
+GraphiQL *Explorer* memungkinkan Anda untuk membangun kueri penuh secara interaktif dengan mengklik bidang dan input yang tersedia tanpa proses mengetik kueri berulang dengan tangan.
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-build-a-graphql-query-using-gatsby-s-graphiql-explorer"
@@ -126,7 +126,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 export default ({ data }) => {
-  console.log(data) // *highlight-line*
+  console.log(data) // highlight-line
   return (
     <Layout>
       <div>Hello world</div>
@@ -221,6 +221,6 @@ Dan sekarang buka [http://localhost:8000/my-files](http://localhost:8000/my-file
 
 ![halaman-my-files](my-files-page.png)
 
-## Apa yang akan terjadi selanjutnya?
+## Apa selanjutnya?
 
 Sekarang Anda telah belajar bagaimana _source_ plugin membawa data ke sistem data Gatsby. Di tutorial selanjutnya, Anda akan belajar bagaimana plugin transformer membawa data mentah yang dibawa oleh _source_ plugin. Kombinasi _source_ plugin dan plugin transformer dapat menangani semua sumber data dan transformasi data yang Anda perlukan saat membangun situs Gatsby. Pelajari tentang plugin transformer di [bagian ke 6 dari tutorial tutorial](/tutorial/part-six/).
