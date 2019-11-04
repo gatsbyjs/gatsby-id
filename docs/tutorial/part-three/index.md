@@ -1,57 +1,57 @@
 ---
-title: Creating Nested Layout Components
+title: Membuat Komponen layout Bertingkat
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Welcome to part three!
+Selamat Datang di bagian ketiga
 
-## What's in this tutorial?
+## Apa saja yang ada didalam tutorial ini?
 
-In this part, you'll learn about Gatsby plugins and creating "layout" components.
+Didalam bagian ini, anda akan belajar tentang _plugins_ dari Gatsby dan pembuatan komponen _layout_ atau tata letak.
 
-Gatsby plugins are JavaScript packages that help add functionality to a Gatsby site. Gatsby is designed to be extensible, which means plugins are able to extend and modify just about everything Gatsby does.
+_Plugin_ Gatsby ini merupakan paket dari komponen-komponen Javascript yang berfungsi membantu menambah fungsionalitas ke sebuah situs Gatsby. Gatsby dirancang agar dapat dikembangkan, yang berarti _plugin_ dapat memperluas dan memodifikasi apa saja yang dilakukan Gatsby.
 
-Layout components are for sections of your site that you want to share across multiple pages. For example, sites will commonly have a layout component with a shared header and footer. Other common things to add to layouts are a sidebar and/or navigation menu. On this page for example, the header at the top is part of gatsbyjs.org's layout component.
+Komponen _Layout_ merupakan bagian dari situs anda yang nantinya bisa anda bagikan di beberapa halaman. Misalnya, situs umumnya akan memiliki komponen _layout_ dengan _header_ dan _footer_ bersama. Hal-hal umum lainnya untuk ditambahkan ke dalam _layout_ adalah menu _sidebar_ dan / atau navigasi. Di halaman ini misalnya, tajuk di bagian atas adalah bagian dari komponen _layout_ gatsbyjs.org.
 
-Let's dive into part three.
+mari selami bagian ketiga.
 
-## Using plugins
+## Penggunaan _Plugin_
 
-You’re probably familiar with the idea of plugins. Many software systems support adding custom plugins to add new functionality or even modify the core workings of the software. Gatsby plugins work the same way.
+Anda mungkin mengetahui gagasan dari _plugin_. Banyak sistem perangkat lunak yang mendukung penambahan _plugin_ khusus untuk menambah fungsionalitas baru atau bahkan memodifikasi inti kerja dari perangkat lunak. _Plugin_ Gatsby juga bekerja dengan cara yang sama.
 
-Community members (like you!) can contribute plugins (small amounts of JavaScript code) that others can then use when building Gatsby sites.
+Anggota komunitas (seperti anda!) Dapat berkontribusi _plugin_ (sejumlah kecil kode JavaScript) yang kemudian dapat digunakan orang lain ketika membangun situs Gatsby mereka.
 
-> There are already hundreds of plugins! Explore the Gatsby [Plugin Library](/plugins/).
+> Sudah ada ratusan plugin! Jelajahi [Perpustakaan _Plugin_](/plugins/) Gatsby.
 
-Our goal with plugins is to make them straightforward to install and use. You will likely be using plugins in almost every Gatsby site you build. While working through the rest of the tutorial you’ll have many opportunities to practice installing and using plugins.
+Tujuan kami dengan adanya _plugin_ adalah membuatnya mudah untuk diinstal dan digunakan. Kemungkinan anda akan menggunakan _plugin_ di hampir setiap situs Gatsby yang anda bangun. Saat mengerjakan seluruh tutorial anda akan memiliki banyak kesempatan untuk berlatih memasang dan menggunakan _plugin_.
 
-For an initial introduction to using plugins, we'll install and implement the Gatsby plugin for Typography.js.
+Untuk pengantar awal menggunakan plugin, anda akan menginstal dan mengimplementasikan plugin Gatsby untuk Typography.js.
 
-[Typography.js](https://kyleamathews.github.io/typography.js/) is a JavaScript library which generates global base styles for your site's typography. The library has a [corresponding Gatsby plugin](/packages/gatsby-plugin-typography/) to streamline using it in a Gatsby site.
+[_Typography.js_](https://kyleamathews.github.io/typography.js/) adalah sebuah perpustakaan dari Javasript yang menghasilkan bentuk dasar tampilan dari _typography_ secara keseluruhan untuk situs anda. Perpustakaan ini memiliki sebuah [_plugin_ dari Gatsby yang sesuai](/packages/gatsby-plugin-typography/) yang mempermudah penggunaannya di situs Gatsby anda.
 
-### ✋ Create a new Gatsby site
+### ✋ Membuat sebuah situs baru menggunakan Gatsby
 
-As we mentioned in [part two](/tutorial/part-two/), at this point it's probably a good idea to close the terminal window(s) and project files from previous parts of the tutorial, to keep things clean on your desktop. Then open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-three` and then move to this new directory:
+Seperti yang kami sebutkan di [bagian kedua](/tutorial/part-two/), pada titik ini alangkah baiknya dengan menutup jendela terminal yang tampil kemudian memproyeksikan file dari bagian tutorial sebelumnya, untuk menjaga semuanya tetap bersih pada bagian Desktop anda. lalu buka jendela terminal baru dan jalankan perintah berikut untuk membuat situs Gatsby baru didalam direktori yang disebut `tutorial-bagian-tiga` dan kemudian pindah ke direktori baru ini:
 
 ```shell
 gatsby new tutorial-part-three https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-three
 ```
 
-### ✋ Install and configure `gatsby-plugin-typography`
+### ✋ Menambahkan dan konfigurasi `gatsby-plugin-typography`
 
-There are two main steps to using a plugin: Installing and configuring.
+Ada dua langkah utama untuk menggunakan _plugin_: Menambahkan dan konfigurasi.
 
-1. Install the `gatsby-plugin-typography` NPM package.
+1. Menambahkan _package_ dari _NPM_ `gatsby-plugin-typography`.
 
 ```shell
 npm install --save gatsby-plugin-typography react-typography typography typography-theme-fairy-gates
 ```
 
-> Note: Typography.js requires a few additional packages, so those are included in the instructions. Additional requirements like this will be listed in the "install" instructions of each plugin.
+> Catatan: _Typography.js_ memerlukan beberapa _packages_ tambahan, itu termasuk dalam instruksi. Persyaratan tambahan seperti ini akan tercantum dalam instruksi "_install_" dari masing-masing penggunaan _plugin_.
 
-2. Edit the file `gatsby-config.js` at the root of your project to the following:
+2. Lakukan perubahan pada file `gatsby-config.js` yang berada pada struktur bagian utama proyek anda dengan cara berikut:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -59,46 +59,46 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
-}
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
+  ]
+};
 ```
 
-The `gatsby-config.js` is another special file that Gatsby will automatically recognize. This is where you add plugins and other site configuration.
+`gatsby-config.js` adalah file khusus lain yang secara otomatis akan dikenali Gatsby. Di sinilah Anda perlu menambahkan _plugin_ dan konfigurasi situs lainnya.
 
-> Check out the [doc on gatsby-config.js](/docs/gatsby-config/) to read more, if you wish.
+> jika anda tertarik bisa kunjungi informasi lebih lanjut berikut ini, [dokumen mengenai gatsby-config.js](/docs/gatsby-config/).
 
-3. Typography.js needs a configuration file. Create a new directory called `utils` in the `src` directory. Then add a new file called `typography.js` to `utils` and copy the following into the file:
+3. _Typography.js_ memerlukan file untuk konfigurasi. Buatlah direktori baru bernama `utils` didalam direktori `src`. Kemudian tambahkan file baru bernama `typography.js` ke dalam direktori `utils` dan salin bagian berikut ke dalam file tersebut:
 
 ```javascript:title=src/utils/typography.js
-import Typography from "typography"
-import fairyGateTheme from "typography-theme-fairy-gates"
+import Typography from "typography";
+import fairyGateTheme from "typography-theme-fairy-gates";
 
-const typography = new Typography(fairyGateTheme)
+const typography = new Typography(fairyGateTheme);
 
-export const { scale, rhythm, options } = typography
-export default typography
+export const { scale, rhythm, options } = typography;
+export default typography;
 ```
 
-4. Start the development server.
+4. Mulai jalankan server untuk pengembangan.
 
 ```shell
 gatsby develop
 ```
 
-Once you load the site, if you inspect the generated HTML using the Chrome developer tools, you’ll see that the typography plugin added a `<style>` element to the `<head>` element with its generated CSS:
+Setelah Anda memuat situs, jika Anda memeriksa _HTML_ yang dihasilkan menggunakan alat pengembang _Chrome_, Anda akan melihat bahwa _plugin_ _typography_ menambahkan elemen `<style>` ke elemen `<head>` dengan CSS yang dihasilkannya:
 
 ![typography-styles](typography-styles.png)
 
-### ✋ Make some content and style changes
+### ✋ Buat beberapa perubahan konten dan gaya
 
-Copy the following into your `src/pages/index.js` so you can see the
-effect of the CSS generated by Typography.js better.
+Salin berikut ini ke dalam `src/pages/index.js` Anda sehingga dapat melihat
+efek lebih baik dari CSS yang dihasilkan oleh `Typography.js`.
 
 ```jsx:title=src/pages/index.js
-import React from "react"
+import React from "react";
 
 export default () => (
   <div>
@@ -108,18 +108,18 @@ export default () => (
       websites.
     </p>
   </div>
-)
+);
 ```
 
-Your site should now look like this:
+Situs anda akan terlihat seperti berikut ini:
 
 ![no-layout](no-layout.png)
 
-Let's make a quick improvement. Many sites have a single column of text centered in the middle of the page. To create this, add the following styles to the
-`<div>` in `src/pages/index.js`.
+Mari kita lakukan perbaikan secara cepat. Banyak situs memiliki satu kolom teks yang berpusat di tengah halaman. Untuk membuat ini, tambahkan gaya berikut ke
+`<div>` pada `src/pages/index.js`.
 
 ```jsx:title=src/pages/index.js
-import React from "react"
+import React from "react";
 
 export default () => (
   // highlight-next-line
@@ -130,30 +130,30 @@ export default () => (
       websites.
     </p>
   </div>
-)
+);
 ```
 
 ![with-layout2](with-layout2.png)
 
-Sweet. You've installed and configured your very first Gatsby plugin!
+Manis bukan. Anda telah berhasil menambahkan dan mengkonfigurasi _plugin_ Gatsby pertama Anda!
 
-## Creating layout components
+## Membuat komponen _layout_
 
-Now let's move on to learning about layout components. To get ready for this part, add a couple new pages to your project: an about page and a contact page.
+Saatnya memulai belajar mengenai komponen-komponen dari _layout_. Agar siap untuk bagian ini, tambahkan beberapa halaman baru ke proyek Anda, seperti halaman _about_ dan halaman _contact_.
 
 ```jsx:title=src/pages/about.js
-import React from "react"
+import React from "react";
 
 export default () => (
   <div>
     <h1>About me</h1>
     <p>I’m good enough, I’m smart enough, and gosh darn it, people like me!</p>
   </div>
-)
+);
 ```
 
 ```jsx:title=src/pages/contact.js
-import React from "react"
+import React from "react";
 
 export default () => (
   <div>
@@ -162,34 +162,34 @@ export default () => (
       <a href="mailto:me@example.com">me@example.com</a>
     </p>
   </div>
-)
+);
 ```
 
-Let's see what the new about page looks like:
+Mari kita lihat seperti apa tampilan halaman yang baru:
 
 ![about-uncentered](about-uncentered.png)
 
-Hmm. It would be nice if the content of the two new pages were centered like the index page. And it would be nice to have some sort of global navigation so it's easy for visitors to find and visit each of the sub-pages.
+Hmm. Akan lebih baik jika konten dari kedua halaman baru ini dipusatkan seperti halaman _index_. Dan akan lebih menyenangkan memiliki semacam navigasi global sehingga mudah bagi pengunjung untuk menemukan dan mengunjungi masing-masing sub-halaman.
 
-You'll tackle these changes by creating your first layout component.
+Anda akan mulai mengatasi perubahan ini dengan membuat komponen _layout_ pertama Anda.
 
-### ✋ Create your first layout component
+### ✋ Membuat komponen _layout_ pertama anda
 
-1. Create a new directory at `src/components`.
+1. Buat sebuah direktori baru pada `src/components`.
 
-2. Create a very basic layout component at `src/components/layout.js`:
+2. Buat komponen _layout_ yang sangat mendasar pada `src/components/layout.js`:
 
 ```jsx:title=src/components/layout.js
-import React from "react"
+import React from "react";
 
 export default ({ children }) => (
   <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
     {children}
   </div>
-)
+);
 ```
 
-3. Import this new layout component into your `src/pages/index.js` page component:
+3. Tambahkan komponen _layout_ yang baru ini ke dalam komponen halaman `src/pages/index.js` Anda:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -208,47 +208,47 @@ export default () => (
 
 ![with-layout2](with-layout2.png)
 
-Sweet, the layout is working! The content of your index page is still centered.
+Manis bukan, _layout_-nya bekerja! Konten halaman _index_ Anda masih berada terpusat ditengah.
 
-But try navigating to `/about/`, or `/contact/`. The content on those pages still won't be centered.
+Namun cobalah menavigasi ke `/about/`, atau `/contact/`. Konten pada halaman-halaman tersebut masih tidak akan terpusat ditengah.
 
-4. Import the layout component in `about.js` and `contact.js` (as you did for `index.js` in the previous step).
+4. Tambahkan komponen _layout_ di `about.js` dan `contact.js` (seperti yang Anda lakukan untuk `index.js` pada langkah sebelumnya).
 
-The content of all three of your pages is centered thanks to this single shared layout component!
+Konten ketiga halaman Anda terpusat ditengah berkat komponen _layout_ tunggal yang dibagikan ini!
 
-### ✋ Add a site title
+### ✋ Menambahkan judul situs
 
-1. Add the following line to your new layout component:
+1. Tambahkan baris berikut ke komponen _layout_ baru Anda:
 
 ```jsx:title=src/components/layout.js
-import React from "react"
+import React from "react";
 
 export default ({ children }) => (
   <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
     <h3>MySweetSite</h3> {/* highlight-line */}
     {children}
   </div>
-)
+);
 ```
 
-If you go to any of your three pages, you'll see the same title added, e.g. the `/about/` page:
+Jika Anda membuka salah satu dari tiga halaman Anda, Anda akan melihat judul yang sama ditambahkan, misalnya halaman `/about/`:
 
 ![with-title](with-title.png)
 
-### ✋ Add navigation links between pages
+### ✋ Tambahkan tautan navigasi antar halaman
 
-1. Copy the following into your layout component file:
+1. Salin bagian berikut ini ke file komponen _layout_ Anda:
 
 ```jsx:title=src/components/layout.js
-import React from "react"
+import React from "react";
 // highlight-start
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
-)
+);
 // highlight-end
 
 export default ({ children }) => (
@@ -267,15 +267,15 @@ export default ({ children }) => (
     {/* highlight-end */}
     {children}
   </div>
-)
+);
 ```
 
 ![with-navigation2](with-navigation2.png)
 
-And there you have it! A three page site with basic global navigation.
+Dan tepat di sana Anda memilikinya! Ketiga halaman situs dengan dasar navigasi global.
 
-_Challenge:_ With your new "layout component" powers, trying adding headers, footers, global navigation, sidebars, etc. to your Gatsby sites!
+_Tantangan:_ Dengan kekuatan "komponen _layout_" baru Anda, coba tambahkan _header_, _footer_, navigasi global, _sidebars_, dll ke situs Gatsby Anda!
 
-## What's coming next?
+## Apa yang akan terjadi selanjutnya?
 
-Continue on to [part four of the tutorial](/tutorial/part-four/) where you'll start learning about Gatsby's data layer and programmatically creating pages!
+Lanjutkan ke [tutorial bagian empat](/tutorial/part-four/) di mana Anda akan mulai belajar tentang lapisan data Gatsby dan membuat halaman secara pemrograman!
