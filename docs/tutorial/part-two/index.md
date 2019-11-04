@@ -1,5 +1,5 @@
 ---
-title: Pengenalan Styling di Gatsby
+judul: Pengenalan _Styling_ di Gatsby
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
@@ -14,17 +14,17 @@ disableTableOfContents: true
 
 -->
 
-Selamat datang di bagian dua dari tutorial Gatsby!
+Selamat datang di bagian kedua dari tutorial Gatsby!
 
 ## Apa yang ada di dalam tutorial ini?
 
-Pada bagian ini, Anda akan menjelajahi pilihan untuk _styling_ situs web Gatsby dan menyelam lebih dalam tentang penggunaan komponen React untuk membangun situs.
+Pada bagian ini, Anda akan menjelajahi pilihan untuk _styling_ situs web Gatsby dan mempelajari lebih dalam tentang penggunaan komponen React untuk membangun situs.
 
-## Menggunakan global styles
+## Menggunakan global _style_
 
-Setiap situs memiliki semacam _global style_. Ini termasuk hal-hal seperti tipografi dan warna latar belakang. Style ini mengatur keseluruhan nuansa situs — sangat mirip dengan warna dan tekstur dinding yang mengatur nuansa keseluruhan ruangan.
+Setiap situs memiliki semacam _global style_. Ini termasuk hal-hal seperti tipografi dan warna latar belakang. _Style_ ini mengatur keseluruhan nuansa situs — sangat mirip dengan warna dan tekstur dinding yang mengatur nuansa keseluruhan ruangan.
 
-### Membuat global style dengan CSS standar
+### Membuat global _style_ dengan CSS standar
 
 Salah satu cara yang paling mudah dalam menambahkan _global style_ ke sebuah situs adalah menggunakan global `.css` _stylesheet_.
 
@@ -48,7 +48,7 @@ Sekarang Anda memiliki situs Gatsby baru (berdasarkan pada Gatsby "hello world" 
 │       └── index.js
 ```
 
-#### ✋ Tambah style pada berkas css
+#### ✋ Tambah _style_ pada berkas css
 
 1. Buat berkas `.css` di dalam proyek baru Anda:
 
@@ -72,7 +72,7 @@ Anda sekarang seharusnya memiliki struktur seperti ini:
 │       └── global.css
 ```
 
-2. Definisikan beberapa styles di dalam berkas `global.css`:
+2. Definisikan beberapa _style_ di dalam berkas `global.css`:
 
 ```css:title=src/styles/global.css
 html {
@@ -82,7 +82,7 @@ html {
 
 > Catatan: penempatan contoh berkas css di dalam diretori `/src/styles/` bersifat acak.
 
-#### ✋ Muat stylesheet ke dalam `gatsby-browser.js`
+#### ✋ Muat _stylesheet_ ke dalam `gatsby-browser.js`
 
 1. Buat berkas `gatsby-browser.js`
 
@@ -103,12 +103,12 @@ Struktur berkas proyek Anda sekarang seharusnya terlihat seperti ini:
 ├── gatsby-browser.js
 ```
 
-> 💡 Apa itu `gatsby-browser.js`? Jangan terlalu khawatir tentang ini untuk sekarang, pahami saja bahwa `gatsby-browser.js` merupakan salah satu dari beberapa berkas khusus yang Gatsby cari dan gunakan (jika ada). Disini, penamaan berkas **merupakan** sesuatu yang penting. Jika Anda ingin mendalami lebih jauh sekarang, Periksa [dokumentasi](/docs/browser-apis/).
+> 💡 Apa itu `gatsby-browser.js`? Jangan terlalu khawatir tentang ini untuk sekarang, pahami saja bahwa `gatsby-browser.js` merupakan salah satu dari beberapa berkas khusus yang Gatsby cari dan gunakan (jika ada). Disini, penamaan berkas **merupakan** sesuatu yang penting. Jika Anda ingin mendalami lebih jauh sekarang, periksa [dokumentasi](/docs/browser-apis/).
 
-2. Impor stylesheet yang baru saja Anda buat ke dalam berkas `gatsby-browser.js`:
+2. Impor _stylesheet_ yang baru saja Anda buat ke dalam berkas `gatsby-browser.js`:
 
 ```javascript:title=gatsby-browser.js
-import './src/styles/global.css';
+import "./src/styles/global.css"
 
 // or:
 // require('./src/styles/global.css')
@@ -126,42 +126,42 @@ Jika Anda melihat proyek pada peramban, Anda seharusnya melihat penerapan latar 
 
 ![Lavender Hello World!](global-css.png)
 
-> Tip: Bagian ini berfokus pada cara tercepat dan termudah untuk memulai styling pada situs Gatsby — impor standar berkas CSS secara langsung menggunakan `gatsby-browser.js`. Pada kebanyakan kasus, cara terbaik menambahkan global styles adalah dengan _shared layout component_. [Telusur dokumentasi](/docs/global-css/) untuk penjelasan lebih tentang pendekatan itu.
+> Tip: Bagian ini berfokus pada cara tercepat dan termudah untuk memulai styling pada situs Gatsby — impor standar berkas CSS secara langsung menggunakan `gatsby-browser.js`. Pada kebanyakan kasus, cara terbaik menambahkan global _style_ adalah dengan _shared layout component_. [Telusur dokumentasi](/docs/global-css/) untuk penjelasan lebih tentang pendekatan itu.
 
 ## Menggunakan component-scoped CSS
 
-Sejauh ini, kita telah membahas tentang pendekatan yang lebih tradisional tentang penggunaan standar css stylesheet. Sekarang, kita akan membahas beragam metode tentang modularisasi CSS untuk menangani styling berbasis komponen.
+Sejauh ini, kita telah membahas tentang pendekatan yang lebih tradisional tentang penggunaan standar css _stylesheet_. Sekarang, kita akan membahas beragam metode tentang modularisasi CSS untuk menangani styling berbasis komponen.
 
 ### Modul CSS
 
-Mari kita jelajahi **CSS Module**. Dikutip dari
+Mari kita jelajahi **Modul CSS**. Dikutip dari
 [the CSS Module homepage](https://github.com/css-modules/css-modules):
 
-> **CSS Module** merupakan berkas CSS yang mana semua nama kelas dan nama animasi
+> **Modul CSS** merupakan berkas CSS yang mana semua nama kelas dan nama animasi
 > normalnya dicakup secara lokal.
 
-CSS Modules sangat populer karena CSS Modules mengizinkan Anda menulis CSS secara normal namun dengan banyak keamanan. CSS Modules secara otomatis menghasilkan nama kelas dan animasi unik, jadi Anda tidak perlu khawatir tentang penamaan _selector_ yang sama.
+Modul CSS sangat populer karena Modul CSS mengizinkan Anda menulis CSS secara normal namun dengan banyak keamanan. Modul CSS secara otomatis menghasilkan nama kelas dan animasi unik, jadi Anda tidak perlu khawatir tentang penamaan _selector_ yang sama.
 
-Gatsby berfungsi _out of the box_ dengan CSS Modules. Pendekatan ini sangat direkomendasikan untuk mereka yang awam dalam pengembangan menggunakan Gatsby (dan React pada umumnya).
+Gatsby berfungsi _out of the box_ dengan Modul CSS. Pendekatan ini sangat direkomendasikan untuk mereka yang awam dalam pengembangan menggunakan Gatsby (dan React pada umumnya).
 
-#### ✋ Build a new page using CSS Modules
+#### ✋ Membangun halaman baru menggunakan Modul CSS
 
-Pada bagian ini, Anda akan membuat komponen halaman baru dan style yang digunakan halaman komponen menggunakan CSS Module.
+Pada bagian ini, Anda akan membuat komponen halaman baru dan _style_ yang digunakan halaman komponen menggunakan Modul CSS.
 
 Pertama, buat komponen `Container` baru.
 
 1. Buat direktori baru pada `src/components` lalu, dalam direktori tersebut, buat berkas dengan nama `container.js` dan tempel kode berikut:
 
 ```javascript:title=src/components/container.js
-import React from 'react';
-import containerStyles from './container.module.css';
+import React from "react"
+import containerStyles from "./container.module.css"
 
 export default ({ children }) => (
   <div className={containerStyles.container}>{children}</div>
-);
+)
 ```
 
-Anda akan melihat Anda mengimpor file modul css bernama `container.module.css`. Mari kita buat file itu sekarang.
+Anda akan melihat Anda mengimpor berkas modul css bernama `container.module.css`. Mari kita buat berkas itu sekarang.
 
 2. Pada direkori yang sama (`src/components`), buat sebuah berkas `container.module.css` dan salin/tempel kode berikut:
 
@@ -172,31 +172,31 @@ Anda akan melihat Anda mengimpor file modul css bernama `container.module.css`. 
 }
 ```
 
-Anda akan melihat bahwa nama file diakhiri dengan `.module.css` alih-alih`.css` biasa. Ini adalah cara Anda memberi tahu Gatsby bahwa file CSS ini harus diproses sebagai modul CSS daripada CSS biasa.
+Anda akan melihat bahwa nama berkas diakhiri dengan `.module.css` alih-alih`.css` biasa. Ini adalah cara Anda memberi tahu Gatsby bahwa berkas CSS ini harus diproses sebagai modul CSS daripada CSS biasa.
 
 3. Buat komponen halaman baru dengan cara membuat berkas baru pada
    `src/pages/about-css-modules.js`:
 
 ```javascript:title=src/pages/about-css-modules.js
-import React from 'react';
+import React from "react"
 
-import Container from '../components/container';
+import Container from "../components/container"
 
 export default () => (
   <Container>
     <h1>About CSS Modules</h1>
     <p>CSS Modules are cool</p>
   </Container>
-);
+)
 ```
 
 Sekarang, jika Anda mengunjungi `http://localhost:8000/about-css-modules/`, Halaman Anda seharusnya terlihat seperti ini:
 
-![Halaman dengan CSS module styles](css-modules-basic.png)
+![Halaman dengan CSS module _style_](css-modules-basic.png)
 
-#### ✋ Style sebuah komponen menggunakan CSS Modules
+#### ✋ _Styling_ sebuah komponen menggunakan modul CSS
 
-Pada bagian ini, Anda akan membuat sebuah daftar orang dengan nama, avatar, dan biografi singkat dalam bahasa Latin. Anda akan membuat sebuah komponen `<User />` dan menerapkan style pada komponen tersebut menggunakan CSS module.
+Pada bagian ini, Anda akan membuat sebuah daftar orang dengan nama, avatar, dan biografi singkat dalam bahasa Latin. Anda akan membuat sebuah komponen `<User />` dan menerapkan _style_ pada komponen tersebut menggunakan CSS module.
 
 1. Buat berkas untuk CSS pada `src/pages/about-css-modules.module.css`.
 
@@ -239,13 +239,13 @@ Pada bagian ini, Anda akan membuat sebuah daftar orang dengan nama, avatar, dan 
 3. Impor berkas baru `src/pages/about-css-modules.module.css` ke dalam halaman `about-css-modules.js` yang sudah anda buat diawal dengan cara menyunting beberapa baris pertama pada berkas seperti:
 
 ```javascript:title=src/pages/about-css-modules.js
-import React from 'react';
+import React from "react"
 // highlight-next-line
-import styles from './about-css-modules.module.css';
-import Container from '../components/container';
+import styles from "./about-css-modules.module.css"
+import Container from "../components/container"
 
 // highlight-next-line
-console.log(styles);
+console.log(styles)
 ```
 
 kode `console.log(styles)` akan mencatat hasil impor, jadi Anda dapat melihat hasil proses dari berkas`./about-css-modules.module.css`. Jika Anda membuka _developer console_ (menggunkan misalnya _developer tools_ Firefox atau Chrome) pada peramban Anda, Anda akan melihat:
@@ -259,11 +259,11 @@ Jika Anda membandingkan dengan berkas CSS Anda, Anda akan melihat bahwa setiap k
 Buat komponen `<User />` baru dibarisan dalam komponen halaman `about-css-modules.js`. Ubah `about-css-modules.js` menjadi seperti berikut:
 
 ```jsx:title=src/pages/about-css-modules.js
-import React from 'react';
-import styles from './about-css-modules.module.css';
-import Container from '../components/container';
+import React from "react"
+import styles from "./about-css-modules.module.css"
+import Container from "../components/container"
 
-console.log(styles);
+console.log(styles)
 
 // highlight-start
 const User = props => (
@@ -274,7 +274,7 @@ const User = props => (
       <p className={styles.excerpt}>{props.excerpt}</p>
     </div>
   </div>
-);
+)
 // highlight-end
 
 export default () => (
@@ -294,7 +294,7 @@ export default () => (
     />
     {/* highlight-end */}
   </Container>
-);
+)
 ```
 
 > Tip: Umumnya, jika Anda menggunakan komponen pada banyak tempat pada sebuah situs, hal itu seharusnya di dalam berkas modulnya sendiri pada direktori `components`. Tetapi, jika hal tersebut hanya digunakan dalam satu berkas, buat dibaris pada berkas yang ada.
@@ -325,7 +325,7 @@ Gatsby mendukung hampir setiap opsi styling (jika belum ada plugin untuk opsi CS
 - [Stylus](/packages/gatsby-plugin-stylus/)
 - [PostCSS](/packages/gatsby-plugin-postcss/)
 
-and banyak lagi!
+dan banyak lagi!
 
 ## Apa selanjutnya?
 
