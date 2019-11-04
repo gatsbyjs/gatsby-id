@@ -1,5 +1,5 @@
 ---
-title: Membuat Komponen layout Bertingkat
+judul: Membuat Komponen layout Bertingkat
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
