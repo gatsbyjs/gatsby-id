@@ -1,19 +1,19 @@
 ---
-title: Commands (Gatsby CLI)
+title: Perintah (Gatsby CLI)
 tableOfContentsDepth: 2
 ---
 
-The Gatsby command line tool (CLI) is the main entry point for getting up and running with a Gatsby application and for using functionality including like running a development server and building out your Gatsby application for deployment.
+Gatsby *command line interface* (CLI) adalah *entry point* utama untuk memulai dan menjalankan aplikasi Gatsby dan juga kita dapat menggunakan fungsi-fungsinya termasuk untuk menjalankan *development server* dan membangun aplikasi Gatsby saat *deployment*.
 
-_We provide similar documentation available with the gatsby-cli [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md), and our [cheat sheet](/docs/cheat-sheet/) has all the top CLI commands ready to print out._
+_Kami menyediakan dokumentasi serupa yang tersedia dengan gatsby-cli [README](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md), dan [cheat sheet](/docs/cheat-sheet/) kami memiliki semua perintah CLI yang siap untuk dijalankan._
 
-## How to use gatsby-cli
+## Cara menggunakan gatsby-cli
 
-The Gatsby CLI (`gatsby-cli`) is packaged as an executable that can be used globally. The Gatsby CLI is available via [npm](https://www.npmjs.com/) and should be installed globally by running `npm install -g gatsby-cli` to use it locally.
+Gatsby CLI (`gatsby-cli`) dapat dieksekusi dan digunakan secara global. Gatsby CLI tersedia melalui [npm](https://www.npmjs.com/) dan harus diinstal secara global dengan menjalankan `npm install -g gatsby-cli` untuk dapat digunakan secara lokal.
 
-Run `gatsby --help` for full help.
+Jalankan `gatsby --help` untuk bantuan lengkap.
 
-You can also use the `package.json` script variant of these commands, typically exposed _for you_ with most [starters](/docs/starters/). For example, if you want to make the [`gatsby develop`](#develop) command available in your application, open up `package.json` and add a script like so:
+Anda juga dapat menggunakan varian skrip pada `package.json` untuk beberapa perintah tertentu, biasanya terbuka _untuk Anda_ pada sebagian besar [starters](/docs/starters/). Misalnya, jika Anda ingin perintah [`gatsby develop`](#develop) tersedia di aplikasi Anda, buka `package.json` dan tambahkan skrip seperti:
 
 ```json:title=package.json
 {
@@ -23,7 +23,7 @@ You can also use the `package.json` script variant of these commands, typically 
 }
 ```
 
-## API commands
+## Perintah API
 
 ### `new`
 
@@ -31,30 +31,30 @@ You can also use the `package.json` script variant of these commands, typically 
 gatsby new [<site-name> [<starter-url>]]
 ```
 
-#### Arguments
+#### Argumen
 
-| Argument    | Description                                                                                                                                                                                                     |
+| Argumen    | Deskripsi                                                                                                                                                                                                     |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| site-name   | Your Gatsby site name, which is also used to create a project directory.                                                                                                                                        |
-| starter-url | A Gatsby starter URL or local file path. Defaults to [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default); see the [Gatsby starters](/docs/gatsby-starters/) docs for more information. |
+| site-name   | Nama situs Gatsby Anda, yang juga digunakan untuk membuat direktori proyek.                                                                                                                                      |
+| starter-url | Gatsby *starter* URL atau *path* file lokal. Bawaannya yaitu [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default); lihat dokumen [Gatsby *starters*](/docs/gatsby-starters/) untuk informasi lebih lanjut. |
 
-> Note: The `site-name` should only consist of letters and numbers. If you specify a `.`, `./` or a `<space>` in the name, `gatsby new` will throw an error.
+> Catatan: `site-name` harus terdiri dari huruf dan angka. Jika Anda memberikan `.`, `./` atau `<space>` pada nama tersebut, `gatsby new` akan memberikan informasi terkait kesalahan.
 
-#### Examples
+#### Contoh
 
-- Create a Gatsby site named `my-awesome-site` using the default starter:
+- Buat situs Gatsby bernama `my-awesome-site` menggunakan *starter* bawaan:
 
 ```shell
 gatsby new my-awesome-site
 ```
 
-- Create a Gatsby site named `my-awesome-blog-site`, using [gatsby-starter-blog](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/):
+- Buat nama situs Gatsby dengan nama `my-awesome-blog-site`, menggunakan [gatsby-starter-blog](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/):
 
 ```shell
 gatsby new my-awesome-blog-site https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-- If you leave out both of the arguments, the CLI will run an interactive shell asking for these inputs:
+- Jika Anda mengabaikan kedua argumen tersebut, CLI akan menjalankan *shell* interaktif yang meminta Anda untuk menginput ini:
 
 ```shell
 gatsby new
@@ -66,35 +66,35 @@ gatsby new
    (Use a different starter)
 ```
 
-See the [Gatsby starters docs](https://www.gatsbyjs.org/docs/gatsby-starters/) for more details.
+Lihat [Dokumen Gatsby starters](https://www.gatsbyjs.org/docs/gatsby-starters/) untuk rincian lebih lanjut.
 
 ### `develop`
 
-Once you've installed a Gatsby site, go to the root directory of your project and start the development server:
+Setelah Anda menginstal situs Gatsby, buka direktori utama pada proyek Anda dan mulai *development server*:
 
 `gatsby develop`
 
-#### Options
+#### Pilihan
 
-|     Option      | Description                                     |
+|     Pilihan     | Deskripsi                                       |
 | :-------------: | ----------------------------------------------- |
-| `-H`, `--host`  | Set host. Defaults to localhost                 |
-| `-p`, `--port`  | Set port. Defaults to 8000                      |
-| `-o`, `--open`  | Open the site in your (default) browser for you |
-| `-S`, `--https` | Use HTTPS                                       |
+| `-H`, `--host`  | Menetapkan host. Bawaannya yaitu localhost      |
+| `-p`, `--port`  | Menetapkan port. Bawaannya yaitu 8000           |
+| `-o`, `--open`  | Membuka situs di browser (bawaan) Anda          |
+| `-S`, `--https` | Menggunakan HTTPS                               |
 
-Follow the [Local HTTPS guide](/docs/local-https/)
-to find out how you can set up an HTTPS development server using Gatsby.
+Ikuti [Panduan HTTPS Lokal](/docs/local-https/)
+untuk mengetahui bagaimana Anda dapat mengatur *development server* HTTPS menggunakan Gatsby.
 
-#### Preview changes on other devices
+#### Pratinjau perubahan pada perangkat lain
 
-You can use the Gatsby develop command with the host option to access your dev environment on other devices on the same network, run:
+Anda dapat menggunakan perintah *develop* pada Gatsby dengan opsi host untuk mengakses lingkungan pengembangan Anda di perangkat lain di jaringan yang sama, jalankan:
 
 ```shell
 gatsby develop -H 0.0.0.0
 ```
 
-Then the terminal will log information as usual, but will additionally include a URL that you can navigate to from a client on the same network to see how the site renders.
+Kemudian terminal akan mencatat informasi seperti biasanya, tetapi juga akan menyertakan URL yang dapat Anda navigasikan dari klien di jaringan yang sama untuk melihat bagaimana situs di-*render*.
 
 ```
 You can now view gatsbyjs.org in the browser.
@@ -103,84 +103,84 @@ You can now view gatsbyjs.org in the browser.
   On Your Network:  http://192.168.0.212:8000/ // highlight-line
 ```
 
-**Note**: you can't visit 0.0.0.0:8000 on Windows (but things will work using either localhost:8000 or the "On Your Network" URL on Windows)
+**Catatan**: Anda tidak dapat mengunjungi 0.0.0.0:8000 di Windows (tetapi semuanya akan berjalan dengan menggunakan localhost:8000 atau URL "Di Jaringan Anda" pada Windows)
 
 ### `build`
 
-At the root of a Gatsby site, compile your application and make it ready for deployment:
+Pada *root* situs Gatsby, *compile* aplikasi Anda dan siapkan aplikasi Anda untuk *deployment*:
 
 `gatsby build`
 
-#### Options
+#### Pilihan
 
-|            Option            | Description                                                                                               |
+|            Pilihan            | Deskripsi                                                                                               |
 | :--------------------------: | --------------------------------------------------------------------------------------------------------- |
-|       `--prefix-paths`       | Build site with link paths prefixed (set pathPrefix in your config)                                       |
-|        `--no-uglify`         | Build site without uglifying JS bundles (for debugging)                                                   |
-| `--open-tracing-config-file` | Tracer configuration file (OpenTracing compatible). See [Performance Tracing](/docs/performance-tracing/) |
-| `--no-color`, `--no-colors`  | Disables colored terminal output                                                                          |
+|       `--prefix-paths`       | Membangun situs dengan jalur tautan yang menggunakan awalan (tetapkan pathPrefix di konfigurasi Anda)                |
+|        `--no-uglify`         | Membangun situs tanpa bundel *uglifying* JS (untuk *debugging*)                                                  |
+| `--open-tracing-config-file` | Konfigurasi pelacak file (kompatibel dengan OpenTracing). Lihat [Penelusuran Kinerja](/docs/performance-tracing/) |
+| `--no-color`, `--no-colors`  | Menonaktifkan output terminal berwarna                                                                          |
 
-In addition to these build options, there are some optional [build environment variables](/docs/environment-variables/#build-variables) for more advanced configurations that can adjust how a build runs. For example, setting `CI=true` as an environment variable will tailor output for [dumb terminals](https://en.wikipedia.org/wiki/Computer_terminal#Dumb_terminals).
+Selain opsi pembangunan situs ini, ada beberapa pilihan [variabel lingkungan pembangunan situs](/docs/environment-variables/#build-variables) untuk konfigurasi lebih lanjut yang dapat menyesuaikan cara kerja pembangunan. Misalnya, menetapkan `CI = true` sebagai variabel lingkungan akan menyesuaikan *output* untuk [*dumb terminals*](https://en.wikipedia.org/wiki/Computer_terminal#Dumb_terminals).
 
 ### `serve`
 
-At the root of a Gatsby site, serve the production build of your site for testing:
+Pada *root* situs Gatsby, sediakan versi produksi situs Anda untuk pengujian:
 
 `gatsby serve`
 
-#### Options
+#### Pilihan
 
-|      Option      | Description                                                                              |
-| :--------------: | ---------------------------------------------------------------------------------------- |
-|  `-H`, `--host`  | Set host. Defaults to localhost                                                          |
-|  `-p`, `--port`  | Set port. Defaults to 9000                                                               |
-|  `-o`, `--open`  | Open the site in your (default) browser for you                                          |
-| `--prefix-paths` | Serve site with link paths prefixed (if built with pathPrefix in your gatsby-config.js). |
+|     Pilihan     | Deskripsi                                       |
+| :-------------: | ----------------------------------------------- |
+| `-H`, `--host`  | Menetapkan host. Bawaannya yaitu localhost      |
+| `-p`, `--port`  | Menetapkan port. Bawaannya yaitu 8000           |
+| `-o`, `--open`  | Membuka situs di browser (bawaan) Anda          |
+| `-S`, `--https` | Menyediakan situs dengan jalur tautan yang menggunakan awalan (jika dibangun dengan pathPrefix di gatsby-config.js Anda). |
 
 ### `info`
 
-At the root of a Gatsby site, get helpful environment information which will be required when reporting a bug:
+Pada *root* situs Gatsby, dapatkan informasi lingkungan yang akan diperlukan saat melaporkan *bug*:
 
 `gatsby info`
 
-#### Options
+#### Pilihan
 
-|       Option        | Description                                             |
-| :-----------------: | ------------------------------------------------------- |
-| `-C`, `--clipboard` | Automagically copy environment information to clipboard |
+|       Pilihan       | Deskripsi                                                    |
+| :-----------------: | -------------------------------------------------------      |
+| `-C`, `--clipboard` | Secara otomatis menyalin informasi lingkungan ke *clipboard* |
 
 ### `clean`
 
-At the root of a Gatsby site, wipe out the cache (`.cache` folder) and public directories:
+Pada *root* situs Gatsby, menghapus *cache* (folder `.cache`) dan direktori publik:
 
 `gatsby clean`
 
-This is useful as a last resort when your local project seems to have issues or content does not seem to be refreshing. Issues this may fix commonly include:
+Ini berguna sebagai upaya terakhir ketika proyek lokal Anda tampaknya memiliki masalah. Masalah yang dapat diperbaiki ini biasanya meliputi:
 
-- Stale data, e.g. this file/resource/etc. isn't appearing
-- GraphQL error, e.g. this GraphQL resource should be present but is not
-- Dependency issues, e.g. invalid version, cryptic errors in console, etc.
-- Plugin issues, e.g. developing a local plugin and changes don't seem to be taking effect
+- Data lama, misalnya file/resource/etc. ini tidak muncul
+- Kesalahan GraphQL, misalnya sumber daya GraphQL ini harusnya ada tetapi ternyata tidak
+- Masalah *dependency*, misalnya versi tidak valid, kesalahan *cryptic* di konsol, dll.
+- Masalah *plugin*, misalnya mengembangkan *plugin* lokal dan perubahan tampaknya tidak berpengaruh
 
 ### `plugin`
 
-Run commands pertaining to gatsby plugins.
+Menjalankan perintah yang berkaitan dengan *plugin* gatsby.
 
 #### `docs`
 
 `gatsby plugin docs`
 
-Directs you to documentation about using and creating plugins.
+Mengarahkan Anda ke dokumentasi tentang penggunaan dan pembuatan *plugin*.
 
 ### Repl
 
-Get a Node.js REPL (interactive shell) with context of your Gatsby environment:
+Mendapatkan Node.js REPL (shell interaktif) dengan konteks lingkungan Gatsby Anda:
 
 `gatsby repl`
 
-Gatsby will prompt you to type in commands and explore. When it shows this: `gatsby >`
+Gatsby akan meminta Anda untuk mengetik perintah dan *explore*. Ketika itu menunjukkan ini: `gatsby >`
 
-You can type in a command, such as one of these:
+Anda bisa mengetikkan perintah, seperti salah satu dari:
 
 `babelrc`
 
@@ -200,10 +200,10 @@ You can type in a command, such as one of these:
 
 `staticQueries`
 
-When combined with the [GraphQL explorer](/docs/introducing-graphiql/), these REPL commands could be very helpful for understanding your Gatsby site's data.
+Ketika dikombinasikan dengan [GraphQL explorer](/docs/introducing-graphiql/), perintah REPL ini bisa sangat membantu untuk memahami data situs Gatsby Anda.
 
-For more information, check out the [Gatsby REPL documentation](/docs/gatsby-repl/).
+Untuk informasi lebih lanjut, lihat [Dokumentasi Gatsby REPL](/docs/gatsby-repl/).
 
-### Disabling colored output
+### Menonaktifkan *output* berwarna
 
-In addition to the explicit `--no-color` option, the CLI respects the presence of the `NO_COLOR` environment variable (see [no-color.org](https://no-color.org/)).
+Selain opsi `--no-color` yang eksplisit, CLI menghargai keberadaan variabel lingkungan `NO_COLOR` (lihat [no-color.org](https://no-color.org/)).
