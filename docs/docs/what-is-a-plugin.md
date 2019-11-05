@@ -1,14 +1,14 @@
 ---
-title: What is a Plugin?
+title: Apa itu Plugin?
 ---
 
-Gatsby plugins are Node.js packages that implement Gatsby APIs. For larger, more complex sites, plugins let you modularize your site customizations into site-specific plugins.
+Plugin Gatsby adalah paket Node.js yang menerapkan API Gatsby. Untuk situs yang lebih besar dan lebih kompleks, plugin memungkinkan Anda memodulasi kustomisasi situs Anda menjadi plugin khusus situs.
 
-One of the best ways to add functionality to Gatsby is through our plugin system. Gatsby is designed to be extensible, which means plugins are able to extend and modify just about everything Gatsby does.
+Salah satu cara terbaik untuk menambahkan fungsionalitas ke Gatsby adalah melalui sistem plugin kami. Gatsby dirancang agar dapat dikembangkan, yang berarti plugin dapat memperluas dan memodifikasi apa saja yang dilakukan Gatsby.
 
-Of the many possibilities, plugins can:
+Dari sekian banyak kemungkinan, plugin dapat:
 
-- add external data or content (e.g. your CMS, static files, a REST API) to your Gatsby GraphQL data
-- transform data from other formats (e.g. Markdown, YAML, CSV) to JSON objects
-- add third-party services (e.g. Google Analytics, Instagram) to your site
-- do anything you can dream up!
+- menambahkan data atau konten eksternal (mis. CMS, file statis, REST API) ke data Gatsby GraphQL Anda
+- mentransformasikan data dari format lain (mis. Markdown, YAML, CSV) menjadi objek JSON
+- menambahkan layanan pihak ketiga (mis. Google Analytics, Instagram) ke situs Anda
+- lakukan apa saja yang bisa kamu impikan!
