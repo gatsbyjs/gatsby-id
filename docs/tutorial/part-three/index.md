@@ -32,7 +32,7 @@ Untuk pengantar awal menggunakan plugin, anda akan menginstal dan mengimplementa
 
 ### ✋ Membuat sebuah situs baru menggunakan Gatsby
 
-Seperti yang kami sebutkan di [bagian kedua](/tutorial/part-two/), pada titik ini alangkah baiknya dengan menutup jendela terminal yang tampil kemudian memproyeksikan file dari bagian tutorial sebelumnya, untuk menjaga semuanya tetap bersih pada bagian Desktop anda. lalu buka jendela terminal baru dan jalankan perintah berikut untuk membuat situs Gatsby baru didalam direktori yang disebut `tutorial-bagian-tiga` dan kemudian pindah ke direktori baru ini:
+Seperti yang kami sebutkan di [bagian kedua](/tutorial/part-two/),pada titik ini alangkah baiknya dengan menutup jendela terminal yang tampil dan juga file dari tutorial sebelumnya, untuk menjaga semuanya tetap bersih pada bagian Desktop anda. lalu buka jendela terminal baru dan jalankan perintah berikut untuk membuat situs Gatsby baru didalam direktori yang disebut `tutorial-bagian-tiga` dan kemudian pindah ke direktori baru ini:
 
 ```shell
 gatsby new tutorial-part-three https://github.com/gatsbyjs/gatsby-starter-hello-world
@@ -63,7 +63,7 @@ module.exports = {
       }
     }
   ]
-};
+}
 ```
 
 `gatsby-config.js` adalah file khusus lain yang secara otomatis akan dikenali Gatsby. Di sinilah Anda perlu menambahkan _plugin_ dan konfigurasi situs lainnya.
@@ -73,13 +73,13 @@ module.exports = {
 3. _Typography.js_ memerlukan file untuk konfigurasi. Buatlah direktori baru bernama `utils` didalam direktori `src`. Kemudian tambahkan file baru bernama `typography.js` ke dalam direktori `utils` dan salin bagian berikut ke dalam file tersebut:
 
 ```javascript:title=src/utils/typography.js
-import Typography from "typography";
-import fairyGateTheme from "typography-theme-fairy-gates";
+import Typography from "typography"
+import fairyGateTheme from "typography-theme-fairy-gates"
 
-const typography = new Typography(fairyGateTheme);
+const typography = new Typography(fairyGateTheme)
 
-export const { scale, rhythm, options } = typography;
-export default typography;
+export const { scale, rhythm, options } = typography
+export default typography
 ```
 
 4. Mulai jalankan server untuk pengembangan.
@@ -98,7 +98,7 @@ Salin berikut ini ke dalam `src/pages/index.js` Anda sehingga dapat melihat
 efek lebih baik dari CSS yang dihasilkan oleh `Typography.js`.
 
 ```jsx:title=src/pages/index.js
-import React from "react";
+import React from "react"
 
 export default () => (
   <div>
@@ -108,7 +108,7 @@ export default () => (
       websites.
     </p>
   </div>
-);
+)
 ```
 
 Situs anda akan terlihat seperti berikut ini:
@@ -119,7 +119,7 @@ Mari kita lakukan perbaikan secara cepat. Banyak situs memiliki satu kolom teks 
 `<div>` pada `src/pages/index.js`.
 
 ```jsx:title=src/pages/index.js
-import React from "react";
+import React from "react"
 
 export default () => (
   // highlight-next-line
@@ -130,7 +130,7 @@ export default () => (
       websites.
     </p>
   </div>
-);
+)
 ```
 
 ![with-layout2](with-layout2.png)
@@ -142,18 +142,18 @@ Manis bukan. Anda telah berhasil menambahkan dan mengkonfigurasi _plugin_ Gatsby
 Saatnya memulai belajar mengenai komponen-komponen dari _layout_. Agar siap untuk bagian ini, tambahkan beberapa halaman baru ke proyek Anda, seperti halaman _about_ dan halaman _contact_.
 
 ```jsx:title=src/pages/about.js
-import React from "react";
+import React from "react"
 
 export default () => (
   <div>
     <h1>About me</h1>
     <p>I’m good enough, I’m smart enough, and gosh darn it, people like me!</p>
   </div>
-);
+)
 ```
 
 ```jsx:title=src/pages/contact.js
-import React from "react";
+import React from "react"
 
 export default () => (
   <div>
@@ -162,7 +162,7 @@ export default () => (
       <a href="mailto:me@example.com">me@example.com</a>
     </p>
   </div>
-);
+)
 ```
 
 Mari kita lihat seperti apa tampilan halaman yang baru:
@@ -180,13 +180,13 @@ Anda akan mulai mengatasi perubahan ini dengan membuat komponen _layout_ pertama
 2. Buat komponen _layout_ yang sangat mendasar pada `src/components/layout.js`:
 
 ```jsx:title=src/components/layout.js
-import React from "react";
+import React from "react"
 
 export default ({ children }) => (
   <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
     {children}
   </div>
-);
+)
 ```
 
 3. Tambahkan komponen _layout_ yang baru ini ke dalam komponen halaman `src/pages/index.js` Anda:
@@ -221,14 +221,14 @@ Konten ketiga halaman Anda terpusat ditengah berkat komponen _layout_ tunggal ya
 1. Tambahkan baris berikut ke komponen _layout_ baru Anda:
 
 ```jsx:title=src/components/layout.js
-import React from "react";
+import React from "react"
 
 export default ({ children }) => (
   <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
     <h3>MySweetSite</h3> {/* highlight-line */}
     {children}
   </div>
-);
+)
 ```
 
 Jika Anda membuka salah satu dari tiga halaman Anda, Anda akan melihat judul yang sama ditambahkan, misalnya halaman `/about/`:
@@ -240,15 +240,15 @@ Jika Anda membuka salah satu dari tiga halaman Anda, Anda akan melihat judul yan
 1. Salin bagian berikut ini ke file komponen _layout_ Anda:
 
 ```jsx:title=src/components/layout.js
-import React from "react";
+import React from "react"
 // highlight-start
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
-);
+)
 // highlight-end
 
 export default ({ children }) => (
@@ -267,7 +267,7 @@ export default ({ children }) => (
     {/* highlight-end */}
     {children}
   </div>
-);
+)
 ```
 
 ![with-navigation2](with-navigation2.png)
