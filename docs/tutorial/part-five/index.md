@@ -1,5 +1,5 @@
 ---
-title: Source Plugin
+title: *Source* Plugin
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
@@ -89,7 +89,7 @@ Di panel Exploere, bidang `id` telah dipilih secara otomatis. Tentukan pilihan u
 
 ![pilihan-pada-filesystem-explorer](filesystem-explorer-options.png)
 
-Alternatifnya, Anda dapat menambahkan bidang dengan menggunakan pintasan _autocomplete_ (<kbd>Ctrl + Space</kbd>). Ini akan menampilkan bindang yang dapat diminta pada node `File`.
+Alternatifnya, Anda dapat menambahkan bidang dengan menggunakan pintasan _autocomplete_ (<kbd>Ctrl + Space</kbd>). Ini akan menampilkan bidang yang dapat diminta pada node `File`.
 
 ![filesystem-autocomplete](filesystem-autocomplete.png)
 
@@ -108,22 +108,13 @@ untuk mulai membangun UI.
 
 Ayo Coba ini.
 
-Building new pages with Gatsby often starts in GraphiQL. You first sketch out
-the data query by playing in GraphiQL then copy this to a React page component
-to start building the UI.
-
-Let's try this.
-
 Buat file baru di `src/pages/my-files.js` dengan `allFile` GraphQL _query_ Anda baru saja
 dibuat
 
-Create a new file at `src/pages/my-files.js` with the `allFile` GraphQL query you just
-created:
-
 ```jsx:title=src/pages/my-files.js
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 export default ({ data }) => {
   console.log(data) // highlight-line
@@ -164,9 +155,9 @@ Bentuk data sama dengan bentuk dari GraphQL _query_.
 Tambahkan beberapa kode ke komponen Anda untuk mencetak File data.
 
 ```jsx:title=src/pages/my-files.js
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 export default ({ data }) => {
   console.log(data)
