@@ -5,10 +5,15 @@ Kami sangat membutuhkan kontribusi kalian dan Gatsby mengapresiasi semua kontrib
 
 ## Terima Kasih
 
-Berikut adalah daftar yang telah memberikan kontribusi
+Berikut adalah daftar yang telah memberikan kontribusi (yang telah di *merged*)
 
+- [adiatma](https://github.com/adiatma)
+- [andriawan](https://github.com/andriawan)
 - [bangunbagustapa](https://github.com/bangunbagustapa)
+- [hannaiazizah](https://github.com/hannaiazizah)
 - [iamyuu](https://github.com/iamyuu)
+- [pbwibowo](https://github.com/pbwibowo)
 - [sprabowo](https://github.com/sprabowo)
+
 
 Terima kasih banyak atas kontribusi kalian :purple_heart:
