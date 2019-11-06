@@ -1,53 +1,53 @@
 ---
-title: Source Plugins
+title: *Source* Plugin
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-> This tutorial is part of a series about Gatsby’s data layer. Make sure you’ve gone through [part 4](/tutorial/part-four/) before continuing here.
+> Tutorial ini adalah bagian dari seri tentang data layer Gatsby. Pastikan Anda telah melewati [part 4](/tutorial/part-four/) sebelum ke sini.
 
-## What's in this tutorial?
+## Apa yang ada di toturial ini?
 
-In this tutorial, you'll be learning about how to pull data into your Gatsby site using GraphQL and source plugins. Before you learn about these plugins, however, you'll want to know how to use something called GraphiQL, a tool that helps you structure your queries correctly.
+Di dalam tutorial ini, Anda akan belajar tentang bagaimana cara menarik data ke situs Gatsby Anda menggunakan GraphQL dan _source_ plugin. Namun, sebelum Anda belajar tentang plugin ini, Anda pasti ingin tahu caranya menggunakan sesuatu yang di sebut GraphiQL, alat yang membantu Anda menyusun kueri dengan benar.
 
-## Introducing GraphiQL
+## Pengantar GraphiQL
 
-GraphiQL is the GraphQL integrated development environment (IDE). It's a powerful (and all-around awesome) tool you'll use often while building Gatsby websites.
+GraphiQL adalah _integrated development environment_ (IDE) untuk GraphQL. Ini adalah alat yang ampuh (dan luar biasa) yang akan sering Anda gunakan saat membangun situs web Gatsby.
 
-You can access it when your site's development server is running—normally at
+Anda dapat mengaksesnya ketika server pengembangan situs Anda berjalan, biasanya di
 <http://localhost:8000/___graphql>.
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4"></source>
-  <p>Your browser does not support the video element.</p>
+  <p>Browser Anda tidak mendukung elemen video.</p>
 </video>
 
-Poke around the built-in `Site` "type" and see what fields are available on it -- including the `siteMetadata` object you queried earlier. Try opening GraphiQL and play with your data! Press <kbd>Ctrl + Space</kbd> (or use <kbd>Shift + Space</kbd> as an alternate keyboard shortcut) to bring up the autocomplete window and <kbd>Ctrl + Enter</kbd> to run the GraphQL query. You'll be using GraphiQL a lot more through the remainder of the tutorial.
+Lihat pada "tipe" `Site` dan lihat kolom apa yang tersedia di dalamnya, termasuk objek `siteMetadata` yang Anda minta sebelumnya. Coba buka GraphiQL dan mainkan dengan data Anda! Tekan <kbd>Ctrl + Space</kbd> (atau gunakan <kbd>Shift + Space</kbd> sebagai alternatif pintasan keyboard) untuk membuka jendela _autocomplete_ dan <kbd>Ctrl + Enter</kbd> untuk menjalankan kueri GraphQL. Anda akan menggunakan GraphiQL lebih banyak melalui tutorial yang tersisa.
 
-## Using the GraphiQL Explorer
+## Menggunakan GraphiQL *Explorer*
 
-The GraphiQL Explorer enables you to interactively construct full queries by clicking through available fields and inputs without the repetitive process of typing these queries out by hand.
+GraphiQL *Explorer* memungkinkan Anda untuk membangun kueri penuh secara interaktif dengan mengklik bidang dan input yang tersedia tanpa proses mengetik kueri berulang dengan tangan.
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-build-a-graphql-query-using-gatsby-s-graphiql-explorer"
-  lessonTitle="Build a GraphQL Query using Gatsby’s GraphiQL Explorer"
+  lessonTitle="Membuat kueri GraphQL menggunakan Gatsby GraphiQL Explorer"
 />
 
-## Source plugins
+## _Source_ plugin
 
-Data in Gatsby sites can come from anywhere: APIs, databases, CMSs, local files, etc.
+Data di situs Gatsby dapat berasal dari mana saja: APIs, databases, CMSs, local files, dll.
 
-Source plugins fetch data from their source. E.g. the filesystem source plugin knows how to fetch data from the file system. The WordPress plugin knows how to fetch data from the WordPress API.
+_Source_ plugin menggambil data dari sumbernya. Misalnya plugin _source filesystem_ tahu cara mengambil data dari sistem file. WordPress plugin tahu cara mengambil data dari API WordPress.
 
-Add [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) and explore how it works.
+Tambahkan [`gatsby-source-filesystem`](/packages/gatsby-source-filesystem/) dan jelajahi cara kerjanya.
 
-First, install the plugin at the root of the project:
+Pertama, install plugin di _root_ projek:
 
 ```shell
 npm install --save gatsby-source-filesystem
 ```
 
-Then add it to your `gatsby-config.js`:
+Selanjutnya tambahkan ini ke `gatsby-config.js` Anda:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -75,42 +75,41 @@ module.exports = {
 }
 ```
 
-Save that and restart the gatsby development server. Then open up GraphiQL again.
+Simpan itu dan mulai ulang server pengembangan gatsby. Kemudian buka kembali GraphiQL.
 
-In the explorer pane, you'll see `allFile` and `file` available as selections:
+Di panel penjelajah, Anda akan melihat `allFile` dan `file` tersedia sebagai pilihan:
 
 ![graphiql-filesystem](graphiql-filesystem.png)
 
-Click the `allFile` dropdown. Position your cursor after `allFile` in the query area, and then type <kbd>Ctrl + Enter</kbd>. This will pre-fill a query for the `id` of each file. Press "Play" to run the query:
+Klik dropdown `allFile`. Posisikan kursor Anda setelah `allFile` di area permintaan, dan lalu ketik <kbd>Ctrl + Enter</kbd>. Ini akan mengisi `id` untuk setiap file terlebih dahulu. Tekan "Mainkan" untuk menjalankan kueri:
 
 ![filesystem-query](filesystem-query.png)
 
-In the Explorer pane, the `id` field has automatically been selected. Make selections for more fields by checking the field's corresponding checkbox. Press "Play" to run the query again, with the new fields:
+Di panel Exploere, bidang `id` telah dipilih secara otomatis. Tentukan pilihan untuk lebih banyak bidang dengan mencentang kotak yang sesuai pada bidang tersebut. Tekan "Mainkan" untuk menjalankan kueri lagi, dengan bidang baru:
 
-![filesystem-explorer-options](filesystem-explorer-options.png)
+![pilihan-pada-filesystem-explorer](filesystem-explorer-options.png)
 
-Alternatively, you can add fields by using the autocomplete shortcut (<kbd>Ctrl + Space</kbd>). This will show queryable fields on the `File` nodes.
+Alternatifnya, Anda dapat menambahkan bidang dengan menggunakan pintasan _autocomplete_ (<kbd>Ctrl + Space</kbd>). Ini akan menampilkan bidang yang dapat diminta pada node `File`.
 
 ![filesystem-autocomplete](filesystem-autocomplete.png)
 
-Try adding a number of fields to your query, pressing <kbd>Ctrl + Enter</kbd>
-each time to re-run the query. You'll see the updated query results:
+Coba tambahkan sejumlah bidang ke kueri Anda, dengan menekan <kbd>Ctrl + Enter</kbd>
+setiap kali menjalankan kueri kembali. Anda akan melihat hasil _query_ yang diperbarui:
 
 ![allfile-query](allfile-query.png)
 
-The result is an array of `File` "nodes" (node is a fancy name for an object in a
-"graph"). Each `File` node object has the fields you queried for.
+Hasilnya adalah array dari `File` "nodes" (_node_ adalah nama mewah untuk objek di "_graph_"). Setiap objek `File` _node_ memiliki bidang yang Anda minta.
 
-## Build a page with a GraphQL query
+## Membuat halaman dengan GraphQL _query_
 
-Building new pages with Gatsby often starts in GraphiQL. You first sketch out
-the data query by playing in GraphiQL then copy this to a React page component
-to start building the UI.
+Membangun halaman baru dengna Gatsby sering dimulai dengan GraphiQL. Anda pertama-tama membuat sketsa
+kueri data dengan bermain di GraphiQL lalu salin ini ke halaman komponen React
+untuk mulai membangun UI.
 
-Let's try this.
+Ayo Coba ini.
 
-Create a new file at `src/pages/my-files.js` with the `allFile` GraphQL query you just
-created:
+Buat file baru di `src/pages/my-files.js` dengan `allFile` GraphQL _query_ Anda baru saja
+dibuat
 
 ```jsx:title=src/pages/my-files.js
 import React from "react"
@@ -142,18 +141,18 @@ export const query = graphql`
 `
 ```
 
-The `console.log(data)` line is highlighted above. It's often helpful when
-creating a new component to console out the data you're getting from the GraphQL query
-so you can explore the data in your browser console while building the UI.
+Baris `console.log(data)` disorot lebih tinggi. Ini sering membantu ketika
+membuat komponen baru untuk mencetak data yang Anda dapatkan dari GraphQL _query_
+sehingga Anda dapat menjelajahi data di konsol browser Anda sambil membuat UI.
 
-If you visit the new page at `/my-files/` and open up your browser console
-you will see something like:
+Jika Anda menggunjungi halaman baru di `/my-files/` dan buka konsol browser Anda
+Anda akan melihat sesuatu seperti:
 
-![data-in-console](data-in-console.png)
+![data-di-konsol](data-in-console.png)
 
-The shape of the data matches the shape of the GraphQL query.
+Bentuk data sama dengan bentuk dari GraphQL _query_.
 
-Add some code to your component to print out the File data.
+Tambahkan beberapa kode ke komponen Anda untuk mencetak File data.
 
 ```jsx:title=src/pages/my-files.js
 import React from "react"
@@ -209,10 +208,10 @@ export const query = graphql`
 `
 ```
 
-And now visit [http://localhost:8000/my-files](http://localhost:8000/my-files)… 😲
+Dan sekarang buka [http://localhost:8000/my-files](http://localhost:8000/my-files)… 😲
 
-![my-files-page](my-files-page.png)
+![halaman-my-files](my-files-page.png)
 
-## What's coming next?
+## Apa selanjutnya?
 
-Now you've learned how source plugins bring data _into_ Gatsby’s data system. In the next tutorial, you'll learn how transformer plugins _transform_ the raw content brought by source plugins. The combination of source plugins and transformer plugins can handle all data sourcing and data transformation you might need when building a Gatsby site. Learn about transformer plugins in [part six of the tutorial](/tutorial/part-six/).
+Sekarang Anda telah belajar bagaimana _source_ plugin membawa data ke sistem data Gatsby. Di tutorial selanjutnya, Anda akan belajar bagaimana plugin transformer membawa data mentah yang dibawa oleh _source_ plugin. Kombinasi _source_ plugin dan plugin transformer dapat menangani semua sumber data dan transformasi data yang Anda perlukan saat membangun situs Gatsby. Pelajari tentang plugin transformer di [bagian ke 6 dari tutorial tutorial](/tutorial/part-six/).
