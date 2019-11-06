@@ -54,7 +54,7 @@ export default () => (
 ```js
 impor Aksi dari "aksi"
 expor standar () => (
-   <div gaya = {{color: `ungu`, fontSize:` 72px`}}> Halo Gatsby! </div>
+   <div style= {{color: `ungu`, fontSize:` 72px`}}> Halo Gatsby! </div>
 )
 ```
 
