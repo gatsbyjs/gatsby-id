@@ -1,18 +1,18 @@
 ---
-title: Using a Plugin in Your Site
+title: Menggunakan Plugin pada situs Anda
 ---
 
-Gatsby plugins are Node.js packages, so you can install them like other packages in node using NPM.
+Plugin Gatsby adalah paket Node.js, jadi Anda dapat menginstallnya seperti paket lain menggunakan NPM.
 
-For example, `gatsby-transformer-json` is a package which adds support for JSON files to the Gatsby data layer.
+Misalnya, `gatsby-transformer-json` adalah paket yang akan menambahkan dukungan untuk file JSON ke lapisan data Gatsby.
 
-To install it, in the root of your site you run:
+Untuk menginstallnya, di *root* situs Anda jalankan:
 
 ```shell
 npm install --save gatsby-transformer-json
 ```
 
-Then in your site's `gatsby-config.js` you add `gatsby-transformer-json` to the plugins array like:
+Kemudian di `gatsby-config.js` pada situs Anda, tambahkan `gatsby-transformer-json` ke dalam array seperti:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
 }
 ```
 
-Plugins can take options. For example:
+Plugin dapat mengambil opsi. Sebagai contoh:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -53,4 +53,4 @@ module.exports = {
 }
 ```
 
-Note that plugin options will be stringified by Gatsby, so they cannot be functions.
+Perhatikan bahwa opsi plugin akan dirangkai oleh Gatsby, jadi mereka tidak bisa berupa fungsi.
