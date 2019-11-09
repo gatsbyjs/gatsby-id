@@ -1,144 +1,114 @@
 ---
-title: Programmatically create pages from data
+title: Secara terprogram membuat halaman dari data
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-> This tutorial is part of a series about Gatsby’s data layer. Make sure you’ve gone through [part 4](/tutorial/part-four/), [part 5](/tutorial/part-five/), and [part 6](/tutorial/part-six/) before continuing here.
+> Tutorial ini adalah bagian dari rangkaian tentang _data layer_ Gatsby. Pastikan Anda telah melewati [bagian 4](/tutorial/part-four/), [bagian 5](/tutorial/part-five/), dan [bagian 6](/tutorial/part-six/) sebelum melanjutkan di sini.
 
-## What's in this tutorial?
+## Apa yang ada di tutorial ini?
 
-In the previous tutorial, you created a nice index page that queries markdown
-files and produces a list of blog post titles and excerpts. But you don't want to just see excerpts, you want actual pages for your
-markdown files.
+Di tutorial sebelumnya, Anda telah membuat halaman indeks yang mengambil file _markdown_ dan menghasilkan daftar dari judul postingan blog beserta kutipannya. Tapi, tentu Anda tidak ingin hanya melihat kutipan saja, Anda ingin melihat halaman sebenarnya dari file _markdown_.
 
-You could continue to create pages by placing React components in `src/pages`. However, you'll
-now learn how to _programmatically_ create pages from _data_. Gatsby is _not_
-limited to making pages from files like many static site generators. Gatsby lets
-you use GraphQL to query your _data_ and _map_ the query results to _pages_—all at build
-time. This is a really powerful idea. You'll be exploring its implications and
-ways to use it for the remainder of this part of the tutorial.
+Anda bisa melanjutkan untuk membuat halaman dengan menempatkan komponen React di `src/pages`. Namun, sekarang Anda akan belajar bagimana untuk secara terprogram membuat halaman dari _data_. Gatsby _tidak_ terbatas hanya membuat halaman dari _files_ seperti kebanyakan generator halaman statis. Gatsby mengijinkan Anda menggunakan GraphQL untuk mengambil _data_ dan _memetakan_ hasil dari _query_ ke semua _halaman_ pada saat _build time_. Ini adalah ide yang sangat _powerful_. Anda akan mengeksplorasi maksud dan cara menggunakannya di tutorial ini.
 
-Let's get started.
+Mari kita mulai.
 
-## Creating slugs for pages
+## Membuat _slugs_ untuk halaman
 
-Creating new pages has two steps:
+Membuat halaman baru memiliki dua langkah:
 
-1.  Generate the "path" or "slug" for the page.
-2.  Create the page.
+1.  Menghasilkan "_path_" atau "_slug_" untuk halaman.
+2.  Membuat halaman.
 
-_**Note**: Often data sources will directly provide a slug or pathname for content — when working with one of those systems (e.g. a CMS), you don't need to create the slugs yourself as you do with markdown files._
+_**Catatan**: Seringkali sumber data akan secara langsung memberikan slug atau nama tujuan untuk konten — ketika bekerja dengan salah satu sistem (contohnya sebuah CMS), Anda tidak harus membuat sendiri slugs seperti yang Anda lakukan untuk file markdown._
 
-To create your markdown pages, you'll learn to use two Gatsby APIs:
-[`onCreateNode`](/docs/node-apis/#onCreateNode) and
-[`createPages`](/docs/node-apis/#createPages). These are two workhorse APIs
-you'll see used in many sites and plugins.
+Untuk membuat halaman _markdown_, Anda akan belajar menggunakan dua APIs Gatsby: [`onCreateNode`](/docs/node-apis/#onCreateNode) dan [`createPages`](/docs/node-apis/#createPages). Keduanya adalah APIs utama yang akan sering Anda lihat digunakan di banyak situs dan plugin.
 
-We do our best to make Gatsby APIs simple to implement. To implement an API, you export a function
-with the name of the API from `gatsby-node.js`.
+Kami melakukan yang terbaik untuk membuat APIs Gatsby mudah diimplementasikan. Untuk implementasi API, Anda akan mengkespor sebuah fungsi dari API `gatsby-node.js`.
 
-So, here's where you'll do that. In the root of your site, create a file named
-`gatsby-node.js`. Then add the following.
+Jadi, begini cara melakukannya. Di folder bagian atas (_root_) situs anda, buat sebuah file dengan nama `gatsby-node.js`. Kemudian tambahkan sebagai berikut:
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
-  console.log(node.internal.type)
-}
+  console.log(node.internal.type);
+};
 ```
 
-This `onCreateNode` function will be called by Gatsby whenever a new node is created (or updated).
+`onCreateNode` adalah fungsi yang akan dipanggil oleh Gatsby ketika _node_ baru telah berhasil dibuat (atau diperbaharui).
 
-Stop and restart the development server. As you do, you'll see quite a few newly
-created nodes get logged to the terminal console.
+_Stop_ dan _restart_ server _development_. Setelah itu, Anda akan melihat beberapa _node_ telah dibuat dan ditampilkan di konsol _terminal_.
 
-Use this API to add the slugs for your markdown pages to `MarkdownRemark`
-nodes.
+Pergunakan API untuk menambahkan _slugs_ pada halaman _markdown_ Anda ke `MarkdownRemark` _nodes_.
 
-Change your function so it now only logs `MarkdownRemark` nodes.
+Ubah fungsi Anda, sehingga _logs_ hanya menampilkan `MarkdownRemark` nodes.
 
 ```javascript:title=gatsby-node.js
 exports.onCreateNode = ({ node }) => {
   // highlight-start
   if (node.internal.type === `MarkdownRemark`) {
-    console.log(node.internal.type)
+    console.log(node.internal.type);
   }
   // highlight-end
-}
+};
 ```
 
-You want to use each markdown file name to create the page slug. So
-`pandas-and-bananas.md` will become `/pandas-and-bananas/`. But how do you get
-the file name from the `MarkdownRemark` node? To get it, you need to _traverse_
-the "node graph" to its _parent_ `File` node, as `File` nodes contain data you
-need about files on disk. To do that, modify your function again:
+Anda ingin menggunakan setiap nama file _markdown_ untuk membuat _slug_ dari halaman. Sehingga `pandas-and-bananas.md` akan menjadi `/pandas-and-bananas/`. Tapi bagaimana Anda mendapatkan nama file dari _node_ `MarkdownRemark`? Untuk mendapatkannya, Anda harus meneruskan (_traverse_) "_node graph_" ke _parent node `File`_, karena _node `File`_ memiliki data yang Anda butuhkan dari _disk_. Untuk melakukannya, ubah fungsi anda lagi:
 
 ```javascript:title=gatsby-node.js
 // highlight-next-line
 exports.onCreateNode = ({ node, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     // highlight-start
-    const fileNode = getNode(node.parent)
-    console.log(`\n`, fileNode.relativePath)
+    const fileNode = getNode(node.parent);
+    console.log(`\n`, fileNode.relativePath);
     // highlight-end
   }
-}
+};
 ```
 
-After restarting your development server, you should see the relative paths for your two markdown
-files print to the terminal screen.
+Setelah _restart_ server _development_, Anda seharusnya melihat _relative paths_ untuk dua file _markdown_ ditampilkan di layar _terminal_.
 
 ![markdown-relative-path](markdown-relative-path.png)
 
-Now you'll have to create slugs. As the logic for creating slugs from file names can get
-tricky, the `gatsby-source-filesystem` plugin ships with a function for creating
-slugs. Let's use that.
+Sekarang Anda harus membuat _slugs_. Karena logika untuk membuat _slugs_ dari nama _file_ akan rumit, maka plugin `gatsby-source-filesystem` telah memiliki fungsi untuk membuat _slugs_.
+Mari gunakan pluginnya.
 
 ```javascript:title=gatsby-node.js
-const { createFilePath } = require(`gatsby-source-filesystem`) // highlight-line
+const { createFilePath } = require(`gatsby-source-filesystem`); // highlight-line
 
 exports.onCreateNode = ({ node, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
-    console.log(createFilePath({ node, getNode, basePath: `pages` })) // highlight-line
+    console.log(createFilePath({ node, getNode, basePath: `pages` })); // highlight-line
   }
-}
+};
 ```
 
-The function handles finding the parent `File` node along with creating the
-slug. Run the development server again and you should see logged to the terminal
-two slugs, one for each markdown file.
+Fungsi tersebut menangani pencarian _parent `File` node_ bersamaan dengan pembuatan _slug_. Jalankan lagi server _development_ dan Anda akan melihat dua _slugs_ ditampilkan di _terminal_, satu untuk setiap file _markdown_.
 
-Now you can add your new slugs directly onto the `MarkdownRemark` nodes. This is
-powerful, as any data you add to nodes is available to query later with GraphQL.
-So, it'll be easy to get the slug when it comes time to create the pages.
+Sekarang Anda dapat menambahkan _slugs_ baru secara langsung ke dalam _nodes_ `MarkdownRemark`. Hal ini sangat _powerful_, karena data apapun yang Anda tambahkan ke _nodes_ akan tersedia untuk diambil nanti dengan GraphQL. Jadi, hal ini akan memudahkan untuk mendapatkan _slug_ ketika nanti akan membuat halaman.
 
-To do so, you'll use a function passed to your API implementation called
-[`createNodeField`](/docs/actions/#createNodeField). This function
-allows you to create additional fields on nodes created by other plugins. Only
-the original creator of a node can directly modify the node—all other plugins
-(including your `gatsby-node.js`) must use this function to create additional
-fields.
+Untuk melakukannya, Anda akan menggunakan fungsi dari API yaitu [`createNodeField`](/docs/actions/#createNodeField). Fungsi ini mengijinkan Anda untuk membuat _field_ tambahan pada _nodes_ yang dibuat oleh _plugins_ lain. Hanya pembuat asli dari _node_ yang dapat langsung mengubah semua _node_ dari _plugin_ lain (termasuk `gatsby-node.js` Anda) harus menggunakan fungsi ini untuk membuat tambahan _fields_.
 
 ```javascript:title=gatsby-node.js
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`);
 // highlight-next-line
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions // highlight-line
+  const { createNodeField } = actions; // highlight-line
   if (node.internal.type === `MarkdownRemark`) {
     // highlight-start
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
-    })
+      value: slug
+    });
     // highlight-end
   }
-}
+};
 ```
 
-Restart the development server and open or refresh GraphiQL. Then run this
-GraphQL query to see your new slugs.
+_Restart_ server _development_ dan _refresh_ GraphiQL. Kemudian jalankan perintah GraphQL berikut untuk melihat _slugs_ Anda yang baru:
 
 ```graphql
 {
@@ -154,26 +124,26 @@ GraphQL query to see your new slugs.
 }
 ```
 
-Now that the slugs are created, you can create the pages.
+Sekarang _slugs_ telah dibuat, Anda dapat membuat halaman.
 
-## Creating pages
+## Membuat Halaman
 
-In the same `gatsby-node.js` file, add the following.
+Di tempat yang sama dengan file `gatsby-node.js`, tambahkan seperti berikut:
 
 ```javascript:title=gatsby-node.js
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
-    })
+      value: slug
+    });
   }
-}
+};
 
 // highlight-start
 exports.createPages = async ({ graphql, actions }) => {
@@ -191,68 +161,63 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
-  console.log(JSON.stringify(result, null, 4))
-}
+  console.log(JSON.stringify(result, null, 4));
+};
 // highlight-end
 ```
 
-You've added an implementation of the
-[`createPages`](/docs/node-apis/#createPages) API which Gatsby calls so plugins can add
-pages.
+Anda akan menambahkan implementasi dari [`createPages`](/docs/node-apis/#createPages), ini adalah API yang dipanggil oleh Gatsby sehingga _plugins_ dapat membuat halaman.
 
-As mentioned in the intro to this part of the tutorial, the steps to programmatically creating pages are:
+Seperti disinggung pada awal bagian dari tutorial ini, langkah-langkah untuk membuat halaman secara terprogram adalah:
 
-1.  Query data with GraphQL
-2.  Map the query results to pages
+1.  Mengambil data dengan GraphQL
+2.  Memetakan hasil _query_ ke halaman
 
-The above code is the first step for creating pages from your markdown as you're
-using the supplied `graphql` function to query the markdown slugs you created.
-Then you're logging out the result of the query which should look like:
+Kode diatas adalah langkah pertama untuk membuat halaman dari _markdown_ Anda, saat Anda menggunakan fungsi yang disediakan `graphql` untuk mengambil _markdown slugs_ yang telah Anda buat sebelumnya. Kemudian hasil dari _query_ Anda akan menampilkan yang terlihat seperti:
 
 ![query-markdown-slugs](query-markdown-slugs.png)
 
-You need one additional thing beyond a slug to create pages: a page template
-component. Like everything in Gatsby, programmatic pages are powered by React
-components. When creating a page, you need to specify which component to use.
+Anda membutuhkan satu hal tambahan diluar _slug_ untuk membuat halaman: sebuah format komponen halaman.
+Seperti semua yang ada di Gatsby, halaman terprogram juga menggunakan komponen React.
+Ketika membuat halaman, Anda perlu menentukan komponen mana yang akan digunakan.
 
-Create a directory at `src/templates`, and then add the following in a file named
-`src/templates/blog-post.js`.
+Buat folder di `src/templates`, kemudian tambahkan kode di bawah ini, ke dalam _file_ dengan nama `src/templates/blog-post.js`.
 
 ```jsx:title=src/templates/blog-post.js
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
 
 export default () => {
   return (
     <Layout>
       <div>Hello blog post</div>
     </Layout>
-  )
-}
+  );
+};
 ```
 
-Then update `gatsby-node.js`
+Kemudian perbaharui `gatsby-node.js`
 
 ```javascript:title=gatsby-node.js
-const path = require(`path`) // highlight-line
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`); // highlight-line
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
-    })
+      value: slug
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions // highlight-line
+  const { createPage } = actions; // highlight-line
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -265,7 +230,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   // highlight-start
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -275,36 +240,32 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
-      },
-    })
-  })
+        slug: node.fields.slug
+      }
+    });
+  });
   // highlight-end
-}
+};
 ```
 
-Restart the development server and your pages will be created! An easy way to
-find new pages you create while developing is to go to a random path where
-Gatsby will helpfully show you a list of pages on the site. If you go to
-<http://localhost:8000/sdf>, you'll see the new pages you created.
+Jalankan ulang server _development_ dan halaman Anda akan dibuat! Cara mudah untuk mencari halaman baru yang telah dibuat adalah dengan membuka halaman secara acak, karena Gatsby akan membantu menunjukkan daftar halaman dari situs. Jika anda mengakses <http://localhost:8000/sdf>, Anda akan melihat halaman baru yang telah dibuat.
 
 ![new-pages](new-pages.png)
 
-Visit one of them and you see:
+Klik salah satu dari halaman, maka Anda akan melihat:
 
 ![hello-world-blog-post](hello-world-blog-post.png)
 
-Which is a bit boring and not what you want. Now you can pull in data from your markdown post. Change
-`src/templates/blog-post.js` to:
+Hal ini sedikit membosankan dan bukan yang Anda inginkan. Sekarang Anda bisa mengambil data dari postingan _markdown_. Ubah `src/templates/blog-post.js` ke:
 
 ```jsx:title=src/templates/blog-post.js
-import React from "react"
-import { graphql } from "gatsby" // highlight-line
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby"; // highlight-line
+import Layout from "../components/layout";
 
 // highlight-start
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   // highlight-end
   return (
     <Layout>
@@ -315,8 +276,8 @@ export default ({ data }) => {
       </div>
       {/* highlight-end */}
     </Layout>
-  )
-}
+  );
+};
 
 // highlight-start
 export const query = graphql`
@@ -328,27 +289,26 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 // highlight-end
 ```
 
-And…
+Dan…
 
 ![blog-post](blog-post.png)
 
-Sweet!
+Keren!
 
-The last step is to link to your new pages from the index page.
+Langkah terakhir adalah untuk menghubungkan halaman baru Anda dari halaman indeks.
 
-Return to `src/pages/index.js`, query for your markdown slugs, and create
-links.
+Kembali ke `src/pages/index.js`, ambil _markdown slugs_ Anda, dan buat penghubung.
 
 ```jsx:title=src/pages/index.js
-import React from "react"
-import { css } from "@emotion/core"
-import { Link, graphql } from "gatsby" // highlight-line
-import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
+import React from "react";
+import { css } from "@emotion/core";
+import { Link, graphql } from "gatsby"; // highlight-line
+import { rhythm } from "../utils/typography";
+import Layout from "../components/layout";
 
 export default ({ data }) => {
   return (
@@ -394,8 +354,8 @@ export default ({ data }) => {
         ))}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -418,28 +378,23 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 ```
 
-And there you go! A working, albeit small, blog!
+Dan selesai! Blog berfungsi, meskipun kecil!
 
-## Challenge
+## Tantangan
 
-Try playing more with the site. Try adding some more markdown files. Explore
-querying other data from the `MarkdownRemark` nodes and adding them to the
-frontpage or blog posts pages.
+Coba lebih banyak bermain-main dengan situs Anda. Coba tambahkan beberapa file _markdown_. Coba ambil data lain dari _nodes_ `MarkdownRemark` dan tambahkan hasilnya ke halaman utama atau halaman posting blog.
 
-In this part of the tutorial, you've learned the foundations of building with
-Gatsby's data layer. You've learned how to _source_ and _transform_ data using
-plugins, how to use GraphQL to _map_ data to pages, and then how to build _page
-template components_ where you query for data for each page.
+Pada tutorial ini, Anda telah belajar dasar dari pembuatan situs dengan _data layer_ Gatsby's. Anda telah belajar darimana sumber data dan cara mengubah data dengan _plugins_, bagaimana menggunakan GraphQL untuk _memetakan_ data ke halaman, dan kemudian bagaimana untuk membangun _template komponen halaman_ tempat Anda mengambil data untuk setiap halaman.
 
-## What's coming next?
+## Apa tutorial selanjutnya?
 
-Now that you've built a Gatsby site, where do you go next?
+Sekarang anda telah membangun situs dengan Gatsby, kemudian apa selanjutnya?
 
-- Share your Gatsby site on Twitter and see what other people have created by searching for #gatsbytutorial! Make sure to mention @gatsbyjs in your Tweet and include the hashtag #gatsbytutorial :)
-- You could take a look at some [example sites](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)
-- Explore more [plugins](/docs/plugins/)
-- See what [other people are building with Gatsby](/showcase/)
-- Check out the documentation on [Gatsby's APIs](/docs/api-specification/), [nodes](/docs/node-interface/), or [GraphQL](/docs/graphql-reference/)
+- Bagikan situs Gatsby anda ke Twitter dan lihat apa yang orang lain telah buat dengan mencari #gatsbytutorial! Pastikan untuk menyertakan @gatsbyjs dan _hashtag_ #gatsbytutorial di Tweet Anda :)
+- Anda dapat melihat beberapa [contoh situs](https://github.com/gatsbyjs/gatsby/tree/master/examples#gatsby-example-websites)
+- Cari tahu lebih lanjut [plugins](/docs/plugins/)
+- Lihat yang [orang lain buat dengan Gatsby](/showcase/)
+- Lihat dokumentasi [Gatsby's APIs](/docs/api-specification/), [nodes](/docs/node-interface/), atau [GraphQL](/docs/graphql-reference/)
