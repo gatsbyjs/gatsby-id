@@ -1,94 +1,95 @@
 ---
-title: Preparing a Site to Go Live
+judul: Mempersiapkan situs untuk Ditayangkan
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Wow! You've come a long way! You've learned how to:
+Wow! Anda telah melalui perjalanan belajar yang cukup jauh! mulai dari cara:
 
-- create new Gatsby sites
-- create pages and components
-- style components
-- add plugins to a site
-- source & transform data
-- use GraphQL to query data for pages
-- programmatically create pages from your data
+- Membuat situs Gatsby yang baru
+- Membuat halaman beserta komponennya
+- Membuat komponen tampilan atau _style_
+- Menambahkan _plugin_ kedalam situs anda
+- Sumber dan Perubahan data
+- Menggunakan _Graphql_ melakukan pengolahaan data untuk keperluan halaman anda
+- Membuat halaman secara terprogram dari data yang Anda miliki
 
-In this final section, you're going to walk through some common steps for preparing a site to go live by introducing a powerful site diagnostic tool called [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Along the way, we'll introduce a few more plugins you'll often want to use in your Gatsby sites.
+Di bagian akhir berikut ini, Anda akan berjalan beberapa langkah secara umum untuk menyiapkan situs anda untuk ditayangkan, dengan memperkenalkan alat diagnostik situs yang kuat bernama [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Selanjutnya, kami akan memperkenalkan ke beberapa _plugin_ lagi yang nantinya sering Anda gunakan di dalam situs Gatsby Anda.
 
-## Audit with Lighthouse
+## Pemeriksaan dengan menggunakan Lighthouse
 
-Quoting from the [Lighthouse website](https://developers.google.com/web/tools/lighthouse/):
+Mengutip dari [situs web Lighthouse](https://developers.google.com/web/tools/lighthouse/):
 
-> Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps (PWAs), and more.
 
-Lighthouse is included in Chrome DevTools. Running its audit -- and then addressing the errors it finds and implementing the improvements it suggests -- is a great way to prepare your site to go live. It helps give you confidence that your site is as fast and accessible as possible.
+> _Lighthouse_ merupakan sebuah sumber terbuka atau bisa disebut _open-source_, yang merupakan alat yang bekerja otomatis untuk peningkatan kualitas halaman web. Anda bisa menjalankannya di beberapa halaman web, baik publik bahkan yang memerlukan autentifikasi. Terdapat pemeriksaan untuk kinerja, kemudahan, _progressive web apps (PWAs)_, dan banyak lagi.
 
-Try it out!
+_Lighthouse_ juga termasuk di dalam bagian _Chrome DevTools_. Jalankan _lighthouse_ --  dan kemudian lakukan perbaikan kesalahan yang ditemukannya, serta implementasikan peningkatan yang disarankan -- berikut ini langkah yang bagus sebelum situs anda ditayangkan. membantu memberi Anda kepercayaan diri bahwa situs Anda cepat dan dapat diakses.
 
-First, you need to create a production build of your Gatsby site. The Gatsby development server is optimized for making development fast; But the site that it generates, while closely resembling a production version of the site, isn't as optimized.
+Mari coba sekarang!
 
-### ✋ Create a production build
+Pertama, Anda perlu membuat bagian produksi pengembangan situs Gatsby Anda. Server dari pengembangan Gatsby dioptimalkan untuk mempercepat proses pengembangan Namun situs yang dihasilkannya akan sangat mirip dengan versi produksi situs tersebut, meskipun tidak dioptimalkan.
 
-1.  Stop the development server (if it's still running) and run the following command:
+### ✋ Membuat sebuah pengembangan produksi
+
+1.  Hentikan _server_ pengembangan (jika masih berjalan) dan jalankan perintah berikut:
 
 ```shell
 gatsby build
 ```
+> 💡 Seperti yang telah Anda pelajari di [bagian 1](/tutorial/part-one/), ini menghasilkan berupa pengembangan situs Anda dan menghasilkan file statis yang ditempatkan ke dalam direktori `public`.
 
-> 💡 As you learned in [part 1](/tutorial/part-one/), this does a production build of your site and outputs the built static files into the `public` directory.
-
-2.  View the production site locally. Run:
+2. Lihat lokasi produksi situs secara lokal. jalankan perintah berikut ini:
 
 ```shell
 gatsby serve
 ```
 
-Once this starts, you can view your site at [`localhost:9000`](http://localhost:9000).
+Setelah ini dijalankan, Anda dapat melihat situs Anda di [`localhost:9000`](http://localhost:9000).
 
-### Run a Lighthouse audit
+### Menjalankan audit Lighthouse
 
-Now you're going to run your first Lighthouse test.
+Sekarang Anda akan menjalankan tes _Lighthouse_ pertama Anda.
 
-1.  If you haven't already done so, open the site in Chrome Incognito Mode so no extensions interfere with the test. Then, open up the Chrome DevTools.
+1.  Jika Anda belum melakukannya, buka situs dalam Mode Penyamaran atau _Incognito Mode_ pada _Chrome_ sehingga tidak ada ekstensi yang mengganggu proses pengujian. Lalu, buka _Chrome DevTools_.
 
-2.  Click on the "Audits" tab where you'll see a screen that looks like:
+2.  Klik pada tab "_Audit_" di mana Anda akan melihat layar yang terlihat seperti berikut ini:
 
 ![Lighthouse audit start](./lighthouse-audit.png)
 
-3.  Click "Perform an audit..." (All available audit types should be selected by default). Then click "Run audit". (It'll then take a minute or so to run the audit). Once the audit is complete, you should see results that look like this:
+3.  Klik "_Perform an audit..._" (Semua jenis audit yang tersedia harus dipilih secara _default_). Kemudian klik "_Run audit_". (Selanjutnya akan membutuhkan satu menit atau lebih untuk menjalankan audit). Setelah audit selesai, Anda akan melihat hasil yang terlihat seperti ini:
 
-![Lighthouse audit results](./lighthouse-audit-results.png)
+![Lighthouse audit start](./lighthouse-audit-results.png)
 
-As you can see, Gatsby's performance is excellent out of the box but you're missing some things for PWA, Accessibility, Best Practices, and SEO that will improve your scores (and in the process make your site much more friendly to visitors and search engines).
+Seperti yang Anda lihat, kinerja Gatsby anda sangat bagus, tetapi Anda kehilangan beberapa hal untuk _PWA, Accessibility, Best Practices, and SEO_ yang akan meningkatkan skor Anda (dan dalam proses berikut ini membuat situs Anda jauh lebih ramah bagi pengunjung dan mesin pencari).
 
-## Add a manifest file
+## Menambahkan sebuah file _manifest_
 
-Looks like you have a pretty lackluster score in the "Progressive Web App" category. Let's address that.
+Sepertinya Anda memiliki skor yang cukup tidak menarik di kategori "_Progressive Web App_". Mari kita atasi ini.
 
-But first, what exactly _are_ PWAs?
+Namun, apa sebenarnya _PWA_ itu?
 
-They are regular websites that take advantage of modern browser functionality to augment the web experience with app-like features and benefits. Check out [Google's overview](https://developers.google.com/web/progressive-web-apps/) of what defines a PWA experience.
+Mereka adalah situs web biasa yang memanfaatkan fungsionalitas dari mesin pencari _modern_ untuk menambah pengalaman web seperti fitur aplikasi. Lihat [ikhtisar dari Google](https://developers.google.com/web/progressive-web-apps/) yang menjelaskan pengalaman pada fitur _PWA_.
 
-Inclusion of a web app manifest is one of the three generally accepted [baseline requirements for a PWA](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1).
+Pencantuman _manifest_ pada aplikasi web adalah salah satu dari tiga syarat yang diterima secara umum, berikut [persyaratan dasar untuk _PWA_](https://alistapart.com/article/yes-that-web-project-should-be-a-pwa#section1).
 
-Quoting [Google](https://developers.google.com/web/fundamentals/web-app-manifest/):
+Kutipan dari [Google](https://developers.google.com/web/fundamentals/web-app-manifest/):
 
-> The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+> _Manifest_ pada aplikasi web adalah file berupa _JSON_ sederhana yang memberi tahu mesin pencari tentang aplikasi web Anda dan bagaimana seharusnya berperilaku ketika di-'_install_' pada perangkat seluler atau pada pengguna desktop.
 
-[Gatsby's manifest plugin](/packages/gatsby-plugin-manifest/) configures Gatsby to create a `manifest.webmanifest` file on every site build.
+[_Plugin manifest_ Gatsby](/packages/gatsby-plugin-manifest/) untuk mengkonfigurasi Gatsby dengan membuat file `manifest.webmanifest` di setiap pembuatan situs.
 
-### ✋ Using `gatsby-plugin-manifest`
+### ✋ Menggunakan `gatsby-plugin-manifest`
 
-1.  Install the plugin:
+1.  Menambahkan _plugin_:
 
 ```shell
 npm install --save gatsby-plugin-manifest
 ```
 
-2. Add a favicon for your app under `src/images/icon.png`. For the purposes of this tutorial you can use [this example icon](https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/tutorial/part-eight/icon.png), should you not have one available. The icon is necessary to build all images for the manifest. For more information, look at the docs for [`gatsby-plugin-manifest`](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-plugin-manifest/README.md).
+2. Tambahkan _favicon_ untuk aplikasi Anda di bawah `src/images/icon.png`. Untuk keperluan tutorial ini, jika Anda tidak memiliki satupun yang tersedia bisa Anda gunakan [contoh ikon berikut](https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/tutorial/part-eight/icon.png). Ikon sangat diperlukan untuk membuat semua gambar pada _manifest_. Untuk informasi lebih lanjut, lihat dokumen berikut ini [`gatsby-plugin-manifest`](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-plugin-manifest/README.md).
 
-3. Add the plugin to the `plugins` array in your `gatsby-config.js` file.
+
+3. Tambahkan _plugin_ ke dalam _array_ `plugins` pada file` gatsby-config.js` Anda.
 
 ```javascript:title=gatsby-config.js
 {
@@ -111,23 +112,23 @@ npm install --save gatsby-plugin-manifest
 }
 ```
 
-That's all you need to get started with adding a web manifest to a Gatsby site. The example given reflects a base configuration -- Check out the [plugin reference](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) for more options.
+Ini semua yang anda butuhkan cukup dengan menambahkan _manifest_ ke dalam situs web Gatsby anda. Contoh yang diberikan merupakan contoh konfigurasi dasar -- Lihat [referensi _plugin_](/packages/gatsby-plugin-manifest/?=gatsby-plugin-manifest#automatic-mode) untuk pilihan lainnya.
 
-## Add offline support
+## Menambahkan dukungan _Offline_
 
-Another requirement for a website to qualify as a PWA is the use of a [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API). A service worker runs in the background, deciding to serve network or cached content based on connectivity, allowing for a seamless, managed offline experience.
+Persyaratan lain agar situs web memenuhi syarat sebagai _PWA_ adalah penggunaan [_service worker_](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API). Sebuah _service worker_ berjalan di latar belakang, menentukan untuk melayani bagian jaringan atau konten yang di-_cache_ atau disembunyikan berdasarkan konektivitas, untuk memungkinkan pengalaman yang dapat dikelola tanpa hambatan saat anda _offline_.
 
-[Gatsby's offline plugin](/packages/gatsby-plugin-offline/) makes a Gatsby site work offline and more resistant to bad network conditions by creating a service worker for your site.
+[_Plugin offline_ Gatsby's](/packages/gatsby-plugin-offline/) membuat situs Gatsby anda dapat bekerja secara _offline_ dan lebih tahan terhadap kondisi jaringan yang buruk, dengan menciptakan sebuah _service worker_ untuk situs Anda.
 
-### ✋ Using `gatsby-plugin-offline`
+### ✋ Tambahkan `gatsby-plugin-offline`
 
-1.  Install the plugin:
+1.  Menambahkan _plugin_:
 
 ```shell
 npm install --save gatsby-plugin-offline
 ```
 
-2.  Add the plugin to the `plugins` array in your `gatsby-config.js` file.
+2.  Tambahkan _plugin_ ke dalam _array_ `plugins` pada file` gatsby-config.js` Anda.
 
 ```javascript:title=gatsby-config.js
 {
@@ -152,27 +153,27 @@ npm install --save gatsby-plugin-offline
 }
 ```
 
-That's all you need to get started with service workers with Gatsby.
+Hanya itu saja yang anda butuhkan untuk memulai menggunakan _service worker_ dengan Gatsby.
 
-> 💡 The offline plugin should be listed _after_ the manifest plugin so that the offline plugin can cache the created `manifest.webmanifest`.
+> 💡 _Plugin offline_ harus terdaftar setelah plugin _manifest_ sehingga _plugin offline_ dapat menyimpan _cache_ `manifest.webmanifest` yang dibuat.
 
-## Add page metadata
+## Menambahkan _metadata_ pada halaman
 
-Adding metadata to pages (such as a title or description) is key in helping search engines like Google understand your content and decide when to surface it in search results.
+Menambahkan _metadata_ ke dalam halaman (seperti judul atau deskripsi) merupakan kunci dalam membantu mesin pencari seperti _Google_ memahami konten Anda dan memutuskan kapan akan muncul di hasil pencarian.
 
-[React Helmet](https://github.com/nfl/react-helmet) is a package that provides a React component interface for you to manage your [document head](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head).
+[_React Helmet_](https://github.com/nfl/react-helmet) adalah _package_ yang menyediakan komponen dari _React_ untuk mengelola antarmuka di bagian [kop dokumen atau _document head_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head)anda.
 
-Gatsby's [react helmet plugin](/packages/gatsby-plugin-react-helmet/) provides drop-in support for server rendering data added with React Helmet. Using the plugin, attributes you add to React Helmet will be added to the static HTML pages that Gatsby builds.
+[_Plugin react helmet_](/packages/gatsby-plugin-react-helmet/) Gatsby menyediakan dukungan bersifat sementara atau bisa disebut _drop-in_ untuk _rendering data server_ yang nantinya ditambahkan dengan _React Helmet_. Dengan menggunakan _plugin_ ini, atribut yang Anda tambahkan ke _React Helmet_ akan ditambahkan juga ke dalam halaman _HTML_ statis yang dibuat oleh Gatsby.
 
-### ✋ Using `React Helmet` and `gatsby-plugin-react-helmet`
+### ✋ Menggunakan `React Helmet` dan` gatsby-plugin-react-helmet`
 
-1.  Install both packages:
+1.  Menambahkan kedua _package_:
 
 ```shell
 npm install --save gatsby-plugin-react-helmet react-helmet
 ```
 
-2.  Make sure you have a `description` and an `author` configured inside your `siteMetadata` object. Also, add the `gatsby-plugin-react-helmet` plugin to the `plugins` array in your `gatsby-config.js` file.
+2.  Pastikan Anda memiliki konfigurasi `_description_` dan `_author_` di dalam objek `_siteMetadata_` Anda. Tambahkan juga _plugin_ `gatsby-plugin-react-helmet` ke dalam _array `plugins`_ di dalam file `gatsby-config.js` Anda.
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -205,7 +206,7 @@ module.exports = {
 }
 ```
 
-3. In the `src/components` directory, create a file called `seo.js` and add the following:
+3. Di dalam direktori `src/components`, buat file bernama `seo.js` dan tambahkan berikut ini:
 
 ```jsx:title=src/components/seo.js
 import React from "react"
@@ -291,9 +292,9 @@ SEO.propTypes = {
 export default SEO
 ```
 
-The above code sets up defaults for your most common metadata tags and provides you an `<SEO>` component to work with in the rest of your project. Pretty cool, right?
+Kode di atas mengatur _default_ untuk _tag metadata_ Anda secara umum dan memberi Anda komponen `<SEO>` yang dikerjakan dengan santai pada proyek Anda. Cukup keren, bukan?
 
-4.  Now, you can use the `<SEO>` component in your templates and pages and pass props to it. For example, add it to your `blog-post.js` template like so:
+4.  Sekarang, Anda dapat menggunakan komponen `<SEO>` di _template_ dan halaman Anda serta meneruskan _props_ ke sana. Sebagai contoh, tambahkan ke _template_ `blog-post.js` Anda seperti berikut ini:
 
 ```jsx:title=src/templates/blog-post.js
 import React from "react"
@@ -331,44 +332,44 @@ export const query = graphql`
 `
 ```
 
-The above example is based off the [Gatsby Starter Blog](/starters/gatsbyjs/gatsby-starter-blog/). By passing props to the `<SEO>` component, you can dynamically change the metadata for a post. In this case, the blog post `title` and `excerpt` (if it exists in the blog post markdown file) will be used instead of the default `siteMetadata` properties in your `gatsby-config.js` file.
+Contoh di atas berdasarkan dari [_Gatsby Starter Blog_](/starters/gatsbyjs/gatsby-starter-blog/). Dengan melewatkan _props_ ke dalam komponen `<SEO>`, Anda dapat secara dinamis mengubah _metadata_ untuk sebuah _posting_. Dalam hal ini, _postingan blog_ `_title_` dan `_excerpt_` (jika ada file _markdown_ di dalam posting _blog_) maka `_siteMetadata_` akan digunakan sebagai ganti properti _default_ di dalam file `gatsby-config.js` Anda.
 
-Now, if you run the Lighthouse audit again as laid out above, you should get close to--if not a perfect-- 100 score!
+Sekarang, jika Anda menjalankan audit _Lighthouse_ kembali seperti yang dijelaskan sebelumnya di atas, Anda harus mendekati nilai 100! meski itu bukan merupakan nilai yang sempurna
 
-> 💡 For further reading and examples, check out [Adding an SEO Component](/docs/add-seo-component/) and the [React Helmet docs](https://github.com/nfl/react-helmet#example)!
+> 💡 mengenai bacaan dan contoh lebih lanjut, dapat dilihat bagian [Menambahkan Komponen _SEO_](/docs/add-seo-component/) dan [Dokumen _React Helmet_](https://github.com/nfl/react-helmet#example)!
 
-## Keep making it better
+## Mari membuatnya menjadi lebih baik
 
-In this section, we've shown you a few Gatsby-specific tools to improve your site's performance and prepare to go live.
+Di bagian ini, kami telah menunjukkan kepada Anda beberapa alat khusus Gatsby untuk meningkatkan kinerja situs Anda dan persiapan untuk ditayangkan.
 
-Lighthouse is a great tool for site improvements and learning -- Continue looking through the detailed feedback it provides and keep making your site better!
+_Lighthouse_ adalah alat yang hebat untuk perbaikan dan pembelajaran situs -- Lanjutkan dengan mencari melalui umpan balik terperinci yang diberikannya dan terus membuat situs Anda menjadi lebih baik!
 
-## Next Steps
+## Langkah Selanjutnya
 
-### Official Documentation
+### Dokumentasi Resmi
 
-- [Official Documentation](https://www.gatsbyjs.org/docs/): View our Official Documentation for _[Quick Start](https://www.gatsbyjs.org/docs/quick-start/)_, _[Detailed Guides](https://www.gatsbyjs.org/docs/preparing-your-environment/)_, _[API References](https://www.gatsbyjs.org/docs/gatsby-link/)_, and much more.
+- [Dokumentasi Resmi](https://www.gatsbyjs.org/docs/): Lihat Dokumentasi Resmi kami untuk _[Memulai Cepat](https://www.gatsbyjs.org/docs/quick-start/)_, _[Panduan Lengkap](https://www.gatsbyjs.org/docs/preparing-your-environment/)_, _[Referensi API](https://www.gatsbyjs.org/docs/gatsby-link/)_, dan masih banyak lagi.
 
-### Official Plugins
+### _Plugins_ Resmi
 
-- [Official Plugins](https://github.com/gatsbyjs/gatsby/tree/master/packages): The complete list of all the Official Plugins maintained by Gatsby.
+- [_Plugins_ Resmi](https://github.com/gatsbyjs/gatsby/tree/master/packages): Daftar lengkap semua _Plugin_ Resmi yang dikelola oleh Gatsby.
 
-### Official Starters
+### _Starters_ Resmi
 
-1.  [Gatsby's Default Starter](https://github.com/gatsbyjs/gatsby-starter-default): Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. _[working example](http://gatsbyjs.github.io/gatsby-starter-default/)_
-2.  [Gatsby's Blog Starter](https://github.com/gatsbyjs/gatsby-starter-blog): Gatsby starter for creating an awesome and blazing-fast blog. _[working example](http://gatsbyjs.github.io/gatsby-starter-blog/)_
-3.  [Gatsby's Hello-World Starter](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby Starter with the bare essentials needed for a Gatsby site. _[working example](https://gatsby-starter-hello-world-demo.netlify.com/)_
+1.  [_Gatsby's Default Starter_](https://github.com/gatsbyjs/gatsby-starter-default): Mulailah proyek Anda dengan kerangka _default_ ini. _Starter_ setengah jadi ini dikirimkan bersama file konfigurasi utama Gatsby yang mungkin Anda butuhkan. _[contoh kerja](http://gatsbyjs.github.io/gatsby-starter-default/)_
+2.  [_Gatsby's Blog Starter_](https://github.com/gatsbyjs/gatsby-starter-blog): _Gatsby Starter_ untuk membuat _blog_ yang luar biasa dan sangat cepat. _[contoh kerja](http://gatsbyjs.github.io/gatsby-starter-blog/)_
+3.  [_Gatsby's Hello-World Starter_](https://github.com/gatsbyjs/gatsby-starter-hello-world): _Gatsby Starter_ dengan hal-hal mendasar yang diperlukan untuk sebuah situs Gatsby. _[contoh kerja](https://gatsby-starter-hello-world-demo.netlify.com/)_
 
-## That's all, folks
+## Itu saja, sobat
 
-Well, not quite; just for this tutorial. There are [Additional Tutorials](/tutorial/additional-tutorials/) to check out for more guided use cases.
+Sebenarnya tidak cukup hanya untuk mengandalkan tutorial ini saja. Ada [Tutorial Tambahan](/tutorial/additional-tutorials/) untuk memeriksa kasus penggunaan yang lebih terperinci.
 
-This is just the beginning. Keep going!
+Ini hanya permulaan, teruskan!
 
-- Did you build something cool? Share it on Twitter, tag [#buildwithgatsby](https://twitter.com/search?q=%23buildwithgatsby), and [@mention us](https://twitter.com/gatsbyjs)!
-- Did you write a cool blog post about what you learned? Share that, too!
-- Contribute! Take a stroll through [open issues](https://github.com/gatsbyjs/gatsby/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) on the gatsby repo and [become a contributor](/contributing/how-to-contribute/).
+- Apakah Anda membuat sesuatu yang keren? Bagikan di _Twitter_, beri _tag_ [#buildwithgatsby](https://twitter.com/search?q=%23buildwithgatsby), dan [_@mention_ kami](https://twitter.com/gatsbyjs)!
+- Apakah Anda menulis posting blog keren tentang apa yang Anda pelajari? Bagikan itu juga!
+- Berkontribusi! kunjungi bagian berikut ini [_open issues_](https://github.com/gatsbyjs/gatsby/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) melalui _repo_ gatsby dan [Menjadi kontributor](/contributing/how-to-contribute/).
 
-Check out the ["how to contribute"](/contributing/how-to-contribute/) docs for even more ideas.
+lihat dokumen [bagaimana cara berkontribusi](/contributing/how-to-contribute/) untuk lebih membuat banyak ide.
 
-We can't wait to see what you do 😄.
+Kami tidak sabar untuk melihat apa yang Anda lakukan sekanjutnya 😄.
