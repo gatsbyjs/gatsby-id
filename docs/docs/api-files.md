@@ -1,10 +1,10 @@
 ---
-title: API Files
+title: File API
 ---
 
-Gatsby uses 4 files in the root of your project to configure your site and control its behavior. All of these files are optional.
+Gatsby menggunakan 4 file di *root* proyek Anda untuk mengkonfigurasi situs Anda dan mengendalikan perilakunya. Semua file ini opsional.
 
-- [gatsby-config.js](/docs/api-files-gatsby-config) - Enables plugins, defines common site data, and contains other site configuration that integrates with Gatsby's GraphQL data layer.
-- [gatsby-browser.js](/docs/api-files-gatsby-browser) - Gives you control over Gatsby's behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page.
-- [gatsby-node.js](/docs/api-files-gatsby-node) - Allows you to respond to events in the Gatsby build cycle. For example, adding pages dynamically, editing GraphQL nodes as they are created, or performing an action after a build is complete.
-- [gatsby-ssr.js](/docs/api-files-gatsby-ssr) - Exposes Gatsby's server-side rendering process so you can control how it builds your HTML pages.
+- [gatsby-config.js](/docs/api-files-gatsby-config) - Mengaktifkan *plugin*, mendefinisikan data umum situs, dan berisi konfigurasi lain yang terintegrasi dengan lapisan data GraphQL dari Gatsby.
+- [gatsby-browser.js](/docs/api-files-gatsby-browser) - Memberikan Anda kendali atas perilaku Gatsby di peramban web. Sebagai contoh, memberikan respon terhadap pengguna yang berpindah rute, atau memanggil fungsi ketika pengguna membuka laman apapun pertama kali.
+- [gatsby-node.js](/docs/api-files-gatsby-node) - Memungkinkan Anda untuk merespon *event* pada *build cycle* Gatsby. Sebagai contoh, menambahkan laman secara dinamis, mengubah *node* GraphQL saat dibuat, atau melakukan tindakan setelah proses *build* selesai.
+- [gatsby-ssr.js](/docs/api-files-gatsby-ssr) - Mengekspos proses *server-side rendering* Gatsby sehingga Anda dapat mengendalikan bagaimana Gatsby membangun laman HTML Anda.
