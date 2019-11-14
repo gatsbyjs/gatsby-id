@@ -4,7 +4,7 @@ title: Menambahkan Service Worker
 
 ## Apa itu *service worker*
 
-*Service worker* adalah *script* yang dijalankan oleh peramban web anda di balik layar, terpisah dengan laman web, membuka pintu untuk fitur-fitur yang tidak memerlukan laman web atau interaksi dengan pengguna. Hal ini meningkatkan ketersedian situs anda pada koneksi yang kurang lancar, dan sangat penting untuk menciptakan pengalaman pengguna yang baik.
+*Service worker* adalah *script* yang dijalankan oleh peramban web anda di balik layar, terpisah dengan halaman web, membuka pintu untuk fitur-fitur yang tidak memerlukan halaman web atau interaksi dengan pengguna. Hal ini meningkatkan ketersedian situs anda pada koneksi yang kurang lancar, dan sangat penting untuk menciptakan pengalaman pengguna yang baik.
 
 *Service worker* mendukung fitur-fitur seperti *push notification* dan *background sync*.
 
