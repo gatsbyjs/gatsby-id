@@ -1,30 +1,30 @@
 ---
-title: Adding a Service Worker
+title: Menambahkan Service Worker
 ---
 
-## What is a service worker
+## Apa itu *service worker*
 
-A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. They increase your site availability in spotty connections, and are essential to making a nice user experience.
+*Service worker* adalah *script* yang dijalankan oleh peramban web anda di balik layar, terpisah dengan halaman web, membuka pintu untuk fitur-fitur yang tidak memerlukan halaman web atau interaksi dengan pengguna. Hal ini meningkatkan ketersedian situs anda pada koneksi yang kurang lancar, dan sangat penting untuk menciptakan pengalaman pengguna yang baik.
 
-It supports features like push notifications and background sync.
+*Service worker* mendukung fitur-fitur seperti *push notification* dan *background sync*.
 
-## Using service workers in Gatsby with `gatsby-plugin-offline`
+## Menggunakan *service worker* pada Gatsby dengan `gatsby-plugin-offline`
 
-Gatsby provides awesome plugin interface to create and load a service worker into your site [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline).
+Gatsby menyediakan antarmuka *plugin* untuk membuat dan memuat *service worker* ke dalam situs anda dengan [gatsby-plugin-offline](https://www.npmjs.com/package/gatsby-plugin-offline).
 
-You can use this plugin together with the [manifest plugin](https://www.npmjs.com/package/gatsby-plugin-manifest). (Don’t forget to list the offline plugin after the manifest plugin so that the manifest file can be included in the service worker).
+Anda dapat menggunakan *plugin* ini dengan [manifest plugin](https://www.npmjs.com/package/gatsby-plugin-manifest). (Jangan lupa untuk mendaftarkan *offline plugin* setelah *manifest plugin* agar file *manifest* dapat dimasukkan ke dalam *service worker*).
 
-## Installing `gatsby-plugin-offline`
+## Memasang `gatsby-plugin-offline`
 
 `npm install --save gatsby-plugin-offline`
 
-Add this plugin to your `gatsby-config.js`
+Tambahkan *plugin* ini pada file `gatsby-config.js` Anda
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-offline`]
 ```
 
-## References
+## Referensi
 
-- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/)
-- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [Service Worker: sebuah pengantar](https://developers.google.com/web/fundamentals/primers/service-workers/)
+- [API Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
