@@ -1,8 +1,8 @@
 ---
-title: Reference Guides
+title: Panduan Referensi
 overview: true
 ---
 
-Dive deeper into different topics around building with Gatsby, like sourcing data, building and styling pages, deployment, and more. While the [tutorials](/tutorial/) are step-by-step instructions, reference guides are resources about the various Gatsby development techniques.
+Gali lebih dalam tentang topik-topik seputar mengembangkan dengan Gatsby, seperti *sourcing* data, membuat dan menghias halaman, *deployment*, dan banyak lagi. Meskipun [tutorial](/tutorial/) adalah petunjuk langkah demi langkah, panduan referensi adalah sumber daya pengetahuan tentang berbagai macam teknik pengembangan dengan Gatsby.
 
 <GuideList slug={props.slug} />
