@@ -1,106 +1,84 @@
 ---
-title: Data in Gatsby
+judul : Data di Gatsby
 typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
-Welcome to Part Four of the tutorial! Halfway through! Hope things are starting
-to feel pretty comfortable 😀
+Selamat datang di panduan bagian 4 ! Setengah jalan ! Semoga semuanya dimulai dengan perasaan menggembirakan
 
-## Recap of the first half of the tutorial
+## Ringkasan dari setengah bagian pertama dari panduan
 
-So far, you've been learning how to use React.js—how powerful it is to be able to
-create your _own_ components to act as custom building blocks for websites.
+Sejauh ini, anda telah belajar bagaimana menggunakan React.js betapa bergunanya hal tersebut untuk membuat komponenmu sendiri sehingga dapat membuat blok bangunan untuk websites
 
-You’ve also explored styling components using CSS Modules.
+Anda juga telah menjelajahi komponen-komponen desain menggunakan modul CSS
 
-## What's in this tutorial?
+## Apa yang ada didalam panduan ini ?
 
-In the next four parts of the tutorial (including this one), you'll be diving into the Gatsby data layer, which is a powerful feature of Gatsby that lets you easily build sites from Markdown, WordPress, headless CMSs, and other data sources of all flavors.
+Dalam 4 bagian selanjutnya dari panduan ini(termasuk ini), anda akan mendalami lapisan data Gatsby, yang mana merupakan fitur yang sangat kuat dari Gatsby yang memungkinkan anda secara mudah membuat situs dari Markdown, Wordpress, headless CMSsm dan berbagai sumber data lainnya.
 
-**NOTE:** Gatsby’s data layer is powered by GraphQL. For an in-depth tutorial on
-GraphQL, we recommend [How to GraphQL](https://www.howtographql.com/).
+*Catatan* layer data Gatsby dipersembahkan oleh GraphQL. Untuk panduan yang lebih mendalam tentang GraphQL, kami merekomendasikan [bagaimana caranya GraphQL](https://www.howtographql.com/). 
 
-## Data in Gatsby
+## Data di Gatsby
 
-A website has four parts: HTML, CSS, JS, and data. The first half of the
-tutorial focused on the first three. Now let’s learn how to use data in Gatsby
-sites.
+Sebuah website mempunyai empat bagian : HTML, CSS, JS dan data. Bagian awal dari panduan ini memfokuskan pada HTML, CSS dan JS. Sekarang mari belajar bagaimana caranya menggunakan data di Gatsby
 
-**What is data?**
+** Apakah data itu?**
 
-A very computer science-y answer would be: data is things like `"strings"`,
-integers (`42`), objects (`{ pizza: true }`), etc.
+Kebanyakan pegiat komputer akan menjawab seperti ini : data merupakan hal yang seperti "strings". bilangan bulat ('42'). objek ('{pizza: true}'), dsb
 
-For the purpose of working in Gatsby, however, a more useful answer is
-"everything that lives outside a React component".
+Untuk tujuan pekerjaan di Gatsby, namun, jawaban yang lebih tepat adalah "segala sesuatu hidup diluar komponen react"
 
-So far, you've been writing text and adding images _directly_ in components.
-Which is an _excellent_ way to build many websites. But, often you want to store
-data _outside_ components and then bring the data _into_ the component as
-needed.
+Sejuah ini, anda telah menulis teks dan menambahkan gambar secara langsung dalam komponen. Yang mana hal tersebut merupakan langkah yang luar biasa untuk membangun kebanyakan website. Tetapi, sering kali anda ingin menyimpan data diluar komponen dan kemudian membawa data ke dalam komponen sesuai kebutuhan anda.
 
-If you're building a site with WordPress (so other contributors
-have a nice interface for adding & maintaining content) and Gatsby, the _data_
-for the site (pages and posts) are in WordPress and you _pull_ that data, as
-needed, into your components.
+Jika anda membangun sebuah situs dengan Wordpress (sehingga kontributor lain memiliki antarmuka yang bagus untuk menambahkan dan memelihara konten) dan Gatsby, data untuk situs (halaman dan kiriman) ada dalam WordPress sehingga anda dapat melakukan Pull data tersebut sesuai kebutuhan, dalam komponen anda.
 
-Data can also live in file types like Markdown, CSV, etc. as well as databases
-and APIs of all sorts.
+Data juga dapat digunakan dalam jenis file seperti Markdown, CSV, dsb. sebaik database dan segala macam API
 
-**Gatsby's data layer lets you pull data from these (and any other source)
-directly into your components**—in the shape and form you want.
+** Layer data Gatsby memungkinkan anda menarik data dari sini ( dan sumber lainnya) secara langsung kedalam komponen anda** dalam bentuk dan kondisi yang anda inginkan
 
-## Using Unstructured Data vs GraphQL
+## Menggunakan data tak tersetruktur Vs GraphQL
 
-### Do I have to use GraphQL and source plugins to pull data into Gatsby sites?
+### Haruskah saya menggunakan GraphQL dan sumber plugin untuk menarik data ke dalam situs Gatsby ?
 
-Absolutely not! You can use the node `createPages` API to pull unstructured data into Gatsby pages directly, rather than through the GraphQL data layer. This is a great choice for small sites, while GraphQL and source plugins can help save time with more complex sites.
+Tentu tidak ! Anda dapat menggunakan node API 'createPages' untuk menarik data tak tersruktur ke dalam halaman Gatsby secara langsung, daripada melalui data layer GraphQL. Ini adalah pilihan yang bagus untuk situs kecil, sementara GraphQL dan sumber-sumber plugin dapat mempersingkat waktu dengan situs yang lebih kompleks
 
-See the [Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/) guide to learn how to pull data into your Gatsby site using the node `createPages` API and to see an example site!
+Lihat [Menggunakan Gatsby tanpa GraphQL](/docs/Menggunakan Gatsby tanpa GraphQL/) panduan untuk belajar bagaimana menarik data ke dalam situs Gatsby anda menggunakan node API 'membuat halaman' dan untuk melihat contoh situs
 
-### When do I use unstructured data vs GraphQL?
+### kapan saya menggunakan data tak tersetruktur Vs GraphQL?
 
-If you're building a small site, one efficient way to build it is to pull in unstructured data as outlined in this guide, using `createPages` API, and then if the site becomes more complex later on, you move on to building more complex sites, or you'd like to transform your data, follow these steps:
+Jika anda membuat situs kecil, salah satu cara yang efisien untuk membuat situs yaitu dengan menarik data tak tersetruktur seperti yang diuraikan di paduan ini, menggunakan API 'createPages' dan jika situsnya menjadi lebih kompleks, anda beralih membangun situs yang lebih kompleks  atau anda suka mentransformasikan data, ikuti langkah berikut:
 
-1.  Check out the [Plugin Library](/plugins/) to see if the source plugins and/or transformer plugins you'd like to use already exist
-2.  If they don't exist, read the [Plugin Authoring](/docs/creating-plugins/) guide and consider building your own!
+1. Periksa [Perpustakaan plugin](/plugind/) untuk melihat jika sumber dan atau tranformasi plugin yang anda suka untuk digunakan sudah ada
+2. Jika belum ada, baca [Pembuatan plugin](/docs/creating-plugins/) buatlah sesuai keinginan anda.
 
-### How Gatsby's data layer uses GraphQL to pull data into components
+### Bagaimana layer data Gatsby menggunakan GraphQL untuk menarik data ke dalam komponen
 
-There are many options for loading data into React components. One of the most
-popular and powerful of these is a technology called
-[GraphQL](http://graphql.org/).
+Ada beberapa pilihan untuk memuat data ke komponen react. Salah satu yang paling populer dan paling berguna adalah teknologi yang dinamakan [GraphQL](http://graphql.org/) 
 
-GraphQL was invented at Facebook to help product engineers _pull_ needed data into
-components.
+GraphQL ditemukan pada Facebook untuk membantu teknisi produksi menarik data yang dibutuhkan ke komponen
 
-GraphQL is a **q**uery **l**anguage (the _QL_ part of its name). If you're
-familiar with SQL, it works in a very similar way. Using a special syntax, you describe
-the data you want in your component and then that data is given
-to you.
+GraphQL adalah q atau query dan l atau languege yang artinya bahasa permintaan. Jika anda familiar dengan SQL, graphQL juga memiliki cara kerja yang sama. Menggunakan sebuah syntax khusus, anda menggambarkan data yang anda inginkan dalam komponen anda dan kemudian data itu diberikan kepadamu
 
-Gatsby uses GraphQL to enable components to declare the data they need.
+Gatsby menggunakan GraphQL untuk memungkinkan komponen untuk mendeklarasikan data yang mereka inginkan
 
-## Create a new example site
+## Membuat sebuah contoh situs
 
-Create another new site for this part of the tutorial. You're going to build a Markdown blog called "Pandas Eating Lots". It's dedicated to showing off the best pictures and videos of pandas eating lots of food. Along the way, you'll be dipping your toes into GraphQL and Gatsby's Markdown support.
+Buat situs baru yang lain untuk tutorial ini. anda akan membangun sebuah blog Markdown yang dinamakan "Panda Banyak Makan", situs itu didedikasikan untuk memnunjukkan gambar dan video terbaik dari berbagai makanan panda. Sepanjang jalan, anda akan mendalami GraphQL dan dengan dukungan dari Gatsby Markdown. 
 
-Open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-four`. Then navigate to the new directory:
+Buka sebuah jendela tutorial baru dan ikuti sejumlah penrintah untuk membuat situs Gatby baru dalam sebuah arahan yang bernama "panduan bagian empat". kemudian navigasikan ke direktori yang baru.
 
 ```shell
 gatsby new tutorial-part-four https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-four
 ```
 
-Then install some other needed dependencies at the root of the project. You'll use the Typography theme
-"Kirkham", and you'll try out a CSS-in-JS library, ["Emotion"](https://emotion.sh/):
+Kemudian pasang beberapa hal dibutuhkan lainmya pada bagian yang sama pada folder projek anda. Anda akan menggunakan tema tipografi 'Kirkham' dan anda akan mencoba sebuah pustakan CSS-in-JS, ["emotion]((https://emotion.sh/))  
+
 
 ```shell
 npm install --save gatsby-plugin-typography typography react-typography typography-theme-kirkham gatsby-plugin-emotion @emotion/core
 ```
-
-Set up a site similar to what you ended with in [Part Three](/tutorial/part-three). This site will have a layout component and two page components:
+Persiapkan sebuah situs yang sama dengan apa yang anda butuhkan  di [Bagian Empat](/tutorial/part-three) Situs ini akan mempunyai komponen layout dan dua halaman komponen.
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -184,7 +162,7 @@ export default typography
 export const rhythm = typography.rhythm
 ```
 
-`gatsby-config.js` (must be in the root of your project, not under src)
+`gatsby-config.js`(Harus di bagian utama folder projek anda, bukan dibawah src)
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -200,27 +178,26 @@ module.exports = {
 }
 ```
 
-Add the above files and then run `gatsby develop`, per usual, and you should see the following:
+Tambahkan file diatas dan jalankan `gatsby develop`, seperti biasa dan anda harus mengikuti langkah berikut:
 
-![start](start.png)
+![mulai](start.png)
+Anda mempunyai situs kecil lain dengan sebuah tata letak dan dua buah halaman
 
-You have another small site with a layout and two pages.
+Sekarang anda dapat memulai berquery
 
-Now you can start querying 😋
+## GraphQL query pertama anda
 
-## Your first GraphQL query
+Ketika membuat situs, anda kemungkinan ingin menggunakan kembali beberapa data seperti judul situs contohnya. Lihat pada halaman '/about/'. Anda akan memperhatikan bahwa anda memiilki judul situs ('Panda banyak makan) di kedua tata letak komponen (kepala situs) serta di '<h1 />' dari halaman'about.js (kepala halaman)
 
-When building sites, you'll probably want to reuse common bits of data -- like the _site title_ for example. Look at the `/about/` page. You'll notice that you have the site title (`Pandas Eating Lots`) in both the layout component (the site header) as well as in the `<h1 />` of the `about.js` page (the page header).
+Tetapi bagaimana jika amda ingin mengubah judul situs pada kemudian hari? Anda harus mencari judul di semua komponen dan mengedit setiap contohnya. Ini rumit dan rawan kesalahan, terlebih jika lebih besar seperti situs yang lebih kompleks. Sebagai gantinya, anda dapat menyimpan judul di suatu lokasi dan referensikan lokasi tersebut ke file yang lain, ubah judul dalam satu tempat yang sama dan Gatsby akan _pull_ judul terbaru ke file referensi tersebut.
 
-But what if you want to change the site title in the future? You'd have to search for the title across all your components and edit each instance. This is both cumbersome and error-prone, especially for larger, more complex sites. Instead, you can store the title in one location and reference that location from other files; change the title in a single place, and Gatsby will _pull_ your updated title into files that reference it.
-
-The place for these common bits of data is the `siteMetadata` object in the `gatsby-config.js` file. Add your site title to the `gatsby-config.js` file:
+Sebuah tempat untuk sekumpulan bit data ini adalah 'siteMetadata' sebuah objek di file 'gatsby-config.js'. Tambahkan judul situs anda ke file 'gatsby-config.js'
 
 ```javascript:title=gatsby-config.js
 module.exports = {
   // highlight-start
   siteMetadata: {
-    title: `Title from siteMetadata`,
+    title: `Judul dari siteMetadata`,
   },
   // highlight-end
   plugins: [
@@ -235,11 +212,11 @@ module.exports = {
 }
 ```
 
-Restart the development server.
+Jalankan ulang server pengembangan
 
-### Use a page query
+### Gunakan sebuah halaman query
 
-Now the site title is available to be queried; Add it to the `about.js` file using a [page query](/docs/page-query):
+Sekarang judul situs tersedia untuk diquerykan; tambahkan hal itu ke file 'about.js' menggunakan [halaman query](/docs/page-query): 
 
 ```jsx:title=src/pages/about.js
 import React from "react"
@@ -251,8 +228,7 @@ export default ({ data }) => (
   <Layout>
     <h1>About {data.site.siteMetadata.title}</h1> {/* highlight-line */}
     <p>
-      We're the only site running on your computer dedicated to showing the best
-      photos and videos of pandas eating lots of food.
+      Kami satu-satunya situs yang ada dikomputer anda yang didedikasikan untuk menunjukkan foto dan video terbaik dari panda yang banyak memakan
     </p>
   </Layout>
 )
@@ -269,14 +245,13 @@ export const query = graphql`
 `
 // highlight-end
 ```
+Itu Berhasil
 
-It worked! 🎉
+[Judul halaman ditarik dari sitemetadata](site-metadata-title.png)
 
-![Page title pulling from siteMetadata](site-metadata-title.png)
-
-The basic GraphQL query that retrieves the `title` in your `about.js` changes above is:
-
+GraphQL query dasar yang mengambil 'judul' di 'about.js' milikmu , maka perubahanmya menjadi
 ```graphql:title=src/pages/about.js
+
 {
   site {
     siteMetadata {
@@ -286,16 +261,15 @@ The basic GraphQL query that retrieves the `title` in your `about.js` changes ab
 }
 ```
 
-> 💡 In [part five](/tutorial/part-five/#introducing-graphiql), you'll meet a tool that lets us interactively explore the data available through GraphQL, and help formulate queries like the one above.
+> 💡 In Pada [bagian lima](/tutorial/part-five/#introducing-graphiql), anda akan menemui sebuah alat yang memungkinkan kita secara interaktiv menjelajahi data yang tersedia melalui GraphQL dan membantu memformulasikan query seperti diatas.
 
-Page queries live outside of the component definition -- by convention at the end of a page component file -- and are only available on page components.
+Halaman query di luar dari definisi komponen == oleh konvensi pada akhir halaman file komponen -- hanya tersedia di halaman komponen.
 
-### Use a StaticQuery
+### Menggunakan sebuah Query statis
 
-[StaticQuery](/docs/static-query/) is a new API introduced in Gatsby v2 that allows non-page components (like your `layout.js` component), to retrieve data via GraphQL queries.
-Let's use its newly introduced hook version — [`useStaticQuery`](/docs/use-static-query/).
+[Querystatis] (/docs/static-query/) adalah sebuah API baru diperkenalkan di Gatsby versi 2 yang mana memungkinkan selain halaman komponen (seperti komponen 'layout.js' anda), untuk mengambil data menggunakan query GraphQL. Mari gunakan itu untuk memperkenalkan versi terkait ['useStaticQuery'](/docs/use-static-query/). 
 
-Go ahead and make some changes to your `src/components/layout.js` file to use the `useStaticQuery` hook and a `{data.site.siteMetadata.title}` reference that uses this data. When you are done, your file will look like this:
+Lanjutkan dan buat beberapa perubahan ke file 'src/components/layout.js' anda untuk menggunakan kaitan 'usestaticquery' dan sebuah '[data.site.siteMetadata.title]` referensikan penggunaan tersebut pada data ini. Ketika sudah selesai. file anda akan menjadi seperti ini :  
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -354,26 +328,19 @@ export default ({ children }) => {
 // highlight-end
 ```
 
-Another success! 🎉
+Kesuksesan Lainnya....🎉
 
-![Page title and layout title both pulling from siteMetadata](site-metadata-two-titles.png)
+![Judul halaman dan judul layout keduanya diambil dari siteMetadata](site-metadata-two-titles.png)
+Kenapa menggunakan dua query yang berbeda disini? Contoh ini menjelaskan secara singkat jenis jenis query, bagaimana formatnya dan dimana dapat digunakan. Untuk sekarang, simpan dalam pikiranmu bahwa hanya halaman yang dapat membuat halaman query. Selain komponen, tata letak dapat menggunakan query statis. tutorial [Bagian 7](/tutorial/part-seven/) yang mana menjelaskan hal tersebut secara mendalam.
 
-Why use two different queries here? These examples were quick introductions to
-the query types, how they are formatted, and where they can be used. For now,
-keep in mind that only pages can make page queries. Non-page components, such as
-Layout, can use StaticQuery. [Part 7](/tutorial/part-seven/) of the tutorial explains these in greater
-depth.
+Tapi ayo kembali ke judul sesungguhnya
 
-But let's restore the real title.
+Salah satu prinsip utama dari Gatsby adalah _kreator membutuhkan koneksi sesegera mungkin ke apa saja yang mereka buat_ [hat tip to Bret Victor](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principle/)). Dengan kata lain, ketika anda membuat beberapa perubahan kode anda harus sesegera mungkin melihat efek dari perubahan tersebut. Anda memanipulasikan masukan dari Gatsby dan dapat melihat perubahan tampilan yang ditampilkan di layar. 
 
-One of the core principles of Gatsby is that _creators need an immediate connection to what they're creating_ ([hat tip to Bret Victor](http://blog.ezyang.com/2012/02/transcript-of-inventing-on-principle/)). In other words, when you make any change to code you should immediately see the effect of that change. You manipulate an input of Gatsby and you see the new output showing up on the screen.
+Hampir dimana mana, perubahan yang anda buat akan sesegera mungkin berpengaruh. Edit file 'gatsby-config.js' lagi. kali ini rubah 'judul' kembali ke 'panda banyak makan'. Seharunya perubahannya sangat cepat di situs anda.
 
-So almost everywhere, changes you make will immediately take effect. Edit the `gatsby-config.js` file again, this time changing the `title` back to "Pandas Eating Lots". The change should show up very quickly in your site pages.
+![Kedua judul mengatakan panda banyak makan](pandas-eating-lots-titles.png)
 
-![Both titles say Pandas Eating Lots](pandas-eating-lots-titles.png)
+|## apa selanjutnya ?
 
-## What's coming next?
-
-Next, you'll be learning about how to pull data into your Gatsby site using
-GraphQL with source plugins in [part five](/tutorial/part-five/) of the
-tutorial.
+Selanjutnya, anda akan mempelajari tentang bagaimana menarik data ke situs Gatsby anda menggunakan GraphQL dengan sumber plugin di tutorial [bagian lima](/tutorial/part-five/) 
