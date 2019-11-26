@@ -1,5 +1,5 @@
 ---
-title: Recipes
+title: Resep
 tableOfContentsDepth: 2
 ---
 
@@ -29,13 +29,13 @@ A live example may not be possible depending on the nature of the recipe, in whi
 See [docs templates](/docs/docs-templates/) in the contributing docs for more help.
 -->
 
-Craving a happy medium between [full-length tutorials](/tutorial/) and crawling the [docs](/docs/)? Here's a cookbook of guiding recipes on how to build things, Gatsby style.
+Menginginkan media yang menyenangkan antara [tutorial lengkap](/tutorial/) dan [dokumentasi](/docs/)?. Berikut adalah buku resep panduan tentang cara membangun sesuatu, gaya Gatsby.
 
-## 1. Pages and Layouts
+## 1. Halaman dan Tata Letak
 
-### Project structure
+### Struktur proyek
 
-Inside a Gatsby project, you may see some or all of the following folders and files:
+Di dalam proyek Gatbsy, Anda kemungkinan akan menemui sebagian atau semua dari direktori dan berkas sebagai berikut:
 
 ```
 |-- /.cache
@@ -52,67 +52,67 @@ Inside a Gatsby project, you may see some or all of the following folders and fi
 |-- gatsby-browser.js
 ```
 
-Some notable files and their definitions:
+Beberapa berkas penting dan definisinya:
 
-- `gatsby-config.js` — configure options for a Gatsby site, with metadata for project title, description, plugins, etc.
-- `gatsby-node.js` — implement Gatsby’s Node.js APIs to customize and extend default settings affecting the build process
-- `gatsby-browser.js` — customize and extend default settings affecting the browser, using Gatsby’s browser APIs
-- `gatsby-ssr.js` — use Gatsby’s server-side rendering APIs to customize default settings affecting server-side rendering
+- `gatsby-config.js` — konfigurasi opsi untuk situs Gatsby, dengan metadata untuk judul proyek, deskripsi, plugin, dan lainnya.
+- `gatsby-node.js` — implementasi Gatsby Node.js API untuk kustomisasi dan memperluas pengaturan standar yang berefek pada saat proses build
+- `gatsby-browser.js` — kustomisasi dan memperluas pengaturan standar yang berefek pada peramban, menggunakan API peramban Gatsby
+- `gatsby-ssr.js` — menggunakan API dari Gatsby server-side rendering untuk kustomisasi pengaturan standar yang berefek pada server-side rendering 
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- For a tour of all the common folders and files, read the docs on [Gatsby's Project Structure](/docs/gatsby-project-structure/)
-- For common commands, check out the [Gatsby CLI docs](/docs/gatsby-cli)
-- Check out the [Gatsby Cheat Sheet](/docs/cheat-sheet/) for downloadable info at a glance
+- Untuk tur dari semua direktori dan berkas yang umum, bacalah dokumentasi di [Struktur Proyek Gatsby](/docs/gatsby-project-structure/)
+- Untuk baris perintah yang umum, cek [Dokumentasi Gastby CLI](/docs/gatsby-cli)
+- Cek [Gatsby Cheat Sheet](/docs/cheat-sheet/) untuk informasi yang dapat didownload dalam sekejap
 
-### Creating pages automatically
+### Membuat halaman secara otomatis
 
-Gatsby core automatically turns React components in `src/pages` into pages with URLs.
-For example, components at `src/pages/index.js` and `src/pages/about.js` would automatically create pages from those filenames for the site's index page (`/`) and `/about`.
+Inti dari Gatsby adalah secara otomatis mengubah komponen React di `src/pages` menjadi berbagai halaman dengan beberapa URL.
+Sebagai contoh, komponen `src/pages/index.js` dan `src/pages/about.js` akan otomatis membuat beberapa halaman pada situs dengan halaman index (`/`) dan `/about`.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- Sebuah [Situs Gatsby](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli) telah terinstall
 
-#### Directions
+#### Petunjuk
 
-1. Create a directory for `src/pages` if your site doesn't already have one.
-2. Add a component file to the pages directory:
+1. Buatlah sebuah direktori `src/pages` jika situs Anda belum memilikinya.
+2. Tambahkan sebuah berkas komponen ke direktori halaman:
 
 ```jsx:title=src/pages/about.js
 import React from "react"
 
 const AboutPage = () => (
   <main>
-    <h1>About the Author</h1>
-    <p>Welcome to my Gatsby site.</p>
+    <h1>Tentang Pengarang</h1>
+    <p>Selamat datang di situs Gatsby.</p>
   </main>
 )
 
 export default AboutPage
 ```
 
-3. Run `gatsby develop` to start the development server.
-4. Visit your new page in the browser: `http://localhost:8000/about`
+3. Jalankan `gatsby develop` untuk memulai development server.
+4. Kunjungi halaman baru anda melalui peramban: `http://localhost:8000/about`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Creating and modifying pages](/docs/creating-and-modifying-pages/)
+- [Membuat dan memodifikasi halaman](/docs/creating-and-modifying-pages/)
 
-### Linking between pages
+### Menghubungkan antar halaman
 
-Routing in Gatsby relies on the `<Link />` component.
+Routing di Gatsby mengandalkan pada komponen `<Link />`.
 
-#### Prerequisites
+#### Prasyarat
 
-- A Gatsby site with two page components: `index.js` and `contact.js`
-- The Gatsby `<Link />` component
-- The [Gatsby CLI](/docs/gatsby-cli/) to run `gatsby develop`
+- Sebuah situs Gatsby dengan dua komponen halaman: `index.js` dan `contact.js`
+- Komponen Gatsby `<Link />`
+- [Gatsby CLI](/docs/gatsby-cli/) untuk menjalankan `gatsby develop`
 
-#### Directions
+#### Petunjuk
 
-1. Open the index page component (`src/pages/index.js`), import the `<Link />` component from Gatsby, add a `<Link />` component above the header, and give it a `to` property with the value of `"/contact/"` for the pathname:
+1. Bukalah komponen halaman index (`src/pages/index.js`), impor komponen `<Link />` dari Gatsby, tambahkan komponen `<Link />` di atas header, dan beri `to` property dengan value `"/contact/"` untuk nama path-nya, sebagai berikut:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -120,27 +120,27 @@ import { Link } from "gatsby"
 
 export default () => (
   <div style={{ color: `purple` }}>
-    <Link to="/contact/">Contact</Link>
-    <p>What a world.</p>
+    <Link to="/contact/">Kontak</Link>
+    <p>Dunia yang luarbiasa.</p>
   </div>
 )
 ```
 
-2. Run `gatsby develop` and navigate to the index page. You should have a link that takes you to the contact page when clicked!
+2. Jalankan `gatsby develop` dan buka halaman index. Anda akan menemui sebuah tautan yang bisa mengarahkan ANda ke halaman kontak ketika ditekan!
 
-> **Note**: Gatsby's `<Link />` component is a wrapper around [`@reach/router`'s Link component](https://reach.tech/router/api/Link). For more information about Gatsby's `<Link />` component, consult the [API reference for `<Link />`](/docs/gatsby-link/).
+> **Catatan**: Komponen Gatsby `<Link />` adalah sebuah sampul dari [komponen link `@reach/router`](https://reach.tech/router/api/Link). Untuk informasi lebih lanjut mengenai komponen Gatsby `<Link />`, dapat dilihat di [Referensi API untuk `<Link />`](/docs/gatsby-link/).
 
-### Creating a layout component
+### Membuat sebuah komponen tata letak
 
-It's common to wrap pages with a React layout component, which makes it possible to share markup, styles, and functionality across multiple pages.
+Adalah hal yang umum ketika membungkus halaman dengan sebuah komponen tata letak React, yang mana untuk memungkinkan membagikan markup, styles, dan fungsionalitas lintas halaman.
 
-#### Prerequisites
+#### Prasyarat
 
-- A Gatsby Site
+- Sebuah situs Gatsby
 
-#### Directions
+#### Petunjuk
 
-1. Create a layout component in `src/components`, where child components will be passed in as props:
+1. Buatlah sebuah komponen tata letak di `src/components`, dimana komponen child-nya akan dioper sebagai props:
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -152,7 +152,7 @@ export default ({ children }) => (
 )
 ```
 
-2. Import and use the layout component in a page:
+2. Impor dan gunakan komponen tata letak di sebuah halaman:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -160,29 +160,29 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <Link to="/contact/">Contact</Link>
-    <p>What a world.</p>
+    <Link to="/contact/">Kontak</Link>
+    <p>Dunia yang luarbiasa.</p>
   </Layout>
 )
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Create a layout component in [tutorial part three](/tutorial/part-three/#your-first-layout-component)
-- Styling with [Layout Components](/docs/layout-components/)
+- Buat sebuah komponen tata letak di [tutorial bab ketiga](/tutorial/part-three/#your-first-layout-component)
+- Styling dengan [Komponen Tata letak](/docs/layout-components/)
 
-### Creating pages programmatically with createPage
+### Membuat halaman secara terprogram dengan createPage
 
 You can create pages programmatically in the `gatsby-node.js` file with helper methods Gatsby provides.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- A `gatsby-node.js` file
+- Sebuah [Situs Gatsby](/docs/quick-start)
+- Satu berkas `gatsby-node.js`
 
-#### Directions
+#### Petunjuk
 
-1. In `gatsby-node.js`, add an export for `createPages`
+1. Pada `gatsby-node.js`, tambahkan sebuah ekspor untuk `createPages`
 
 ```javascript:title=gatsby-node.js
 // highlight-start
@@ -192,7 +192,7 @@ exports.createPages = ({ actions }) => {
 // highlight-end
 ```
 
-2. Destructure the `createPage` action from the available actions so it can be called by itself, and add or get data
+2. Destructure `createPage` action dari action yang tersedia, sehingga bisa dipanggil dengan sendirinya, dan tambahkan atau ambil data
 
 ```javascript:title=gatsby-node.js
 exports.createPages = ({ actions }) => {
@@ -213,7 +213,7 @@ exports.createPages = ({ actions }) => {
 }
 ```
 
-3. Loop through the data in `gatsby-node.js` and provide the path, template, and context (data that will be passed in the props' pageContext) to `createPage` for each invocation
+3. Loop melalui data di `gatsby-node.js` dan sediakan path, template, dan context (data akan dioper di pageContext props) untuk `createPage` pada tiap-tiap invocation.
 
 ```javascript:title=gatsby-node.js
 exports.createPages = ({ actions }) => {
@@ -241,7 +241,7 @@ exports.createPages = ({ actions }) => {
 }
 ```
 
-4. Create a React component to serve as the template for your page that was used in `createPage`
+4. Buat sebuah komponen React untuk ditampilkan sebagai template pada halaman Anda yang telah digunakan pada `createPage`
 
 ```jsx:title=src/templates/dog-template.js
 import React from "react"
@@ -253,28 +253,28 @@ export default ({ pageContext: { dog } }) => (
 )
 ```
 
-5. Run `gatsby develop` and navigate to the path of one of the pages you created (like at `http://localhost:8000/Fido`) to see the data you passed it displayed on the page
+5. Jalankan `gatsby develop` arahkan ke path menuju salah satu halaman yang telah Anda buat (contoh pada `http://localhost:8000/Fido`) untuk melihat data yang telah Anda oper untuk ditampilan pada halaman
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Tutorial section on [programmatically creating pages from data](/tutorial/part-seven/)
-- Reference guide on [using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/)
-- [Example repo](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-createPage) for this recipe
+- Bab tutorial [membuat halaman secara terprogram dari data](/tutorial/part-seven/)
+- Panduan referensi [menggunakan Gatsby tanpa GraphQL](/docs/using-gatsby-without-graphql/)
+- [Contoh repo](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-createPage) untuk resep ini
 
-## 2. Styling with CSS
+## 2. Styling dengan CSS
 
-There are so many ways to add styles to your website; Gatsby supports almost every possible option, through official and community plugins.
+Banyak cara untuk menambah styles pada situs Anda; Gatsby memberikan dukungan untuk hampir semua pilihan yang bisa dilakukan, melalui plugin resmi dan komunitas.
 
-### Using global CSS files without a Layout component
+### Menggunakan berkas CSS global tanpa komponen Tata letak
 
-#### Prerequisites
+#### Prasyarat
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
-- A `gatsby-browser.js` file
+- Satu [Situs Gatsby](/docs/quick-start/) yang sudah ada dengan komponen halaman index
+- Satu berkas `gatsby-browser.js`
 
-#### Directions
+#### Petunjuk
 
-1. Create a global CSS file as `src/styles/global.css` and paste the following into the file:
+1. Buatlah sebuah berkas CSS global sebagai `src/styles/global.css` dan tempel yang di bawa ini pada berkas:
 
 ```css:title=src/styles/styles/global.css
 html {
@@ -286,37 +286,37 @@ p {
 }
 ```
 
-2. Import the global CSS file in the `gatsby-browser.js` file such as the following:
+2. Impor berkas CSS global pada berkas `gatsby-browser.js` sebagai berikut:
 
 ```javascript:gatsby-browser.js
 import "./src/styles/global.css"
 ```
 
-> **Note:** You can also make use of `require('./src/styles/global.css')` to import the global CSS file in your `gatsby-config.js` file.
+> **Catatan:** Anda juga dapat menggunakan `require('./src/styles/global.css')` untuk impor berkas CSS global pada berkas `gatsby-config.js`.
 
-3. Run `gatsby-develop` to observe the global styling being applied across your site.
+3. Jalankan `gatsby-develop` untuk mengamati pengaplikasian styling global pada situs Anda.
 
-> **Note:** This approach is not the best fit if you are using CSS-in-JS for styling your site, in which case a layout page with all the shared components should be used. This is covered in the next recipe.
+> **Catatan:** Pendekatan ini bukanlah yang terbaik jika Anda menggunakan CSS-in-JS untuk styling situs Anda, dalam hal ini halaman tata letak dengan semua komponen bersama (shared components) harus digunakan. Hal ini akan diulas pada resep selanjutnya.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- More on [adding global styles without a layout component](/docs/global-css/#adding-global-styles-without-a-layout-component)
+- Lebih lanjut mengenai [menambah styles global tanpa komponen tata letak](/docs/global-css/#adding-global-styles-without-a-layout-component)
 
-### Using global styles in a layout component
+### Menggunakan styles global pada komponen tata letak
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
+- Satu [Situs Gatsby](/docs/quick-start/) dengan komponen halaman index
 
-#### Directions
+#### Petunjuk
 
-You can add global styles to a [shared layout component](/tutorial/part-three/#your-first-layout-component). This component is used for things that are common throughout the site, like a header or footer.
+Anda dapat menambah styles global pada [komponent tata letak bersama](/tutorial/part-three/#your-first-layout-component). Komponen ini digunakan pada hal yang umum di seluruh situs, contohnya pada header dan footer.
 
-1. If you don't already have one, create a new directory in your site at `/src/components`.
+1. Jika anda belum memiliki satu pun, buatlah sebuah direktori pada situs Anda di `/src/components`.
 
-2. Inside the components directory, create two files: `layout.css` and `layout.js`.
+2. Pada direktori komponent, buatlah dua berkas: `layout.css` dan `layout.js`.
 
-3. Add the following to `layout.css`:
+3. Tambahkan yang berikut ini pada `layout.css`:
 
 ```css:title=/src/components/layout.css
 body {
@@ -324,7 +324,7 @@ body {
 }
 ```
 
-4. Edit `layout.js` to import the CSS file and output layout markup:
+4. Sunting `layout.js` untuk impor berkas CSS dan keluaran dari markup layout:
 
 ```jsx:title=/src/components/layout.js
 import React from "react"
@@ -333,30 +333,30 @@ import "./layout.css"
 export default ({ children }) => <div>{children}</div>
 ```
 
-5. Now edit your site's homepage at `/src/pages/index.js` and use the new layout component:
+5. Sekarang sunting beranda situs Anda pada `/src/pages/index.js` dan gunakan komponen tata letak yang baru:
 
 ```jsx:title=/src/pages/index.js
 import React from "react"
 import Layout from "../components/layout"
 
-export default () => <Layout>Hello world!</Layout>
+export default () => <Layout>Halo dunia!</Layout>
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Standard Styling with Global CSS Files](/docs/global-css/)
-- [More about layout components](/tutorial/part-three)
+- [Styling Standar dengan Berkas CSS Global](/docs/global-css/)
+- [Selebihnya mengenai komponen tata letak](/tutorial/part-three)
 
-### Using Styled Components
+### Menggunakan Styled Components
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
-- [gatsby-plugin-styled-components, styled-components, and babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) installed in `package.json`
+- Satu [Situs Gatsby](/docs/quick-start/) yang sudah ada dengan komponen halaman index
+- [gatsby-plugin-styled-components, styled-components, dan babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) terpasang di `package.json`
 
-#### Directions
+#### Petunjuk
 
-1. Inside your `gatsby-config.js` file add `gatsby-plugin-styled-components`
+1. Pada berkas `gatsby-config.js` tambahkan `gatsby-plugin-styled-components`
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -364,11 +364,11 @@ module.exports = {
 }
 ```
 
-2. Open the index page component (`src/pages/index.js`) and import the `styled-components` package
+2. Buka komponen halaman index (`src/pages/index.js`) dan impor `styled-components`package.
 
-3. Style components by creating style blocks for each element type
+3. Hias komponen dengan membuat style blocks untuk tiap-tiap tipe elemen.
 
-4. Apply to the page by including styled components in the JSX
+4. Terapkan pada halaman dengan cara memuat styled components  pada JSX
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -404,8 +404,8 @@ const User = props => (
 
 export default () => (
   <Container>
-    <h1>About Styled Components</h1>
-    <p>Styled Components is cool</p>
+    <h1>Tentang Styled Components</h1>
+    <p>Styled Components yang keren</p>
     <User
       username="Jane Doe"
       avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
@@ -418,22 +418,22 @@ export default () => (
 )
 ```
 
-4. Run `gatsby develop` to see the changes
+4. Jalankan `gatsby develop` untuk melihat perubahannya
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [More on Using Styled Components](/docs/styled-components/)
-- [Egghead lesson](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
+- [Info lebih lanjut menggunakan Styled Components](/docs/styled-components/)
+- [Pelajaran Egghead](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
 
-### Using CSS Modules
+### Menggunakan Modul CSS
 
-#### Prerequisites
+#### Prasyarat
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
+- Satu [Situs Gatsby](/docs/quick-start/) yang sudah ada dengan komponen halaman index
 
-#### Directions
+#### Petunjuk
 
-1. Create a CSS module as `src/pages/index.module.css` and paste the following into the module:
+1. Buatlah sebuah modul CSS `src/pages/index.module.css` dan tempel berikut ini pada modul:
 
 ```css:title=src/components/index.module.css
 .feature {
@@ -442,7 +442,7 @@ export default () => (
 }
 ```
 
-2. Import the CSS module as a JSX object `style` in the `index.js` file by modifying the page so it looks like the following:
+2. Impor modul CSS sebagai objek JSX `style` pada berkas `index.js` dengan memodifikasi halaman tersebut sebagai berikut:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -452,47 +452,47 @@ import style from "./index.module.css"
 
 export default () => (
   <section className={style.feature}>
-    <h1>Using CSS Modules</h1>
+    <h1>Menggunakan Modul CSS</h1>
   </section>
 )
 // highlight-end
 ```
 
-3. Run `gatsby develop` to see the changes.
+3. Jalankan `gatsby develop` untuk melihat perubahan.
 
-**Note:**
-Notice that the file extension is `.module.css` instead of `.css`, which tells Gatsby that this is a CSS module.
+**Catatan:**
+Perhatikan bahwa ekstensi berkas adalah `.module.css` bukan `.css`, karena Gatsby akan mengenalnya sebagai modul CSS.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- More on [Using CSS Modules](/tutorial/part-two/#css-modules)
-- [Live example on Using CSS modules](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
+- Selengkapnya [Menggunakan Modul CSS](/tutorial/part-two/#css-modules)
+- [Contoh langsung menggunakan Modul CSS](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
 
-### Using Sass/SCSS
+### Menggunakan Sass/SCSS
 
-Sass is an extension of CSS that gives you more advanced features like nested rules, variables, mixins, and more.
+Sass adalah sebuah ekstensi dari CSS yang membereikan Anda fitur lanjutan seperti kaidah nested, variables, mixins, dan banyak lagi.
 
-Sass has 2 syntaxes. The most commonly used syntax is "SCSS", and is a superset of CSS. That means all valid CSS syntax, is valid SCSS syntax. SCSS files use the extension .scss
+Sass memiliki 2 sintaks. Sintaks paling banyak digunakan adalah "SCSS", dan ini adalah versi CSS yang sudah ditingkatkan. Artinya seluruh sintaks CSS yang valid, valid juga untuk SCSS. Berkas SCSS menggunakan ekstensi .scss
 
-Sass will compile .scss and .sass files to .css files for you, so you can write your stylesheets with more advanced features.
+Sass akan menghimpun berkas .scss dan .sass menjadi berkas .css untuk Anda, dan Anda dapat menulis stylesheet dengan lebih banyak fitur lanjutan.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start/).
+- Sebuah [Situs Gatsby](/docs/quick-start)
 
-#### Directions
+#### Petunjuk
 
-1. Install the Gatsby plugin [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and `node-sass`.
+1. Pasang plugin Gatsby [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) dan `node-sass`.
 
 `npm install --save node-sass gatsby-plugin-sass`
 
-2. Include the plugin in your `gatsby-config.js` file.
+2. Muat plugin pada berkas `gatsby-config.js` Anda.
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-sass`],
 ```
 
-3.  Write your stylesheets as `.sass` or `.scss` files and import them. If you don't know how to import styles, take a look at [Styling with CSS](/docs/recipes/#2-styling-with-css)
+3. Tulis stylesheet Anda sebagai berkas `.sass` atau `.scss` dan impor mereka. Jika Anda belum tahu caranya impor styles, coba lihat [Styling dengan CSS](/docs/recipes/#2-styling-with-css)
 
 ```css:title=styles.scss
 $font-stack: Helvetica, sans-serif;
@@ -518,30 +518,30 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
-_Note: You can use Sass/SCSS files as modules too, like mentioned in the previous recipe about CSS modules, with the difference that instead of .css the extensions have to be .scss or .sass_
+_Note: Anda dapat menggunakan berkas Sass/SCSS sebagai modul, seperti yang telah dijelaskan pada resep sebelumnya mengenai modul CSS, dengan perbedaan ekstensinya haruslah .scss atau .sass, bukan .css_
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Difference between .sass and .scss](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
-- [Sass guide from the official Sass website](https://sass-lang.com/guide)
-- [A more complete installation tutorial on Sass with some more explanations and more resources](https://www.gatsbyjs.org/docs/sass/)
+- [Perbedaan antara .sass dan .scss](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
+- [Panduan Sass dari situs resmi sass](https://sass-lang.com/guide)
+- [Tutorial lengkap instalasi Sass dengan penjelasan dan sumber daya yang lebih lengkap](https://www.gatsbyjs.org/docs/sass/)
 
-### Adding a Local Font
+### Menambah Font Lokal
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start/)
-- A font file: `.woff2`, `.ttf`, etc.
+- Sebuah [Situs Gatsby](/docs/quick-start)
+- Berkas font: `.woff2`, `.ttf`, etc.
 
-#### Directions
+#### Petunjuk
 
-1. Copy a font file into your Gatsby project, such as `src/fonts/fontname.woff2`.
+1. Salin sebuah berkas font ke proyek Gatsby Anda, seperti `src/fonts/fontname.woff2`.
 
 ```
 src/fonts/fontname.woff2
 ```
 
-2. Import the font asset into a CSS file to bundle it into your Gatsby site:
+2. Impor asset font ke sebuah berkas CSS untuk menggabungkannya ke situs Gatsby Anda:
 
 ```css:title=src/css/typography.css
 @font-face {
@@ -550,7 +550,7 @@ src/fonts/fontname.woff2
 }
 ```
 
-**Note:** Make sure the font name is referenced from the relevant CSS, e.g.:
+**Catatan:** Pastikan nama font direferensikan dari CSS yang relevan, contoh:
 
 ```css:title=src/components/layout.css
 body {
@@ -558,31 +558,31 @@ body {
 }
 ```
 
-By targeting the HTML `body` element, your font will apply to most text on the page. Additional CSS can target other elements, such as `button` or `textarea`.
+Dengan menargetkan elemen HTML `body`, font Anda akan diterapkan pada sebagian teks di halaman. CSS tambahan dapat diarahkan ke elemen lainnya, contoh `button` atau `textarea`.
 
-If fonts are not updating following steps above, make sure to replace the existing font-family in relevant CSS.
+Jika font tidak memperbarui setelah mengikuti langkah-langkah di atas, pastikan untuk menggantikan font-family yang sudah ada dengan CSS yang relevan.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- More on [importing assets into files](/docs/importing-assets-into-files/)
+- Selengkapnya [impor aset ke berkas](/docs/importing-assets-into-files/)
 
-### Using Emotion
+### Menggunakan Emotion
 
-[Emotion](https://emotion.sh) is a powerful CSS-in-JS library that supports both inline CSS styles and styled components. You can use each styling feature individually or together in the same file.
+[Emotion](https://emotion.sh) adalah pustaka CSS-in-JS yang mantap, mendukung inline CSS styles dan styled components sekaligus. Anda dapat menggunakan masing-masing fitur secara sendiri ataupun berbarengan.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
+- Sebuah [Situs Gatsby](/docs/quick-start)
 
-#### Directions
+#### Petunjuk
 
-1. Install the [Gatsby Emotion plugin](/packages/gatsby-plugin-emotion/) and Emotion packages.
+1. Pasang [Plugin Gatsby Emotion](/packages/gatsby-plugin-emotion/) dan Emotion package.
 
 ```shell
 npm install --save gatsby-plugin-emotion @emotion/core @emotion/styled
 ```
 
-2. Add the `gatsby-plugin-emotion` plugin to your `gatsby-config.js` file:
+2. Tambahkan plugin `gatsby-plugin-emotion` ke dalam berkas `gatsby-config.js` Anda:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -590,9 +590,9 @@ module.exports = {
 }
 ```
 
-3. If you don't already have one, create a page in your Gatsby site at `src/pages/emotion-sample.js`.
+3. Jika Anda tidak punya, buatlah sebuah halaman di situs Gatsby anda pada `src/pages/emotion-sample.js`.
 
-Import Emotion's `css` core package. You can then use the `css` prop to add [Emotion object styles](https://emotion.sh/docs/object-styles) to any element inside a component:
+Impor inti package `css` dari Emotion. Anda dapat menggunakan `css` prop untuk menambahkan [Style Emotion objek](https://emotion.sh/docs/object-styles) pada elemen apa saja pada sebuah komponen.
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -606,13 +606,13 @@ export default () => (
         color: "blue",
       }}
     >
-      This page is using Emotion.
+      Halaman ini menggunakan Emotion.
     </p>
   </div>
 )
 ```
 
-4. To use Emotion's [styled components](https://emotion.sh/docs/styled), import the package and define them using the `styled` function.
+4. Untuk menggunakan [styled components](https://emotion.sh/docs/styled) dari Emotion, impor paket dan definisikan menggunakan fungsi `styled`.
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -628,169 +628,173 @@ const Content = styled.div`
 
 export default () => (
   <Content>
-    <p>This page is using Emotion.</p>
+    <p>Halaman ini menggunakan Emotion.</p>
   </Content>
 )
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Using Emotion in Gatsby](/docs/emotion/)
-- [Emotion website](https://emotion.sh)
-- [Getting started with Emotion and Gatsby](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
+- [Menggunakan Emotion di Gatsby](/docs/emotion/)
+- [Situs Emotion](https://emotion.sh)
+- [Memulai dengan Emotion dan Gatsby](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
 
-### Using Google Fonts
+### Menggunakan Font Google 
 
-Hosting your own [Google Fonts](https://fonts.google.com/) locally within a project means they won't have to be fetched over the network when your site loads, increasing your site's speed index by up to ~300 milliseconds on desktop and 1+ seconds on 3G. It's also recommended to limit custom font usage to only the essential for performance.
+Hosting [Font Google](https://fonts.google.com/) Anda sendiri di lokal pada sebuah proyek berarti font tersebut tidak akan di-fetch melalui jejaring internet ketika situs dimuat, akan meningkatkan kecepatan situs Anda sampai dengan ~300 milidetik pada desktop dan `+ detik pada 3G. Juga rekomendasi untuk memberikan batas penggunaan font kustom hanya untuk hal yang penting demi kinerja yang baik.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli/) installed
-- Choosing a font package from [the typefaces project](https://github.com/KyleAMathews/typefaces)
+- Sebuah [Situs Gatsby](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli/) sudah terpasang
+- Memilih package font dari [proyel typefaces](https://github.com/KyleAMathews/typefaces)
 
-#### Directions
+#### Petunjuk
 
-1. Run `npm install --save typeface-your-chosen-font`, replacing `your-chosen-font` with the name of the font you want to install from [the typefaces project](https://github.com/KyleAMathews/typefaces).
+1. Jalankan `npm install --save typeface-your-chosen-font`, menggantikan `your-chosen-font` dengan nama font yang ingin Anda pasang dari [proyek typefaces](https://github.com/KyleAMathews/typefaces).
 
-An example to load the popular 'Source Sans Pro' font would be: `npm install --save typeface-source-sans-pro`.
+Contoh untuk memuat font 'Source Sans Pro' yang populer seperti ini: `npm install --save typeface-source-sans-pro`.
 
-2. Add `import "typeface-your-chosen-font"` to a layout template, page component, or `gatsby-browser.js`.
+2. Tambahkan `import "typeface-your-chosen-font"` pada template tata letak, komponen halaman, atau `gatsby-browser.js`.
 
 ```jsx:title=src/components/layout.js
 import "typeface-your-chosen-font"
 ```
 
-3. Once it's imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+3. Apabila sudah diimpor, nama font ini dapat digunakan pada stylesheet CSS, modul CSS, atau CSS-in-JS.
 
 ```css:title=src/components/layout.css
 body {
-  font-family: "Your Chosen Font";
+  font-family: "Font Pilihan Anda";
 }
 ```
 
-_NOTE: So for the above example, the relevant CSS declaration would be `font-family: 'Source Sans Pro';`_
+_CATATAN: Untuk contoh di atas, deklarasi css yang tepat akan menjadi `font-family: 'Source Sans Pro';`_
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Typography.js](/docs/typography-js/) - Another option for using Google fonts on a Gatsby site
+- [Typography.js](/docs/typography-js/) - Pilihan lain untuk menggunakan font Google pada situs Gatsby
 - [The Typefaces Project Docs](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
-- [Live example on Kyle Mathews' blog](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
+- [Dokumentasi Proyek Typefaces](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
+- [Contoh langsung pada blog Kyle Mathews](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
 
-## 3. Working with starters
+## 3. Bekerja dengan starter
 
-[Starters](/docs/starters/) are boilerplate Gatsby sites maintained officially, or by the community.
+[Starter](/docs/starters/) adalah boilerplate situs Gatsby yang disokong secara resmi atau bersama dengan komunitas.
 
-### Using a starter
+### Menggunakan starter
 
-#### Prerequisites
+#### Prasyarat
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-#### Directions
+#### Petunjuk
 
-1. Find the starter you'd like to use. (_The [Starter Library](/starters/?v=2) is a good place to look!_)
+1. Pilih starter yang ingin Anda gunakan. (_The [Pustaka Starter](/starters/?v=2) adalah tempat terbaik untuk meninjau!_)
 
-2. Generate a new site based on the starter. In the terminal, run:
+2. Buat situs baru menggunakan starter. Pada termina, jalankan:
 
 ```shell
-gatsby new {your-project-name} {link-to-starter}
+gatsby new {nama-proyek-anda} {tautan-starter}
 ```
 
-> _Don't run the above command as-is -- remember to replace {your-project-name} and {link-to-starter}!_
+> _Jangan jalankan persis seperti yang ada pada contoh -- ingat untuk menggantu {nama-proyek-anda} dan {tautan-starter}!_
 
-3. Run your new site:
+3. Jalankan situs baru Anda:
 
 ```shell
-cd {your-project-name}
+cd {nama-proyek-anda}
 gatsby develop
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Follow a [more detailed guide](/docs/starters/) on using Gatsby starters.
-- Learn how to use the [Gatsby CLI](/docs/gatsby-cli) tool to use starters in [tutorial part one](/tutorial/part-one/#using-gatsby-starters)
-- Browse the [Starter Library](/starters/?v=2)
-- Check out Gatsby's [official default starter](https://github.com/gatsbyjs/gatsby-starter-default)
+- Ikuti [panduan lebih detail](/docs/starters/) menggunakan starter Gatsby.
+- Belajar menggunakan [Gatsby CLI](/docs/gatsby-cli) perangkat untuk menggunakan starter di [tutorial bab pertama](/tutorial/part-one/#using-gatsby-starters)
+- Jelajahi [Pustaka Starter](/starters/?v=2)
+- Cek Gatsby [starter resmi standar](https://github.com/gatsbyjs/gatsby-starter-default)
 
-## 4. Working with themes
+## 4. Bekerja dengan tema
 
-A Gatsby theme abstracts Gatsby configuration (shared functionality, data sourcing, design) into an installable package. This means that the configuration and functionality isn’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+Sebuah tema Gatsby membungkus struktur Gatsby (fungsionalitas, sumber data, desain) ke dalam satu paket yang bisa dipasang. Ini artinya pengaturan dan fungsionalitas tidak secara langsung tertulis pada proyek Anda, tetapi sudah dibuat dalam suatu versi, diatur secara sentral, dan terpasang sebagai dependency. Anda dapat secara mudah memperbarui tema, membuat tema secara bersama-sama, bahkan bertukar tema yang cocok dan sesuai satu sama lain.
 
-- Read more on [What is a Gatsby Theme?](/docs/themes/what-are-gatsby-themes)
+- Baca selengkapnya [Apa itu Tema Gatsby?](/docs/themes/what-are-gatsby-themes)
 
-### Creating a new site using a theme starter
+### Membuat situs baru menggunakan starter tema
 
-Creating a site based on a starter that configures a theme follows the same process as creating a site based on a starter that **doesn't** configure a theme. In this example you can use the [starter for creating a new site that uses the official Gatsby blog theme](https://github.com/gatsbyjs/gatsby-starter-blog-theme).
 
-#### Prerequisites
+Membuat situs berdasarkan starter yang menstruktur tema, sama prosesnya dengan membuat situs berdasarkan starter yang tidak menstruktur tema. Pada contoh ini Anda dapat menggunakan [starter untuk membuat situs baru yang menggunakan tema blog Gatsby resmi](https://github.com/gatsbyjs/gatsby-starter-blog-theme).
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+#### Prasyarat
 
-#### Directions
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-1. Generate a new site based on the blog theme starter:
+#### Petunjuk
+
+1. Buatlah sebuat situs berdasarkan starter tema blog:
 
 ```shell
-gatsby new {your-project-name} https://github.com/gatsbyjs/gatsby-starter-blog-theme
+gatsby new {nama-proyek-anda} https://github.com/gatsbyjs/gatsby-starter-blog-theme
 ```
 
-2. Run your new site:
+2. Jalankan situs baru Anda:
 
 ```shell
-cd {your-project-name}
+cd {nama-proyek-anda}
 gatsby develop
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Learn how to use an existing Gatsby theme in the [shorter conceptual guide](/docs/themes/using-a-gatsby-theme) or the more detailed [step-by-step tutorial](/tutorial/using-a-theme).
+- Belajar cara menggunakan tema Gatsby yang sudah diseddiakan di [panduan konsep yang lebih pendek](/docs/themes/using-a-gatsby-theme) atau lebih detail [tutorial selangkah demi selangkah](/tutorial/using-a-theme).
 
-### Building a new theme
+### Build tema baru
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-use-the-gatsby-theme-workspace-starter-to-begin-building-a-new-theme"
-  lessonTitle="Use the Gatsby Theme Workspace Starter to Begin Building a New Theme"
+  lessonTitle="Menggunakan Starter Ruang Kerja Tema Gatsby untuk Memulai Build sebuah Tema Baru"
 />
 
-#### Prerequisites
+#### Prasyarat
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-* [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) installed
+* [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable) terpasang
 
-#### Directions
+#### Petunjuk
 
-1. Generate a new theme workspace using the [Gatsby theme workspace starter](https://github.com/gatsbyjs/gatsby-starter-theme-workspace):
+1. Buatlah sebuah ruang kerja tema baru menggunakan [Starter ruang kerja tema Gatsby](https://github.com/gatsbyjs/gatsby-starter-theme-workspace):
 
 ```shell
-gatsby new {your-project-name} https://github.com/gatsbyjs/gatsby-starter-theme-workspace
+gatsby new {nama-proyek-anda} https://github.com/gatsbyjs/gatsby-starter-theme-workspace
 ```
 
-2. Run the example site in the workspace:
+2. Jalankan situs contoh tersebut pada ruang kerja:
 
 ```shell
 yarn workspace example develop
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Follow a [more detailed guide](/docs/themes/building-themes/) on using the Gatsby theme workspace starter.
-- Learn how to build your own theme in the [Gatsby Theme Authoring video course on Egghead](https://egghead.io/courses/gatsby-theme-authoring), or in the [video course's complementary written tutorial companion](/tutorial/building-a-theme).
+- Ikuti [panduan selengkapnya](/docs/themes/building-themes/) menggunakan starter ruang kerja tema Gatsby.
+- Belajar bagaimana cara build tema Anda pada [Kursus video pembuatan tema Gatsby pada Egghead](https://egghead.io/courses/gatsby-theme-authoring), atau pada [kursus video tambahan](/tutorial/building-a-theme).
 
-## 5. Sourcing data
+## 5. Sumber data
 
-Data sourcing in Gatsby is plugin-driven; Source plugins fetch data from their source (e.g. the `gatsby-source-filesystem` plugin fetches data from the file system, the `gatsby-source-wordpress` plugin fetches data from the WordPress API, etc). You can also source the data yourself.
+Sumber data pada Gatsby disokong dengan plugin; Plugin mengambil data dari sumber yang mereka miliki (contoh plugin `gatsby-source-filesystem` mengambil data dari berkas sistem, plugin `gatsby-source-wordpress` mengambul data dari API WordPress, dsb). Anda juga dapat meletakkan data pada sumber Anda sendiri.
 
-### Adding data to GraphQL
+### Menambahkan data ke GraphQL
 
-Gatsby's [GraphQL data layer](/docs/querying-with-graphql/) uses nodes to model chunks of data. Gatsby source plugins add source nodes that you can query for, but you can also create source nodes yourself. To add custom data to the GraphQL data layer yourself, Gatsby provides methods you can leverage.
 
-This recipe shows you how to add custom data using `createNode()`.
+[Lapisan data GraphQL](/docs/querying-with-graphql/) Gatsby menggunakan simpul(node) untuk sekumpulan data. Plugin sumber(source) Gatsby menambahkan simpul sumber yang dapat anda query, tetapi juga Anda dapat membuat simpul sumber Anda sendiri. Untuk menambahkan data kustom pada lapisan data GraphQL, Gatsby memberikan metode yang dapat Anda atur.
 
-#### Directions
+Resep ini menunjukkan kepada Anda bagaimana menambah kustom data menggunakan `createNode()`.
 
-1. In `gatsby-node.js` use `sourceNodes()` and `actions.createNode()` to create and export nodes to be able to query the data.
+#### Petunjuk
+
+1. Pada `gatsby-node.js` menggunakan `sourceNodes()` dan `actions.createNode()` untuk membuat dan ekspor simpul yang dapat men-query data.
+
 
 ```javascript:title=gatsby-node.js
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
@@ -814,11 +818,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 ```
 
-2. Run `gatsby develop`.
+2. Jalankan `gatsby develop`.
 
-   > _Note: After making changes in `gatsby-node.js` you need to re-run `gatsby develop` for the changes to take effect._
+   > _Catatan: Setelah membuat perubahan pada `gatsby-node.js` Anda perlu untuk menjalankan ulang `gatsby develop` untuk melihat perubahan yang terjadi._
 
-3. Query the data (in GraphiQL or in your components).
+3. Query data (pada GraphQL atau di komponen Anda).
 
 ```graphql
 query MyPokemonQuery {
@@ -832,30 +836,31 @@ query MyPokemonQuery {
 }
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Walk through an example using the `gatsby-source-filesystem` plugin in [tutorial part five](/tutorial/part-five/#source-plugins)
+- Contoh singkat menggunakan plugin `gatsby-source-filesystem` pada [tutorial bab lima](/tutorial/part-five/#source-plugins)
 - Search available source plugins in the [Gatsby library](/plugins/?=source)
-- Understand source plugins by building one in the [Pixabay source plugin tutorial](/docs/pixabay-source-plugin-tutorial/)
-- The createNode function [documentation](/docs/actions/#createNode)
+- Cari sumber plugin yang tersedia di [pustaka Gatsby](/plugins/?=source)
+- Paham sumber dar plugin dengan build salah satunya dari [Pixabay tutorial plugin sumber](/docs/pixabay-source-plugin-tutorial/)
+- Fungsi createNode [dokumentasi](/docs/actions/#createNode)
 
-### Sourcing Markdown data for blog posts and pages with GraphQL
+### Sumber data Markdown untuk post dan halaman blog dengan GrapghQL
 
-You can source Markdown data and use Gatsby's [`createPages` API](/docs/actions/#createPage) to create pages dynamically.
+Anda dapat meletakkan data Markdown dan menggunakan [`createPages` API](/docs/actions/#createPage) Gatsby untuk membuat halaman secara dinamis.
 
-This recipe shows how to create pages from Markdown files on your local filesystem using Gatsby's GraphQL data layer.
+Resep ini menampilkan bagaimana cara membuat halaman dari berkas Markdown pada sistem berkas lokal Anda mengginakan lapisan dara GraphQL Gatsby.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start) with a `gatsby-config.js` file
-- The [Gatsby CLI](/docs/gatsby-cli) installed
-- The [gatsby-source-filesystem plugin](/packages/gatsby-source-filesystem) installed
-- The [gatsby-transformer-remark plugin](/packages/gatsby-transformer-remark) installed
-- A `gatsby-node.js` file
+- Sebuah [situs Gatsby](/docs/quick-start) dengan berkas `gatsby-config.js`
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
+- [gatsby-source-filesystem plugin](/packages/gatsby-source-filesystem) terpasang
+- [gatsby-transformer-remark plugin](/packages/gatsby-transformer-remark) terpasang
+- Berkas `gatsby-node.js`
 
-#### Directions
+#### Petunjuk
 
-1. In `gatsby-config.js`, configure `gatsby-transformer-remark` along with `gatsby-source-filesystem` to pull in Markdown files from a source folder. This would be in addition to any previous `gatsby-source-filesystem` entries, such as for images:
+1. Pada `gatsby-config.js`, konfigurasi `gatsby-transformer-remark` dengan `gatsby-source-filesystem` untuk menangkap berkas Markdown dari sebuat berkas sumber. Ini merupakan tambahan dari catatan `gatsby-source-filesystem`, contohnya di bawah ini:
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -871,19 +876,20 @@ module.exports = {
   ]
 ```
 
-2. Add a Markdown post to `src/content`, including frontmatter for the title, date, and path, with some initial content for the body of the post:
+2. Tambahkan sebuah post Markdown pada `src/content`,  sekaligus sebuah sampul depan untuk judul, tanggal, dan path, dengan beberapa konten awal untuk body dari sebuah post:
 
 ```markdown:title=src/content/my-first-post.md
 ---
-title: My First Post
+title: Post Pertamaku
 date: 2019-07-10
-path: /my-first-post
+path: /post-pertamaku
 ---
 
-This is my first Gatsby post written in Markdown!
+Ini post pertamaku di Gatsby menggunakan Markdown!
 ```
 
-3. Start up the development server with `gatsby develop`, navigate to the GraphiQL explorer at `http://localhost:8000/___graphql`, and write a query to get all markdown data:
+
+3. Mulai peladen(server) pengembangan dengan `gatsby develop`, arahkan ke GraphQL explorer pada `http://localhost:8000/___graphql`, dan tulis query untuk mendapatkan semua dara markdown:
 
 ```graphql
 {
@@ -900,13 +906,13 @@ This is my first Gatsby post written in Markdown!
 ```
 
 <iframe
-  title="Query for all markdown"
+  title="Query untuk semua markdown"
   src="https://q4xpb.sse.codesandbox.io/___graphql?explorerIsOpen=false&query=%7B%0A%20%20allMarkdownRemark%20%7B%0A%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20frontmatter%20%7B%0A%20%20%20%20%20%20%20%20%20%20path%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D"
   width="600"
   height="300"
 />
 
-4. Add the JavaScript code to generate pages from Markdown posts at build time by copying the GraphQL query into `gatsby-node.js` and looping through the results:
+4. Tambahkan kode JavaScript untuk membuat halaman dari post Markdown ketika build dengan cara menyalin query GraphQL ke dalam `gatsby-node.js` dan looping sampai hasilnya:
 
 ```js:title=gatsby-node.js
 const path = require(`path`)
@@ -940,7 +946,7 @@ exports.createPages = async ({ actions, graphql }) => {
 }
 ```
 
-5. Add a post template in `src/templates`, including a GraphQL query for generating pages dynamically from Markdown content at build time:
+5. Tambahkan sebuah template post di `src/templates`, termasuk sebuah query GraphhQL untuk membuat halaman secara dinamis dari konten Markdwon ketika build:
 
 ```jsx:title=src/templates/post.js
 import React from "react"
@@ -975,31 +981,31 @@ export const pageQuery = graphql`
 `
 ```
 
-6. Run `gatsby develop` to restart the development server. View your post in the browser: `http://localhost:8000/my-first-post`
+6. Jalankan `gatsby develop` untuk menjalankan ulang peladen pengembangan. Untuk melihat hasil post pada peramban: `http://localhost:8000/my-first-post`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Tutorial: Programmatically create pages from data](/tutorial/part-seven/)
-- [Creating and modifying pages](/docs/creating-and-modifying-pages/)
-- [Adding Markdown pages](/docs/adding-markdown-pages/)
-- [Guide to creating pages from data programmatically](/docs/programmatically-create-pages-from-data/)
-- [Example repo](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-markdown) for this recipe
+- [Tutorial: Membuat halaman secara terprogram dengan data](/tutorial/part-seven/)
+- [Membuat dan memodifikasi halaman](/docs/creating-and-modifying-pages/)
+- [Menambahkan halaman Markdown](/docs/adding-markdown-pages/)
+- [Panduan untuk membuat halaman dari data secara terprogram](/docs/programmatically-create-pages-from-data/)
+- [Contoh repo](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-sourcing-markdown) untuk resep ini
 
-### Pulling data from an external source and creating pages without GraphQL
+### Menarik data dari sumber eksternal dan membuat halaman tanpa GraphQL
 
-You don't have to use the GraphQL data layer to include data in pages, [though there are reasons why you should consider GraphQL](/docs/why-gatsby-uses-graphql/). You can use the node `createPages` API to pull unstructured data directly into Gatsby sites rather than through GraphQL and source plugins.
+Anda tidak perlu menggunakan lapisan data GraphQL untuk memasukkan data pada halaman, [meskipun ada beberapa alasan mengapa harus mempertimbangkan GraphQL](/docs/why-gatsby-uses-graphql/). Anda dapat menggunakan simpul API `createPages` untuk menarik data yang tak terstruktur ke dalam situs Gatsby secara langsung daripada melalui GraphQL dan plugin sumber.
 
-In this recipe, you'll create dynamic pages from data fetched from the [PokéAPI’s REST endpoints](https://www.pokeapi.co/). The [full example](https://github.com/jlengstorf/gatsby-with-unstructured-data/) can be found on GitHub.
+Pada resep ini, Anda akan membuat halaman secara dinamis dari data yang didapat dari [PokéAPI’s REST endpoints](https://www.pokeapi.co/). [Contoh lengkap](https://github.com/jlengstorf/gatsby-with-unstructured-data/) dapat ditemukan pada GitHub.
 
-#### Prerequisites
+#### Prasyarat
 
-- A Gatsby Site with a `gatsby-node.js` file
-- The [Gatsby CLI](/docs/gatsby-cli) installed
-- The [axios](https://www.npmjs.com/package/axios) package installed through npm
+- Situs Gatsby dengan berkas `gatsby-node.js`
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
+- Paket [axios](https://www.npmjs.com/package/axios) terpasang melalui npm
 
-#### Directions
+#### Petunjuk
 
-1. In `gatsby-node.js`, add the JavaScript code to fetch data from the PokéAPI and programmatically create an index page:
+1. Pada `gatsby-node.js`, tambahkan kode JavaScript untuk mendapatkan data dari PokéAPI dan secara terprogram membuat halaman index: 
 
 ```js:title=gatsby-node.js
 const axios = require("axios")
@@ -1025,14 +1031,14 @@ exports.createPages = async ({ actions: { createPage } }) => {
 }
 ```
 
-2. Create a template to display Pokémon on the homepage:
+2. Buat sebuah template untuk menampilkan Pokémon pada beranda: 
 
 ```js:title=src/templates/all-pokemon.js
 import React from "react"
 
 export default ({ pageContext: { allPokemon } }) => (
   <div>
-    <h1>Behold, the Pokémon!</h1>
+    <h1>Lihat, itu Pokémon!</h1>
     <ul>
       {allPokemon.map(pokemon => (
         <li key={pokemon.id}>
@@ -1045,32 +1051,32 @@ export default ({ pageContext: { allPokemon } }) => (
 )
 ```
 
-3. Run `gatsby develop` to fetch the data, build pages, and start the development server.
-4. View your homepage in a browser: `http://localhost:8000`
+3. Jalankan `gatsby develop` untuk mendapatkan data, build halaman, dan memulai peladen pengembangan.
+4. Buka beranda Anda di peramban: `http://localhost:8000`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Full Pokemon data repo](https://github.com/jlengstorf/gatsby-with-unstructured-data/)
-- More on using unstructured data in [Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/)
-- When and how to [query data with GraphQL](/docs/querying-with-graphql/) for more complex Gatsby sites
+- [Repo data lengkap Pokemon](https://github.com/jlengstorf/gatsby-with-unstructured-data/)
+- Selengkapnya menggunakan data tak terstruktur [Menggunakan Gatsby tanpa GraphQL](/docs/using-gatsby-without-graphql/)
+- Kapan dan bagaimana [query data dengan GraphQL](/docs/querying-with-graphql/) untuk situs Gatsby yang lebih rumit
 
-### Sourcing content from Drupal
+### Konten sumber dari Drupal
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- A [Drupal](http://drupal.org) site
-- The [JSON:API module](https://www.drupal.org/project/jsonapi) installed and enabled on the Drupal site
+- Sebuah [situs Gatsby](/docs/quick-start)
+- Sebuah situs [Drupal](http://drupal.org)
+- [Modul JSON:API](https://www.drupal.org/project/jsonapi) terpasang dan aktif pada situs Drupal
 
-#### Directions
+#### Petunjuk
 
-1. Install the `gatsby-source-drupal` plugin.
+1. Pasang plugin `gatsby-source-drupal`.
 
 ```
 npm install --save gatsby-source-drupal
 ```
 
-2. Edit your `gatsby-config.js` file to enable the plugin and configure it.
+2. Ubah berkas`gatsby-config.js` untuk mengaktifkannya, kemudian konfigurasi.
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -1078,15 +1084,15 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://your-website/`,
-        apiBase: `api`, // optional, defaults to `jsonapi`
+        baseUrl: `https://situs-anda`,
+        apiBase: `api`, // pilihan, standarnya `jsonapi`
       },
     },
   ],
 }
 ```
 
-3. Start the development server with `gatsby develop`, and open the GraphiQL explorer at `http://localhost:8000/___graphql`. Under the Explorer tab, you should see new node types, such as `allBlockBlock` for Drupal blocks, and one for every content type in your Drupal site. For example, if you have a "Page" content type, it will be available as `allNodePage`. To query all "Page" nodes for their title and body, use a query like:
+3. Jalankan peladen pengembangan dengan cara `gatsby develop`, dan buka GraphQL explorer pada `http://localhost:8000/___graphql`. Pada tab Explorer, Anda akan melihat tipe-tipe simpul, misalnya `allBlockBlock` untuk blok Drupal, dan satu untuk tiap tipe konten di situs Drupal Anda. Sebagai contoh, jika Anda memiliki tipe konten "Halaman", akan tersedia sebagai `allNodePage`. Untuk query semua simpul "Halaman" untuk judul dan body, gunakan query sebagaimana berikut ini:
 
 ```graphql
 {
@@ -1103,9 +1109,9 @@ module.exports = {
 }
 ```
 
-4. To use your Drupal data, create a new page in your Gatsby site at `src/pages/drupal.js`. This page will list all Drupal "Page" nodes.
+4. Untuk menggunakan data Drupal Anda, buatlah sebuah halaman baru di situs Gatsby anda di `src/pages/drupal.js`. Halaman ini akan membuat daftar keseluruhan semua simpul "Halaman" Drupal. 
 
-_**Note:** the exact GraphQL schema will depend on your how Drupal instance is structured._
+_**Catatan:**Schema GraphQL yang tepat persis bergantung kepada bagaimana Anda membuat struktur dari instance Drupal_
 
 ```jsx:title=src/pages/drupal.js
 import React from "react"
@@ -1113,7 +1119,7 @@ import { graphql } from "gatsby"
 
 const DrupalPage = ({ data }) => (
   <div>
-    <h1>Drupal pages</h1>
+    <h1>Halaman Drupal</h1>
     <ul>
     {data.allNodePage.edges.map(({ node, index }) => (
       <li key={index}>
@@ -1144,29 +1150,29 @@ export const query = graphql`
 }
 ```
 
-5. With the development server running, you can view the new page by visiting `http://localhost:8000/drupal`.
+5. Ketika peladen pengembangan berjalan, Anda dapat melihat halaman baru dengan mengunjungi `http://localhost:8000/drupal`.
 
-#### Additional Resources
+#### Sumber daya tambahan
 
-- [Using Decoupled Drupal with Gatsby](/blog/2018-08-13-using-decoupled-drupal-with-gatsby/)
-- [More on sourcing from Drupal](/docs/sourcing-from-drupal)
-- [Tutorial: Programmatically create pages from data](/tutorial/part-seven/)
+- [Menggunakan Drupal yang terpisah dengan Gatsby](/blog/2018-08-13-using-decoupled-drupal-with-gatsby/)
+- [Selengkapnya sumber dari Drupal](/docs/sourcing-from-drupal)
+- [Tutorial: Membuat halaman dari data secara terprogram](/tutorial/part-seven/)
 
-## 6. Querying data
+## 6. Query data
 
-### Querying data with a Page Query
+### Query data dengan Halaman Query
 
-You can use the `graphql` tag to query data in the pages of your Gatsby site. This gives you access to anything included in Gatsby's data layer, such as site metadata, source plugins, images, and more.
+Anda dapat menggunakan label `graphql` untuk query data pada halaman situs Gatsby Anda. Hal ini memberikan Anda akses kepada aja saja termasuk lapisan data Gatsby, seperti metadata, plugin sumber, gambar, dan lainnya. 
 
-#### Directions
+#### Petunjuk
 
-1. Import `graphql` from `gatsby`.
+1. Impor `graphql` dari `gatsby`.
 
-2. Export a constant named `query` and set its value to be a `graphql` template with the query between two backticks.
+2. Ekspor sebuah nama konstan `query` dan atur nilainya menjadi template `graphql` dengan query antara dua backtick.
 
-3. Pass in `data` as a prop to the component.
+3. Oper `data` sebagai prop pada komponen.
 
-4. The `data` variable holds the queried data and can be referenced in JSX to output HTML.
+4. Variabel `data` menyimpan query data dan dapat dirujuk pada JSX untuk menghasilkan HTML.
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -1198,19 +1204,20 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [GraphQL and Gatsby](/docs/graphql/): understanding the expected shape of your data
-- [More on querying data in pages with GraphQL](/docs/page-query/)
-- [MDN on Tagged Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) like the ones used in GraphQL
+- [GraphQL dan Gatsby](/docs/graphql/): paham bentuk data yang diharapkan
+- [Selebihnya mengenai query data di halaman dengan GraphQL](/docs/page-query/)
+- [MDN untuk Tagged Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) seperti yang digunakan pada GraphQL
 
-### Querying data with the StaticQuery Component
+### Query data dengan komponen StaticQuery
 
-`StaticQuery` is a component for retrieving data from Gatsby's data layer in [non-page components](/docs/static-query/), such as a header, navigation, or any other child component.
+`StaticQuery` adalah komponen untuk menerima data dari lapisan data Gatsby pada [komponen bukan halaman](/docs/static-query/), seperti header, navigasi, atau komponen child lainnya.
 
-#### Directions
+#### Petunjuk
 
 1. The `StaticQuery` Component requires two render props: `query` and `render`.
+1. Komponen `StaticQuery` membutuhkan dua prop untuk render: `query` dan `render`.
 
 ```jsx:title=src/components/NonPageComponent.js
 import React from "react"
@@ -1241,26 +1248,28 @@ const NonPageComponent = () => (
 export default NonPageComponent
 ```
 
-2. You can now use this component as you would [any other component](/docs/building-with-components#non-page-components) by importing it into a larger page of JSX components and HTML markup.
+2. Anda sekarang dapat menggunakan komponen tersebut seperti yang akan anda lakukan terhadap [komponen lainnya](/docs/building-with-components#non-page-components) dengan cara mengimpor ke dalam halaman yang lebih besar dari komponen JSX dan markup HTML.
 
-### Querying data with the useStaticQuery hook
+### Query data dengan hook useStaticQuery 
 
-Since Gatsby v2.1.0, you can use the `useStaticQuery` hook to query data with a JavaScript function instead of a component. The syntax removes the need for a `<StaticQuery>` component to wrap everything, which some people find simpler to write.
+Sejak gatsby v2.1.0, Anda dapat menggunakan hook `useStaticQuery` untuk query data pada fungsi JavaScript daripada terhadap komponen. Sintak ini menghapus kebutuhan akan komponen `<StaticQuery>` untuk membungkus apa saja, yang mana beberapa orang melihatnya sebagai suatu yang lebih sederhana untuk ditulis.
 
 The `useStaticQuery` hook takes a GraphQL query and returns the requested data. It can be stored in a variable and used later in your JSX templates.
 
-#### Prerequisites
+Hook `useStaticQuery` menggunakan GraphQL query dan mengembalikan data yang diminta. Data tersebut dapat diletakkan pada variabel dan digunakan di kemudian hari pada template JSX Anda.
 
-- You'll need React and ReactDOM 16.8.0 or later (keeping Gatsby updated handles this)
-- Recommended reading: the [Rules of React Hooks](https://reactjs.org/docs/hooks-rules.html)
+#### Prasyarat
 
-#### Directions
+- Anda akan membutuhkan React dan ReactDOM 16.8.0 ke atas  Gatsby akan selalu memperbarui dan memperhatikan hal ini
+- Bacaan rekomendasi: [Kaidah React Hooks](https://reactjs.org/docs/hooks-rules.html)
 
-1. Import `useStaticQuery` and `graphql` from `gatsby` in order to use the hook query the data.
+#### Petunjuk
 
-2. In the start of a stateless functional component, assign a variable to the value of `useStaticQuery` with your `graphql` query passed as an argument.
+1. Impor `useStaticQuery` dan `graphql` dari `gatsby` untuk menggunakan query hook pada data.
 
-3. In the JSX code returned from your component, you can reference that variable to handle the returned data.
+2. Pada permulaan stateless functional component, tetapkan sebuah variabel untuk nilai `useStaticQuery` dengan query `graphql` Anda yang dioper sebagai argumen.
+
+3. Pada JSX kode dikembalikan dari komponen Anda, dan Anda dapat merujuk variable tersebut untuk menanganu balikan data.
 
 ```jsx:title=src/components/NonPageComponent.js
 import React from "react"
@@ -1289,28 +1298,28 @@ const NonPageComponent = () => {
 export default NonPageComponent
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [More on Static Query for querying data in components](/docs/static-query/)
-- [The difference between a static query and a page query](/docs/static-query/#how-staticquery-differs-from-page-query)
-- [More on the useStaticQuery hook](/docs/use-static-query/)
-- [Visualize your data with GraphiQL](/docs/introducing-graphiql/)
+- [Lebih lanjut mengenati Static Query untuk query data di komponen](/docs/static-query/)
+- [Perbedaan antara static query dan page query](/docs/static-query/#how-staticquery-differs-from-page-query)
+- [Lebih lanjut mengenai hook useStaticQuery](/docs/use-static-query/)
+- [Visualisasikan data Anda dengan GraphQL](/docs/introducing-graphiql/)
 
-### Limiting with GraphQL
+### Membatasi dengan GraphQL
 
-When querying for data with GraphQL, you can limit the number of results returned with a specific number. This is helpful if you only need a few pieces of data or need to [paginate data](/docs/adding-pagination/).
+Ketika query data dengan GraphQL, Anda dapat membatasi jumlah hasil balikan dengan jumlah yang spesifik. Ini sangat membantu jika Anda hanya butuh sedikit data atau butuh untuk [data paginasi](/docs/adding-pagination/).
 
-To limit data, you'll need a Gatsby site with some nodes in the GraphQL data layer. All sites have some nodes like `allSitePage` and `sitePage` created automatically: more can be added by installing source plugins like `gatsby-source-filesystem` in `gatsby-config.js`.
+Untuk membatasi data, Anda akan nutuh situs Gatsby dengan beberapa simpul pada lapisan data GraphQL. Semua situs memiliki beberapa simpul seperti `allSitePage` dan `sitePage` yang dibuat secara otomatis: selebihnya dapat ditambahkan dengan cara memasang plugin sumber seperti `gatsby-source-filesystem` in `gatsby-config.js`.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start/)
+- Sebuah [situs Gatsby](/docs/quick-start/)
 
-#### Directions
+#### Petunjuk
 
-1. Run `gatsby develop` to start the development server.
-2. Open a tab in your browser at: `http://localhost:8000/___graphql`.
-3. Add a query in the editor with the following fields on `allSitePage` to start off:
+1. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+2. Buka tab di peramban Anda: `http://localhost:8000/___graphql`.
+3. Tambahkan sebuah query pada editor dengan fields `allSitePage` untuk memulai sebagai berikut:
 
 ```graphql
 {
@@ -1325,7 +1334,7 @@ To limit data, you'll need a Gatsby site with some nodes in the GraphQL data lay
 }
 ```
 
-4. Add a `limit` argument to the `allSitePage` field and give it an integer value `3`.
+4. Tambahkan `limit` argumen pada `allSitePage` field dan tambahkan nilai integer `3`.
 
 ```graphql
 {
@@ -1340,13 +1349,13 @@ To limit data, you'll need a Gatsby site with some nodes in the GraphQL data lay
 }
 ```
 
-5. Click the play button in the GraphiQL page and the data in the `edges` field will be limited to the number specified.
+5. Pilih tombol play pada halaman GraphQL dan data pada field `edges` akan dibatasi jumlahnya seperti yang sudah dispesifikasi
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Learn about [nodes in Gatsby's GraphQL data API](/docs/node-interface/)
-- [Gatsby GraphQL reference for limiting](/docs/graphql-reference/#limit)
-- Live example:
+- Belajar mengenai [API simpul data pada GraphQL Gatsby](/docs/node-interface/)
+- [Rujukan GraphQL Gatsby untuk membuat batasan](/docs/graphql-reference/#limit)
+- Contoh langsung:
 
 <iframe
   title="Limiting returned data"
@@ -1355,22 +1364,22 @@ To limit data, you'll need a Gatsby site with some nodes in the GraphQL data lay
   height="300"
 />
 
-### Sorting with GraphQL
+### Mengurutkan (sorting) dengan GraphQL
 
-The ordering of your results can be specified with the GraphQL `sort` argument. You can specify which fields to sort by and the order to sort in.
+Urutan dari hasil Anda dapat dibuat spesifik dengan argumen `sort` GraphQL. Anda dapat menetapkan field mana yang akan diurutkan (sort by dan sort in).
 
-For this recipe, you'll need a Gatsby site with a collection of nodes to sort in the GraphQL data layer. All sites have some nodes like `allSitePage` created automatically: more can be added by installing source plugins.
+Pada resep ini, Anda akan membutuhkan situs Gatsby dengan kumpulan simpul untuk mengurutkan pada lapisan data GraphQL, Semua situs memiliki beberapa simpul seperti `allSitePage` yang dibuat otomatis: selebihnya dapat ditambahkan dengan memasang plugin sumber. 
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- Queryable fields prefixed with `all`, e.g. `allSitePage`
+- Sebuah [situs Gatsby](/docs/quick-start)
+- Field yang dapat di-query dengan awalan `all`, contoh `allSitePage`
 
-#### Directions
+#### Petunjuk
 
-1. Run `gatsby develop` to start the development server.
-2. Open the GraphiQL explorer in a browser tab at: `http://localhost:8000/___graphql`
-3. Add a query in the editor with the following fields on `allSitePage` to start off:
+1. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+2. Buka GraphQL explorer pada tab peramban: `http://localhost:8000/___graphql`.
+3. Tambah satu query pada editor dengan field pada `allSitePage` untuk memulai sebagai berikut:
 
 ```graphql
 {
@@ -1385,7 +1394,7 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to sort in
 }
 ```
 
-4. Add a `sort` argument to the `allSitePage` field and give it an object with the `fields` and `order` attributes. The value for `fields` can be a field or an array of fields to sort by (this example uses the `path` field), the `order` can be either `ASC` or `DESC` for ascending and descending respectively.
+4. Tambah argumen `sort` pada field `allSitePage` dan beri sebuah objek dengan atribut `fields` dan `order`. Nilai pada `fields` dapat sebuah field atau sebuah array dari fields untuk diurutkan (pada contoh ini menggunakan `path` field), `order` dapat antara `ASC` untuk naik atau `DESC` untuk turun. 
 
 ```graphql
 {
@@ -1401,13 +1410,13 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to sort in
 
 ```
 
-5. Click the play button in the GraphiQL page and the data returned will be sorted ascending by the `path` field.
+5. Tekan tombol play pada halaman GraphQL dan balikan data akan diurutkan secara naik dengan field `path`.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Gatsby GraphQL reference for sorting](/docs/graphql-reference/#sort)
-- Learn about [nodes in Gatsby's GraphQL data API](/docs/node-interface/)
-- Live example:
+- [GraphQL Gatsby rujukan untuk mengurutkan](/docs/graphql-reference/#sort)
+- Belajar mengenai [API data simpul GraphQL Gatsby](/docs/node-interface/)
+- Contoh langsung:
 
 <iframe
   title="Sorting data"
@@ -1416,22 +1425,22 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to sort in
   height="300"
 />
 
-### Filtering with GraphQL
+### Menyaring (filtering) dengan GraphQLsby-transformer-remark` in `gatsby-config.js` to produce `allMarkdownRemark`.
 
-Queried results can be filtered down with operators like `eq` (equals), `ne` (not equals), `in`, and `regex` on specified fields.
+Hasil query dapat disaring dengan operator seperti `eq` (equals), `ne` (not equals), `in`, dan `regex` pada field yang spesifik.
 
-For this recipe, you'll need a Gatsby site with a collection of nodes to filter in the GraphQL data layer. All sites have some nodes like `allSitePage` created automatically: more can be added by installing source and transformer plugins like `gatsby-source-filesystem` and `gatsby-transformer-remark` in `gatsby-config.js` to produce `allMarkdownRemark`.
+Pada resep ini, Anda akan membutuhkan situs Gatsby dengan kumpulan simpul untuk menyaring lapisan data GraphQL. Semua situs memiliki beberapa simpul seperti `allSitePage` yang dibuat secara otomatis: selebihnya dapat ditambahkan dengan cara memasang sumber dan plugin transformer seperti `gatsby-source-filesystem` dan `gatsby-transformer-remark` pada `gatsby-config.js` untuk menghasilkan `allMarkdownRemark`.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- Queryable fields prefixed with `all`, e.g. `allSitePage` or `allMarkdownRemark`
+- Sebuah [situs Gatsby](/docs/quick-start)
+- Field yang dapat di-query dengan awalan `all`, contoh `allSitePage` atau `allMarkdownRemark`
 
-#### Directions
+#### Petunjuk
 
-1. Run `gatsby develop` to start the development server.
-2. Open the GraphiQL explorer in a browser tab at: `http://localhost:8000/___graphql`
-3. Add a query in the editor using a field prefixed by 'all', like `allMarkdownRemark` (meaning that it will return a list of nodes)
+1. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+2. Buka GraphQL explorer pada tab peramban: `http://localhost:8000/___graphql`.
+3. Tambah satu query pada editor dengan field yang diawali dengan 'all' seperti `allMarkdownRemark` (artinya akan memberikan balikan daftar dari simpul-simpul)
 
 ```graphql
 {
@@ -1448,11 +1457,11 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to filter 
 }
 ```
 
-4. Add a `filter` argument to the `allMarkdownRemark` field and give it an object with the fields you'd like to filter by. In this example, Markdown content is filtered by the `categories` attribute in frontmatter metadata. The next value is the operator: in this case `eq`, or equals, with a value of 'magical creatures'.
+4. Tambah argumen `filter` pada field `allMarkdownRemark` dan beri sebuah objek dengan field yang akan Anda saring (filter by). Pada contoh ini, konten Markdown akan disaring dengan atribut `categories` pada metadata frontmatter. Nilai selanjutnya adalah operator: pada hal ini `eq`, atau equals (sama), dengan nilai 'makhluk magis'.
 
 ```graphql
 {
-  allMarkdownRemark(filter: {frontmatter: {categories: {eq: "magical creatures"}}}) { // highlight-line
+  allMarkdownRemark(filter: {frontmatter: {categories: {eq: "makhluk magis"}}}) { // highlight-line
     edges {
       node {
         frontmatter {
@@ -1465,14 +1474,14 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to filter 
 }
 ```
 
-5. Click the play button in the GraphiQL page. The data that matches the filter parameters should be returned, in this case only sourced Markdown files tagged with a category of 'magical creatures'.
+5. Tekan tombol play pada halaman GraphQl. Data yang sesuai dengan parameter filter akan dibalikkan, pada hal ini hanya berkas Markdown yang ditandai dengan kategori 'makhlus magis'.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Gatsby GraphQL reference for filtering](/docs/graphql-reference/#filter)
-- [Complete list of possible operators](/docs/graphql-reference/#complete-list-of-possible-operators)
-- Learn about [nodes in Gatsby's GraphQL data API](/docs/node-interface/)
-- Live example:
+- [Rujukan GraphQL Gatsby untuk filtering](/docs/graphql-reference/#filter)
+- [Daftar lengkap operator yang tepat](/docs/graphql-reference/#complete-list-of-possible-operators)
+- Belajar mengenai [simpul pada API data GraphQL Gatsby](/docs/node-interface/)
+- Contoh langsung:
 
 <iframe
   title="Filtering data"
@@ -1481,17 +1490,17 @@ For this recipe, you'll need a Gatsby site with a collection of nodes to filter 
   height="300"
 />
 
-### GraphQL Query Aliases
+### Istilah lain dari Query GraphQL
 
-You can rename any field in a GraphQL query with an alias.
+Anda dapat mengganti nama sitilah dari field yang ada pada query GraphQL.
 
-If you would like to run two queries on the same datasource, you can use an alias to avoid a naming collision with two queries of the same name.
+Jika anda akan menggunakan dua query pada sumber data yang sama, Anda dapat menggunakan nama/istilah lain untuk menghindari tumbukan query pada nama/istilah yang sama
 
-#### Directions
+#### Petunjuk
 
-1. Run `gatsby develop` to start the development server.
-2. Open the GraphiQL explorer in a browser tab at: `http://localhost:8000/___graphql`
-3. Add a query in the editor using two fields of the same name like `allFile`
+1. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+2. Buka GraphQL explorer pada tab peramban: `http://localhost:8000/___graphql`.
+3. Tambahkan satu query pada editor menggunakan dua field dengan nama yang sama seperti `allFile`
 
 ```graphql
 {
@@ -1506,7 +1515,7 @@ If you would like to run two queries on the same datasource, you can use an alia
 }
 ```
 
-4. Add the name you would like to use for any field before the name of the field in your GraphQL schema, separated by a colon. (E.g. `[alias-name]: [original-name]`)
+4. Tambahkan nama/istilah yang akan digunakan untuk field apa saja, sebelum field yang ada pada schema GraphQL, dipisahkan dengan titik dua. (Contoh `[alias-name]: [original-name]`)
 
 ```graphql
 {
@@ -1521,12 +1530,12 @@ If you would like to run two queries on the same datasource, you can use an alia
 }
 ```
 
-5. Click the play button in the GraphiQL page and 2 objects with alias names you provided should be output.
+5. Tekan tombol play pada halaman GraphQL dan dua objek dengan nama lain yang sudah Anda berikan akan menjadi keluarannya.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Gatsby GraphQL reference for aliasing](/docs/graphql-reference/#aliasing)
-- Live example:
+- [GraphQL Gatsby rujukan untuk memberikan nama lain](/docs/graphql-reference/#aliasing)
+- Contoh langsung:
 
 <iframe
   title="Using aliases"
@@ -1535,15 +1544,15 @@ If you would like to run two queries on the same datasource, you can use an alia
   height="300"
 />
 
-### GraphQL Query Fragments
+### Fragmen Query GraphQL
 
-GraphQL fragments are shareable chunks of a query that can be reused.
+Fragmen GraphQL adalah bingkahan yang dapat dibagi oleh query dan dapat digunakan kembali.
 
-You might want to use them to share multiple fields between queries or to colocate a component with the data it uses.
+Anda mungkin ingin menggunakannya untuk membagi berbagai field antar query atau untuk menempatkan sebuah komponen dengan data yang digunakan.
 
-#### Directions
+#### Petunjuk
 
-1. Declare a `graphql` template string with a Fragment in it. The fragment should be made up of the keyword `fragment`, a name, the GraphQL type it is associated with (in this case of type `Site`, as demonstrated by `on Site`), and the fields that make up the fragment:
+1. Deklarasikan sebuah template string `graphql` dengan Fragmen di dalamnya. Fragmen sebaiknya dibuat dengan kata kunci `fragment`, nama, tipe GraphQL terkait (pada hal ini tipe `Site`, didemonstrasikan sebagai `on Site`), dan field yang membentuk fragmen:
 
 ```jsx
 export const query = graphql`
@@ -1556,7 +1565,7 @@ export const query = graphql`
 `
 ```
 
-2. Now, include the fragment in a query for a field of the type specified by the fragment. This includes those fields without having to declare them all independently:
+2. Sekarang, muat fragmen pada query untuk tipe field yang telah dispesifikasikan oleh fragmen. Sekaligus muat field tersebut tanpa harus mendeklarasikan semuanya secara terpisah.
 
 ```diff
 export const pageQuery = graphql`
@@ -1570,82 +1579,82 @@ export const pageQuery = graphql`
 `
 ```
 
-**Note**: Fragments don't need to be imported in Gatsby. Exporting a query with a Fragment makes that Fragment available in _all_ queries in your project.
+**Catatan**: Fragmen tidak perlu untuk diimpor pada Gatsby. Ekspor sebuah query dengan Fragmen membuat Fragmen tersebut tersedia pada _semua_ query pada proyek Anda.
 
-Fragments can be nested inside other fragments, and multiple fragments can be used in the same query.
+Fragmen dapat dibuat nested di dalam fragmen lainnya, dan penggunaan banyak fragmen dapat digunakan pada query yang sama.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Simple example repo using fragments](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-fragments)
-- [Gatsby GraphQL reference for fragments](/docs/graphql-reference/#fragments)
-- [Gatsby image fragments](/docs/gatsby-image/#image-query-fragments)
-- [Example repo with co-located data](https://github.com/gatsbyjs/gatsby/tree/master/examples/gatsbygram)
+- [Contoh repo menggunakan fragmen secara sederhana](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-fragments)
+- [Rujukan fragmen GraphQL Gatsby](/docs/graphql-reference/#fragments)
+- [Fragmen gambar Gatsby](/docs/gatsby-image/#image-query-fragments)
+- [Contoh repo dengan data yang ditempatkan](https://github.com/gatsbyjs/gatsby/tree/master/examples/gatsbygram)
 
-## 7. Working with images
+## 7. Bekerja dengan Gambar
 
-### Import an image into a component with webpack
+### Impor gambar ke dalam komponen dengan webpack
 
-Images can be imported right into a JavaScript module with webpack. This process automatically minifies and copies the image to your site's `public` folder, providing a dynamic image URL for you to pass to an HTML `<img>` element like a regular file path.
+Gambar dapat diimpor ke dalam modul JavaScript dengan webpack. Proses ini otomatis memperkecil dan menyalin gambar ke berkas `public` situs Anda, memberikan URL gambar dinamis untuk Anda melalui elemen HTML `<img>` seperti path umum lainnya.
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-import-a-local-image-into-a-gatsby-component-with-webpack"
   lessonTitle="Import a Local Image into a Gatsby Component with webpack"
 />
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby Site](/docs/quick-start) with a `.js` file exporting a React component
-- an image (`.jpg`, `.png`, `.gif`, `.svg`, etc.) in the `src` folder
+- Sebuah [Gatsby Site](/docs/quick-start) dengan sebuah berkas `.js` yang diekspor ke komponen React
+- Sebuah gambar (`.jpg`, `.png`, `.gif`, `.svg`, etc.) pada direktori `src`
 
-#### Directions
+#### Petunjuk
 
-1. Import your file from its path in the `src` folder:
+1. Impor berkas Anda dari path-nya pada berkas `src`:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
-// Tell webpack this JS file uses this image
+// Menunjukkan webpack bahwa berkas JS menggunakan gambar ini
 import FiestaImg from "../assets/fiesta.jpg" // highlight-line
 ```
 
-2. In `index.js`, add an `<img>` tag with the `src` as the name of the import you used from webpack (in this case `FiestaImg`), and add an `alt` attribute [describing the image](https://webaim.org/techniques/alttext/):
+2. Pada `index.js` tambahkan sebuah tag `<img>` dengan `src` sebagai nama yang Anda gunakan ketika impor dari webpack (pada `FiestaImg`), dan tambahkan sebuah attribut `alt` [mendeskripsikan gambar](https://webaim.org/techniques/alttext/):
 
 ```jsx:title=src/pages/index.js
 import React from "react"
 import FiestaImg from "../assets/fiesta.jpg"
 
 export default () => (
-  // The import result is the URL of your image
+  // Hasil impor adalah URL dari gambar Anda
   <img src={FiestaImg} alt="A dog smiling in a party hat" /> // highlight-line
 )
 ```
 
-3. Run `gatsby develop` to start the development server.
-4. View your image in the browser: `http://localhost:8000/`
+3. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+4. Lihat gambar Anda pada peramban: `http://localhost:8000/`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Example repo importing an image with webpack](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-webpack-image)
-- [More on all image techniques in Gatsby](/docs/images-and-files/)
+- [Contoh repo impor sebuah gambar dengan webpack](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-webpack-image)
+- [Selebihnya mengenai teknik manipulasi gambar di Gatsby](/docs/images-and-files/)
 
-### Reference an image from the `static` folder
+### Referensi sebuah gambar pada berkas `static`
 
-As an alternative to importing assets with webpack, the `static` folder allows access to content that gets automatically copied into the `public` folder when built.
+Sebuah alternatif untuk impor asset dengan webpack, berkas `static` mengizinkan akses konten yang mana otomatis tersalin ke berkas `public` setelah ter-build.
 
-This is an **escape route** for [specific use cases](/docs/static-folder/#when-to-use-the-static-folder), and other methods like [importing with webpack](#import-an-image-into-a-component-with-webpack) are recommended to leverage optimizations made by Gatsby.
+Ini adalah sebuah **rute pelarian** untuk [kasus spesifik](/docs/static-folder/#when-to-use-the-static-folder), dan beragam metode lainnya seperti [impor dengan webpack](#import-an-image-into-a-component-with-webpack) merupakan rekomendasi untuk pengoptimalan performa dari Gatsby.
 
 <EggheadEmbed
   lessonLink="https://egghead.io/lessons/gatsby-use-a-local-image-from-the-static-folder-in-a-gatsby-component"
   lessonTitle="Use a local image from the static folder in a Gatsby component"
 />
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby Site](/docs/quick-start) with a `.js` file exporting a React component
-- An image (`.jpg`, `.png`, `.gif`, `.svg`, etc.) in the `static` folder
+- Sebuah [Gatsby Site](/docs/quick-start) dengan sebuah berkas `.js` yang diekspor ke komponen React
+- Sebuah gambar (`.jpg`, `.png`, `.gif`, `.svg`, etc.) pada direktori `src`
 
-#### Directions
+#### Petunjuk
 
-1. Ensure that the image is in your `static` folder at the root of the project. Your project structure might look something like this:
+1. Pastikan gambar pada berkas `static` Anda terletak pada root proyek Anda. Struktur proyek Anda mungkin akan seperti ini:
 
 ```
 ├── gatsby-config.js
@@ -1656,50 +1665,50 @@ This is an **escape route** for [specific use cases](/docs/static-folder/#when-t
 │       └── fiesta.jpg
 ```
 
-2. In `index.js`, add an `<img>` tag with the `src` as the relative path of the file from the `static` folder, and add an `alt` attribute [describing the image](https://webaim.org/techniques/alttext/):
+2. Pada `index.js`, tambahkan tag `<img>` dengan `src` sebagai path relatif pada berkas dari direktori `static`, dan tambahkan atribut `alt` [mendeskripsikan gambar](https://webaim.org/techniques/alttext/):
 
 ```jsx:title=src/pages/index.js
 import React from "react"
 
 export default () => (
-  <img src={`fiesta.jpg`} alt="A dog smiling in a party hat" /> // highlight-line
+  <img src={`fiesta.jpg`} alt="Seekor anjing tersenyum pada " /> // highlight-line
 )
 ```
 
-3. Run `gatsby develop` to start the development server.
-4. View your image in the browser: `http://localhost:8000/`
+3. Jalankan `gatsby develop` untuk memulai peladen pengembangan.
+4. Lihat gambar anda pada peramban: `http://localhost:8000/`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Example repo referencing an image from the static folder](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-static-image)
-- [Using the Static Folder](/docs/static-folder/)
-- [More on all image techniques in Gatsby](/docs/images-and-files/)
+- [Contoh repo yang mereferensikan sebuah gambar pada berkas statis](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipe-static-image)
+- [Menggunakan Folder Static](/docs/static-folder/)
+- [Selengkapnya teknik manipulasi gambar pada Gatsby](/docs/images-and-files/)
 
-### Optimizing and querying local images with gatsby-image
+### Optimisasi dan query gambar lokal dengan gatsby-image
 
-The `gatsby-image` plugin can relieve much of the pain associated with optimizing images in your site.
+Plugin `gatsby-image` dapat meringankan beban yang berkaitan dengan optimisasi gambar pada situs Anda. Ini akan merawat beban termasuk membuat beberapa ukuran gambar dan dimuat dalam waktu bersamaan.
 
-Gatsby will generate optimized resources which can be queried with GraphQL and passed into Gatsby's image component. This takes care of the heavy lifting including creating several image sizes and loading them at the right time.
+Gatsby akan membuat sumber daya yang teroptimisasi yang mana dapat di-query dengan GraphQL dan dioper pada komponen gambar Gatsby. 
 
-#### Prerequisites
+#### Prasyarat
 
-- The `gatsby-image`, `gatsby-transformer-sharp`, and `gatsby-plugin-sharp` packages installed and added to the plugins array in `gatsby-config`
-- [Images sourced](/packages/gatsby-image/#install) in your `gatsby-config` using a plugin like `gatsby-source-filesystem`
+- Paket `gatsby-image`, `gatsby-transformer-sharp`, dan `gatsby-plugin-sharp` terpasang dan ditambahkan pada array plugin di `gatsby-config`
+- [Gambar bersumber](/packages/gatsby-image/#install) pada `gatsby-config` menggunakan plugin seperti `gatsby-source-filesystem`
 
-#### Directions
+#### Petunjuk
 
-1. First, import `Img` from `gatsby-image`, as well as `graphql` and `useStaticQuery` from `gatsby`
+1. Pertama, impor `Img`, `graphql`, dan `useStaticQuery` dari `gatsby-image`. 
 
 ```jsx
-import { useStaticQuery, graphql } from "gatsby" // to query for image data
-import Img from "gatsby-image" // to take image data and render it
+import { useStaticQuery, graphql } from "gatsby" // untuk query data gambar
+import Img from "gatsby-image" // untuk mengambil data dari gambar dan me-render-nya
 ```
 
-2. Write a query to get image data, and pass the data into the `<Img />` component:
+2. Tulis sebuah query untuk mengambil data gambar, dan oper data ke dalam komponen `<Img />`:
 
-Choose any of the following options or a combination of them.
+Pilih salah satu dari (bisa lebih) dari pilihan berikut.
 
-a. a single image queried by its file [path](/docs/content-and-data/) (Example: `images/corgi.jpg`)
+a. satu gambar yang di-query dari berkas tersebut [path](/docs/content-and-data/) (Contoh: `images/corgi.jpg`)
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1719,11 +1728,11 @@ const data = useStaticQuery(graphql`
 `)
 
 return (
-  <Img fluid={data.file.childImageSharp.fluid} alt="A corgi smiling happily" />
+  <Img fluid={data.file.childImageSharp.fluid} alt="Seekor corgi tersenyum bahagia" />
 )
 ```
 
-b. using a [GraphQL fragment](/docs/using-fragments/), to query for the necessary fields more tersely
+b. menggunakan [GraphQL fragment](/docs/using-fragments/), untuk query field yang diperlukan lebih singkat
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1739,11 +1748,11 @@ const data = useStaticQuery(graphql`
 `)
 
 return (
-  <Img fluid={data.file.childImageSharp.fluid} alt="A corgi smiling happily" />
+  <Img fluid={data.file.childImageSharp.fluid} alt="Seekor corgi tersenyum bahagia" />
 )
 ```
 
-c. several images from a directory (Example: `images/dogs`) [filtered](/docs/graphql-reference/#filter) by the `extension` and `relativeDirectory` fields, and then mapped into `Img` components
+c. beberapa gambar dari sebuah direktori (Contoh: `images/dogs`) [terfilter](/docs/graphql-reference/#filter) dengan `extension` dan field `relativeDirectory`, kemudian di-map ke dalam komponen `Img`.
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1776,7 +1785,7 @@ return (
     {data.allFile.edges.map(image => (
       <Img
         fluid={image.node.childImageSharp.fluid}
-        alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+        alt={image.node.base.split(".")[0]} // hanya gunakan bagian dari ektensi berkas dengan dibubuhkan nama berkas
       />
     ))}
     // highlight-end
@@ -1784,9 +1793,10 @@ return (
 )
 ```
 
-**Note**: This method can make it difficult to match images with `alt` text for accessibility. This example uses images with `alt` text included in the filename, like `dog in a party hat.jpg`.
+**Catatan**: Metode ini dapat mempersulit untuk mencocokkan gambar dengan teks `alt` untuk hal aksesbilitas. Pada contoh ini menggunakan teks `alt` termasuk berkas nama, seperti `anjing pada topi pesta.jpg`.
 
-d. an image of a fixed size using the `fixed` field instead of `fluid`
+d. sebuah gambar dengan gambar yang sudah pasti(fixed) menggunakan field `fixed` dibandingan `fluid`.
+
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1801,11 +1811,11 @@ const data = useStaticQuery(graphql`
   }
 `)
 return (
-  <Img fixed={data.file.childImageSharp.fixed} alt="A corgi smiling happily" />
+  <Img fixed={data.file.childImageSharp.fixed} alt="Seekor corgi tersenyum bahagia" />
 )
 ```
 
-e. an image of a fixed size with a `maxWidth`
+e. sebuah gambar dengan ukuran pasti dengan `maxWidth`
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1820,11 +1830,11 @@ const data = useStaticQuery(graphql`
   }
 `)
 return (
-  <Img fixed={data.file.childImageSharp.fixed} alt="A corgi smiling happily" /> // highlight-line
+  <Img fixed={data.file.childImageSharp.fixed} alt="Seekor corgi tersenyum bahagia" /> // highlight-line
 )
 ```
 
-f. an image filling a fluid container with a max width (in pixels) and a higher quality (the default value is 50 i.e. 50%)
+f. sebuah gambar yang mengisi wadah yang fleksbibel (fluid container) dengan max width (dalam pixels) dan kualitas yang lebih tinggi (nilai standarnya ada 50 sampai dengan 50%)
 
 ```jsx
 const data = useStaticQuery(graphql`
@@ -1840,21 +1850,21 @@ const data = useStaticQuery(graphql`
 `)
 
 return (
-  <Img fluid={data.file.childImageSharp.fluid} alt="A corgi smiling happily" />
+  <Img fluid={data.file.childImageSharp.fluid} alt="Seekor corgi tersenyum bahagia" />
 )
 ```
 
-3. (Optional) Add inline styles to the `<Img />` like you would to other components
+3. (Pilihan) Tambahkan inline style pada `<Img />` seperti pada komponen lainnya
 
 ```jsx
 <Img
   fluid={data.file.childImageSharp.fluid}
-  alt="A corgi smiling happily"
+  alt="Seekor corgi tersenyum bahagia"
   style={{ border: "2px solid rebeccapurple", borderRadius: 5, height: 250 }} // highlight-line
 />
 ```
 
-4. (Optional) Force an image into a desired aspect ratio by overriding the `aspectRatio` field returned by the GraphQL query before it is passed into the `<Img />` component
+4. (Pilihan) paksa sebuah gambar terhadap aspek rasio yang diinginkan dengan menimpa filed `aspectRatio` yang dikembalikan oleh query GraphQL sebelum dioper di komponen `<Img />`
 
 ```jsx
 <Img
@@ -1862,53 +1872,54 @@ return (
     ...data.file.childImageSharp.fluid,
     aspectRatio: 1.6, // 1280 / 800 = 1.6
   }}
-  alt="A corgi smiling happily"
+  alt="Seekor corgi tersenyum bahagia"
 />
 ```
 
-5. Run `gatsby develop`, to generate images from files in the filesystem (if not done already) and cache them
+5. Jalankan `gatsby develop` untuk menghasilkan gambar dari berkas dari sistem berkas (jika belum selesai) dan membuat cache dari gambar tersebut
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Example repository illustrating these examples](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipes-gatsby-image)
-- [Gatsby Image API](/docs/gatsby-image/)
-- [Using Gatsby Image](/docs/using-gatsby-image)
-- [More on working with images in Gatsby](/docs/working-with-images/)
-- [Free egghead.io videos explaining these steps](https://egghead.io/playlists/using-gatsby-image-with-gatsby-ea85129e)
+- [Contoh repo mengilustrasikan contoh-contoh di atas](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipes-gatsby-image)
+- [API Gambar Gatsby](/docs/gatsby-image/)
+- [Menggunakan Gambar Gatsby](/docs/using-gatsby-image)
+- [Lebih lanjut tentang bekerja dengan gambar di Gatsby](/docs/working-with-images/)
+- [Video gratis dari egghead.io menjelasakan langkah demi langkah](https://egghead.io/playlists/using-gatsby-image-with-gatsby-ea85129e)
 
-### Optimizing and querying images in post frontmatter with gatsby-image
+### Optimisasi dan query gambar pada frontmatter post dengan gatsby-image
 
-For use cases like a featured image in a blog post, you can _still_ use `gatsby-image`. The `Img` component needs processed image data, which can come from a local (or remote) file, including from a URL in the frontmatter of a `.md` or `.mdx` file.
+Pada kasus seperti gambar unggulan pada bos sebuah blog, Anda tetap _dapat_ menggunakan `gatsby-image`. Komponen `Img` memerlukan data gambar yang diproses, yang mana dapat berasal dari berkas lokal (atau remote), termasuk dari URL pada berkas `.md` atau `.mdx` dari frontmatter.
 
-To inline images in markdown (using the `![]()` syntax), consider using a plugin like [`gatsby-remark-images`](/packages/gatsby-remark-images/)
+Untuk gambar inline pada markdown (menggunakan sintaks `![]()`), pertimbangkan menggunakan plugin seperti [`gatsby-remark-images`](/packages/
+gatsby-remark-images/)
 
-#### Prerequisites
+#### Prasyarat
 
-- The `gatsby-image`, `gatsby-transformer-sharp`, and `gatsby-plugin-sharp` packages installed and added to the plugins array in `gatsby-config`
-- [Images sourced](/packages/gatsby-image/#install) in your `gatsby-config` using a plugin like `gatsby-source-filesystem`
-- Markdown files sourced in your `gatsby-config` with image URLs in frontmatter
-- [Pages created](/docs/creating-and-modifying-pages/) from Markdown using [`createPages`](https://www.gatsbyjs.org/docs/node-apis/#createPages)
+- Paket `gatsby-image`, `gatsby-transformer-sharp`, dan `gatsby-plugin-sharp` terpasang dan ditambahkan pada array plugin pada `gatsby-config`
+- [Gambar yang bersumber](/packages/gatsby-image/#install) pada `gatsby-config` Anda menggunakan plugin seperti `gatsby-source-filesystem`
+- Berkas markdown yang bersumber pada `gatsby-config` Anda dengan URL gambar pada frontmatter.
+- [Halaman yang sudah dibuat](/docs/creating-and-modifying-pages/) dari Markdown menggunakan [`createPages`](https://www.gatsbyjs.org/docs/node-apis/#createPages)
 
-#### Directions
+#### Petunjuk
 
-1. Verify that the Markdown file has an image URL with a valid path to an image file in your project
+1. Pastikan berkas Markdown memiliki sebuah URL gambar dengan path yang valid pada berkas gambar di proyek Anda
 
 ```mdx:title=post.mdx
 ---
-title: My First Post
+title: Post pertamaku
 featuredImage: ./corgi.png // highlight-line
 ---
 
 Post content...
 ```
 
-2. Verify that a unique identifier (a slug in this example) is passed in context when `createPages` is called in `gatsby-node.js`, which will later be passed into a GraphQL query in the Layout component
+2. Pastikan pada pengidentifikasi unik (sebuah slug pada contoh ini) diarahkan pada context ketika `createPages` dipanggil pada `gatsby-node.js`, yang mana kemudian akan dioper ke query GraphQL pada komponen Tata letak
 
 ```js:title=gatsby-node.js
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // query for all markdown
+  // query untuk semua markdown
 
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
@@ -1924,7 +1935,7 @@ exports.createPages = async ({ graphql, actions }) => {
 }
 ```
 
-3. Now, import `Img` from `gatsby-image`, and `graphql` from `gatsby` into the template component, write a [pageQuery](/docs/page-query/) to get image data based on the passed in `slug` and pass that data to the `<Img />` component:
+3. Sekarang, impor `Img` pada `gatsby-image` dan `graphql` dari `gatsby` ke komponen tata letak, buat sebuah [pageQuery](/docs/page-query/) untuk mendapatkan data gambar berdasarkan yang dioper pada `slug` dan melewati data pada komponen `<Img />`:
 
 ```jsx:title=markdown-layout.jsx
 import React from "react"
@@ -1936,7 +1947,7 @@ export default ({ children, data }) => (
     // highlight-start
     <Img
       fluid={data.markdown.frontmatter.image.childImageSharp.fluid}
-      alt="A corgi smiling happily"
+      alt="Seekor corgi tersenyum bahagia"
     />
     // highlight-end
     {children}
@@ -1963,43 +1974,43 @@ export const pageQuery = graphql`
 // highlight-end
 ```
 
-4. Run `gatsby develop`, which will generate images for files sourced in the filesystem
+4. Jalankan `gatsby develop` yang akan menghasilkan gambar pada berkas bersumber pada sistem berkas
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Example repository using this recipe](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipes-gatsby-image)
-- [Featured images with frontmatter](/docs/working-with-images-in-markdown/#featured-images-with-frontmatter-metadata)
-- [Gatsby Image API](/docs/gatsby-image/)
-- [Using Gatsby Image](/docs/using-gatsby-image)
-- [More on working with images in Gatsby](/docs/working-with-images/)
+- [Contoh repo menggunakan resep ini](https://github.com/gatsbyjs/gatsby/tree/master/examples/recipes-gatsby-image)
+- [Gambar unggulan dengan frontmatter](/docs/working-with-images-in-markdown/#featured-images-with-frontmatter-metadata)
+- [API Gambar Gatsby](/docs/gatsby-image/)
+- [Menggunakan Gambar Gatsby](/docs/using-gatsby-image)
+- [Lebih lanjut tentang bekerja dengan gambar di Gatsby](/docs/working-with-images/)
 
-## 8. Transforming data
+## 8. Transformasi (mengubah bentuk) data
 
-Transforming data in Gatsby is plugin-driven. Transformer plugins take data fetched using source plugins, and process it into something more usable (e.g. JSON into JavaScript objects, and more).
+Transformasi data pada Gatsby adalah plugin-driven (berdasarkan plugin). Plugin transformer (pengubah) mengambil data menggunakan plugin sumber, dan memprosesnya menjadi sesuatu yang dapat dipakai.
 
-### Transforming Markdown into HTML
+### Transformasi Markdown ke dalam HTML
 
-The `gatsby-transformer-remark` plugin can transform Markdown files to HTML.
+Plugin `gatsby-transformer-remark` dapat mengubah bentuk berkas Markdown menjadi HTML.
 
-#### Prerequisites
+#### Prasyarat
 
-- A Gatsby site with `gatsby-config.js` and an `index.js` page
-- A Markdown file saved in your Gatsby site `src` directory
-- A source plugin installed, such as `gatsby-source-filesystem`
-- The `gatsby-transformer-remark` plugin installed
+- Sebuah situs Gatsby dengan `gatsby-config.js` dan sebuah halaman `index.js`
+- Sebuah berkas Markdown yang tersimpan pada direktori `src` situs Gatsby Anda
+- Sebuah plugin bersumber yang terpasang, contohnya `gatsby-source-filesystem`
+- Plugin `gatsby-transformer-remark` terpasang
 
-#### Directions
+#### Petunjuk
 
-1. Add the transformer plugin in your `gatsby-config.js`:
+1. Tambahkan plugin transformer pada `gatsby-config.js` Anda:
 
 ```js:title=gatsby-config.js
 plugins: [
-  // not shown: gatsby-source-filesystem for creating nodes to transform
+  // tidak ditampilkan: gatsby-source-filesystem untuk membuat node kemudian ditransformasi
   `gatsby-transformer-remark`
 ],
 ```
 
-2. Add a GraphQL query to the `index.js` file of your Gatsby site to fetch `MarkdownRemark` nodes:
+2. Tambahkan sebuah query GraphQl pada berkas `index.js` situs Gatsby Anda untuk mendapatkan node dari `MarkdownRemark`:
 
 ```jsx:title=src/pages/index.js
 export const query = graphql`
@@ -2021,113 +2032,115 @@ export const query = graphql`
 `
 ```
 
-3. Restart the development server and open GraphiQL at `http://localhost:8000/___graphql`. Explore the fields available on the `MarkdownRemark` node.
+3. Jalankan ulang peladen pengembangan dan buka GraphQL pada `http://localhost:8000/___graphql`. Jelajahi field yang tersedia pada node `MarkdownRemark`.
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Tutorial on transforming Markdown to HTML](/tutorial/part-six/#transformer-plugins) using `gatsby-transformer-remark`
-- Browse available transformer plugins in the [Gatsby plugin library](/plugins/?=transformer)
+- [Tutorial mengubah bentuk Markdown menjadi HTML](/tutorial/part-six/#transformer-plugins) menggunakan `gatsby-transformer-remark`
+- Jelajahi plugin transformer yang tersedia pada [pustaka plugin Gatsby](/plugins/?=transformer)
 
-## 9. Deploying your site
+## 9. Deploy situs Anda
 
-Showtime. Once you are happy with your site, you are ready to go live with it!
+Saatnya pertunjukan. Bila Anda sudah merasa cukup dengan situs Anda, Anda sudha siap untuk menjalankannya!
 
-### Preparing for deployment
+### Mempersiapkan deployment
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- Sebuah [Gatsby site](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-#### Directions
+#### Petunjuk
 
-1. Stop your development server if it is running (`Ctrl + C` on your command line in most cases)
+1. Memberhentikan peladen pengembangan jika sedang berjalan (`Ctrl + C` pada command line)
 
-2. For the standard site path at the root directory (`/`), run `gatsby build` using the Gatsby CLI on the command line. The built files will now be in the `public` folder.
+2. Untuk path situs yang standar pada direktori root (`/`), jalankan `gatsby build` menggunakan Gatsby CLI pada command line. Berkas yang sudah ter-build akan terletak pada berkas `folder`.
 
 ```shell
 gatsby build
 ```
 
-3. To include a site path other than `/` (such as `/site-name/`), set a path prefix by adding the following to your `gatsby-config.js` and replacing `yourpathprefix` with your desired path prefix:
+3. Untuk mengikutsertakan path lainnya selain `/` (contohnya `/nama-situs/`), atur sebuah awalan path dengan nembahkan hal berikut pada `gatsby-config.js` Anda mengganntikan `pathprefixanda` dengan awalan (prefix) yang diinginkan:
 
 ```js:title=gatsby-config.js
 module.exports = {
-  pathPrefix: `/yourpathprefix`,
+  pathPrefix: `/pathprefixanda`,
 }
 ```
 
-There are a few reasons to do this -- for instance, hosting a blog built with Gatsby on a domain with another site not built on Gatsby. The main site would direct to `example.com`, and the Gatsby site with a path prefix could live at `example.com/blog`.
+Ada beberapa alasan untuk melakukan hal ini -- contohnya, hos sebuah blog yang dibuat dengan gatsby pada sebuah domain dengan situs lainnya yang tidak dibuat dengan Gatsby. Situ utama akan diarahkan ke `contoh.com`, dan situs Gatsby akan diarahkan ke path prefix yang terdapat pada `contoh.com/blog`.
 
-4. With a path prefix set in `gatsby-config.js`, run `gatsby build` with the `--prefix-paths` flag to automatically add the prefix to the beginning of all Gatsby site URLs and `<Link>` tags.
+4. Dengan path prefix yang diatur pada `gatsby-config.js`, jalankan `gatsby build` dengan flag `--prefix-paths`, maka akan secara otomatis menambahkan prefix (awalan) pada semua URL situs Gatsby dan tag `<Link>`.
+
 
 ```shell
 gatsby build --prefix-paths
 ```
 
-5. Make sure that your site looks the same when running `gatsby build` as with `gatsby develop`. By running `gatsby serve` when you build your site, you can test out (and debug if necessary) the finished product before deploying it live.
+5. Pastikan situs Anda tampil sama persis ketika menjalankan `gatsby build` maupun `gatsby develop`. Dengan `gatsby serve`ketika Anda build situs Anda, Anda dapat menguji (debug kalau diperlukan) produk yang sudah selesai sebelum di-deploy.
 
 ```shell
 gatsby build && gatsby serve
 ```
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- Walk through building and deploying an example site in [tutorial part one](/tutorial/part-one/#deploying-a-gatsby-site)
-- Learn about [performance optimization](/docs/performance/)
-- Read about [other deployment related topics](/docs/preparing-for-deployment/)
-- Check out the [deployment docs](/docs/deploying-and-hosting/) for specific hosting platforms and how to deploy to them
+- Build dan deploy sebuah contoh situs [tutorial bab pertama](/tutorial/part-one/#deploying-a-gatsby-site)
+- Belajar mengenai [optimisasi performa](/docs/performance/)
+- Baca mengenai [topik yang berhubungan dengan deployment](/docs/preparing-for-deployment/)
+- Cek [dokumentasi deployment](/docs/deploying-and-hosting/) untuk hosting platform yang spesifik dan bagaimana deploy pada platform tersebut
 
-### Deploying to Netlify
+### Deploy ke Netlify
 
-Use [`netlify-cli`](https://www.netlify.com/docs/cli/) to deploy your Gatsby application without leaving the command-line interface.
+Gunakan [`netlify-cli`](https://www.netlify.com/docs/cli/) untuk deploy aplikasi Gatsby Anda tanpa meninggalkan tampilan command line.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- The [netlify-cli](https://www.npmjs.com/package/netlify-cli) package installed
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- Sebuah [situs Gatsby](/docs/quick-start) dengan satu komponen `index.js`
+- Paket [Netlify-cli](https://www.npmjs.com/package/netlify-cli) terpasang
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-#### Directions
+#### Petunjuk
 
-1. Build your gatsby application using `gatsby build`
+1. Build aplikasi Gatsby Anda menggunakan `gatsby build`
 
-2. Login into Netlify using `netlify login`
+2. Masuk ke Netlify menggunakan `netlify login`
 
-3. Run the command `netlify init`. Select the "Create & configure a new site" option.
+3. Jalankan perintah `netlify init`. Pilih opsi "Create & configure a new site".
 
-4. Choose a custom website name if you want or press enter to receive a random one.
+4. Pilih nama situs yang diinginkan dan tekan enter kalau ingin mendapatkan nama yang acak
 
-5. Choose your [Team](https://www.netlify.com/docs/teams/).
+5. Pilih [tim Anda](https://www.netlify.com/docs/teams/).
 
-6. Change the deploy path to `public/`
+6. Ganti path deploy menjadi `public/`.
 
-7. Make sure that everything looks fine before deploying to production using `netlify deploy --prod`
+7. Pastikan semuanya berjalan dengan baik sebelum deploy ke production menggunakan `netlify deploy --prod`
 
-#### Additional resources
+#### Sumber daya tambahan
 
-- [Hosting on Netlify](/docs/hosting-on-netlify)
+- [Hosting menggunakan Netlify](/docs/hosting-on-netlify)
 - [gatsby-plugin-netlify](/packages/gatsby-plugin-netlify)
 
-### Deploying to ZEIT Now
+### Deploy ke ZEIT Now
 
-Use [Now CLI](https://zeit.co/download) to deploy your Gatsby application without leaving the command-line interface.
+Gunakan [Now CLI](https://zeit.co/download) untuk deploy aplikasi Gatsby Anda tanpa meninggalkan tampilan command line.
 
-#### Prerequisites
+#### Prasyarat
 
-- A [ZEIT Now](https://zeit.co/signup) account
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- [Now CLI](https://zeit.co/download) package installed
-- [Gatsby CLI](/docs/gatsby-cli) installed
+- Sebuah akun [ZEIT Now](https://zeit.co/signup)
+- Sebuah [situs Gatsby](/docs/quick-start) dengan satu komponen `index.js`
+- Paket [Netlify-cli](https://www.npmjs.com/package/netlify-cli) terpasang
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-#### Directions
 
-1. Login into Now CLI using `now login`
+#### Petunjuk
 
-2. Change to the directory of your Gatsby.js application in the Terminal if you aren't already there
+1. Masuk ke Now CLI menggunakan `now login`
 
-3. Run `now` to deploy it
+2. Ganti ke direktori dari aplikasi Gatsby.js Anda pada Terminal jika ANda belum di sana.
 
-#### Additional resources
+3. Jalankan `now` untuk deploy
 
-- [Deploying to ZEIT Now](/docs/deploying-to-zeit-now/)
+#### Sumber daya tambahan
+
+- [Deploy ke ZEIT Now](/docs/deploying-to-zeit-now/)
