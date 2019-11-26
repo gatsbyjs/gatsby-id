@@ -1,17 +1,17 @@
 ---
-title: Why Contribute to Gatsby.js?
+title: Mengapa Berkontribusi ke Gatsby.js?
 ---
 
-There are many reasons to contribute to Gatsby.js and open source software in general. Here are some of the benefits of participating:
+Ada banyak alasan untuk berkontribusi ke Gatsby.js dan perangkat lunak *open source* pada umumnya. Ini adalah beberapa manfaat ikut berpartisipasi:
 
-- **Growing your community.** Working with Gatsby.js in open source can connect you with people working on similar things. You can get help or give help, and you might even make an IRL acquaintance! It has happened.
+- **Menumbuhkan komunitas Anda.** Bekerja dengan Gatsby.js pada komunitas *open source* dapat menghubungkan Anda dengan orang-orang yang mengerjakan hal serupa. Anda dapat membantu atau memberikan bantuan, dan Anda bahkan dapat berkenalan di dunia nyata! Hal ini telah terjadi.
 
-- **Improving your skills.** When you work on a Gatsby issue or pull request, inevitably you'll learn more about how something works in the project; either by asking questions and gathering info, or by digging deeper into the code yourself. Gatsby.js also offers free [pair programming sessions](/contributing/pair-programming/) to the community, if there's something you'd like to work on together. There's definitely a skill-building benefit to contributing in OSS!
+- **Meningkatkan keterampilan Anda.** Ketika Anda bekerja pada *issue* atau *pull request* Gatsby, mau tidak mau Anda akan belajar lebih banyak tentang bagaimana sesuatu bekerja di dalam proyek; baik dengan mengajukan pertanyaan dan mengumpulkan informasi, atau dengan mencari tahu ke dalam kode sumber. Gatsby.js juga menawarkan dengan cuma-cuma [sesi *pair programming*](/contributing/pair-programming/) pada komunitas, jika ada hal yang ingin ada kerjakan bersama. Jelas ada banyak manfaat membangun keterampilan dengan dengan berkontribusi pada perangkat lunak *open source*!
 
-- **Getting free swag!** By participating in the repo on GitHub, you can become eligible for free swag that the Gatsby team offers as a way to say thank you. With 5 contributions, you can advance to a second level with even more swag options! Learn more about this [sweet swag deal](/contributing/contributor-swag/).
+- **Dapatkan bingkisan gratis!** Dengan berpartisipasi pada repositori di GitHub, Anda memenuhi syarat untuk mendapatkan bingkisan gratis sebagai ucapan terima kasih dari tim Gatsby. Dengan 5 kontribusi, Anda dapat naik ke level berikutnya dengan lebih banyak pilihan bingkisan! Pelajari lebih lanjut tentang [tawaran bingkisan gratis](/contributing/contributor-swag/).
 
-- **Becoming an expert.** You might start off totally new to a project like Gatsby or React.js, and by building things and [opening issues](/contributing/how-to-file-an-issue/) when you encounter a new challenge or a bug, you'll learn a ton over time. Staying current with your favorite framework through its open source repo can also give you a leading edge on forthcoming changes. Eventually, you could find your knowledge of said project has grown so much that you've become an expert. Celebrate by updating your resumé!
+- **Menjadi seorang ahli.** Anda mungkin baru memulai dengan proyek seperti Gatsby atau React.js, dan dengan membangun berbagai hal dan [membuka *issue*](/contributing/how-to-file-an-issue/) ketika Anda menemukan *bug* atau tantangan baru, Anda akan belajar banyak seiring waktu. Tetap terkini dengan *framework* favorit Anda melalui repositori *open source* dapat memberi Anda keunggulan pada perubahan yang akan datang. Akhirnya, Anda dapat menemukan pengetahuan Anda tentang proyek-proyek yang telah berkembang sedemikan rupa sehingga Anda menjadi seorang ahli. Rayakan dengan memperbarui *resumé* Anda!
 
-- **Speaking at conferences.** With those skills you've earned yourself working in open source, why not share that knowledge with the world? Web platform conferences the world over are continually looking for speakers and fresh takes on popular topics. Did you build something with Gatsby.js that you're excited about? The [industry would love to hear from you](http://weareallaweso.me/)!
+- **Berbicara di konferensi.** Dengan keterampilan yang Anda dapatkan dari bekerja pada komunitas *open source*, mengapa tidak berbagi pengetahuan Anda dengan dunia? Konferensi platform web di seluruh dunia terus mencari pembicara dan angin segar untuk topik-topik populer. Apakah anda membangun sesuatu dengan Gatsby.js yang membuat Anda bersemangat? [Kami akan senang mendengar cerita dari anda](http://weareallaweso.me/)!
 
-There are undoubtedly more benefits than those listed here. Has Gatsby.js and open source software made your life better somehow? We'd love to hear about it. Reach out to us [on Twitter](https://twitter.com/gatsbyjs)!
+Pasti ada lebih banyak manfaat dari apa yang tercantum di sini. Apakah Gatsby.js dan perangkat lunak *open source* membuat hidup Anda lebih baik? Kami ingin sekali mendengar cerita Anda. Hubungi kami [di Twitter](https://twitter.com/gatsbyjs)!
