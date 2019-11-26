@@ -29,7 +29,7 @@ A live example may not be possible depending on the nature of the recipe, in whi
 See [docs templates](/docs/docs-templates/) in the contributing docs for more help.
 -->
 
-Menginginkan yang di tengah-tengah antara [tutorial lengkap](/tutorial/) dan merayap di [dokumentasi](/docs/)?. Berikut ini panduan meracik untuk membuat sesuatu, Gatsby style.
+Menginginkan media yang menyenangkan antara [tutorial lengkap](/tutorial/) dan [dokumentasi](/docs/)?. Berikut adalah buku resep panduan tentang cara membangun sesuatu, gaya Gatsby.
 
 ## 1. Halaman dan Tata Letak
 
@@ -61,7 +61,7 @@ Beberapa berkas penting dan definisinya:
 
 #### Sumber daya tambahan
 
-- Untuk tur dari semua direktori dan berkas yang umum, bacalah dokumentasi di [Struktur Proyek Gatsby]((/docs/gatsby-project-structure/))
+- Untuk tur dari semua direktori dan berkas yang umum, bacalah dokumentasi di [Struktur Proyek Gatsby](/docs/gatsby-project-structure/)
 - Untuk baris perintah yang umum, cek [Dokumentasi Gastby CLI](/docs/gatsby-cli)
 - Cek [Gatsby Cheat Sheet](/docs/cheat-sheet/) untuk informasi yang dapat didownload dalam sekejap
 
