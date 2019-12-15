@@ -1,14 +1,12 @@
 ---
-title: Customizing Components
+title: Menyesuaikan Komponen
 ---
 
-Using MDX, you can replace every HTML element that Markdown renders with a
-custom implementation. This allows you to use a set of design system components
-when rendering.
+Dengan menggunakan MDX, Anda dapat menggati setiap elemen HTML yang dibuat oleh Markdown dengan menyesuaikan implementasi. Ini memungkinkan anda untuk menggunakan satu set komponen sistem desian saat rendering..
 
 ```javascript:title=src/components/layout.js
-import { MDXProvider } from "@mdx-js/react"
-import * as DesignSystem from "your-design-system"
+import { MDXProvider } from "@mdx-js/react";
+import * as DesignSystem from "your-design-system";
 
 export default function Layout({ children }) {
   return (
@@ -19,16 +17,16 @@ export default function Layout({ children }) {
         h2: DesignSystem.H2,
         h3: DesignSystem.H3,
         // Or define component inline
-        p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+        p: props => <p {...props} style={{ color: "rebeccapurple" }} />
       }}
     >
       {children}
     </MDXProvider>
-  )
+  );
 }
 ```
 
-The following components can be customized with the MDXProvider:
+Komponen-komponen berikut dapat disesuaikan dengan MDXProvider:
 
 | Tag             | Name                                                                 | Syntax                                              |
 | --------------- | -------------------------------------------------------------------- | --------------------------------------------------- |
@@ -57,12 +55,11 @@ The following components can be customized with the MDXProvider:
 | `a`             | [Link](https://github.com/syntax-tree/mdast#link)                    | `<https://mdxjs.com>` or `[MDX](https://mdxjs.com)` |
 | `img`           | [Image](https://github.com/syntax-tree/mdast#image)                  | `![alt](https://mdx-logo.now.sh)`                   |
 
-## How does this work?
+## Bagaimana cara kerjanya?
 
-Components passed to the MDXProvider are used to render the HTML elements
-that Markdown creates. It uses
+Komponen yang diteruskan ke MDXProvider digunakan untuk elemen HTML yang menciptakan Markdown. Itu menggunakan
 [React's Context API](https://reactjs.org/docs/context.html).
 
-## Related
+## Terkait
 
 - [MDX components](https://mdxjs.com/getting-started/)
