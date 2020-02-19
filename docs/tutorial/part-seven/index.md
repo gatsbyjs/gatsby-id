@@ -39,7 +39,12 @@ exports.onCreateNode = ({ node }) => {
 
 _Stop_ dan _restart_ server _development_. Setelah itu, Anda akan melihat beberapa _node_ telah dibuat dan ditampilkan di konsol _terminal_.
 
+<<<<<<< HEAD
 Pergunakan API untuk menambahkan _slugs_ pada halaman _markdown_ Anda ke `MarkdownRemark` _nodes_.
+=======
+In the next section, you will use this API to add slugs for your Markdown pages to `MarkdownRemark`
+nodes.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Ubah fungsi Anda, sehingga _logs_ hanya menampilkan `MarkdownRemark` nodes.
 
@@ -248,7 +253,14 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 ```
 
+<<<<<<< HEAD
 Jalankan ulang server _development_ dan halaman Anda akan dibuat! Cara mudah untuk mencari halaman baru yang telah dibuat adalah dengan membuka halaman secara acak, karena Gatsby akan membantu menunjukkan daftar halaman dari situs. Jika anda mengakses <http://localhost:8000/sdf>, Anda akan melihat halaman baru yang telah dibuat.
+=======
+Restart the development server and your pages will be created! An easy way to
+find new pages you create while developing is to go to a random path where
+Gatsby will helpfully show you a list of pages on the site. If you go to
+`http://localhost:8000/sdf`, you'll see the new pages you created.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![new-pages](new-pages.png)
 
@@ -342,7 +354,7 @@ export default ({ data }) => {
                 {node.frontmatter.title}{" "}
                 <span
                   css={css`
-                    color: #bbb;
+                    color: #555;
                   `}
                 >
                   — {node.frontmatter.date}
@@ -385,7 +397,13 @@ Dan selesai! Blog berfungsi, meskipun kecil!
 
 ## Tantangan
 
+<<<<<<< HEAD
 Coba lebih banyak bermain-main dengan situs Anda. Coba tambahkan beberapa file _markdown_. Coba ambil data lain dari _nodes_ `MarkdownRemark` dan tambahkan hasilnya ke halaman utama atau halaman posting blog.
+=======
+Try playing more with the site. Try adding some more markdown files. Explore
+querying other data from the `MarkdownRemark` nodes and adding them to the
+front page or blog posts pages.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Pada tutorial ini, Anda telah belajar dasar dari pembuatan situs dengan _data layer_ Gatsby's. Anda telah belajar darimana sumber data dan cara mengubah data dengan _plugins_, bagaimana menggunakan GraphQL untuk _memetakan_ data ke halaman, dan kemudian bagaimana untuk membangun _template komponen halaman_ tempat Anda mengambil data untuk setiap halaman.
 

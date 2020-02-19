@@ -11,7 +11,11 @@ dan memutuskan kapan akan muncul dalam hasil pencarian.
 
 [Plugin *react helmet* Gatsby](/packages/gatsby-plugin-react-helmet) menyediakan dukungan *drop-in* untuk data *rendering server* yang ditambahkan dengan *React helmet*. Dengan menggunakan plugin ini, atribut yang anda tambahkan ke *React helmet* akan ditambahkan ke halaman HTML statis yang dibuat dengan Gatsby.
 
+<<<<<<< HEAD
 ### Cara menggunakan `React Helmet` dan `gatsby-plugin-react-helmet`
+=======
+## Using `React Helmet` and `gatsby-plugin-react-helmet`
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 1. Instal kedua pustaka:
 

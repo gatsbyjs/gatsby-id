@@ -28,7 +28,11 @@ Dalam tutorial menengah ini, Anda akan belajar cara menarik data dari hampir dar
 
 Tema Gatsby mengabstraksi semua konfigurasi standar Anda (berbagi fungsionalitas, sumber data, desain) dari situs Anda dan menjadi paket yang dapat diinstal.
 
+<<<<<<< HEAD
 Ini berarti konfigurasi dan fungsionalitas secara tidak langsung di tulis ke dalam proyek Anda, tapi agak berversi, dikelola secara berpusat, dan diinstall sebagai "dependency". Anda dapat secara mulus memperbarui tema, menggabungkan tema bersamaan, dan bahkan menukar satu tema yang kompatibel dengan yang lain.
+=======
+This means that the configuration and functionality aren’t directly written into your project, but rather versioned, centrally managed, and installed as a dependency. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Pelajari lebih lanjut tentang menggunakan dan membangun tema dengan [tutorial tema Gatsby](/tutorial/theme-tutorials/).
 

@@ -14,8 +14,13 @@ Di dalam tutorial ini, Anda akan belajar tentang bagaimana cara menarik data ke 
 
 GraphiQL adalah _integrated development environment_ (IDE) untuk GraphQL. Ini adalah alat yang ampuh (dan luar biasa) yang akan sering Anda gunakan saat membangun situs web Gatsby.
 
+<<<<<<< HEAD
 Anda dapat mengaksesnya ketika server pengembangan situs Anda berjalan, biasanya di
 <http://localhost:8000/___graphql>.
+=======
+You can access it when your site's development server is running—normally at
+`http://localhost:8000/___graphql`.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="/graphiql-explore.mp4"></source>
@@ -93,8 +98,13 @@ Alternatifnya, Anda dapat menambahkan bidang dengan menggunakan pintasan _autoco
 
 ![filesystem-autocomplete](filesystem-autocomplete.png)
 
+<<<<<<< HEAD
 Coba tambahkan sejumlah bidang ke kueri Anda, dengan menekan <kbd>Ctrl + Enter</kbd>
 setiap kali menjalankan kueri kembali. Anda akan melihat hasil _query_ yang diperbarui:
+=======
+Try adding a number of fields to your query, press <kbd>Ctrl + Enter</kbd>
+each time to re-run the query. You'll see the updated query results:
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![allfile-query](allfile-query.png)
 
@@ -208,7 +218,11 @@ export const query = graphql`
 `
 ```
 
+<<<<<<< HEAD
 Dan sekarang buka [http://localhost:8000/my-files](http://localhost:8000/my-files)… 😲
+=======
+And now visit `http://localhost:8000/my-files`… 😲
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![halaman-my-files](my-files-page.png)
 

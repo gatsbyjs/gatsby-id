@@ -114,7 +114,11 @@ import "./src/styles/global.css"
 // require('./src/styles/global.css')
 ```
 
+<<<<<<< HEAD
 > Catatan: Baik sintaksis CommonJS (`require`) maupun ES Module (`import`) berfungsi disini. Jika Anda tidak yakin memilih yang mana, Kita kebanyakan menggunakan `import` seiring waktu.
+=======
+> Note: Both CommonJS (`require`) and ES Module (`import`) syntax work here. If you’re not sure which to choose, `import` is usually a good default. When working with files that are only run in a Node.js environment however (like `gatsby-node.js`), `require` will need to be used.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 3. Jalankan server pengembangan:
 
@@ -152,7 +156,7 @@ Pertama, buat komponen `Container` baru.
 
 1. Buat direktori baru pada `src/components` lalu, dalam direktori tersebut, buat berkas dengan nama `container.js` dan tempel kode berikut:
 
-```javascript:title=src/components/container.js
+```jsx:title=src/components/container.js
 import React from "react"
 import containerStyles from "./container.module.css"
 
@@ -177,7 +181,7 @@ Anda akan melihat bahwa nama berkas diakhiri dengan `.module.css` alih-alih`.css
 3. Buat komponen halaman baru dengan cara membuat berkas baru pada
    `src/pages/about-css-modules.js`:
 
-```javascript:title=src/pages/about-css-modules.js
+```jsx:title=src/pages/about-css-modules.js
 import React from "react"
 
 import Container from "../components/container"
@@ -248,15 +252,24 @@ import Container from "../components/container"
 console.log(styles)
 ```
 
+<<<<<<< HEAD
 kode `console.log(styles)` akan mencatat hasil impor, jadi Anda dapat melihat hasil proses dari berkas`./about-css-modules.module.css`. Jika Anda membuka _developer console_ (menggunkan misalnya _developer tools_ Firefox atau Chrome) pada peramban Anda, Anda akan melihat:
+=======
+The `console.log(styles)` code will log the resulting import so you can see the result of your processed `./about-css-modules.module.css` file. If you open the developer console (using e.g. Firefox or Chrome's developer tools, often by the F12 key) in your browser, you'll see:
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![Hasil Impor CSS module pada console](css-modules-console.png)
 
 Jika Anda membandingkan dengan berkas CSS Anda, Anda akan melihat bahwa setiap kelas sekarang merupakan sebuah kunci pada obyek yang diimpor merujuk pada sebuah string panjang contohnya `avatar` merujuk pada `src-pages----about-css-modules-module---avatar---2lRF7`. Hal ini merupaka nama kelas yang dihasilkan oleh CSS Modules. Mereka dijamin unik terhadap situs Anda. Dan karena Anda harus mengimpornya untuk menggunakan kelas-kelas yang ada, Tidak pernah ada pertanyaan tentang dimana berberapa CSS tersebut sedang digunakan.
 
+<<<<<<< HEAD
 4. Buat sebuah komponen `User`.
 
 Buat komponen `<User />` baru dibarisan dalam komponen halaman `about-css-modules.js`. Ubah `about-css-modules.js` menjadi seperti berikut:
+=======
+4. Create a new `<User />` component inline in the `about-css-modules.js` page
+   component. Modify `about-css-modules.js` so it looks like the following:
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ```jsx:title=src/pages/about-css-modules.js
 import React from "react"

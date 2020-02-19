@@ -4,7 +4,11 @@ title: Menggunakan Plugin pada situs Anda
 
 Plugin Gatsby adalah paket Node.js, jadi Anda dapat menginstallnya seperti paket lain menggunakan NPM.
 
+<<<<<<< HEAD
 Misalnya, `gatsby-transformer-json` adalah paket yang akan menambahkan dukungan untuk file JSON ke lapisan data Gatsby.
+=======
+For example, `gatsby-transformer-json` is a package that adds support for JSON files to the Gatsby data layer.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Untuk menginstallnya, di *root* situs Anda jalankan:
 
