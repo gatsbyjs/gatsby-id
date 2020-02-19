@@ -152,7 +152,7 @@ Pertama, buat komponen `Container` baru.
 
 1. Buat direktori baru pada `src/components` lalu, dalam direktori tersebut, buat berkas dengan nama `container.js` dan tempel kode berikut:
 
-```javascript:title=src/components/container.js
+```jsx:title=src/components/container.js
 import React from "react"
 import containerStyles from "./container.module.css"
 
@@ -177,7 +177,7 @@ Anda akan melihat bahwa nama berkas diakhiri dengan `.module.css` alih-alih`.css
 3. Buat komponen halaman baru dengan cara membuat berkas baru pada
    `src/pages/about-css-modules.js`:
 
-```javascript:title=src/pages/about-css-modules.js
+```jsx:title=src/pages/about-css-modules.js
 import React from "react"
 
 import Container from "../components/container"

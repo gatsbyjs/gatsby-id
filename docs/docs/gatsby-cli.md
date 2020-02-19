@@ -27,7 +27,7 @@ Anda juga dapat menggunakan varian skrip pada `package.json` untuk beberapa peri
 
 ### `new`
 
-```
+```shell
 gatsby new [<site-name> [<starter-url>]]
 ```
 
@@ -96,7 +96,7 @@ gatsby develop -H 0.0.0.0
 
 Kemudian terminal akan mencatat informasi seperti biasanya, tetapi juga akan menyertakan URL yang dapat Anda navigasikan dari klien di jaringan yang sama untuk melihat bagaimana situs di-*render*.
 
-```
+```shell
 You can now view gatsbyjs.org in the browser.
 ⠀
   Local:            http://0.0.0.0:8000/

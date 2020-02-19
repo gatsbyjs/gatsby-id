@@ -87,7 +87,7 @@ Sekarang Anda siap menggunakan Gatsby CLI untuk membuat situs Gatsby pertama And
 
 <video controls="controls" autoplay="true" loop="true">
   <source type="video/mp4" src="./03-create-site.mp4" />
-  <p>Sorry! You browser doesn't support this video.</p>
+  <p>Sorry! Your browser doesn't support this video.</p>
 </video>
 
 Apa yang baru saja terjadi?

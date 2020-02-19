@@ -270,7 +270,7 @@ export default ({ children }) => (
 )
 ```
 
-![with-navigation2](with-navigation2.png)
+![with-navigation2](with-navigation.png)
 
 Dan tepat di sana Anda memilikinya! Ketiga halaman situs dengan dasar navigasi global.
 

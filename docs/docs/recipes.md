@@ -37,20 +37,7 @@ Menginginkan media yang menyenangkan antara [tutorial lengkap](/tutorial/) dan [
 
 Di dalam proyek Gatbsy, Anda kemungkinan akan menemui sebagian atau semua dari direktori dan berkas sebagai berikut:
 
-```
-|-- /.cache
-|-- /plugins
-|-- /public
-|-- /src
-    |-- /pages
-    |-- /templates
-    |-- html.js
-|-- /static
-|-- gatsby-config.js
-|-- gatsby-node.js
-|-- gatsby-ssr.js
-|-- gatsby-browser.js
-```
+## [2. Styling with CSS](/docs/recipes/styling-css)
 
 Beberapa berkas penting dan definisinya:
 
@@ -1910,37 +1897,21 @@ title: Post pertamaku
 featuredImage: ./corgi.png // highlight-line
 ---
 
-Post content...
-```
+## [4. Working with themes](/docs/recipes/working-with-themes)
 
 2. Pastikan pada pengidentifikasi unik (sebuah slug pada contoh ini) diarahkan pada context ketika `createPages` dipanggil pada `gatsby-node.js`, yang mana kemudian akan dioper ke query GraphQL pada komponen Tata letak
 
-```js:title=gatsby-node.js
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+- [Creating a new site using a theme](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme)
+- [Creating a new site using a theme starter](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
+- [Building a new theme](/docs/recipes/working-with-themes#building-a-new-theme)
 
   // query untuk semua markdown
 
-  result.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/components/markdown-layout.js`),
-      // highlight-start
-      context: {
-        slug: node.fields.slug,
-      },
-      // highlight-end
-    })
-  })
-}
-```
+Pull data from multiple locations, like the filesystem or database, into your Gatsby site.
 
 3. Sekarang, impor `Img` pada `gatsby-image` dan `graphql` dari `gatsby` ke komponen tata letak, buat sebuah [pageQuery](/docs/page-query/) untuk mendapatkan data gambar berdasarkan yang dioper pada `slug` dan melewati data pada komponen `<Img />`:
 
-```jsx:title=markdown-layout.jsx
-import React from "react"
-import { graphql } from "gatsby" // highlight-line
-import Img from "gatsby-image" // highlight-line
+## [6. Querying data](/docs/recipes/querying-data)
 
 export default ({ children, data }) => (
   <main>
@@ -1954,25 +1925,15 @@ export default ({ children, data }) => (
   </main>
 )
 
-// highlight-start
-export const pageQuery = graphql`
-  query PostQuery($slug: String) {
-    markdown: mdx(fields: { slug: { eq: $slug } }) {
-      id
-      frontmatter {
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
-// highlight-end
-```
+- [Querying data with a Page Query](/docs/recipes/querying-data#querying-data-with-a-page-query)
+- [Querying data with the StaticQuery Component](/docs/recipes/querying-data#querying-data-with-the-staticquery-component)
+- [Querying data with the useStaticQuery hook](/docs/recipes/querying-data/#querying-data-with-the-usestaticquery-hook)
+- [Limiting with GraphQL](/docs/recipes/querying-data#limiting-with-graphql)
+- [Sorting with GraphQL](/docs/recipes/querying-data#sorting-with-graphql)
+- [Filtering with GraphQL](/docs/recipes/querying-data#filtering-with-graphql)
+- [GraphQL Query Aliases](/docs/recipes/querying-data#graphql-query-aliases)
+- [GraphQL Query Fragments](/docs/recipes/querying-data#graphql-query-fragments)
+- [Querying data client-side with fetch](/docs/recipes/querying-data#querying-data-client-side-with-fetch)
 
 4. Jalankan `gatsby develop` yang akan menghasilkan gambar pada berkas bersumber pada sistem berkas
 
