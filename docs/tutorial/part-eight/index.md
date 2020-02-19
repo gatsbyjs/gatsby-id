@@ -44,7 +44,11 @@ gatsby build
 gatsby serve
 ```
 
+<<<<<<< HEAD
 Setelah ini dijalankan, Anda dapat melihat situs Anda di [`localhost:9000`](http://localhost:9000).
+=======
+Once this starts, you can view your site at `http://localhost:9000`.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ### Menjalankan audit Lighthouse
 
@@ -356,9 +360,15 @@ _Lighthouse_ adalah alat yang hebat untuk perbaikan dan pembelajaran situs -- La
 
 ### _Starters_ Resmi
 
+<<<<<<< HEAD
 1.  [_Gatsby's Default Starter_](https://github.com/gatsbyjs/gatsby-starter-default): Mulailah proyek Anda dengan kerangka _default_ ini. _Starter_ setengah jadi ini dikirimkan bersama file konfigurasi utama Gatsby yang mungkin Anda butuhkan. _[contoh kerja](http://gatsbyjs.github.io/gatsby-starter-default/)_
 2.  [_Gatsby's Blog Starter_](https://github.com/gatsbyjs/gatsby-starter-blog): _Gatsby Starter_ untuk membuat _blog_ yang luar biasa dan sangat cepat. _[contoh kerja](http://gatsbyjs.github.io/gatsby-starter-blog/)_
 3.  [_Gatsby's Hello-World Starter_](https://github.com/gatsbyjs/gatsby-starter-hello-world): _Gatsby Starter_ dengan hal-hal mendasar yang diperlukan untuk sebuah situs Gatsby. _[contoh kerja](https://gatsby-starter-hello-world-demo.netlify.com/)_
+=======
+1.  [Gatsby's Default Starter](https://github.com/gatsbyjs/gatsby-starter-default): Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. _[working example](https://gatsbyjs.github.io/gatsby-starter-default/)_
+2.  [Gatsby's Blog Starter](https://github.com/gatsbyjs/gatsby-starter-blog): Gatsby starter for creating an awesome and blazing-fast blog. _[working example](https://gatsbyjs.github.io/gatsby-starter-blog/)_
+3.  [Gatsby's Hello-World Starter](https://github.com/gatsbyjs/gatsby-starter-hello-world): Gatsby Starter with the bare essentials needed for a Gatsby site. _[working example](https://gatsby-starter-hello-world-demo.netlify.com/)_
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ## Itu saja, sobat
 

@@ -27,7 +27,7 @@ Anda juga dapat menggunakan varian skrip pada `package.json` untuk beberapa peri
 
 ### `new`
 
-```
+```shell
 gatsby new [<site-name> [<starter-url>]]
 ```
 
@@ -78,10 +78,17 @@ Setelah Anda menginstal situs Gatsby, buka direktori utama pada proyek Anda dan 
 
 |     Pilihan     | Deskripsi                                       |
 | :-------------: | ----------------------------------------------- |
+<<<<<<< HEAD
 | `-H`, `--host`  | Menetapkan host. Bawaannya yaitu localhost      |
 | `-p`, `--port`  | Menetapkan port. Bawaannya yaitu 8000           |
 | `-o`, `--open`  | Membuka situs di browser (bawaan) Anda          |
 | `-S`, `--https` | Menggunakan HTTPS                               |
+=======
+| `-H`, `--host`  | Set host. Defaults to localhost                 |
+| `-p`, `--port`  | Set port. Defaults to env.PORT or 8000          |
+| `-o`, `--open`  | Open the site in your (default) browser for you |
+| `-S`, `--https` | Use HTTPS                                       |
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Ikuti [Panduan HTTPS Lokal](/docs/local-https/)
 untuk mengetahui bagaimana Anda dapat mengatur *development server* HTTPS menggunakan Gatsby.
@@ -96,14 +103,18 @@ gatsby develop -H 0.0.0.0
 
 Kemudian terminal akan mencatat informasi seperti biasanya, tetapi juga akan menyertakan URL yang dapat Anda navigasikan dari klien di jaringan yang sama untuk melihat bagaimana situs di-*render*.
 
-```
+```shell
 You can now view gatsbyjs.org in the browser.
 ⠀
   Local:            http://0.0.0.0:8000/
   On Your Network:  http://192.168.0.212:8000/ // highlight-line
 ```
 
+<<<<<<< HEAD
 **Catatan**: Anda tidak dapat mengunjungi 0.0.0.0:8000 di Windows (tetapi semuanya akan berjalan dengan menggunakan localhost:8000 atau URL "Di Jaringan Anda" pada Windows)
+=======
+**Note**: To access Gatsby on your local machine, use either `http://localhost:8000` or the "On Your Network" URL.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ### `build`
 
@@ -206,4 +217,35 @@ Untuk informasi lebih lanjut, lihat [Dokumentasi Gatsby REPL](/docs/gatsby-repl/
 
 ### Menonaktifkan *output* berwarna
 
+<<<<<<< HEAD
 Selain opsi `--no-color` yang eksplisit, CLI menghargai keberadaan variabel lingkungan `NO_COLOR` (lihat [no-color.org](https://no-color.org/)).
+=======
+In addition to the explicit `--no-color` option, the CLI respects the presence of the `NO_COLOR` environment variable (see [no-color.org](https://no-color.org/)).
+
+## How to change your default package manager for your next project?
+
+When you use `gatsby new` for the first time to create a new project, you are asked to choose your default package manager between yarn and npm.
+
+```shell
+Which package manager would you like to use ? › - Use arrow-keys. Return to submit.
+❯  yarn
+   npm
+```
+
+Once you’ve made your choice, the CLI won’t ask for your preference again for any subsequent project.
+
+If you want to change this for your next project you have to edit the config file created automatically by the CLI.
+This file is available on your system at: `~/.config/gatsby/config.json`
+
+In it you’re going to see something like this.
+
+```json:title=config.json
+{
+  "cli": {
+    "packageManager": "yarn"
+  }
+}
+```
+
+Edit your `packageManager` value, save and you’re good to go for your next project using `gatsby new`.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc

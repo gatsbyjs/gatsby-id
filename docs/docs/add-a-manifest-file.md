@@ -16,7 +16,11 @@ Mengutip [Google](https://developers.google.com/web/fundamentals/web-app-manifes
 
 [Gatsby's manifest plugin](/packages/gatsby-plugin-manifest/) konfigurasi Gatsby untuk membuat sebuah file `manifest.webmanifest` setiap kali website di bangun.
 
+<<<<<<< HEAD
 ### Menggunakan `gatsby-plugin-manifest`
+=======
+## Using `gatsby-plugin-manifest`
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 1.  Menginstall plugin:
 

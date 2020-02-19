@@ -31,27 +31,27 @@ See [docs templates](/docs/docs-templates/) in the contributing docs for more he
 
 Menginginkan media yang menyenangkan antara [tutorial lengkap](/tutorial/) dan [dokumentasi](/docs/)?. Berikut adalah buku resep panduan tentang cara membangun sesuatu, gaya Gatsby.
 
+<<<<<<< HEAD
 ## 1. Halaman dan Tata Letak
 
 ### Struktur proyek
 
 Di dalam proyek Gatbsy, Anda kemungkinan akan menemui sebagian atau semua dari direktori dan berkas sebagai berikut:
+=======
+## [1. Pages and layouts](/docs/recipes/pages-layouts)
 
-```
-|-- /.cache
-|-- /plugins
-|-- /public
-|-- /src
-    |-- /pages
-    |-- /templates
-    |-- html.js
-|-- /static
-|-- gatsby-config.js
-|-- gatsby-node.js
-|-- gatsby-ssr.js
-|-- gatsby-browser.js
-```
+Add pages to your Gatsby site, and use layouts to manage common page elements.
 
+- [Project structure](/docs/recipes/pages-layouts#project-structure)
+- [Creating pages automatically](/docs/recipes/pages-layouts#creating-pages-automatically)
+- [Linking between pages](/docs/recipes/pages-layouts#linking-between-pages)
+- [Creating a layout component](/docs/recipes/pages-layouts#creating-a-layout-component)
+- [Creating pages programmatically with createPage](/docs/recipes/pages-layouts#creating-pages-programmatically-with-createpage)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
+
+## [2. Styling with CSS](/docs/recipes/styling-css)
+
+<<<<<<< HEAD
 Beberapa berkas penting dan definisinya:
 
 - `gatsby-config.js` — konfigurasi opsi untuk situs Gatsby, dengan metadata untuk judul proyek, deskripsi, plugin, dan lainnya.
@@ -1909,39 +1909,59 @@ gatsby-remark-images/)
 title: Post pertamaku
 featuredImage: ./corgi.png // highlight-line
 ---
+=======
+There are so many ways to add styles to your website; Gatsby supports almost every possible option, through official and community plugins.
 
-Post content...
-```
+- [Using global CSS files without a Layout component](/docs/recipes/styling-css#using-global-css-files-without-a-layout-component)
+- [Using global styles in a layout component](/docs/recipes/styling-css#using-global-styles-in-a-layout-component)
+- [Using Styled Components](/docs/recipes/styling-css#using-styled-components)
+- [Using CSS Modules](/docs/recipes/styling-css#using-css-modules)
+- [Using Sass/SCSS](/docs/recipes/styling-css#using-sassscss)
+- [Adding a Local Font](/docs/recipes/styling-css#adding-a-local-font)
+- [Using Emotion](/docs/recipes/styling-css#using-emotion)
+- [Using Google Fonts](/docs/recipes/styling-css#using-google-fonts)
 
+## [3. Working with starters](/docs/recipes/working-with-starters)
+
+[Starters](/docs/starters/) are boilerplate Gatsby sites maintained officially, or by the community.
+
+- [Using a starter](/docs/recipes/working-with-starters#using-a-starter)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
+
+## [4. Working with themes](/docs/recipes/working-with-themes)
+
+<<<<<<< HEAD
 2. Pastikan pada pengidentifikasi unik (sebuah slug pada contoh ini) diarahkan pada context ketika `createPages` dipanggil pada `gatsby-node.js`, yang mana kemudian akan dioper ke query GraphQL pada komponen Tata letak
+=======
+A Gatsby theme lets you centralize the look-and-feel of your site. You can seamlessly update a theme, compose themes together, and even swap out one compatible theme for another.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
-```js:title=gatsby-node.js
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+- [Creating a new site using a theme](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme)
+- [Creating a new site using a theme starter](/docs/recipes/working-with-themes#creating-a-new-site-using-a-theme-starter)
+- [Building a new theme](/docs/recipes/working-with-themes#building-a-new-theme)
 
+<<<<<<< HEAD
   // query untuk semua markdown
+=======
+## [5. Sourcing data](/docs/recipes/sourcing-data)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
-  result.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/components/markdown-layout.js`),
-      // highlight-start
-      context: {
-        slug: node.fields.slug,
-      },
-      // highlight-end
-    })
-  })
-}
-```
+Pull data from multiple locations, like the filesystem or database, into your Gatsby site.
 
+<<<<<<< HEAD
 3. Sekarang, impor `Img` pada `gatsby-image` dan `graphql` dari `gatsby` ke komponen tata letak, buat sebuah [pageQuery](/docs/page-query/) untuk mendapatkan data gambar berdasarkan yang dioper pada `slug` dan melewati data pada komponen `<Img />`:
+=======
+- [Adding data to GraphQL](/docs/recipes/sourcing-data#adding-data-to-graphql)
+- [Sourcing Markdown data for blog posts and pages with GraphQL](/docs/recipes/sourcing-data#sourcing-markdown-data-for-blog-posts-and-pages-with-graphql)
+- [Sourcing from WordPress](/docs/recipes/sourcing-data#sourcing-from-wordpress)
+- [Sourcing data from Contentful](/docs/recipes/sourcing-data#sourcing-data-from-contentful)
+- [Pulling data from an external source and creating pages without GraphQL](/docs/recipes/sourcing-data#pulling-data-from-an-external-source-and-creating-pages-without-graphql)
+- [Sourcing content from Drupal](/docs/recipes/sourcing-data#sourcing-content-from-drupal)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
-```jsx:title=markdown-layout.jsx
-import React from "react"
-import { graphql } from "gatsby" // highlight-line
-import Img from "gatsby-image" // highlight-line
+## [6. Querying data](/docs/recipes/querying-data)
 
+<<<<<<< HEAD
 export default ({ children, data }) => (
   <main>
     // highlight-start
@@ -1953,27 +1973,21 @@ export default ({ children, data }) => (
     {children}
   </main>
 )
+=======
+Gatsby lets you access your data across all sources using a single GraphQL interface.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
-// highlight-start
-export const pageQuery = graphql`
-  query PostQuery($slug: String) {
-    markdown: mdx(fields: { slug: { eq: $slug } }) {
-      id
-      frontmatter {
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
-// highlight-end
-```
+- [Querying data with a Page Query](/docs/recipes/querying-data#querying-data-with-a-page-query)
+- [Querying data with the StaticQuery Component](/docs/recipes/querying-data#querying-data-with-the-staticquery-component)
+- [Querying data with the useStaticQuery hook](/docs/recipes/querying-data/#querying-data-with-the-usestaticquery-hook)
+- [Limiting with GraphQL](/docs/recipes/querying-data#limiting-with-graphql)
+- [Sorting with GraphQL](/docs/recipes/querying-data#sorting-with-graphql)
+- [Filtering with GraphQL](/docs/recipes/querying-data#filtering-with-graphql)
+- [GraphQL Query Aliases](/docs/recipes/querying-data#graphql-query-aliases)
+- [GraphQL Query Fragments](/docs/recipes/querying-data#graphql-query-fragments)
+- [Querying data client-side with fetch](/docs/recipes/querying-data#querying-data-client-side-with-fetch)
 
+<<<<<<< HEAD
 4. Jalankan `gatsby develop` yang akan menghasilkan gambar pada berkas bersumber pada sistem berkas
 
 #### Sumber daya tambahan
@@ -1985,9 +1999,22 @@ export const pageQuery = graphql`
 - [Lebih lanjut tentang bekerja dengan gambar di Gatsby](/docs/working-with-images/)
 
 ## 8. Transformasi (mengubah bentuk) data
+=======
+## [7. Working with images](/docs/recipes/working-with-images)
+
+Access images as static resources, or automate the process of optimizing them through powerful plugins.
+
+- [Import an image into a component with webpack](/docs/recipes/working-with-images#import-an-image-into-a-component-with-webpack)
+- [Reference an image from the static folder](/docs/recipes/working-with-images#reference-an-image-from-the-static-folder)
+- [Optimizing and querying local images with gatsby-image](/docs/recipes/working-with-images#optimizing-and-querying-local-images-with-gatsby-image)
+- [Optimizing and querying images in post frontmatter with gatsby-image](/docs/recipes/working-with-images#optimizing-and-querying-images-in-post-frontmatter-with-gatsby-image)
+
+## [8. Transforming data](/docs/recipes/transforming-data)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Transformasi data pada Gatsby adalah plugin-driven (berdasarkan plugin). Plugin transformer (pengubah) mengambil data menggunakan plugin sumber, dan memprosesnya menjadi sesuatu yang dapat dipakai.
 
+<<<<<<< HEAD
 ### Transformasi Markdown ke dalam HTML
 
 Plugin `gatsby-transformer-remark` dapat mengubah bentuk berkas Markdown menjadi HTML.
@@ -2040,9 +2067,16 @@ export const query = graphql`
 - Jelajahi plugin transformer yang tersedia pada [pustaka plugin Gatsby](/plugins/?=transformer)
 
 ## 9. Deploy situs Anda
+=======
+- [Transforming Markdown into HTML](/docs/recipes/transforming-data#transforming-markdown-into-html)
+- [Transforming images into grayscale using GraphQL](/docs/recipes/transforming-data#transforming-images-into-grayscale-using-graphql)
+
+## [9. Deploying your site](/docs/recipes/deploying-your-site)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Saatnya pertunjukan. Bila Anda sudah merasa cukup dengan situs Anda, Anda sudha siap untuk menjalankannya!
 
+<<<<<<< HEAD
 ### Mempersiapkan deployment
 
 #### Prasyarat
@@ -2144,3 +2178,8 @@ Gunakan [Now CLI](https://zeit.co/download) untuk deploy aplikasi Gatsby Anda ta
 #### Sumber daya tambahan
 
 - [Deploy ke ZEIT Now](/docs/deploying-to-zeit-now/)
+=======
+- [Preparing for deployment](/docs/recipes/deploying-your-site#preparing-for-deployment)
+- [Deploying to Netlify](/docs/recipes/deploying-your-site#deploying-to-netlify)
+- [Deploying to ZEIT Now](/docs/recipes/deploying-your-site#deploying-to-zeit-now)
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc

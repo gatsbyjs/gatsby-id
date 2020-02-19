@@ -20,7 +20,11 @@ Ketika membuat sebuah situs Gatsby baru, kamu menggunakan perintah struktur beri
 gatsby new [NAMA_DIREKTORI_SITUS] [URL_DARI_STARTER_RESITORI_GITHUB]
 ```
 
+<<<<<<< HEAD
 Jika Anda menghilangkan URL dari bagian akhir, Gatsby akan secara otomatis menghasilkan situs untuk Anda berdasarkan pada [**starter standar**](https://github.com/gatsbyjs/gatsby-starter-default). Untuk bagian tutorial ini, tetap dengan situs “Hello World” yang sudah Anda buat di tutorial bagian nol
+=======
+If you omit a URL from the end, Gatsby will automatically generate a site for you based on the [**default starter**](https://github.com/gatsbyjs/gatsby-starter-default). For this section of the tutorial, stick with the “Hello World” site you already created in tutorial part zero. You can learn more about [modifying starters](/docs/modifying-a-starter) in the docs.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ### ✋ Buka kodenya
 
@@ -165,7 +169,11 @@ export default () => (
 )
 ```
 
+<<<<<<< HEAD
 2.  Navigasi ke http://localhost:8000/about/.
+=======
+2.  Navigate to `http://localhost:8000/about/`
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![Halaman about yang baru](05-about-page.png)
 
@@ -230,7 +238,11 @@ Sekarang Anda akan melihat teks header “About Gatsby” Anda lagi!
 
 ### Apa itu “props”?
 
+<<<<<<< HEAD
 Sebelumnya Anda mendefinisikan komponen React sebagai bagian dari kode yang dapat digunakan kembali yang menggambarkan UI. Untuk membuat potongan-potongan yang dapat digunakan kembali ini dinamis, Anda harus dapat menyediakannya dengan data yang berbeda. Anda melakukannya dengan input yang disebut “props”. Props adalah (cukup tepat) properti yang disediakan untuk komponen React.
+=======
+Earlier, you defined React components as reusable pieces of code describing a UI. To make these reusable pieces dynamic you need to be able to supply them with different data. You do that with input called "props". Props are (appropriately enough) properties supplied to React components.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Di `about.js` Anda mengirimkan prop `headerText` dengan nilai `"About Gatsby"` ke sub-komponen `Header` yang diimpor:
 
@@ -324,20 +336,30 @@ export default () => (
 )
 ```
 
+<<<<<<< HEAD
 Setelah Anda menyimpan berkas, Anda harus melihat halaman contact dan dapat menghubungkannya dengan beranda.
+=======
+After you save the file, you should see the contact page and be able to follow the link to the homepage.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 <video controls="controls" loop="true">
   <source type="video/mp4" src="./10-linking-between-pages.mp4"></source>
-  <p>Sorry! You browser doesn't support this video.</p>
+  <p>Sorry! Your browser doesn't support this video.</p>
 </video>
 
 Komponen Gatsby `<Link />` untuk menghubungkan antar halaman di dalam situs Anda. Untuk tautan eksternal ke halaman yang tidak ditangani oleh situs Gatsby Anda, gunakan tag HTML `<a>` biasa.
 
 ## Men-deploy situs Gatsby
 
+<<<<<<< HEAD
 Gatsby.js adalah _generator situs modern_, yang berarti tidak ada server untuk men-setup atau basis data rumit untuk digunakan. Sebagai gantinya, perintah Gatsby `build` menghasilkan direktori file HTML dan JavaScript statis yang dapat Anda gunakan untuk layanan hosting situs statis.
 
 Coba gunakan [Surge](http://surge.sh/) untuk men-deploy situs web Gatsby pertama Anda. Surge adalah salah satu dari banyak "static site hosts" yang memungkinkan untuk men-deploy situs Gatsby.
+=======
+Gatsby.js is a _modern site generator_, which means there are no servers to set up or complicated databases to deploy. Instead, the Gatsby `build` command produces a directory of static HTML and JavaScript files which you can deploy to a static site hosting service.
+
+Try using [Surge](http://surge.sh/) for deploying your first Gatsby website. Surge is one of many "static site hosts" which makes it possible to deploy Gatsby sites.
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 Jika sebelumnya Anda belum memasang &amp; mengatur Surge, buka jendela terminal baru dan instal alat baris perintah mereka:
 
@@ -368,7 +390,13 @@ dan terakhir deploy situs Anda dengan menerbitkan berkas yang dihasilkan ke surg
 surge public/
 ```
 
+<<<<<<< HEAD
 Setelah ini selesai berjalan, Anda akan melihat sesuatu di terminal Anda seperti:
+=======
+> Note that you will have to press the `enter` key after you see the `domain: some-name.surge.sh` information on your command-line interface.
+
+Once this finishes running, you should see in your terminal something like:
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ![Tangkapan layar penerbitan situs Gatsby dengan Surge](surge-deployment.png)
 

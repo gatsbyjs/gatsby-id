@@ -270,11 +270,15 @@ export default ({ children }) => (
 )
 ```
 
-![with-navigation2](with-navigation2.png)
+![with-navigation2](with-navigation.png)
 
 Dan tepat di sana Anda memilikinya! Ketiga halaman situs dengan dasar navigasi global.
 
+<<<<<<< HEAD
 _Tantangan:_ Dengan kekuatan "komponen _layout_" baru Anda, coba tambahkan _header_, _footer_, navigasi global, _sidebars_, dll ke situs Gatsby Anda!
+=======
+_Challenge:_ With your new "layout component" powers, try adding headers, footers, global navigation, sidebars, etc. to your Gatsby sites!
+>>>>>>> 90932a06db2e297cf416552b84e48b4b82e56fbc
 
 ## Apa yang akan terjadi selanjutnya?
 
