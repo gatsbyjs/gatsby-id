@@ -328,7 +328,7 @@ Setelah Anda menyimpan berkas, Anda harus melihat halaman contact dan dapat meng
 
 <video controls="controls" loop="true">
   <source type="video/mp4" src="./10-linking-between-pages.mp4"></source>
-  <p>Sorry! You browser doesn't support this video.</p>
+  <p>Sorry! Your browser doesn't support this video.</p>
 </video>
 
 Komponen Gatsby `<Link />` untuk menghubungkan antar halaman di dalam situs Anda. Untuk tautan eksternal ke halaman yang tidak ditangani oleh situs Gatsby Anda, gunakan tag HTML `<a>` biasa.
