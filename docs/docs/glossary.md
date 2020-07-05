@@ -1,9 +1,11 @@
 ---
-title: Glossary
+title: Glosarium
 disableTableOfContents: true
 ---
 
-When you're new to Gatsby there can be a lot of words to learn. This glossary aims to give you a 10,000-foot overview of common terms and what they mean for Gatsby sites.
+import HorizontalNavList from "../../www/src/components/horizontal-nav-list.js"
+
+Saat Anda baru mengenal Gatsby, ada banyak istilah untuk dipelajari. Glosarium ini bertujuan untuk memberi Anda gambaran 10.000 kaki tentang istilah umum serta arti dan maksud istilah tersebut untuk situs-situs Gatsby.
 
 <HorizontalNavList
 items={"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")}
@@ -14,101 +16,101 @@ slug={props.slug}
 
 ### AST
 
-Abstract Syntax Tree: A tree representation of the source code that is found during a [compilation](#compiler) step between two languages. For example, [gatsby-transformer-remark](/packages/gatsby-transformer-remark/) will create an AST from [Markdown](#markdown) to describe a Markdown document in a tree structure using the [Remark](#remark) parser.
+_Abstract Syntax Tree_ atau Pohon Sintaksis Abstrak: Pohon representasi dari kode sumber yang terdapat pada proses [kompilasi](#compiler) antar dua bahasa. Sebagai contoh, [gatsby-transformer-remark](/packages/gatsby-transformer-remark/) akan membuat AST dari [Markdown](#markdown) untuk mendeskripsikan dokumen Markdown dalam sebuah struktur pohon menggunakan _parser_ [Remark](#remark).
 
 ### API
 
-Application Programming Interface: A method for one application to communicate with another. For example, a [source plugin](#source-plugin) will often use an API to get its data.
+_Application Programming Interface_ atau Antarmuka Pemrograman Aplikasi: Metode bagi sebuah aplikasi untuk berkomunikasi dengan aplikasi lainnya. Sebagai contoh, sebuah [_source plugin_](#source-plugin) akan sering menggunakan API untuk mendapatkan data yang diperlukan.
 
-### Accessibility
+### Aksesibilitas
 
-The inclusive practice of removing barriers that prevent interaction with, or access to websites, by people with disabilities. When sites are correctly designed, developed and edited for accessibility, generally all users have equal access to information and functionality. Read about [Gatsby's Commitment to Accessibility](/blog/2019-04-18-gatsby-commitment-to-accessibility/).
+Penerapan secara inklusif untuk menghilangkan hambatan yang mencegah interaksi dengan, atau akses ke situs web oleh para penyandang cacat. Ketika situs dirancang, dikembangkan dan disunting dengan benar untuk aksesibilitas, umumnya semua pengguna memiliki akses yang sama terhadap informasi dan fungsionalitas. Baca tentang [Komitmen Gatsby untuk Aksesibilitas](/blog/2019-04-18-gatsby-commitment-to-accessibility/).
 
 ## B
 
 ### Babel
 
-A tool that lets you write the most modern [JavaScript](#javascript), and on [build](#build) it gets [compiled](#compiler) to code that most web browsers can understand.
+Sebuah alat yang memungkinkan Anda menulis [JavaScript](#javascript) termutakhir, dan ketika proses [_build_](#build) akan [dikompilasi](#compiler) menjadi kode yang dipahami hampir semua peramban web.
 
 ### Backend
 
-The behind the scenes that the [public](#public) does not see. This often refers to the control panel of your [CMS](#cms). These are often powered by server-side programming languages such as Node.js, PHP, Go, ASP.net, Ruby, or Java.
+Belakang layar yang tidak terlihat oleh [publik](#public). Hal ini sering merujuk pada bagian kontrol [CMS](#cms) Anda. _Backend_ biasanya didukung oleh bahasa pemrograman _server-side_ seperti Node.js, PHP, Go, ASP.net, Ruby, atau Java.
 
 ### Build
 
-In Gatsby, this is the process of taking your code and content and packaging it into a website that can be hosted and accessed. Commonly referred to as _build time_. See also: [backend](#backend) and [server-side](#server-side).
+Bagi Gatsby, ini adalah proses mengolah kode dan konten Anda lalu mengemasnya menjadi situs web yang dapat disajikan dan diakses. Umumnya proses ini disebut _build time_. Lihat juga: [_backend_](#backend) dan [_server-side_](#server-side).
 
 ## C
 
 ### Cache
 
-A storage of information locally that might be used again, so computations and lookups can be retrieved faster from one place. Gatsby uses a cache to store information so it can build your site faster when you're developing without needing to do the same work twice.
+Penyimpanan lokal informasi yang dapat digunakan kembali, sehingga perhitungan dan pencarian dapat diambil lebih cepat dari satu tempat. Gatsby menggunakan _cache_ untuk menyimpan informasi sehingga dapat membangun situs Anda lebih cepat ketika Anda mengembangkan situs Anda tanpa perlu melakukan pekerjaan yang sama dua kali.
 
 ### CLI
 
-Command Line Interface: An application that runs on your computer through the [command line](#command-line) and interacted with your keyboard.
+_Command Line Interface_ atau Antarmuka Baris Perintah: Aplikasi yang berjalan pada komputer Anda melalui [baris perintah](#command-line) dan berinteraksi dengan papan ketik Anda.
 
-Gatsby has two command line interfaces. One, [`gatsby`](/docs/gatsby-cli/), for day-to-day development with Gatsby and another, [`gatsby-dev`](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions), for those who contribute to the Gatsby project.
+Gatsby memiliki dua antarmuka baris perintah. Yang pertama adalah [`gatsby`](/docs/gatsby-cli/), untuk pengembangan sehari-hari dengan Gatsby dan satu lagi yaitu [`gatsby-dev`](/contributing/setting-up-your-local-dev-environment/#gatsby-repo-install-instructions), untuk mereka yang berkontribusi pada proyek Gatsby.
 
 ### Client-side
 
-Client-side refers to operations that are performed by the user's browser in a [client–server relationship](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) in a computer network. In Gatsby, this is important when [working with packages](/docs/using-client-side-only-packages/) that rely on objects in the [browser DOM](#dom), such as `window` or `navigator`. See also: [server-side](#server-side), [frontend](#frontend), and [backend](#backend).
+_Client-side_ merujuk pada operasi yang dilakukan oleh peramban web pengguna pada [hubungan klien–server](https://en.wikipedia.org/wiki/Client%E2%80%93server_model) di dalam jaringan komputer. Pada Gatsby, hal ini penting ketika [bekerja dengan _package_](/docs/using-client-side-only-packages/) yang bergantung pada objek di dalam [DOM peramban web](#dom), seperti `window` atau `navigator`. Lihat juga: [_server-side_](#server-side), [_frontend_](#frontend), dan [_backend_](#backend).
 
 ### CMS
 
-Content Management System: an application where you can manage your content and have it saved to a database or file for accessing later. Examples of Content Management Systems include WordPress, Drupal, Contentful, and Netlify CMS.
+_Content Management System_ atau Sistem Manajemen Konten: aplikasi yang memungkinkan Anda mengelola konten Anda dan menyimpannya pada basis data atau file untuk diakses nanti. Beberapa contoh Sistem Manajemen Konten yaitu WordPress, Drupal, Contentful, dan Netlify CMS.
 
 ### Command Line
 
-A text-based interface to run commands on your computer. The default Command Line applications for Mac and Windows are `Terminal` and `Command Prompt` respectively.
+Antarmuka teks untuk menjalankan perintah pada komputer Anda. Aplikasi baris perintah bawaan untuk Mac dan Windows adalah `Terminal` dan `Command Prompt`.
 
 ### Compiler
 
-A compiler is a program that translates code written in one language to another language. For example [Gatsby](#gatsby) can compile [React](#react) applications into static [HTML](#html) files.
+_Compiler_ atau kompilator adalah program yang menerjemahkan kode yang Anda tulis dalam satu bahasa ke bahasa lain. Sebagai contoh [Gatsby](#gatsby) dapat mengkompilasi aplikasi [React](#react) menjadi file [HTML](#html) statis.
 
 ### Component
 
-Components are independent and re-usable chunks of code powered by [React](#react) that, when combined, make up your website or app.
+Komponen adalah potongan kode yang independen dan dapat digunakan kembali yang diberdayakan oleh [React](#react) yang, ketika digabungkan, akan menjadi situs web atau aplikasi Anda.
 
-A component can include components within it. In fact, [pages](#page) and [templates](#template) are examples of components.
+Sebuah komponen dapat terdiri dari beberapa komponen yang berbeda. Bahkan [halaman](#page) dan [_template_](#template) adalah contoh dari komponen.
 
 ### Config
 
-The configuration file, `gatsby-config.js` tells Gatsby information about your website. A common option set in config is your sites metadata that can power your SEO meta tags.
+File konfigurasi, `gatsby-config.js` memberi tahu Gatsby informasi tentang situs web Anda. Pilihan umum yang diatur dalam konfigurasi adalah _metadata_ situs Anda yang dapat mendukung _SEO meta tag_ Anda.
 
 ### [Continuous Deployment](/docs/glossary/continuous-deployment)
 
-Continuous deployment (CD) automates the process of releasing changes to your project. A continuous deployment workflow automatically builds and tests your project, and publishes your changes only when they pass the required tests.
+_Continuous deployment_ (CD) mengotomatiskan proses merilis pembaruan pada proyek Anda. Alur kerja _continuous deployment_ secara otomatis membangun dan menguji proyek Anda, dan menerbitkan pembaruan Anda hanya ketika pembaruan tersebut lulus tes yang diperlukan.
 
 ### CSS
 
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) stands for Cascading Style Sheets, and it's a major part of the Web Platform with [HTML](#html) and [JavaScript](#javascript). CSS is a language for styling webpages designed to be highly backwards-compatible. As new features are rolled out to end users, [CSS parsers](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing) can safely ignore unsupported features and enhance with the properties they do support. CSS accomplishes this with its _cascading_ design, fundamental to styling with new techniques like [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) while providing fallbacks for older browsers. Gatsby supports multiple [approaches to styling](/docs/styling/), including regular CSS files, CSS modules, and CSS-in-JS.
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) adalah singkatan dari Cascading Style Sheets dan merupakan bagian utama dari Platform Web bersama dengan [HTML](#html) dan [JavaScript](#javascript). CSS adalah bahasa untuk menata halaman web yang dirancang agar _backwards-compatible_. Saat fitur baru diluncurkan ke pengguna, [parser CSS](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#CSS_parsing) dapat dengan aman mengabaikan fitur yang tidak didukung serta meningkatkan fitur yang didukung. CSS dapat melakukan hal ini karena didukung dengan desain _cascading_, yang sangat penting untuk penataan halaman web dengan teknik baru seperti [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement) sembari memberi alternatif untuk peramban web lama. Gatsby mendukung berbagai [cara penataan](/docs/styling/), termasuk file CSS biasa, CSS modules, dan CSS-in-JS.
 
 ## D
 
 ### Data Source
 
-Content and data's origin point, typically integrated into Gatsby with [source plugins](#source-plugin). A data source is often a [Headless CMS](#headless-cms), but it could also include Markdown, JSON, or YAML files.
+Sumber asal konten dan data, biasanya terintegrasi dengan Gatsby melalui [_plugin source_](#source-plugin). Sumber data sering kali adalah [_Headless CMS_](#headless-cms), namun bisa juga mencakup file Markdown, JSON, atau YAML.
 
 ### Database
 
-A database is a structured collection of data or content. Often a [CMS](#cms) will save to a database using [backend technologies](#backend). They're often accessed in Gatsby via a [source plugin](#source-plugin)
+Database adalah kumpulan data atau konten yang terstruktur. Seringkali [CMS](#cms) akan menyimpan ke database menggunakan [teknologi backend](#backend). Database biasa diakses pada proyek Gatsby menggunakan [source plugin](#source-plugin).
 
 ### Decoupled
 
-Decoupling describes the separation of different concerns. With [Gatsby](#gatsby) this most commonly means decoupling the [frontend](#frontend) from the [backend](#backend), like with [Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) or [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/).
+_Decoupling_ menggambarkan pemisahan masalah yang berbeda. Bagi [Gatsby](#gatsby), ini umumnya adalah memisahkan [frontend](#frontend) dari [backend](#backend), seperti dengan [Decoupled Drupal](https://dri.es/how-to-decouple-drupal-in-2019) atau [Headless WordPress](https://www.smashingmagazine.com/2018/10/headless-wordpress-decoupled/).
 
 ### [Decoupled Drupal](/docs/glossary/decoupled-drupal)
 
-Decoupling refers to the practice of using Drupal as a [headless CMS](#headless-cms). A decoupled Drupal instance functions as a content API that returns JSON for your [frontend](#frontend) to consume.
+_Decoupling_ mengacu pada praktik menggunakan Drupal sebagai [_headless CMS_](#headless-cms). Decoupled Drupal berfungsi sebagai API konten yang mengembalikan JSON untuk dikonsumsi [frontend](#frontend) Anda.
 
 ### Deploy
 
-The process of [building](#build) your website or app and uploading onto a [hosting provider](#hosting).
+Proses [membangun](#build) situs web atau aplikasi Anda dan mengunggahnya ke [penyedia layanan hosting](#hosting).
 
 ### Development Environment
 
-The [environment](#environment) when you're developing your code. It's accessed through the [CLI](#cli) using `gatsby develop`, and provides extra error reporting and things to help you debug before building for [production](#production-environment).
+[Lingkungan](#environment) tempat Anda mengembangkan kode Anda. Dapat diakses melalui [CLI](#cli) menggunakan perintah `gatsby develop`, yang akan memberikan laporan kesalahan tambahan dan hal-hal untuk membantu Anda melakukan _debug_ sebelum membangun untuk lingkungan [produksi](#production-environment).
 
 ### DOM
 
@@ -118,13 +120,13 @@ The Document Object Model, commonly referred to as "the DOM", is a standard brow
 
 ### ECMAScript
 
-ECMAScript (often referred to as ES) is a specification for scripting languages. [JavaScript](#javascript) is an implementation of ECMAScript. Often developers will use [Babel](#babel) to [compile](#compiler) the latest ECMAScript code into more widely supported JavaScript.
+ECMAScript (sering disebut sebagai ES) adalah spesifikasi bahasa pemrograman. [JavaScript](#javascript) adalah implementasi dari ECMAScript. Seringkali pengembang menggunakan [Babel](#babel) untuk [mengkompilasi](#compiler) kode ECMAScript terbaru menjadi JavaScript yang didukung lebih luas.
 
 ### Environment
 
-The environment that Gatsby runs in. For example, when you are writing your code you probably want as much debugging as possible, but that's undesirable on the live website or app. As such, Gatsby can change its behavior depending on the environment it's in.
+Lingkungan tempat Gatsby bekerja. Misalnya saat Anda menulis kode, Anda mungkin ingin melakukan _debug_ sebanyak mungkin, tetapi tidak untuk situs web atau aplikasi yang telah tersaji. Oleh karena itu Gatsby dapat menyesuaikan dengan lingkungan kerjanya.
 
-Gatsby supports two environments by default, the [development environment](#development-environment) and the [production environment](#production-environment).
+Gatsby memiliki dua lingkungan bawaan, yaitu [lingkungan pengembangan](#development-environment) dan [lingkungan produksi](#production-environment).
 
 ### Environment Variables
 
@@ -134,47 +136,47 @@ Gatsby supports two environments by default, the [development environment](#deve
 
 ### Filesystem
 
-The way files are organized. With Gatsby, it means having files in the same place as your website's or app's code instead of pulling data from an external [source](#data-source). Common filesystem usage in Gatsby includes Markdown content, images, data files, and other assets.
+Cara penataan file. Bagi Gatsby, ini berarti file berada di tempat yang sama dengan kode situs web atau aplikasi Anda alih-alih menarik data dari [sumber](#data-source) eksternal. Penggunaan _filesystem_ yang umum untuk Gatsby termasuk konten Markdown, gambar, file data, dan aset lainnya.
 
 ### Frontend
 
-The [public-facing](#public) interface for your website or app, delivered using web technologies: HTML, CSS, and JavaScript. For more insight into how the Web Platform brings these technologies together, check out this article on [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/).
+Antarmuka untuk [khalayak umum](#public) dari situs web atau aplikasi Anda, disampaikan menggunakan teknologi web: HTML, CSS, dan JavaScript. Untuk wawasan lebih lanjut mengenai bagaimana Platform Web menyatukan teknologi-teknologi ini, Anda bisa melihat artikel tentang [Cara Kerja Peramban](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/).
 
 ## G
 
 ### Gatsby
 
-Gatsby is a modern website framework that builds performance into every website or app by leveraging the latest web technologies such as [React](#react), [GraphQL](#graphql), and modern [JavaScript](#javascript). Gatsby makes it easy to create blazing fast, compelling web experiences without needing to become a performance expert.
+Gatsby adalah _framework_ situs web modern yang meningkatkan kinerja setiap situs web atau aplikasi dengan memanfaatkan teknologi web terbaru seperti [React](#react), [GraphQL](#graphql), dan [JavaScript](#javascript) modern. Gatsby memudahkan Anda dalam membuat pengalaman web yang cepat dan menarik tanpa perlu menjadi ahli kinerja situs web.
 
 ### [GraphQL](/docs/glossary/graphql)
 
-A [query](#query) language that allows you to pull data into your website or app. It’s the [interface that Gatsby uses](/docs/graphql/) for managing site data.
+Bahasa [query](#query) yang memungkinkan Anda menarik data menuju situs web atau aplikasi Anda. GraphQL adalah [antarmuka yang digunakan Gatsby](/docs/graphql/) untuk mengelola data situs.
 
 ## H
 
 ### HTML
 
-A markup language that every web browser is able to understand. It stands for Hypertext Markup Language. [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) gives your web content a universal informational structure, defining things like headings, paragraphs, and more. It is also key to providing an accessible website.
+Bahasa markup yang dipahami oleh setiap peramban web. HTML adalah singkatan dari _Hypertext Markup Language_. [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) memberi konten web Anda struktur informasi universal, mendefinisikan hal-hal seperti judul, paragraf, dan banyak lagi. HTML juga merupakan kunci untuk menyediakan situs web yang dapat diakses.
 
 ### [Headless CMS](/docs/glossary/headless-cms)
 
-A [CMS](#cms) that only handles the [backend](#backend) content management instead of handling both the backend and [frontend](#frontend). This type of setup is also referred to as [Decoupled](#decoupled).
+[CMS](#cms) yang hanya menangani manajemen konten [_backend_](#backend) alih-alih menangani _backend_ dan [_frontend_](#frontend). Jenis pengaturan ini juga disebut sebagai [_Decoupled_](#decoupled).
 
 ### [Headless WordPress](/docs/glossary/headless-wordpress)
 
-The practice of using JSON returned from the WordPress REST API as a [headless CMS](#headless-cms). It allows you to use WordPress to write and edit content that can be consumed by any client capable of parsing JSON.
+Praktek penggunaan JSON yang dihasilkan dari WordPress REST API sebagai [_headless CMS_](#headless-cms). Hal ini memungkinkan Anda menggunakan WordPress untuk menulis dan mengubah konten yang akan dikonsumsi oleh klien mana pun yang mampu menerima JSON.
 
 ### Hosting
 
-A hosting provider keeps a copy of your website or app and makes it accessible to [the public](#public). [Common hosting providers for Gatsby](/docs/deploying-and-hosting/) projects include Netlify, AWS, S3, Surge, Heroku, and more.
+Penyedia layanan hosting menyimpan salinan situs web atau aplikasi Anda dan membuatnya dapat diakses oleh [publik](#public). [Penyedia layanan hosting yang umum untuk proyek Gatsby](/docs/deploying-and-hosting/) termasuk Netlify, AWS, S3, Surge, Heroku, dan banyak lagi.
 
 ### Hot module replacement
 
-A feature in use when you run `gatsby develop` that live updates your site on save of code in a text editor by automatically replacing modules, or chunks of code, in an open browser window.
+Fitur yang digunakan ketika Anda menjalankan `gatsby develop` yang akan memperbarui situs Anda secara langsung ketika Anda menyimpan kode dari _text editor_ dengan secara otomatis mengganti modul, atau potongan kode, di dalam jendela peramban web.
 
 ### Hydration
 
-Once a site has been [built](#build) by Gatsby and loaded in a web browser, [client-side](#client-side) JavaScript assets will download and turn the site into a full React application that can manipulate the [DOM](#dom). This process is often called re-hydration as it runs some of the same JavaScript code used to generate Gatsby pages, but this time with browser DOM APIs like `window` available.
+Setelah situs [dibangun](#build) oleh Gatsby dan dimuat di peramban web, file-file JavaScript untuk [_client-side_](#client-side) akan mengunduh dan mengubah situs tersebut menjadi aplikasi React yang mampu memanipulasi [DOM](#dom). Proses ini disebut dengan _re-hydration_ karena proses ini menjalankan kode JavaScript yang digunakan untuk menghasilkan halaman Gatsby, tetapi kali ini dengan API DOM peramban web seperti `window` telah tersedia.
 
 ## I
 
@@ -186,15 +188,15 @@ As part of its data layer and [build](#build) process, Gatsby will automatically
 
 ### [JAMStack](/docs/glossary/jamstack)
 
-JAMStack refers to a modern web architecture using [JavaScript](#javascript), [APIs](#api), and ([HTML](#html)) markup. From [JAMStack.org](https://jamstack.org): "It’s a new way of building websites and apps that delivers better performance, higher security, lower cost of scaling, and a better developer experience."
+JAMStack merujuk pada arsitektur web modern menggunakan [JavaScript](#javascript), [API](#api), and _markup_ ([HTML](#html)). Dikutip dari [JAMStack.org](https://jamstack.org): "Ini adalah cara baru dalam membangun situs web dan aplikasi yang memberikan kinerja yang lebih baik, keamanan yang lebih tinggi, biaya penskalaan yang lebih rendah, dan pengalaman pengembang yang lebih baik."
 
 ### JavaScript
 
-A programming language that helps us make the web dynamic and interactive. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Javascript) is a widely deployed web technology in browsers. It is also used on the server-side with [Node.js](#node). It is an implementation of the [ECMAScript](#ECMAScript) specification.
+Bahasa pemrograman yang membantu kita menciptakan halaman web yang dinamis dan interaktif. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Javascript) adalah teknologi pada peramban web yang banyak digunakan. JavaScript juga digunakan pada aplikasi _server-side_ dengan [Node.js](#node). JavaScript adalah implementasi dari spesifikasi [ECMAScript](#ECMAScript).
 
 ### JSX
 
-JSX is an extension to JavaScript that allows developers to write HTML and custom components in the same piece of code. The [React team recommends](https://reactjs.org/docs/introducing-jsx.html) using it to describe what a [UI](#UI) should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript. Some important details to note are that because JSX uses JavaScript, some HTML attributes in your markup have to be swapped out to avoid reserved words in JavaScript (things like `htmlFor` and `className`).
+JSX adalah ekstensi JavaScript yang memungkinkan pengembang menulis HTML dan komponen dalam bagian kode yang sama. [Tim React merekomendasikan](https://reactjs.org/docs/introducing-jsx.html) penggunaannya untuk mendeskripsikan seperti apa tampilan pada [UI](#UI). JSX mungkin mengingatkan Anda pada bahasa _template_, tetapi dilengkapi dengan kekuatan JavaScript. Beberapa perincian penting yang perlu diperhatikan karena JSX menggunakan JavaScript, yaitu beberapa atribut HTML di markup Anda harus diganti untuk menghindari _keyword_ JavaScript (seperti `htmlFor` dan `className`).
 
 ## K
 
@@ -202,31 +204,31 @@ JSX is an extension to JavaScript that allows developers to write HTML and custo
 
 ### Linting
 
-Linting is the process of running a program that will analyze code for potential errors. The Gatsby project uses [prettier](https://prettier.io/) to identify and fix common style issues. Another example of a linter commonly used in React projects is [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y), which checks for common [accessibility](#accessibility) issues in development.
+_Linting_ adalah proses menjalankan program yang akan menganalisis kode untuk mencari kesalahan potensial. Proyek Gatsby menggunakan [prettier](https://prettier.io/) untuk mengidentifikasi dan memperbaiki masalah umum penataan kode sumber. Contoh lain dari _linter_ yang biasa digunakan dalam proyek React adalah [eslint-jsx-plugin-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y), yang memeriksa masalah [aksesibilitas](#accessibility) umum dalam pengembangan.
 
 ## M
 
 ### MDX
 
-Extends [Markdown](#markdown) to support [React](#react) [components](#component) within your content.
+Memperluas [Markdown](#markdown) untuk mendukung [komponen](#component) [React](#react) dalam konten Anda.
 
 ### Markdown
 
-A way of writing HTML content with plain text, using special characters to denote content types such as hash symbols for [headings](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements), and underscores and asterisks for text emphasis.
+Cara menulis konten HTML dengan teks biasa, menggunakan karakter spesial untuk menunjukkan tipe konten seperti simbol hash untuk [judul](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements), dan garis bawah dan tanda bintang untuk penekanan teks.
 
 ## N
 
 ### NPM
 
-[Node](#node) [Package](#package) Manager. Allows you to install and update other packages that your project depends on. [Gatsby](#gatsby) and [React](#react) are examples of your project's dependencies. See also: [Yarn](#yarn).
+[Node](#node) [Package](#package) Manager. Memungkinkan Anda memasang dan memperbarui _package_ lain yang diperlukan oleh proyek Anda. [Gatsby](#gatsby) dan [React](#react) adalah beberapa contoh dependensi proyek Anda. Lihat juga: [Yarn](#yarn).
 
 ### Node
 
-Gatsby uses [data nodes](/docs/node-interface/) to represent a single piece of data. A [data source](#data-source) will create multiple nodes.
+Gatsby menggunakan [_node_ data](/docs/node-interface/) untuk mewakili suatu bagian dari data. Sebuah [sumber data](#data-source) akan menciptakan beberapa _node_.
 
 ### [Node.js](/docs/glossary/node)
 
-A program that lets you run [JavaScript](#javascript) on your computer. Gatsby is powered by Node.
+Program yang memungkinkan Anda menjalankan [JavaScript](#javascript) pada komputer Anda. Gatsby didukung oleh Node.
 
 ## O
 
@@ -234,25 +236,25 @@ A program that lets you run [JavaScript](#javascript) on your computer. Gatsby i
 
 ### Package
 
-A package usually describes a [JavaScript](#javascript) program that has additional information about how it should be distributed and used, such as its version number. [NPM](#npm) and [Yarn](#yarn) manages and installs the packages your project uses. [Gatsby](#gatsby) itself is a package.
+_Package_ biasanya mengacu pada program [JavaScript](#javascript) yang memiliki informasi tambahan tentang bagaimana seharusnya didistribusikan dan digunakan, seperti nomor versi. [NPM](#npm) dan [Yarn](#yarn) mengelola dan memasang _package_ yang digunakan proyek Anda. [Gatsby](#gatsby) sendiri adalah sebuah _package_.
 
 ### Page
 
-An [HTML](#html) page.
+Sebuah halaman [HTML](#html).
 
-This also often refers to [components](#component) that live in `/src/pages/` and are converted to pages by [Gatsby](#gatsby), as well as [pages created dynamically](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs) in your `gatsby-node.js` file.
+Hal ini sering juga merujuk pada [komponen](#component) yang berada di `/src/pages/` dan diolah menjadi halaman oleh [Gatsby](#gatsby), serta [halaman yang dibuat secara dinamis](/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs) pada file `gatsby-node.js`.
 
 ### Plugin
 
-Additional code that adds functionality to Gatsby that wasn't included out-of-the-box. Common [Gatsby plugins](/plugins/) include [source](#source-plugins) and [transformer](#transformer) plugins for pulling in and manipulating data, respectively.
+Kode untuk menambahkan fungsionalitas yang belum termasuk pada Gatsby. [_Plugin_ Gatsby](/plugins/) yang umum digunakan meliputi _plugin_ [_source_](#source-plugins) dan [_transformer_](#transformer) untuk menarik dan memanipulasi data.
 
 ### Production Environment
 
-The [environment](#environment) for the [built](#build) website or app that users will experience when [deployed](#deploy). It can be accessed through the [CLI](#cli) using `gatsby build` or `gatsby serve`.
+[Lingkungan](#environment) untuk situs web atau aplikasi yang [dibangun](#build) yang akan digunakan pengguna ketika akan [_deploy_](#deploy). Dapat diakses melalui [CLI](#cli) menggunakan `gatsby build` atau `gatsby serve`.
 
 ### Programmatically
 
-Something that automatically happens based on your code and configuration. For example, you might [configure](#config) your project to create a [page](#page) for every blog post written, or read and display the current year as part of a copyright in your site footer.
+Sesuatu yang terjadi secara otomatis berdasarkan kode dan pengaturan Anda. Misalnya, Anda dapat [mengkonfigurasi](#config) proyek Anda untuk membuat [halaman](#page) untuk setiap posting blog yang ditulis, atau membaca serta menampilkan tahun sebagai bagian dari pernyataan hak cipta pada _footer_ situs Anda.
 
 ### Progressive enhancement
 
@@ -260,23 +262,23 @@ Progressive enhancement is a strategy for the web that emphasizes core page cont
 
 ### Public
 
-This usually refers to either a member of the public (as opposed to your team) or the folder `/public` in which your [built](#build) website or app is saved.
+Biasanya merujuk pada khalayak umum (bukan anggota tim Anda) atau folder `/public` di mana situs web atau aplikasi Anda yang telah [dibangun](#build) tersimpan.
 
 ## Q
 
 ### Query
 
-The process of requesting specific data from somewhere. With Gatsby you normally query with [GraphQL](#graphql).
+Proses meminta data tertentu dari suatu tempat. Dengan Gatsby Anda umumnya meminta data dengan [GraphQL](#graphql).
 
 ## R
 
 ### [React](/docs/glossary/react)
 
-A code library (written with [JavaScript](#javascript)) for building user interfaces. It’s the framework that [Gatsby](#gatsby) uses to build pages and structure content.
+_Library_ kode (ditulis menggunakan [JavaScript](#javascript)) untuk membangun antarmuka pengguna. Ini adalah _framework_ yang digunakan [Gatsby](#gatsby) untuk membuat halaman dan struktur konten.
 
 ### Remark
 
-A parser to translate [Markdown](#markdown) to other formats like [HTML](#html) or [React](#react) code.
+Sebuah _parser_ untuk menerjemahkan [Markdown](#markdown) menjadi format lain seperti [HTML](#html) atau kode [React](#react).
 
 ### Runtime
 
@@ -284,13 +286,13 @@ Runtime is when a program is running (or being executable); it can refer to a fe
 
 ### Routing
 
-Routing is the mechanism for loading the correct content in a website or app based on a network request - usually a URL. For example, it allows for routing URLs like `/about-us` to the appropriate [page](#page), [template](#template), or [component](#component).
+_Routing_ adalah mekanisme untuk memuat konten yang diinginkan pada situs atau aplikasi web sesuai permintaan jaringan - biasanya melalui URL. Misalnya, ketika ingin melakukan _routing_ URL seperti `/about-us` menuju [halaman](#page), [template](#template), atau [komponen](#component) yang sesuai.
 
 ## S
 
 ### Schema
 
-An exact representation of how data is stored in a system, such as tables and fields in a database or a JSON file structure. In Gatsby, the GraphQL schema expresses all queryable data - or data that components can ask about as part of Gatsby's data layer.
+Gambaran bagaimana data tersimpan dalam sebuah sistem, seperti tabel dan kolom pada database atau struktur file JSON. Pada Gatsby, skema GraphQL menggambarkan semua data atau data yang dapat diminta oleh komponen sebagai lapisan data Gatsby.
 
 ### Server-side
 
@@ -298,23 +300,23 @@ The server-side part of the [client-server relationship](https://en.wikipedia.or
 
 ### Source Code
 
-Source code is your code that lives in `/src/` folder and makes up the unique aspects of your website or app. It is made up of [JavaScript](#javascript) and sometimes [CSS](#css) and other files.
+Kode sumber adalah kode yang berada di folder `/src/` dan menjadi aspek unik dari situs web atau aplikasi Anda. Terdiri dari [JavaScript](#javascript) dan terkadang [CSS](#css) dan file lainnya.
 
-The source code gets [built](#build) into the site the [public](#public) will see.
+Kode sumber tersebut [diolah](#build) menjadi situs yang akan dilihat oleh [publik](#public).
 
 ### Source Plugin
 
-A [plugin](#plugin) that adds additional [data sources](#data-source) to Gatsby that can then be [queried](#query) by your [pages](#page) and [components](#component).
+[Plugin](#plugin) yang memberikan tambahan [sumber data](#data-source) untuk Gatsby yang kemudian dapat [diminta](#query) oleh [halaman](#page) dan [komponen](#component) Anda.
 
 ### Starter
 
-A pre-configured Gatsby project that can be used as a starting point for your project. They can be discovered using the [Gatsby Starter Library](/starters/) and installed using the [Gatsby CLI](/docs/starters/).
+Proyek Gatsby yang telah dikonfigurasi sebelumnya dan dapat digunakan sebagai titik awal untuk proyek Anda. Mereka dapat ditemukan menggunakan [Gatsby Starter Library](/starters/) dan dipasang menggunakan [Gatsby CLI](/docs/starters/).
 
 ### Static
 
-Gatsby [builds](#build) static versions of your page that can be easily [hosted](#hosting). This is in contrast to dynamic systems in which each page is generated on-the-fly. Being static affords major performance gains because the work only needs to be done once per content or code change.
+Gatsby [membangun](#build) versi statis halaman Anda yang dapat Anda [hosting](#hosting). Berbeda dengan sistem dinamis di mana setiap halaman dibuat ketika dibutuhkan. Situs statis dapat meningkatkan kinerja karena pekerjaan hanya perlu dilakukan sekali untuk setiap konten atau ketika konten berubah.
 
-It also refers to the `/static` folder which is automatically copied into `/public` on each [build](#build) for files that don't need to be processed by Gatsby but do need to exist in [public](#public).
+Hal ini juga merujuk pada folder `/static` yang secara otomatis disalin ke folder `/public` pada setiap [build](#build) untuk file yang tidak perlu diproses oleh Gatsby tetapi perlu berada di [public](#public).
 
 ### [Static Site Generator](/docs/glossary/static-site-generator)
 
@@ -324,21 +326,21 @@ A software application that creates HTML pages from templates or [components](#c
 
 ### Template
 
-A [component](#component) that is [programmatically](#programmatically) turned into a page by Gatsby.
+[Komponen](#component) yang secara [terprogram](#programmatically) diolah menjadi halaman oleh Gatsby.
 
 ### Theme
 
-A Gatsby theme is like a WordPress theme that is composable (with other themes), extendable (with more logic), and replaceable ([shadowing](/blog/2019-04-29-component-shadowing/)). Gatsby themes can have any facet of a Gatsby app packaged inside of them, and can also offer any number of knobs to turn features on or off.
+Tema Gatsby seperti tema WordPress yang dapat disusun (dengan tema lain), dapat diperluas (dengan tambahan logika), dan dapat diganti ([dibayangi](/blog/2019-04-29-component-shadowing/)). Tema Gatsby dapat memiliki sisi mana pun dari aplikasi Gatsby yang dikemas di dalamnya, dan juga dapat menawarkan sejumlah fitur yang dapat dihidupkan atau dimatikan.
 
 ### Transformer
 
-A [plugin](#plugin) that transforms one type of data to another. For example you might transform a spreadsheet into a [JavaScript](#javascript) array.
+[_Plugin_](#plugin) yang mengubah satu jenis data menjadi jenis yang lain. Misalnya, Anda dapat mengubah _spreadsheet_ menjadi _array_ [JavaScript](#javascript).
 
 ## U
 
 ### UI
 
-A UI refers to a User Interface. In the field of human-computer interaction, a UI is a space where interactions between humans and machines occur. The goal of this interaction is to allow effective operation and control of the machine from the human end, while the machine simultaneously feeds back information that aids the user's decision-making process (such as error messages or notifications).
+_UI_ mengacu pada Antarmuka Pengguna. Pada bidang interaksi manusia-komputer, _UI_ adalah ruang di mana interaksi antara manusia dan mesin terjadi. Tujuan dari interaksi ini adalah untuk memungkinkan operasi dan kontrol mesin yang efektif bagi manusia, sementara mesin secara serentak memberi umpan balik informasi yang membantu proses pengambilan keputusan bagi pegguna (seperti pesan kesalahan atau pemberitahuan).
 
 ## V
 
@@ -346,7 +348,7 @@ A UI refers to a User Interface. In the field of human-computer interaction, a U
 
 ### [webpack](/docs/glossary/webpack)
 
-A [JavaScript](#javascript) application that Gatsby uses to bundle your website's code up. This happens automatically on [build](#build).
+Aplikasi [JavaScript](#javascript) yang digunakan Gatsby untuk mem-_bundle_ kode sumber situs web Anda. Hal ini terjadi secara otomatis ketika proses [_build_](#build).
 
 ## X
 
@@ -354,6 +356,6 @@ A [JavaScript](#javascript) application that Gatsby uses to bundle your website'
 
 ### Yarn
 
-A [package](#package) manager that some prefer to [NPM](#npm). It is also required for [developing Gatsby](/contributing/setting-up-your-local-dev-environment/#using-yarn).
+_[Package](#package) manager_ yang lebih disukai beberapa orang daripada [NPM](#npm). Hal ini juga diperlukan untuk [mengembangkan Gatsby](/contributing/setting-up-your-local-dev-environment/#using-yarn).
 
 ## Z
