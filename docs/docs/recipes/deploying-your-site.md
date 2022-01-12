@@ -31,7 +31,7 @@ module.exports = {
 }
 ```
 
-Ada beberapa alasan untuk melakukan ini -- misalnya, menghosting blog yang dibuat dengan Gatsby di domain dengan situs lain yang tidak dibuat di Gatsby. Situs utama akan mengarah ke `contoh.com`, dan situs Gatsby dengan awalan jalur dapat ditampilkan di `contoh.com/blog`.
+Ada beberapa alasan untuk melakukan ini -- misalnya, menghosting blog yang dibuat dengan Gatsby di domain dengan situs lain yang tidak dibuat di Gatsby. Situs utama akan mengarah ke `example.com`, dan situs Gatsby dengan awalan jalur dapat ditampilkan di `example.com/blog`.
 
 1. Dengan awalan jalur yang disetel di `gatsby-config.js`, jalankan `gatsby build` dengan tanda `--prefix-paths` untuk secara otomatis menambahkan awalan ke awal semua URL situs Gatsby dan tag `<Link>`.
 
