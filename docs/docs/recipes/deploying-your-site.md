@@ -1,28 +1,29 @@
 ---
-title: "Recipes: Deploying Your Site"
+title: "Resep: Menerapkan Situs Anda"
 tableOfContentsDepth: 1
 ---
 
-Showtime. Once you are happy with your site, you are ready to go live with it!
+Pertunjukan dimulai, Setelah Anda puas dengan situs Anda, Anda siap untuk menggunakannya!
 
-## Preparing for deployment
+## Persiapan untuk penerapan
 
-### Prerequisites
+### Persyaratan
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- [Situs Gatsby](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli) terpasang.
 
-### Directions
+### Petunjuk arah
 
-1. Stop your development server if it is running (`Ctrl + C` on your command line in most cases)
+1. Hentikan server pengembangan Anda jika sedang berjalan (`Ctrl + C` pada baris perintah Anda dalam banyak kasus)
 
-2. For the standard site path at the root directory (`/`), run `gatsby build` using the Gatsby CLI on the command line. The built files will now be in the `public` folder.
+2. Untuk jalur situs standar di direktori root (`/`), jalankan `gatsby build` menggunakan Gatsby CLI pada baris perintah. File yang dibangun sekarang akan berada di folder `public`.
 
 ```shell
 gatsby build
 ```
 
-3. To include a site path other than `/` (such as `/site-name/`), set a path prefix by adding the following to your `gatsby-config.js` and replacing `yourpathprefix` with your desired path prefix:
+3. Untuk menyertakan jalur situs selain `/` (seperti `/nama-situs/`), atur path prefix dengan menambahkan yang berikut ini ke `gatsby-config.js` Anda dan mengganti `yourpathprefix` dengan path prefix keinginan Anda:
+
 
 ```js:title=gatsby-config.js
 module.exports = {
@@ -30,77 +31,77 @@ module.exports = {
 }
 ```
 
-There are a few reasons to do this -- for instance, hosting a blog built with Gatsby on a domain with another site not built on Gatsby. The main site would direct to `example.com`, and the Gatsby site with a path prefix could live at `example.com/blog`.
+Ada beberapa alasan untuk melakukan ini -- misalnya, menghosting blog yang dibuat dengan Gatsby di domain dengan situs lain yang tidak dibuat di Gatsby. Situs utama akan mengarah ke `example.com`, dan situs Gatsby dengan awalan jalur dapat ditampilkan di `example.com/blog`.
 
-4. With a path prefix set in `gatsby-config.js`, run `gatsby build` with the `--prefix-paths` flag to automatically add the prefix to the beginning of all Gatsby site URLs and `<Link>` tags.
+1. Dengan awalan jalur yang disetel di `gatsby-config.js`, jalankan `gatsby build` dengan tanda `--prefix-paths` untuk secara otomatis menambahkan awalan ke awal semua URL situs Gatsby dan tag `<Link>`.
 
 ```shell
 gatsby build --prefix-paths
 ```
 
-5. Make sure that your site looks the same when running `gatsby build` as with `gatsby develop`. By running `gatsby serve` when you build your site, you can test out (and debug if necessary) the finished product before deploying it live.
+5. Pastikan situs Anda terlihat sama saat menjalankan `gatsby build` seperti pada `gatsby develop`. Dengan menjalankan `gatsby serve` saat membangun situs, Anda dapat menguji (dan men-debug jika perlu) produk jadi sebelum menerapkannya secara langsung.
 
 ```shell
 gatsby build && gatsby serve
 ```
 
-### Additional resources
+### Sumber daya tambahan
 
-- Walk through building and deploying an example site in [tutorial part one](/tutorial/part-one/#deploying-a-gatsby-site)
-- Learn about [performance optimization](/docs/performance/)
-- Read about [other deployment related topics](/docs/preparing-for-deployment/)
-- Check out the [deployment docs](/docs/deploying-and-hosting/) for specific hosting platforms and how to deploy to them
+- Jelajahi pembuatan dan penerapan situs contoh di [tutorial bagian satu](/tutorial/part-one/#deploying-a-gatsby-site)
+- Pelajari tentang [pengoptimalan kinerja](/docs/performance/)
+- Baca tentang [topik terkait penerapan lainnya](/docs/preparing-for-deployment/)
+- Lihat [dokumen penerapan](/docs/deploying-and-hosting/) for specific hosting platforms and how to deploy to them
 
-## Deploying to Netlify
+## Menerapkan ke Netlify
 
-Use [`netlify-cli`](https://www.netlify.com/docs/cli/) to deploy your Gatsby application without leaving the command-line interface.
+Gunakan [`netlify-cli`](https://www.netlify.com/docs/cli/) untuk menerapkan aplikasi Gatsby Anda tanpa meninggalkan antarmuka baris perintah.
 
-### Prerequisites
+### Prasyarat
 
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- The [netlify-cli](https://www.npmjs.com/package/netlify-cli) package installed
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- Halaman [Situs Gatsby](/docs/quick-start) dengan satu komponen `index.js`
+- Paket [netlify-cli](https://www.npmjs.com/package/netlify-cli) terpasang
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-### Directions
+### Petunjuk arah
 
-1. Build your gatsby application using `gatsby build`
+1. Bangun aplikasi gatsby Anda menggunakan `gatsby build`
 
-2. Login into Netlify using `netlify login`
+2. Masuk ke Netlify menggunakan `netlify login`
 
-3. Run the command `netlify init`. Select the "Create & configure a new site" option.
+3. Jalankan perintah `netlify init`. Pilih opsi "Buat & konfigurasikan situs baru".
 
-4. Choose a custom website name if you want or press enter to receive a random one.
+4. Pilih nama situs web khusus jika Anda mau atau tekan enter untuk menerima yang acak.
 
-5. Choose your [Team](https://www.netlify.com/docs/teams/).
+5. Pilih [Team](https://www.netlify.com/docs/teams/) kamu.
 
-6. Change the deploy path to `public/`
+6. Ubah path ke `public/`
 
-7. Make sure that everything looks fine before deploying to production using `netlify deploy -d . --prod`
+7. Pastikan semuanya terlihat baik-baik saja sebelum digunakan untuk produksi menggunakan `netlify deploy -d . --prod`
 
-### Additional resources
+### Sumber daya tambahan
 
-- [Hosting on Netlify](/docs/hosting-on-netlify)
+- [Hosting di Netlify](/docs/hosting-on-netlify)
 - [gatsby-plugin-netlify](/packages/gatsby-plugin-netlify)
 
-## Deploying to ZEIT Now
+## Menyebarkan ke ZEIT Sekarang
 
-Use [Now CLI](https://zeit.co/download) to deploy your Gatsby application without leaving the command-line interface.
+Gunakan [Now CLI](https://zeit.co/download) untuk menyebarkan aplikasi Gatsby Anda tanpa meninggalkan antarmuka baris perintah.
 
-### Prerequisites
+### Prasyarat
 
-- A [ZEIT Now](https://zeit.co/signup) account
-- A [Gatsby site](/docs/quick-start) with a single component `index.js`
-- [Now CLI](https://zeit.co/download) package installed
-- [Gatsby CLI](/docs/gatsby-cli) installed
+- Akun [ZEIT Now](https://zeit.co/signup)
+- [Situs Gatsby](/docs/quick-start) dengan satu komponen `index.js`
+- Paket [Now CLI](https://zeit.co/download) terpasang
+- [Gatsby CLI](/docs/gatsby-cli) terpasang
 
-### Directions
+### Petunjuk arah
 
-1. Login into Now CLI using `now login`
+1. Masuk ke Sekarang CLI menggunakan `now login`
 
-2. Change to the directory of your Gatsby.js application in the Terminal if you aren't already there
+2. Ubah ke direktori aplikasi Gatsby.js Anda di Terminal jika Anda belum melakukannya
 
-3. Run `now` to deploy it
+3. Jalankan `now` untuk menyebarkannya
 
-### Additional resources
+### Sumber daya tambahan
 
-- [Deploying to ZEIT Now](/docs/deploying-to-zeit-now/)
+- [Menyebarkan ke ZEIT Now](/docs/deploying-to-zeit-now/)
